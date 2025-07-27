@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishon Tuman Hokimligi - Xatlar Ijrosi Monitoring Tizimi</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        :root {
+            --uzbek-blue: #0A4C96;
+            --uzbek-light-blue: #4A90E2;
+            --uzbek-green: #00AA44;
+            --uzbek-red: #E53E3E;
+            --uzbek-gold: #FFD700;
+            --uzbek-white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --info: #3B82F6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--gray-50);
+            min-height: 100vh;
+            line-height: 1.6;
+            color: var(--gray-700);
+            overflow-x: hidden;
+        }
+
+        /* Header Section - Government Style */
+        .header-section {
+            background: linear-gradient(135deg, var(--uzbek-blue) 0%, var(--uzbek-light-blue) 100%);
+            color: white;
+            padding: 2.5rem 0 2rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(10, 76, 150, 0.2);
+        }
+
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="uzbekPattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="5" cy="5" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="15" cy="15" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23uzbekPattern)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .government-logo {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border: 3px solid rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(5px);
+        }
+
+        .title-main {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin: 0;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .title-sub {
+            font-size: 1.3rem;
+            font-weight: 600;
+            opacity: 0.95;
+            margin-top: 0.25rem;
+        }
+
+        .title-system {
+            font-size: 1rem;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-top: 0.75rem;
+            padding: 0.5rem 1.2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: inline-block;
+        }
+
+        .control-panel {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .status-badge, .last-update {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+        }
+        
+        .status-badge {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10B981;
+            font-weight: 600;
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+        
+        .status-badge .fa-circle {
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        .refresh-button {
+            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+            border: none;
+            border-radius: 25px;
+            padding: 0.7rem 1.5rem;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+        }
+
+        .refresh-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Statistics Cards */
+        .stats-section {
+            margin-top: -3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+        }
+        .stat-card:nth-child(1)::before { background: linear-gradient(90deg, var(--info), #1d4ed8); }
+        .stat-card:nth-child(2)::before { background: linear-gradient(90deg, var(--warning), #d97706); }
+        .stat-card:nth-child(3)::before { background: linear-gradient(90deg, var(--success), #059669); }
+        .stat-card:nth-child(4)::before { background: linear-gradient(90deg, var(--danger), #dc2626); }
+        
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .stat-icon {
+            font-size: 1.5rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .stat-content {
+            text-align: right;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--gray-600);
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Main Content & Table */
+        .main-content {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .content-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .content-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--uzbek-blue);
+            margin: 0;
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--gray-100);
+            border: 1px solid var(--gray-300);
+            color: var(--gray-700);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background: var(--gray-200);
+            border-color: var(--gray-400);
+        }
+        
+        .filter-btn.active {
+            background: var(--uzbek-blue);
+            color: white;
+            border-color: var(--uzbek-blue);
+        }
+        
+        .search-container .form-control {
+            border-radius: 8px;
+        }
+
+        .table-responsive {
+            max-height: 600px;
+            overflow: auto;
+        }
+
+        .enhanced-table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        .enhanced-table thead th {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            background: var(--gray-50);
+            color: var(--gray-600);
+            font-weight: 600;
+            border-bottom: 2px solid var(--gray-300);
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .enhanced-table thead th:first-child {
+            text-align: left;
+            padding-left: 1.5rem;
+            width: 30%;
+        }
+        
+        .enhanced-table tbody tr {
+            transition: background-color 0.2s ease;
+        }
+
+        .enhanced-table tbody tr:hover {
+            background-color: var(--gray-100);
+        }
+        
+        .enhanced-table tbody td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--gray-200);
+            vertical-align: middle;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        
+        .enhanced-table tbody td:first-child {
+            text-align: left;
+            padding-left: 1.5rem;
+            white-space: normal;
+        }
+        
+        .employee-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .employee-avatar {
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--uzbek-blue), var(--uzbek-light-blue));
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: 700; font-size: 1rem; flex-shrink: 0;
+        }
+
+        .employee-name {
+            font-weight: 600;
+            color: var(--gray-800);
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .employee-department {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin-top: 0.2rem;
+        }
+        
+        .metric-badge {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .badge-today { color: var(--info); }
+        .badge-tomorrow { color: var(--warning); }
+        .badge-closed { color: var(--success); }
+        .badge-open { color: var(--gray-600); }
+        .badge-overdue { 
+            color: var(--danger); 
+            animation: pulse-red 2s infinite;
+            font-weight: 800;
+        }
+        
+        @keyframes pulse-red { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+
+        .action-btn {
+            background: var(--gray-100); border: 1px solid var(--gray-300); color: var(--gray-600);
+            width: 32px; height: 32px; border-radius: 6px; font-size: 0.8rem;
+            transition: all 0.2s ease; display: inline-flex; align-items: center; justify-content: center;
+        }
+
+        .action-btn:hover { background: var(--uzbek-blue); color: white; border-color: var(--uzbek-blue); }
+
+        /* Charts & Performance Section */
+        .section-title {
+            color: var(--uzbek-blue);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: ''; position: absolute; bottom: -10px; left: 50%;
+            transform: translateX(-50%); width: 70px; height: 4px;
+            background: linear-gradient(90deg, var(--uzbek-blue), var(--uzbek-light-blue));
+            border-radius: 2px;
+        }
+
+        .chart-card, .performance-section {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .chart-title {
+            color: var(--uzbek-blue); font-weight: 700;
+            font-size: 1.2rem; margin: 0;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 350px;
+            width: 100%;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--gray-800);
+            color: var(--gray-300);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+        .footer-link { color: var(--uzbek-light-blue); text-decoration: none; }
+        .footer-link:hover { color: white; text-decoration: underline;}
+
+        /* Loading Spinner */
+        .loading-spinner {
+            width: 18px; height: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: none;
+            margin-left: 0.5rem;
+        }
+
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .header-content .row > div { text-align: center; }
+            .government-logo { margin: 0 auto 1rem; }
+            .control-panel { justify-content: center; margin-top: 1.5rem; }
+            .title-main { font-size: 2rem; }
+            .title-sub { font-size: 1.2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .stat-number { font-size: 2rem; }
+            .stat-label { font-size: 0.9rem; }
+            .content-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .filter-controls { justify-content: flex-start; }
+            .search-container { width: 100%; }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header-section">
+        <div class="container">
+            <div class="header-content">
+                <div class="row align-items-center gy-3">
+                    <div class="col-lg-7">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="government-logo">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div>
+                                <h1 class="title-main">NISHON TUMAN HOKIMLIGI</h1>
+                                <div class="title-sub">Kiruvchi Xatlar Ijrosi Monitoring Tizimi</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="control-panel">
+                            <div class="status-badge">
+                                <i class="fas fa-circle fa-xs me-2"></i>
+                                Faol
+                            </div>
+                            <div class="last-update" id="lastUpdateTime">
+                                <i class="fas fa-clock fa-xs me-2"></i>--:--
+                            </div>
+                            <button class="btn refresh-button d-flex align-items-center" onclick="refreshData()">
+                                <i class="fas fa-sync-alt me-2"></i>
+                                Yangilash
+                                <div class="loading-spinner" id="loadingSpinner"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <!-- Statistics Cards -->
+        <div class="stats-section">
+            <div class="row g-3">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between align-items-start">
+                             <div class="stat-icon" style="background: var(--info);">
+                                <i class="fas fa-envelope-open"></i>
+                            </div>
+                            <div class="stat-content">
+                                <p class="stat-label">Bugungi xatlar</p>
+                                <h2 class="stat-number" id="totalToday">0</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="stat-card">
+                         <div class="d-flex justify-content-between align-items-start">
+                             <div class="stat-icon" style="background: var(--warning);">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-content">
+                                <p class="stat-label">Ertaga tugaydi</p>
+                                <h2 class="stat-number" id="totalTomorrow">0</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="stat-card">
+                         <div class="d-flex justify-content-between align-items-start">
+                             <div class="stat-icon" style="background: var(--success);">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="stat-content">
+                                <p class="stat-label">Yopilgan xatlar</p>
+                                <h2 class="stat-number" id="totalClosed">0</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="stat-card">
+                         <div class="d-flex justify-content-between align-items-start">
+                             <div class="stat-icon" style="background: var(--danger);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="stat-content">
+                                <p class="stat-label">Muddati o'tgan</p>
+                                <h2 class="stat-number" id="totalOverdue">0</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Table Section -->
+        <div class="main-content">
+            <div class="content-header d-flex flex-wrap justify-content-between align-items-center gap-3">
+                <h3 class="content-title m-0">
+                    <i class="fas fa-table me-2"></i>
+                    Xodimlar bo'yicha ma'lumot
+                </h3>
+                <div class="search-container flex-grow-1" style="max-width: 300px;">
+                    <input type="text" class="form-control" placeholder="Xodim qidirish..." id="searchInput" onkeyup="searchEmployee()">
+                </div>
+            </div>
+            <div class="px-3 py-2 border-bottom">
+                 <div class="filter-controls">
+                    <button class="filter-btn active" onclick="filterTable('all')" data-filter="all">Barchasi</button>
+                    <button class="filter-btn" onclick="filterTable('overdue')" data-filter="overdue">Muddati o'tgan</button>
+                    <button class="filter-btn" onclick="filterTable('tomorrow')" data-filter="tomorrow">Ertaga tugaydi</button>
+                    <button class="filter-btn" onclick="filterTable('completed')" data-filter="completed">Bajarganlar</button>
+                    <button class="filter-btn" onclick="filterTable('pending')" data-filter="pending">Jarayonda</button>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table enhanced-table mb-0">
+                    <thead>
+                        <tr>
+                            <th>Hodim Ma'lumotlari</th>
+                            <th>Bugun</th>
+                            <th>Ertaga</th>
+                            <th>Yopilgan</th>
+                            <th>Ochiq</th>
+                            <th>Muddati O'tgan</th>
+                            <th>Samaradorlik</th>
+                            <th>Harakat</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeeTableBody">
+                        <!-- Data will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-section">
+            <h2 class="section-title">Umumiy Statistika</h2>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="chart-card h-100">
+                        <h4 class="chart-title mb-3"><i class="fas fa-chart-pie me-2"></i>Umumiy Taqsimot</h4>
+                        <div class="chart-container" style="height: 300px;"><canvas id="overallChart"></canvas></div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="chart-card h-100">
+                        <h4 class="chart-title mb-3"><i class="fas fa-chart-bar me-2"></i>Bo'limlar Samaradorligi</h4>
+                        <div class="chart-container" style="height: 300px;"><canvas id="departmentChart"></canvas></div>
+                    </div>
+                </div>
+                <div class="col-12">
+                     <div class="chart-card">
+                        <h4 class="chart-title mb-3"><i class="fas fa-chart-line me-2"></i>Haftalik Trend</h4>
+                        <div class="chart-container" style="height: 300px;"><canvas id="trendChart"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p class="mb-1">© 2025 O'zbekiston Respublikasi Nishon Tuman Hokimligi</p>
+            <small>Barcha huquqlar himoyalangan | <a href="#" class="footer-link">Texnik yordam</a></small>
+        </div>
+    </div>
+
+    <script>
+    // --- 1. KONFIGURATSIYA VA HOLAT ---
+    const CONFIG = {
+        SHEET_ID: '1pfRrY0Z5JZvtClxWailRJ-Y0G5vnlYJNDiWSrrMkLHE', // Siz bergan Google Sheet ID
+        API_KEY: 'AIzaSyB6GJvhEICw-6GG8pA5Jjhj79eZ1kQjxPc',       // Siz bergan Google API kaliti
+        RANGE: 'Sheet1!A:G',               // Ma'lumotlar joylashgan diapazon (A ustunidan G ustunigacha)
+        REFRESH_INTERVAL: 300000           // Har 5 daqiqada avtomatik yangilash
+    };
+
+    let charts = {};
+    let employeeData = [];
+    let currentFilter = 'all';
+
+    // --- 2. ILK YUKLASH ---
+    document.addEventListener('DOMContentLoaded', () => {
+        initializeApp();
+    });
+
+    function initializeApp() {
+        // Sahifa ochilganda darhol Google'dan ma'lumotlarni yuklaymiz
+        fetchDataFromGoogleSheet();
+        // Va belgilangan vaqt oralig'ida avtomatik yangilab turishni yoqamiz
+        setInterval(() => fetchDataFromGoogleSheet(), CONFIG.REFRESH_INTERVAL);
+    }
+
+    // --- 3. MA'LUMOTLARNI QAYTA ISHLASH VA YUKLASH ---
+
+    /**
+     * Google Sheet'dan ma'lumotlarni oladi va qayta ishlaydi
+     */
+    async function fetchDataFromGoogleSheet() {
+        const spinner = document.getElementById('loadingSpinner');
+        const button = document.querySelector('.refresh-button');
+        spinner.style.display = 'inline-block';
+        button.disabled = true;
+
+        const url = `https://sheets.googleapis.com/v4/spreadsheets/${CONFIG.SHEET_ID}/values/${CONFIG.RANGE}?key=${CONFIG.API_KEY}`;
+        
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error("Google Sheets API xatosi:", errorData);
+                throw new Error(`Server javobi: ${response.status}. Batafsil ma'lumot konsolda.`);
+            }
+            const json = await response.json();
+
+            // Agar jadval bo'sh bo'lsa yoki ma'lumot kelmasa
+            if (!json.values || json.values.length < 2) {
+                 console.warn("Google Sheet'da ma'lumotlar mavjud emas yoki faqat sarlavha bor.");
+                 employeeData = [];
+                 displayFullDashboard(); // Bo'sh dasbordni ko'rsatish
+                 return;
+            }
+
+            const headers = json.values[0];
+            const rows = json.values.slice(1);
+
+            const data = rows.map(row => {
+                const emp = {};
+                headers.forEach((header, i) => {
+                    emp[header.trim()] = row[i];
+                });
+                return emp;
+            });
+
+            processData(data);
+
+        } catch (error) {
+            console.error("Google Sheet'dan ma'lumot yuklashda xatolik:", error);
+            alert("Ma'lumotlarni yuklab bo'lmadi! Iltimos, quyidagilarni tekshiring:\n1. Internet aloqasi.\n2. Brauzer konsolida (F12) xatolik sababi.\n3. API kaliti va Sheet ID to'g'riligi.");
+        } finally {
+            spinner.style.display = 'none';
+            button.disabled = false;
+        }
+    }
+
+    /**
+     * Kelgan ma'lumotlarni tizimga moslab, samaradorlikni hisoblaydi
+     * @param {Array} data - Google Sheet'dan kelgan xom ma'lumotlar
+     */
+    function processData(data) {
+        employeeData = data.map(emp => {
+            const closed = parseInt(emp.closed) || 0;
+            const open = parseInt(emp.open) || 0;
+            const overdue = parseInt(emp.overdue) || 0;
+            
+            const totalTasks = closed + open + overdue;
+            return {
+                name: emp.name || "Noma'lum",
+                department: emp.department || "Bo'lim ko'rsatilmagan",
+                today: parseInt(emp.today) || 0,
+                tomorrow: parseInt(emp.tomorrow) || 0,
+                closed: closed,
+                open: open,
+                overdue: overdue,
+                efficiency: totalTasks > 0 ? Math.round((closed / totalTasks) * 100) : 0
+            };
+        });
+        displayFullDashboard();
+        updateLastUpdated();
+    }
+
+    function refreshData() {
+        fetchDataFromGoogleSheet();
+    }
+
+    // --- 4. INTERFEYSNI YANGILASH FUNKSIYALARI ---
+
+    /**
+     * Barcha interfeys elementlarini yangilaydi
+     */
+    function displayFullDashboard() {
+        updateSummaryCards(employeeData);
+        filterTable(currentFilter);
+        updateCharts(employeeData);
+    }
+    
+    function updateSummaryCards(data) {
+        const totals = data.reduce((acc, emp) => ({
+            today: acc.today + emp.today,
+            tomorrow: acc.tomorrow + emp.tomorrow,
+            closed: acc.closed + emp.closed,
+            overdue: acc.overdue + emp.overdue
+        }), { today: 0, tomorrow: 0, closed: 0, overdue: 0 });
+
+        animateNumber('totalToday', totals.today);
+        animateNumber('totalTomorrow', totals.tomorrow);
+        animateNumber('totalClosed', totals.closed);
+        animateNumber('totalOverdue', totals.overdue);
+    }
+
+    function updateTable(data) {
+        const tbody = document.getElementById('employeeTableBody');
+        tbody.innerHTML = '';
+
+        if (data.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="8" class="text-center text-muted py-5">Ma'lumot topilmadi</td></tr>`;
+            return;
+        }
+
+        data.forEach(emp => {
+            const initials = emp.name.split(' ').map(n => n[0]).join('').substring(0, 2);
+            const row = `
+                <tr>
+                    <td>
+                        <div class="employee-info">
+                            <div class="employee-avatar">${initials}</div>
+                            <div>
+                                <div class="employee-name">${emp.name}</div>
+                                <div class="employee-department">${emp.department}</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="metric-badge badge-today">${emp.today}</span></td>
+                    <td><span class="metric-badge badge-tomorrow">${emp.tomorrow}</span></td>
+                    <td><span class="metric-badge badge-closed">${emp.closed}</span></td>
+                    <td><span class="metric-badge badge-open">${emp.open}</span></td>
+                    <td><span class="metric-badge badge-overdue">${emp.overdue}</span></td>
+                    <td>
+                        <div class="d-flex align-items-center justify-content-center gap-2">
+                            <small class="fw-bold ${emp.efficiency >= 80 ? 'text-success' : emp.efficiency >= 50 ? 'text-warning' : 'text-danger'}">${emp.efficiency}%</small>
+                            <div class="progress" style="width: 60px; height: 6px;">
+                                <div class="progress-bar ${emp.efficiency >= 80 ? 'bg-success' : emp.efficiency >= 50 ? 'bg-warning' : 'bg-danger'}" 
+                                     style="width: ${emp.efficiency}%"></div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="action-btn" title="Batafsil"><i class="fas fa-eye"></i></button>
+                    </td>
+                </tr>
+            `;
+            tbody.innerHTML += row;
+        });
+    }
+
+    function updateCharts(data) {
+        try {
+            updateOverallChart(data);
+            updateDepartmentChart(data);
+            updateTrendChart();
+        } catch (error) {
+            console.error('Chart yangilanishida xatolik:', error);
+        }
+    }
+    
+    // --- 5. DIAGRAMMALARNI CHIZISH ---
+    
+    function createOrUpdateChart(chartId, type, data, options) {
+        const ctx = document.getElementById(chartId).getContext('2d');
+        if (charts[chartId]) {
+            charts[chartId].destroy();
+        }
+        charts[chartId] = new Chart(ctx, { type, data, options });
+    }
+    
+    function updateOverallChart(data) {
+        const totals = data.reduce((acc, emp) => ({
+            closed: acc.closed + emp.closed,
+            open: acc.open + emp.open,
+            overdue: acc.overdue + emp.overdue,
+            tomorrow: acc.tomorrow + emp.tomorrow
+        }), { closed: 0, open: 0, overdue: 0, tomorrow: 0 });
+
+        createOrUpdateChart('overallChart', 'doughnut', {
+            labels: ["Yopilgan", "Jarayonda", "Muddati O'tgan", "Ertaga Tugaydi"],
+            datasets: [{
+                data: [totals.closed, totals.open, totals.overdue, totals.tomorrow],
+                backgroundColor: ['#10B981', '#6B7280', '#EF4444', '#F59E0B'],
+                borderColor: '#ffffff', borderWidth: 2,
+            }]
+        }, { 
+            responsive: true, maintainAspectRatio: false, cutout: '70%',
+            plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20 } } } 
+        });
+    }
+
+    function updateDepartmentChart(data) {
+        const departmentStats = {};
+        data.forEach(emp => {
+            const dept = emp.department || "Noma'lum bo'lim";
+            if (!departmentStats[dept]) {
+                departmentStats[dept] = { total: 0, closed: 0 };
+            }
+            const totalTasks = emp.closed + emp.open + emp.overdue;
+            departmentStats[dept].total += totalTasks;
+            departmentStats[dept].closed += emp.closed;
+        });
+
+        const departments = Object.keys(departmentStats);
+        const completionRates = departments.map(dept => 
+            departmentStats[dept].total > 0 ? 
+            Math.round((departmentStats[dept].closed / departmentStats[dept].total) * 100) : 0
+        );
+
+        createOrUpdateChart('departmentChart', 'bar', {
+            labels: departments.map(dept => dept.length > 20 ? dept.substring(0, 18) + '...' : dept),
+            datasets: [{
+                label: 'Bajarilish foizi (%)',
+                data: completionRates,
+                backgroundColor: '#4A90E2',
+                borderRadius: 4
+            }]
+        }, {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: { 
+                y: { beginAtZero: true, min: 0, max: 100, ticks: { callback: value => value + '%' } },
+                x: { ticks: { autoSkip: false, maxRotation: 90, minRotation: 45 } }
+            }
+        });
+    }
+
+    function updateTrendChart() {
+        createOrUpdateChart('trendChart', 'line', {
+            labels: ['Dushanba', 'Seshanba', 'Chorshanba', 'Payshanba', 'Juma', 'Shanba'],
+            datasets: [
+                { label: 'Kelgan', data: [35, 42, 38, 44, 50, 28], borderColor: '#3B82F6', fill: false, tension: 0.4 },
+                { label: 'Yopilgan', data: [30, 38, 35, 40, 45, 25], borderColor: '#10B981', fill: false, tension: 0.4 }
+            ]
+        }, {
+            responsive: true, maintainAspectRatio: false,
+            interaction: { intersect: false, mode: 'index' },
+            plugins: { legend: { position: 'top', labels: { usePointStyle: true } } }
+        });
+    }
+
+    // --- 6. INTERAKTIVLIK (FILTR, QIDIRUV) ---
+    
+    function filterTable(filter) {
+        currentFilter = filter;
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-filter') === filter);
+        });
+
+        let filteredData;
+        switch (filter) {
+            case 'overdue': filteredData = employeeData.filter(emp => emp.overdue > 0); break;
+            case 'tomorrow': filteredData = employeeData.filter(emp => emp.tomorrow > 0); break;
+            case 'completed': filteredData = employeeData.filter(emp => emp.efficiency === 100 && emp.open === 0 && emp.overdue === 0); break;
+            case 'pending': filteredData = employeeData.filter(emp => emp.open > 0 || emp.overdue > 0); break;
+            default: filteredData = [...employeeData];
+        }
+        
+        document.getElementById('searchInput').value = '';
+        updateTable(filteredData);
+    }
+
+    function searchEmployee() {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+        const filteredData = employeeData.filter(emp => 
+            emp.name.toLowerCase().includes(searchTerm) ||
+            emp.department.toLowerCase().includes(searchTerm)
+        );
+        updateTable(filteredData);
+        // Qidiruvda filtrni o'chirish
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+        currentFilter = 'all';
+    }
+    
+    // --- 7. YORDAMCHI FUNKSIYALAR ---
+    
+    function updateLastUpdated() {
+        const now = new Date();
+        const time = now.toTimeString().split(' ')[0].substring(0, 5);
+        document.getElementById('lastUpdateTime').innerHTML = `<i class="fas fa-clock fa-xs me-2"></i>${time}`;
+    }
+    
+    function animateNumber(id, finalValue) {
+        const element = document.getElementById(id);
+        if (!element) return;
+        const duration = 1000;
+        const startValue = parseFloat(element.innerText.replace(/[^\d.-]/g, '')) || 0;
+        let startTime = null;
+
+        function animation(currentTime) {
+            if (!startTime) startTime = currentTime;
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+            const currentValue = startValue + (finalValue - startValue) * progress;
+            element.innerText = Math.floor(currentValue);
+            if (progress < 1) requestAnimationFrame(animation);
+        }
+        requestAnimationFrame(animation);
+    }
+</script>
+</body>
+</html>
