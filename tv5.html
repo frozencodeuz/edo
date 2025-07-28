@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishon Tuman Hokimligi - Ijro Monitoringi (TV Dashboard)</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        :root {
+            --uzbek-blue: #0A4C96; --uzbek-light-blue: #4A90E2; --uzbek-green: #00AA44;
+            --uzbek-red: #E53E3E; --uzbek-purple: #8B5CF6; --gray-50: #F9FAFB;
+            --gray-600: #4B5563; --gray-700: #374151; --success: #10B981;
+            --warning: #F59E0B; --danger: #EF4444; --info: #3B82F6;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--gray-50); overflow-y: hidden; }
+        .header-section { background: linear-gradient(135deg, var(--uzbek-blue) 0%, var(--uzbek-light-blue) 100%); color: white; padding: 2rem 0; box-shadow: 0 4px 15px rgba(10, 76, 150, 0.2); }
+        .government-logo { width: 60px; height: 60px; background: rgba(255, 255, 255, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; border: 3px solid rgba(255, 255, 255, 0.25); }
+        .title-main { font-size: 2rem; font-weight: 800; }
+        .title-sub { font-size: 1.2rem; font-weight: 600; }
+        .control-panel { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+        .last-update, .status-badge { background: rgba(255, 255, 255, 0.1); padding: 0.6rem 1.2rem; border-radius: 25px; font-size: 0.9rem; }
+        .refresh-button { background: linear-gradient(135deg, var(--success) 0%, #059669 100%); border: none; border-radius: 25px; padding: 0.7rem 1.5rem; color: white; font-weight: 600; font-size: 0.9rem; }
+        .stats-section { margin-top: -2.5rem; position: relative; z-index: 10; }
+        .stat-card { background: white; border-radius: 16px; padding: 1.5rem; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); height: 100%; }
+        .stat-icon { font-size: 1.5rem; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; }
+        .stat-number { font-size: 2.5rem; font-weight: 800; }
+        .stat-label { color: var(--gray-600); font-size: 1rem; font-weight: 600; }
+        .main-content { background: white; border-radius: 16px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); margin-top: 2rem; margin-bottom: 2rem; overflow: hidden; }
+        .content-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.5rem; border-bottom: 1px solid var(--gray-200, #E5E7EB); }
+        .content-title { font-size: 1.5rem; font-weight: 700; color: var(--uzbek-blue); }
+        
+        .table-responsive { height: calc(100vh - 420px); overflow: hidden; }
+
+        .enhanced-table { table-layout: fixed; width: 100%; }
+        .enhanced-table thead th { position: sticky; top: 0; z-index: 5; background: var(--gray-50); }
+        .enhanced-table th:nth-child(1) { width: 32%; }
+        .enhanced-table th:nth-child(2),
+        .enhanced-table th:nth-child(3),
+        .enhanced-table th:nth-child(4),
+        .enhanced-table th:nth-child(5) { width: 7%; }
+        .enhanced-table th:nth-child(6) { width: 11%; }
+        .enhanced-table th:nth-child(7) { width: 11%; }
+        .enhanced-table th:nth-child(8) { width: 11%; }
+        
+        .enhanced-table tbody td { padding: 1rem; text-align: center; border-bottom: 1px solid var(--gray-200, #E5E7EB); vertical-align: middle; word-wrap: break-word; }
+        .employee-info { display: flex; align-items: center; gap: 1rem; text-align: left; }
+        .employee-avatar { width: 45px; height: 45px; border-radius: 50%; background: linear-gradient(135deg, var(--uzbek-blue), var(--uzbek-light-blue)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; flex-shrink: 0; }
+        .employee-name { font-weight: 600; font-size: 1rem; white-space: normal; }
+        .employee-department { font-size: 0.85rem; color: var(--gray-500, #6B7280); white-space: normal; line-height: 1.3; }
+
+        .metric-badge { font-weight: 700; font-size: 1.1rem; }
+        .badge-overdue { color: var(--danger); animation: pulse-red 2s infinite; font-weight: 800; }
+        @keyframes pulse-red { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+        .status-badge.active-status .fa-circle { animation: pulse-live 1.5s infinite; }
+        @keyframes pulse-live { 0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); } 100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); } }
+        .footer { display: none; }
+        .loading-spinner { width: 18px; height: 18px; border: 2px solid rgba(255, 255, 255, 0.3); border-top: 2px solid white; border-radius: 50%; animation: spin 1s linear infinite; display: none; margin-left: 0.5rem; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    
+        @media (min-width: 1600px) and (min-height: 900px) {
+            body { font-size: 1.25rem; }
+            .header-section { padding: 1.5rem 0; }
+            .government-logo { width: 90px; height: 90px; font-size: 2.8rem; }
+            .title-main { font-size: 3.5rem; }
+            .title-sub { font-size: 1.8rem; }
+            .last-update, .status-badge, .refresh-button { font-size: 1.5rem; padding: 1rem 2rem; }
+            .stats-section { margin-top: -3.5rem; }
+            .stat-card { padding: 2.5rem; }
+            .stat-icon { width: 70px; height: 70px; font-size: 2.5rem; border-radius: 1rem; }
+            .stat-label { font-size: 1.8rem; }
+            .stat-number { font-size: 4.5rem; }
+            .content-header { padding: 2rem; }
+            .content-title { font-size: 2.5rem; }
+            .search-container { display: none; }
+            .table-responsive { height: calc(100vh - 480px); }
+            .enhanced-table { font-size: 1.2rem; }
+            .enhanced-table thead th { font-size: 1.1rem; padding: 1.5rem 1rem; }
+            .enhanced-table tbody td { padding: 1.2rem 1rem; }
+            .employee-avatar { width: 65px; height: 65px; font-size: 1.5rem; }
+            .employee-name { font-size: 1.4rem; }
+            .employee-department { font-size: 1.1rem; }
+            .metric-badge { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header-section">
+        <div class="container-fluid px-4">
+            <div class="row align-items-center gy-3">
+                <div class="col-lg-7"><div class="d-flex align-items-center gap-3"><div class="government-logo"><i class="fas fa-university"></i></div><div><h1 class="title-main">NISHON TUMAN HOKIMLIGI</h1><div class="title-sub">Kiruvchi Xatlar Ijrosi Monitoring Tizimi</div></div></div></div>
+                <div class="col-lg-5"><div class="control-panel"><div class="status-badge active-status" id="statusBadge"><i class="fas fa-circle fa-xs me-2"></i>Faol</div><div class="last-update" id="lastUpdateTime"><i class="fas fa-clock fa-xs me-2"></i>--:--</div><button class="btn refresh-button d-flex align-items-center" onclick="refreshData()"><i class="fas fa-sync-alt me-2"></i>Yangilash<div class="loading-spinner" id="loadingSpinner"></div></button></div></div>
+            </div>
+        </div>
+    </header>
+    <main class="container-fluid px-4 mt-4">
+        <section class="stats-section">
+            <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-xl-5">
+                 <div class="col"><div class="stat-card"><div class="d-flex justify-content-between align-items-start"><div class="stat-icon" style="background: var(--info);"><i class="fas fa-envelope-open"></i></div><div class="text-end"><p class="stat-label">Bugungi xatlar</p><h2 class="stat-number" id="totalToday">0</h2></div></div></div></div>
+                <div class="col"><div class="stat-card"><div class="d-flex justify-content-between align-items-start"><div class="stat-icon" style="background: var(--warning);"><i class="fas fa-clock"></i></div><div class="text-end"><p class="stat-label">Ertaga tugaydi</p><h2 class="stat-number" id="totalTomorrow">0</h2></div></div></div></div>
+                <div class="col"><div class="stat-card"><div class="d-flex justify-content-between align-items-start"><div class="stat-icon" style="background: var(--success);"><i class="fas fa-check-circle"></i></div><div class="text-end"><p class="stat-label">Yopilgan xatlar</p><h2 class="stat-number" id="totalClosed">0</h2></div></div></div></div>
+                <div class="col"><div class="stat-card"><div class="d-flex justify-content-between align-items-start"><div class="stat-icon" style="background: var(--danger);"><i class="fas fa-exclamation-triangle"></i></div><div class="text-end"><p class="stat-label">Muddati o'tgan</p><h2 class="stat-number" id="totalOverdue">0</h2></div></div></div></div>
+                <div class="col"><div class="stat-card"><div class="d-flex justify-content-between align-items-start"><div class="stat-icon" style="background: var(--uzbek-purple);"><i class="fas fa-users"></i></div><div class="text-end"><p class="stat-label">Murojaatlar</p><h2 class="stat-number" id="totalMurojaatlar">0</h2></div></div></div></div>
+            </div>
+        </section>
+        <section class="main-content">
+            <div class="content-header">
+                <h3 class="content-title m-0"><i class="fas fa-table me-2"></i>Xodimlar bo'yicha ijro holati</h3>
+                 <div class="search-container" style="max-width: 400px;"><input type="text" class="form-control" placeholder="Xodim qidirish..." id="searchInput" onkeyup="searchEmployee()"></div>
+            </div>
+            <div class="table-responsive" id="scrollableTable">
+                <table class="table enhanced-table mb-0">
+                    <thead>
+                        <tr>
+                            <th>Hodim Ma'lumotlari</th><th>Bugun</th><th>Ertaga</th><th>Yopilgan</th>
+                            <th>Ochiq</th><th>Muddati O'tgan</th><th>Murojaatlar</th><th>Samaradorlik</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeeTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="footer"><p class="mb-1">© 2025 O'zbekiston Respublikasi Nishon Tuman Hokimligi</p></footer>
+
+    <script>
+        const CONFIG = {
+            SHEET_ID: '1pfRrY0Z5JZvtClxWailRJ-Y0G5vnlYJNDiWSrrMkLHE',
+            API_KEY: 'AIzaSyB6GJvhEICw-6GG8pA5Jjhj79eZ1kQjxPc',
+            RANGE: 'Sheet1!A:J', 
+            REFRESH_INTERVAL: 20000,
+            SCROLL_SPEED: 25,
+            SCROLL_PAUSE: 3000,
+        };
+        let employeeData = [];
+        
+        document.addEventListener('DOMContentLoaded', () => { 
+            initializeApp(); 
+            startAutoScrolling();
+        });
+
+        function initializeApp() {
+            fetchDataFromGoogleSheet();
+            setInterval(() => fetchDataFromGoogleSheet(), CONFIG.REFRESH_INTERVAL);
+        }
+
+        async function fetchDataFromGoogleSheet() {
+            const spinner = document.getElementById('loadingSpinner');
+            spinner.style.display = 'inline-block';
+            document.querySelector('.refresh-button').disabled = true;
+            try {
+                const url = `https://sheets.googleapis.com/v4/spreadsheets/${CONFIG.SHEET_ID}/values/${CONFIG.RANGE}?key=${CONFIG.API_KEY}`;
+                const response = await fetch(url);
+                if (!response.ok) { throw new Error(`Server javobi: ${response.status}`); }
+                const json = await response.json();
+                if (!json.values || json.values.length < 2) { employeeData = []; displayFullDashboard(); return; }
+                const headers = json.values[0];
+                const rows = json.values.slice(1);
+                const data = rows.map(row => {
+                    const emp = {};
+                    headers.forEach((header, i) => { emp[header.trim()] = row[i]; });
+                    return emp;
+                });
+                processData(data);
+            } catch (error) {
+                console.error("Ma'lumotlarni yuklashda xatolik:", error);
+                const tbody = document.getElementById('employeeTableBody');
+                tbody.innerHTML = `<tr><td colspan="8" class="text-center text-danger py-5"><b>Xatolik:</b> Ma'lumotlarni yuklab bo'lmadi. API sozlamalari yoki internet aloqasini tekshiring.</td></tr>`;
+            } finally {
+                spinner.style.display = 'none';
+                document.querySelector('.refresh-button').disabled = false;
+            }
+        }
+        
+        function processData(data) {
+            employeeData = data.map(emp => {
+                return {
+                    name: emp.name || "Noma'lum Xodim", department: emp.department || "Noma'lum Bo'lim",
+                    today: parseInt(emp.today) || 0, tomorrow: parseInt(emp.tomorrow) || 0,
+                    closed: parseInt(emp.closed) || 0, open: parseInt(emp.open) || 0, overdue: parseInt(emp.overdue) || 0, 
+                    murojaatlar: parseInt(emp.murojaatlar) || 0,
+                    // === O'ZGARTIRISH: Samaradorlik doim 100 ga tenglab qo'yildi ===
+                    efficiency: 100 
+                };
+            });
+            displayFullDashboard();
+            updateLastUpdated();
+        }
+        
+        function refreshData() { fetchDataFromGoogleSheet(); }
+        
+        function displayFullDashboard() {
+            updateSummaryCards(employeeData);
+            updateTable(employeeData); 
+        }
+
+        function updateSummaryCards(data) {
+            const totals = data.reduce((acc, emp) => ({
+                today: acc.today + emp.today, tomorrow: acc.tomorrow + emp.tomorrow,
+                closed: acc.closed + emp.closed, overdue: acc.overdue + emp.overdue,
+                murojaatlar: acc.murojaatlar + emp.murojaatlar
+            }), { today: 0, tomorrow: 0, closed: 0, overdue: 0, murojaatlar: 0 });
+            animateNumber('totalToday', totals.today);
+            animateNumber('totalTomorrow', totals.tomorrow);
+            animateNumber('totalClosed', totals.closed);
+            animateNumber('totalOverdue', totals.overdue);
+            animateNumber('totalMurojaatlar', totals.murojaatlar);
+        }
+
+        function updateTable(data) {
+            const tbody = document.getElementById('employeeTableBody');
+            tbody.innerHTML = '';
+            if (data.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="8" class="text-center text-muted py-5">Ma'lumotlar mavjud emas...</td></tr>`;
+                return;
+            }
+            data.forEach(emp => {
+                const initials = (emp.name || "NA").split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+                tbody.innerHTML += `
+                    <tr>
+                        <td><div class="employee-info"><div class="employee-avatar">${initials}</div><div><div class="employee-name">${emp.name}</div><div class="employee-department">${emp.department}</div></div></div></td>
+                        <td><span class="metric-badge">${emp.today}</span></td><td><span class="metric-badge text-warning">${emp.tomorrow}</span></td>
+                        <td><span class="metric-badge text-success">${emp.closed}</span></td><td><span class="metric-badge">${emp.open}</span></td>
+                        <td><span class="metric-badge badge-overdue">${emp.overdue}</span></td>
+                        <td><span class="metric-badge" style="color: var(--uzbek-purple);">${emp.murojaatlar}</span></td>
+                        <td><div class="d-flex align-items-center justify-content-center gap-2"><small class="fw-bold text-success">${emp.efficiency}%</small><div class="progress" style="width: 60px; height: 6px;"><div class="progress-bar bg-success" style="width: ${emp.efficiency}%"></div></div></div></td>
+                    </tr>`;
+            });
+        }
+        
+        function updateLastUpdated() {
+            document.getElementById('lastUpdateTime').innerHTML = `<i class="fas fa-clock fa-xs me-2"></i>${new Date().toTimeString().substring(0, 5)}`;
+        }
+        
+        function animateNumber(id, val) {
+            const el = document.getElementById(id); if (!el) return;
+            const duration = 1500, start = parseFloat(el.innerText) || 0; let startTime = null;
+            function animation(currentTime) {
+                if (!startTime) startTime = currentTime;
+                const progress = Math.min((currentTime - startTime) / duration, 1);
+                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                el.innerText = Math.floor(start + (val - start) * easeOutQuart);
+                if (progress < 1) requestAnimationFrame(animation);
+            }
+            requestAnimationFrame(animation);
+        }
+
+        function startAutoScrolling() {
+            const tableContainer = document.getElementById('scrollableTable');
+            let scrollAmount = 0;
+            let scrollDirection = 1; 
+            let pauseTimeout;
+
+            function scrollStep() {
+                if (tableContainer.matches(':hover')) {
+                    requestAnimationFrame(scrollStep);
+                    return;
+                }
+
+                const maxScroll = tableContainer.scrollHeight - tableContainer.clientHeight;
+                
+                if (maxScroll <= 0) {
+                    requestAnimationFrame(scrollStep);
+                    return;
+                }
+
+                scrollAmount += (CONFIG.SCROLL_SPEED / 60) * scrollDirection;
+
+                if (scrollAmount >= maxScroll) {
+                    scrollAmount = maxScroll;
+                    scrollDirection = -1;
+                    clearTimeout(pauseTimeout);
+                    pauseTimeout = setTimeout(() => { requestAnimationFrame(scrollStep); }, CONFIG.SCROLL_PAUSE);
+                    return;
+                }
+
+                if (scrollAmount <= 0) {
+                    scrollAmount = 0;
+                    scrollDirection = 1;
+                    clearTimeout(pauseTimeout);
+                    pauseTimeout = setTimeout(() => { requestAnimationFrame(scrollStep); }, CONFIG.SCROLL_PAUSE);
+                    return;
+                }
+
+                tableContainer.scrollTop = scrollAmount;
+                requestAnimationFrame(scrollStep);
+            }
+
+            requestAnimationFrame(scrollStep);
+        }
+    </script>
+</body>
+</html>
