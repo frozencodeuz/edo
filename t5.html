@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishon Tuman Hokimligi - Yakuniy Ijro Nazorati Tizimi</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gov-blue: #0A4C96;
+            --gov-light-blue: #4A90E2;
+            --gov-red: #E53E3E;
+            --gov-orange: #F59E0B;
+            --gov-purple: #8B5CF6;
+            --gov-green: #059669;
+            --background-primary: #F3F4F6;
+            --background-secondary: #FFFFFF;
+            --text-primary: #1F2937;
+            --text-secondary: #4B5563;
+            --border-color: #E5E7EB;
+            --shadow-color-light: rgba(0, 0, 0, 0.05);
+            --shadow-color-dark: rgba(0, 0, 0, 0.1);
+            --white: #FFFFFF;
+
+            --font-size-base: clamp(14px, 1.2vw, 16px);
+            --font-size-lg: clamp(1rem, 1.5vw, 1.25rem);
+            --font-size-xl: clamp(1.25rem, 2vw, 1.75rem);
+            --font-size-xxl: clamp(1.75rem, 4vw, 3.5rem);
+            --font-size-main-title: clamp(1.5rem, 2.2vw, 2rem);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: var(--font-size-base);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-primary);
+            color: var(--text-primary);
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-up { animation: slideInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+        @keyframes pulseRed {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 10px 15px rgba(229, 62, 62, 0); }
+        }
+        @keyframes pulseMetric {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* Header Section */
+        .header-section {
+            background: linear-gradient(135deg, var(--gov-blue) 0%, var(--gov-light-blue) 100%);
+            color: var(--white);
+            padding: 0.75rem 0;
+            box-shadow: 0 4px 15px rgba(10, 76, 150, 0.25);
+            position: relative;
+            z-index: 100;
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .government-logo {
+            width: 55px;
+            height: 55px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+        }
+
+        .title-main {
+            font-size: var(--font-size-main-title);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 0.2rem;
+            color: var(--white);
+        }
+
+        .title-sub {
+            font-size: 0.9rem;
+            font-weight: 500;
+            opacity: 0.9;
+            color: var(--white);
+        }
+
+        /* === TUGMALAR ORASIDAGI MASOFA UCHUN TUZATISH === */
+        .control-panel {
+            display: flex;
+            gap: 1.5rem; /* Tugmalar orasidagi masofa oshirildi */
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .status-badge, .last-update {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: var(--white);
+            flex-shrink: 0; /* Elementlar siqilishining oldini olish */
+        }
+
+        .refresh-button {
+            background: linear-gradient(135deg, var(--gov-green) 0%, #047857 100%);
+            border: none;
+            border-radius: 20px;
+            padding: 0.5rem 1.25rem;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.2);
+            flex-shrink: 0;
+        }
+        .refresh-button:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(5, 150, 105, 0.4);
+        }
+        
+        .main-layout { display: flex; height: calc(100vh - 80px); }
+
+        .sidebar-stats {
+            width: 32%;
+            max-width: 520px;
+            min-width: 420px;
+            background: var(--background-secondary);
+            border-right: 3px solid var(--border-color);
+            padding: clamp(1.25rem, 2vw, 1.75rem);
+            box-shadow: 4px 0 15px var(--shadow-color-light);
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            container-type: inline-size;
+            container-name: sidebar;
+        }
+
+        .sidebar-title {
+            font-size: var(--font-size-lg);
+            font-weight: 800;
+            color: var(--gov-blue);
+            margin-bottom: clamp(1rem, 2vw, 1.5rem);
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-transform: uppercase;
+            flex-shrink: 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            gap: clamp(1.25rem, 1.5vw, 1.5rem); /* Kartalar orasidagi masofa */
+            height: 100%;
+        }
+
+        @container sidebar (max-width: 450px) {
+            .stats-grid { grid-template-columns: 1fr; }
+        }
+        
+        .stat-card:nth-child(5) { grid-column: 1 / -1; }
+        
+        .stat-card {
+            background: var(--background-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: clamp(1rem, 1.5vw, 1.25rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px var(--shadow-color-light);
+            border-top: 5px solid;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+        .stat-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 8px 25px var(--shadow-color-dark); }
+        .stat-card.stat-blue:hover { box-shadow: 0 0 20px 5px rgba(74, 144, 226, 0.3); }
+        .stat-card.stat-orange:hover { box-shadow: 0 0 20px 5px rgba(245, 158, 11, 0.3); }
+        .stat-card.stat-red:hover { box-shadow: 0 0 20px 5px rgba(229, 62, 62, 0.3); }
+        .stat-card.stat-purple:hover { box-shadow: 0 0 20px 5px rgba(139, 92, 246, 0.3); }
+        .stat-card.stat-green:hover { box-shadow: 0 0 20px 5px rgba(5, 150, 105, 0.3); }
+
+        .stat-card.stat-blue { border-color: var(--gov-blue); }
+        .stat-card.stat-orange { border-color: var(--gov-orange); }
+        .stat-card.stat-red { border-color: var(--gov-red); }
+        .stat-card.stat-purple { border-color: var(--gov-purple); }
+        .stat-card.stat-green { border-color: var(--gov-green); }
+
+        /* === IKONKALAR VA MATN UCHUN YAKUNIY TUZATISH === */
+        .stat-header {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem; /* Ikona va matn orasidagi masofa */
+            margin-bottom: 0.75rem;
+        }
+
+        .stat-icon {
+            width: 48px; /* Ikona hajmi biroz kattalashtirildi */
+            height: 48px;
+            border-radius: 12px; /* Ikona chegarasi yumaloqlashtirildi */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        .stat-blue .stat-icon { background: var(--gov-blue); }
+        .stat-orange .stat-icon { background: var(--gov-orange); }
+        .stat-red .stat-icon { background: var(--gov-red); }
+        .stat-purple .stat-icon { background: var(--gov-purple); }
+        .stat-green .stat-icon { background: var(--gov-green); }
+
+        .stat-title {
+            font-size: clamp(0.9rem, 1vw, 1rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.4;
+            flex: 1;
+        }
+
+        .stat-main-number {
+            font-size: var(--font-size-xxl);
+            font-weight: 900;
+            line-height: 1;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 0; /* Raqamlar uchun vertikal bo'sh joy */
+        }
+        .stat-blue .stat-main-number { color: var(--gov-blue); }
+        .stat-orange .stat-main-number { color: var(--gov-orange); }
+        .stat-red .stat-main-number { color: var(--gov-red); }
+        .stat-purple .stat-main-number { color: var(--gov-purple); }
+        .stat-green .stat-main-number { color: var(--gov-green); }
+        .stat-red .stat-main-number.pulse { animation: pulseRed 2s infinite; }
+
+        .stat-breakdown { font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.75rem; }
+        .breakdown-item { display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0; border-bottom: 1px solid #f9fafb; }
+        .breakdown-item:last-child { border-bottom: none; }
+        .breakdown-value { font-weight: 700; font-size: 1rem; color: var(--text-primary); }
+
+        /* Main Content Area */
+        .main-content-area {
+            flex: 1;
+            padding: clamp(1.25rem, 2vw, 1.75rem);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--background-secondary);
+        }
+
+        .content-header { padding-bottom: 1rem; border-bottom: 3px solid var(--border-color); margin-bottom: 1.5rem; }
+        .content-title {
+            font-size: var(--font-size-xl);
+            font-weight: 800;
+            color: var(--gov-blue);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-transform: uppercase;
+        }
+
+        .table-container { flex: 1; border-radius: 12px; overflow: hidden; }
+        .table-responsive { height: 100%; overflow-y: auto; }
+        .table-responsive::-webkit-scrollbar { width: 10px; }
+        .table-responsive::-webkit-scrollbar-track { background: var(--background-primary); }
+        .table-responsive::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 5px; }
+        .table-responsive::-webkit-scrollbar-thumb:hover { background: #9CA3AF; }
+
+        .enhanced-table { width: 100%; border-collapse: collapse; }
+        .enhanced-table thead th {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: #F9FAFB;
+            text-align: center;
+            padding: 1.25rem 1rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            border-bottom: 3px solid var(--border-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        .enhanced-table th:first-child { text-align: left; width: 40%; }
+        .enhanced-table tbody tr { opacity: 0; }
+        .enhanced-table tbody td { padding: 1rem; text-align: center; border-bottom: 1px solid var(--border-color); vertical-align: middle; }
+        .enhanced-table tbody tr:nth-child(even) { background-color: #FDFDFD; }
+        .enhanced-table tbody tr:hover { background-color: #E9F2FF; }
+
+        .employee-info { display: flex; align-items: center; gap: 1.5rem; text-align: left; }
+        .employee-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gov-blue);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .employee-name { font-weight: 600; font-size: 1rem; color: var(--text-primary); margin-bottom: 0.25rem; }
+        .employee-department { font-size: 0.85rem; color: var(--text-secondary); }
+
+        .metric-container { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+        .metric-badge {
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 0.5rem 0;
+            border-radius: 8px;
+            width: 80px;
+            border: 2px solid;
+        }
+        .metric-blue { color: var(--gov-blue); background-color: #E9F2FF; border-color: #B3D4FF; }
+        .metric-orange { color: #B45309; background-color: #FEF3C7; border-color: #FDE68A; }
+        .metric-red { color: var(--gov-red); background-color: #FEE2E2; border-color: #FECACA; animation: pulseMetric 2s infinite; }
+        .metric-purple { color: var(--gov-purple); background-color: #F5F3FF; border-color: #DDD6FE; }
+
+        .viloyat-indicator {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            background-color: var(--border-color);
+            padding: 0.25rem 0.6rem;
+            border-radius: 12px;
+            text-transform: uppercase;
+        }
+        .viloyat-indicator.overdue { background-color: #FECACA; color: var(--gov-red); }
+
+    </style>
+</head>
+<body>
+    <header class="header-section">
+        <div class="container-fluid px-4">
+            <div class="row align-items-center">
+                <div class="col-7 col-md-6">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="government-logo"><i class="fas fa-university"></i></div>
+                        <div>
+                            <h1 class="title-main">NISHON TUMAN HOKIMLIGI</h1>
+                            <div class="title-sub">Kengaytirilgan Ijro Nazorati Tizimi</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5 col-md-6">
+                    <div class="control-panel">
+                        <div class="status-badge"><i class="fas fa-circle-check fa-xs me-2"></i>FAOL</div>
+                        <div class="last-update" id="lastUpdateTime"></div>
+                        <button class="btn refresh-button" onclick="refreshData()"><i class="fas fa-sync-alt"></i> Yangilash</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <aside class="sidebar-stats">
+            <h2 class="sidebar-title"><i class="fas fa-chart-pie"></i> Statistika Ma'lumotlari</h2>
+            <div class="stats-grid">
+                <div class="stat-card stat-blue">
+                    <div class="stat-header">
+                        <div class="stat-icon"><i class="fas fa-calendar-day"></i></div>
+                        <div class="stat-title">Bugungi<br>Topshiriqlar</div>
+                    </div>
+                    <div class="stat-main-number" id="totalToday">0</div>
+                    <div class="stat-breakdown">
+                        <div class="breakdown-item"><span>Viloyatdan:</span><span class="breakdown-value" id="todayViloyat">0</span></div>
+                        <div class="breakdown-item"><span>Boshqa:</span><span class="breakdown-value" id="todayOthers">0</span></div>
+                    </div>
+                </div>
+                <div class="stat-card stat-orange">
+                    <div class="stat-header">
+                        <div class="stat-icon"><i class="fas fa-calendar-plus"></i></div>
+                        <div class="stat-title">Ertangi<br>Topshiriqlar</div>
+                    </div>
+                    <div class="stat-main-number" id="totalTomorrow">0</div>
+                    <div class="stat-breakdown">
+                        <div class="breakdown-item"><span>Viloyatdan:</span><span class="breakdown-value" id="tomorrowViloyat">0</span></div>
+                        <div class="breakdown-item"><span>Boshqa:</span><span class="breakdown-value" id="tomorrowOthers">0</span></div>
+                    </div>
+                </div>
+                <div class="stat-card stat-red">
+                    <div class="stat-header">
+                        <div class="stat-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                        <div class="stat-title">Muddati O'tgan<br>Topshiriqlar</div>
+                    </div>
+                    <div class="stat-main-number" id="totalOverdue">0</div>
+                    <div class="stat-breakdown">
+                        <div class="breakdown-item"><span>Viloyatdan:</span><span class="breakdown-value" id="overdueViloyat">0</span></div>
+                        <div class="breakdown-item"><span>Boshqa:</span><span class="breakdown-value" id="overdueOthers">0</span></div>
+                    </div>
+                </div>
+                <div class="stat-card stat-purple">
+                     <div class="stat-header">
+                        <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                        <div class="stat-title">Muddati O'tgan<br>Murojaatlar</div>
+                    </div>
+                    <div class="stat-main-number" id="murojaatlarOverdue">0</div>
+                    <div class="stat-breakdown">
+                        <div class="breakdown-item"><span>Jami o'tgan:</span><span class="breakdown-value" id="murojaatlarOverdueDisplay">0</span></div>
+                    </div>
+                </div>
+                <div class="stat-card stat-green">
+                    <div class="stat-header">
+                        <div class="stat-icon"><i class="fas fa-envelope-open"></i></div>
+                        <div class="stat-title">Bugun Kelgan<br>Murojaatlar</div>
+                    </div>
+                    <div class="stat-main-number" id="murojaatlarToday">0</div>
+                     <div class="stat-breakdown">
+                        <div class="breakdown-item"><span>Jami kelgan:</span><span class="breakdown-value" id="murojaatlarTodayDisplay">0</span></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content-area">
+            <div class="content-header">
+                <h3 class="content-title"><i class="fas fa-users-cog"></i> Xodimlar bo'yicha ijro holati</h3>
+            </div>
+            <div class="table-container">
+                <div class="table-responsive" id="scrollableTable">
+                    <table class="table enhanced-table">
+                        <thead>
+                            <tr>
+                                <th>Xodim Ma'lumotlari</th>
+                                <th>Bugungi Topshiriqlar</th>
+                                <th>Ertangi Topshiriqlar</th>
+                                <th>Muddati O'tgan Topshiriqlar</th>
+                                <th>Muddati O'tgan Murojaatlar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="employeeTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const DUMMY_EMPLOYEE_DATA = [
+            { name: "Aramov Z. A.", department: "Hokim o'rinbosari (Sanoat, qurilish...)", today: 5, todayViloyat: 5, tomorrow: 2, tomorrowViloyat: 1, overdue: 0, overdueViloyat: 0, murojaatlarOverdue: 0 },
+            { name: "Abdiraxmonov K. E.", department: "Ijro intizomi nazorati bo'yicha mutaxassis", today: 2, todayViloyat: 0, tomorrow: 1, tomorrowViloyat: 1, overdue: 0, overdueViloyat: 0, murojaatlarOverdue: 0 },
+            { name: "Nuriddinov S. S.", department: "Tashkiliy-kadrlar guruhi rahbari", today: 2, todayViloyat: 1, tomorrow: 1, tomorrowViloyat: 0, overdue: 1, overdueViloyat: 0, murojaatlarOverdue: 0 },
+            { name: "Xatamov T. B.", department: "Hokim o'rinbosari (Investitsiyalar...)", today: 2, todayViloyat: 0, tomorrow: 2, tomorrowViloyat: 2, overdue: 0, overdueViloyat: 0, murojaatlarOverdue: 0 },
+            { name: "Xujakulova S. J.", department: "Hokim o'rinbosari (Oila va xotin-qizlar)", today: 2, todayViloyat: 1, tomorrow: 2, tomorrowViloyat: 1, overdue: 0, overdueViloyat: 0, murojaatlarOverdue: 0 },
+            { name: "Tojiyev O. R.", department: "Axborot xizmati rahbari", today: 1, todayViloyat: 0, tomorrow: 0, tomorrowViloyat: 0, overdue: 0, overdueViloyat: 0, murojaatlarOverdue: 0 },
+            { name: "Xudoyqulov S. D.", department: "Hokim o'rinbosari (Yoshlar siyosati...)", today: 8, todayViloyat: 3, tomorrow: 10, tomorrowViloyat: 5, overdue: 3, overdueViloyat: 1, murojaatlarOverdue: 2 },
+            { name: "Sheroliyev M. M.", department: "Hokim o'rinbosari (Qishloq xo'jaligi...)", today: 2, todayViloyat: 1, tomorrow: 2, tomorrowViloyat: 0, overdue: 5, overdueViloyat: 2, murojaatlarOverdue: 1 },
+            { name: "Mahmatqulov F. T.", department: "Qishloq va suv xo'jaligi masalalari", today: 0, todayViloyat: 0, tomorrow: 0, tomorrowViloyat: 0, overdue: 2, overdueViloyat: 2, murojaatlarOverdue: 0 },
+            { name: "Xaqnazarov S. E.", department: "Hokim o'rinbosari (Moliya-iqtisod...)", today: 8, todayViloyat: 4, tomorrow: 6, tomorrowViloyat: 2, overdue: 0, overdueViloyat: 0, murojaatlarOverdue: 0 },
+        ];
+
+        const CONFIG = {
+            SCROLL_SPEED: 20,
+            SCROLL_PAUSE: 4000,
+        };
+
+        function updateLastUpdated() {
+            const now = new Date();
+            const timeString = now.toTimeString().substring(0, 5);
+            document.getElementById('lastUpdateTime').innerHTML = `<i class="fas fa-clock fa-xs me-2"></i>${timeString}`;
+        }
+        
+        function animateNumber(element, targetValue) {
+            if (!element) return;
+            const startValue = parseFloat(element.innerText.replace(/,/g, '')) || 0;
+            if (startValue === targetValue) return;
+
+            let startTime = null;
+            const duration = 1200;
+
+            function animation(currentTime) {
+                if (!startTime) startTime = currentTime;
+                const progress = Math.min((currentTime - startTime) / duration, 1);
+                const easeOutQuint = 1 - Math.pow(1 - progress, 5);
+                const currentValue = Math.floor(startValue + (targetValue - startValue) * easeOutQuint);
+                element.innerText = currentValue.toLocaleString();
+                if (progress < 1) requestAnimationFrame(animation);
+            }
+            requestAnimationFrame(animation);
+        }
+
+        function updateSummaryCards() {
+            const summaryData = DUMMY_EMPLOYEE_DATA.reduce((acc, emp) => {
+                acc.totalToday += emp.today;
+                acc.todayViloyat += emp.todayViloyat;
+                acc.totalTomorrow += emp.tomorrow;
+                acc.tomorrowViloyat += emp.tomorrowViloyat;
+                acc.totalOverdue += emp.overdue;
+                acc.overdueViloyat += emp.overdueViloyat;
+                acc.murojaatlarOverdue += emp.murojaatlarOverdue;
+                return acc;
+            }, {
+                totalToday: 0, todayViloyat: 0, totalTomorrow: 0, tomorrowViloyat: 0,
+                totalOverdue: 0, overdueViloyat: 0, murojaatlarOverdue: 0
+            });
+
+            summaryData.todayOthers = summaryData.totalToday - summaryData.todayViloyat;
+            summaryData.tomorrowOthers = summaryData.totalTomorrow - summaryData.tomorrowViloyat;
+            summaryData.overdueOthers = summaryData.totalOverdue - summaryData.overdueViloyat;
+            summaryData.murojaatlarOverdueDisplay = summaryData.murojaatlarOverdue;
+            
+            summaryData.murojaatlarToday = 15;
+            summaryData.murojaatlarTodayDisplay = 15;
+
+
+            for (const [key, value] of Object.entries(summaryData)) {
+                const element = document.getElementById(key);
+                if (element) animateNumber(element, value);
+            }
+
+            const overdueCard = document.getElementById('totalOverdue');
+            if (summaryData.totalOverdue > 0) {
+                overdueCard.classList.add('pulse');
+            } else {
+                overdueCard.classList.remove('pulse');
+            }
+        }
+        
+        function updateTable(data) {
+            const tbody = document.getElementById('employeeTableBody');
+            tbody.innerHTML = '';
+            data.forEach((emp, index) => {
+                const initials = (emp.name || "NA").split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+                
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>
+                        <div class="employee-info">
+                            <div class="employee-avatar">${initials}</div>
+                            <div>
+                                <div class="employee-name">${emp.name}</div>
+                                <div class="employee-department">${emp.department}</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="metric-container">
+                            <span class="metric-badge metric-blue">${emp.today}</span>
+                            ${emp.todayViloyat > 0 ? `<div class="viloyat-indicator">VILOYAT: ${emp.todayViloyat}</div>` : ''}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="metric-container">
+                            <span class="metric-badge ${emp.tomorrow > 0 ? 'metric-orange' : 'metric-blue'}">${emp.tomorrow}</span>
+                            ${emp.tomorrowViloyat > 0 ? `<div class="viloyat-indicator">VILOYAT: ${emp.tomorrowViloyat}</div>` : ''}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="metric-container">
+                            <span class="metric-badge ${emp.overdue > 0 ? 'metric-red' : 'metric-blue'}">${emp.overdue}</span>
+                            ${emp.overdueViloyat > 0 ? `<div class="viloyat-indicator overdue">VILOYAT: ${emp.overdueViloyat}</div>` : ''}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="metric-container">
+                            <span class="metric-badge ${emp.murojaatlarOverdue > 0 ? 'metric-red' : 'metric-purple'}">${emp.murojaatlarOverdue}</span>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(row);
+                
+                row.style.animationDelay = `${index * 50}ms`;
+                row.classList.add('fade-in-up');
+            });
+        }
+
+        function startAutoScrolling() {
+            const tableContainer = document.getElementById('scrollableTable');
+            let scrollAnimation;
+
+            function smoothScroll() {
+                if (tableContainer.isPaused) {
+                    scrollAnimation = requestAnimationFrame(smoothScroll);
+                    return;
+                }
+                const maxScroll = tableContainer.scrollHeight - tableContainer.clientHeight;
+                if (maxScroll <= 0) {
+                    scrollAnimation = requestAnimationFrame(smoothScroll);
+                    return;
+                }
+                
+                tableContainer.scrollTop += (CONFIG.SCROLL_SPEED / 60) * tableContainer.scrollDirection;
+
+                if (tableContainer.scrollTop >= maxScroll) {
+                    tableContainer.scrollTop = maxScroll;
+                    tableContainer.scrollDirection = -1;
+                    tableContainer.isPaused = true;
+                    setTimeout(() => { tableContainer.isPaused = false; }, CONFIG.SCROLL_PAUSE);
+                } else if (tableContainer.scrollTop <= 0) {
+                    tableContainer.scrollTop = 0;
+                    tableContainer.scrollDirection = 1;
+                    tableContainer.isPaused = true;
+                    setTimeout(() => { tableContainer.isPaused = false; }, CONFIG.SCROLL_PAUSE);
+                }
+                scrollAnimation = requestAnimationFrame(smoothScroll);
+            }
+            
+            tableContainer.scrollDirection = 1;
+            tableContainer.isPaused = true;
+            setTimeout(() => tableContainer.isPaused = false, CONFIG.SCROLL_PAUSE);
+
+            smoothScroll();
+
+            tableContainer.addEventListener('mouseenter', () => tableContainer.isPaused = true);
+            tableContainer.addEventListener('mouseleave', () => {
+                setTimeout(() => tableContainer.isPaused = false, 500);
+            });
+        }
+        
+        function animateEntry() {
+            const cards = document.querySelectorAll('.stat-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 100}ms`;
+                card.classList.add('fade-in-up');
+            });
+        }
+
+        function refreshData() {
+            document.querySelectorAll('.fade-in-up').forEach(el => el.classList.remove('fade-in-up'));
+            
+            setTimeout(() => {
+                updateSummaryCards();
+                updateTable(DUMMY_EMPLOYEE_DATA);
+                updateLastUpdated();
+                animateEntry();
+            }, 100);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            refreshData();
+            startAutoScrolling();
+            setInterval(updateLastUpdated, 60000);
+            setInterval(refreshData, 300000);
+        });
+    </script>
+</body>
+</html>
