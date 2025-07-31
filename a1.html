@@ -128,14 +128,6 @@
         }
 
         /* ===== LIVE INDICATOR ===== */
-        .live-indicator {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-
         .live-dot {
             width: 12px;
             height: 12px;
@@ -256,6 +248,29 @@
             opacity: 0.6;
         }
 
+        /* ===== FAOL INDIKATORI STILI ===== */
+        .live-indicator-wrapper {
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--success-green);
+            border-color: rgba(34, 197, 94, 0.3);
+            font-weight: 700;
+        }
+        .live-indicator-wrapper:hover {
+            background: rgba(34, 197, 94, 0.2);
+            transform: translateY(0); /* Hoverda siljimaslik */
+            box-shadow: none;
+        }
+        
+        /* ===== YANGILASH TUGMASI (YASHIL) ===== */
+        .refresh-button-green {
+            background: linear-gradient(135deg, var(--success-green) 0%, #10B981 100%);
+            border-color: rgba(5, 150, 105, 0.3) !important;
+            color: var(--white) !important;
+        }
+
+        .refresh-button-green:hover {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+        }
 
         /* ===== ASOSIY KONTENT ===== */
         .main-content {
@@ -310,6 +325,7 @@
             justify-content: space-between; 
             align-items: flex-start; 
             margin-bottom: 1.5rem;
+            gap: 1rem; /* Ikonka va yozuv orasida minimal masofa */
         }
 
         .stat-label { 
@@ -376,7 +392,7 @@
             font-weight: 900; 
             color: var(--gray-900); 
             line-height: 1; 
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem; /* Pastki qismdan masofa ochildi */
             letter-spacing: -0.07em;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
@@ -438,11 +454,11 @@
             color: var(--gray-700);
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.8rem; /* Ikonka va yozuv orasidagi masofa kattalashtirildi */
             line-height: 1.3;
         }
 
-        .breakdown-label i { font-size: 1.1rem; opacity: 0.8; }
+        .breakdown-label i { font-size: 1.2rem; opacity: 0.8; }
 
         .breakdown-value {
             font-size: clamp(1rem, 1.2vw, 1.1rem); 
@@ -716,8 +732,13 @@
         }
         
         /* ===== RESPONSIVE DIZAYN ===== */
-        @media (max-width: 1600px) {
-            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        
+        /* O'rta o'lchamli ekranlar va planshetlar uchun (masalan, 1400px gacha) */
+        @media (max-width: 1400px) {
+            .stats-grid { 
+                grid-template-columns: repeat(2, 1fr); /* Kartalarni 2x2 qilib joylash */
+                gap: 2rem; 
+            }
             .main-content { padding: 2.5rem; }
             .official-table { min-width: 1200px; }
         }
@@ -733,7 +754,9 @@
         }
 
         @media (max-width: 768px) {
-            .stats-grid { grid-template-columns: 1fr; }
+            .stats-grid { 
+                grid-template-columns: 1fr; /* Kartalarni bitta ustunga joylash */
+            } 
             .official-table thead { display: none; } 
             .official-table, .official-table tbody, .official-table tr, .official-table td { display: block; width: 100%; }
             .official-table tr { margin-bottom: 1.5rem; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1rem; }
@@ -794,12 +817,15 @@
             .control-item { padding: 1.2rem 2rem; font-size: 1.2rem; }
 
             .main-content { padding: 4rem; }
-            .stats-grid { gap: 3rem; }
+            .stats-grid { 
+                grid-template-columns: repeat(4, 1fr); /* 4 ta ustunni saqlab qolish */
+                gap: 3rem; 
+            }
             .stat-card { padding: 2.5rem; }
             .stat-label { font-size: 1.5rem; }
             .stat-icon { width: 70px; height: 70px; font-size: 2.5rem; }
             .stat-value { font-size: 5.5rem; }
-            .breakdown-label { font-size: 1.1rem; }
+            .breakdown-label { font-size: 1.1rem; gap: 1.2rem; }
             .breakdown-value { font-size: 1.3rem; }
             .regional-badge, .new-badge, .critical-badge { font-size: 1rem; padding: 0.6rem 1.5rem; }
 
@@ -837,12 +863,15 @@
             .control-item { padding: 1.8rem 3rem; font-size: 1.8rem; border-radius: 100px; }
 
             .main-content { padding: 6rem; }
-            .stats-grid { gap: 5rem; }
+            .stats-grid { 
+                grid-template-columns: repeat(4, 1fr); /* 4 ta ustunni saqlab qolish */
+                gap: 5rem; 
+            }
             .stat-card { padding: 4rem; border-radius: var(--radius-xl); }
             .stat-label { font-size: 2.2rem; }
             .stat-icon { width: 100px; height: 100px; font-size: 4rem; border-radius: var(--radius-xl); }
             .stat-value { font-size: 8rem; }
-            .breakdown-label { font-size: 1.6rem; }
+            .breakdown-label { font-size: 1.6rem; gap: 1.8rem;}
             .breakdown-value { font-size: 1.8rem; }
             .regional-badge, .new-badge, .critical-badge { font-size: 1.5rem; padding: 1rem 2.5rem; }
 
@@ -888,16 +917,22 @@
                         </div>
                     </div>
                     <div class="header-controls">
-                        <!-- YANGILASH TUGMASI -->
-                        <div id="refresh-button" class="control-item" style="cursor: pointer;">
-                            <i class="fa-solid fa-arrows-rotate"></i>
-                            <span>Yangilash</span>
+                        <!-- FAOL INDIKATORI -->
+                        <div class="control-item live-indicator-wrapper">
+                            <div class="live-dot"></div>
+                            <span>Faol</span>
                         </div>
+                        <!-- OXIRGI YANGILANISH VAQTI -->
                         <div class="control-item">
                             <i class="fa-regular fa-clock"></i>
                             <span>
                                 Oxirgi yangilanish: <span id="current-time">--:--</span>, <span id="current-date">-- --, ----</span>
                             </span>
+                        </div>
+                        <!-- YANGILASH TUGMASI -->
+                        <div id="refresh-button" class="control-item refresh-button-green" style="cursor: pointer;">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                            <span>Yangilash</span>
                         </div>
                     </div>
                 </div>
@@ -1163,19 +1198,19 @@
                             <td data-label="Bugun">
                                 <div class="task-cell">
                                     <span class="task-number">${emp.today_total}</span>
-                                    ${emp.today_regional > 0 ? `<div class="task-badges"><span class="task-regional-tag"><i class="fa-solid fa-building"></i>${emp.today_regional} viloyat</span></div>` : ''}
+                                    ${emp.today_regional > 0 ? `<div class="task-badges"><span class="task-regional-tag"><i class="fa-solid fa-building"></i>Viloyat: ${emp.today_regional}</span></div>` : ''}
                                 </div>
                             </td>
                             <td data-label="Ertaga">
                                 <div class="task-cell">
                                     <span class="task-number">${emp.tomorrow_total}</span>
-                                     ${emp.tomorrow_regional > 0 ? `<div class="task-badges"><span class="task-regional-tag"><i class="fa-solid fa-building"></i>${emp.tomorrow_regional} viloyat</span></div>` : ''}
+                                     ${emp.tomorrow_regional > 0 ? `<div class="task-badges"><span class="task-regional-tag"><i class="fa-solid fa-building"></i>Viloyat: ${emp.tomorrow_regional}</span></div>` : ''}
                                 </div>
                             </td>
                             <td data-label="Muddati o'tgan">
                                 <div class="task-cell ${emp.overdue_tasks_total > 0 ? 'overdue' : ''}">
                                     <span class="task-number">${emp.overdue_tasks_total}</span>
-                                    ${emp.overdue_tasks_regional > 0 ? `<div class="task-badges"><span class="task-regional-tag critical"><i class="fa-solid fa-fire"></i>${emp.overdue_tasks_regional} viloyat</span></div>` : ''}
+                                    ${emp.overdue_tasks_regional > 0 ? `<div class="task-badges"><span class="task-regional-tag critical"><i class="fa-solid fa-fire"></i>Viloyat: ${emp.overdue_tasks_regional}</span></div>` : ''}
                                 </div>
                             </td>
                             <td data-label="Murojaatlar">
