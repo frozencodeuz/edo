@@ -72,61 +72,6 @@
             overflow-x: auto;
         }
 
-        /* ===== AUTO SCROLL TOGGLE ===== */
-        .scroll-toggle-container {
-            position: fixed;
-            top: 25px;
-            right: 3rem;
-            z-index: 1000;
-        }
-
-        .scroll-switch {
-            position: relative;
-            display: inline-block;
-            width: 48px;
-            height: 26px;
-        }
-
-        .scroll-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .scroll-slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, var(--gray-400) 0%, var(--gray-500) 100%);
-            transition: var(--transition);
-            border-radius: 26px;
-            box-shadow: var(--shadow-inner);
-        }
-
-        .scroll-slider:before {
-            position: absolute;
-            content: "";
-            height: 20px;
-            width: 20px;
-            left: 3px;
-            bottom: 3px;
-            background: var(--white);
-            transition: var(--transition);
-            border-radius: 50%;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        input:checked + .scroll-slider {
-            background: linear-gradient(135deg, var(--success-green) 0%, #10B981 100%);
-        }
-
-        input:checked + .scroll-slider:before {
-            transform: translateX(22px);
-        }
-
         /* ===== LIVE INDICATOR ===== */
         .live-dot {
             width: 12px;
@@ -158,7 +103,7 @@
         /* ===== RASMIY HEADER ===== */
         .official-header {
             background: linear-gradient(135deg, var(--gov-blue-darkest) 0%, var(--gov-blue-dark) 50%, var(--gov-blue-primary) 100%);
-            padding: 1.5rem 3rem; 
+            padding: 1rem 2rem; /* PADDING KAMAYTIRILDI */
             color: var(--white);
             box-shadow: var(--shadow-xl);
             position: relative;
@@ -186,31 +131,31 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 50%;
-            padding: 1.2rem; 
+            padding: 1rem; /* PADDING KAMAYTIRILDI */
             border: 2px solid rgba(255, 255, 255, 0.2);
-            width: 104px;
-            height: 104px;
+            width: 84px; /* O'LCHAM KAMAYTIRILDI */
+            height: 84px; /* O'LCHAM KAMAYTIRILDI */
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .government-emblem i { 
-            font-size: 50px;
+            font-size: 40px; /* O'LCHAM KAMAYTIRILDI */
             color: var(--white);
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
         }
 
         .header-title { 
-            font-size: clamp(1.8rem, 3vw, 2.8rem); 
+            font-size: clamp(1.6rem, 2.5vw, 2.2rem); /* O'LCHAM KAMAYTIRILDI */
             font-weight: 900; 
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.1rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
             letter-spacing: -0.025em;
         }
 
         .header-subtitle { 
-            font-size: clamp(1rem, 1.5vw, 1.4rem); 
+            font-size: clamp(0.9rem, 1.2vw, 1.1rem); /* O'LCHAM KAMAYTIRILDI */
             font-weight: 500; 
             opacity: 0.9;
             letter-spacing: 0.025em;
@@ -218,7 +163,7 @@
 
         .header-controls { 
             display: flex; 
-            gap: 1.5rem; 
+            gap: 1rem; /* MASOFA KAMAYTIRILDI */
             align-items: center; 
             flex-wrap: wrap;
         }
@@ -228,8 +173,8 @@
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 50px;
-            padding: 1rem 1.5rem; 
-            font-size: clamp(0.9rem, 1vw, 1rem); 
+            padding: 0.75rem 1.25rem; /* PADDING KAMAYTIRILDI */
+            font-size: clamp(0.85rem, 0.9vw, 0.9rem); /* O'LCHAM KAMAYTIRILDI */
             font-weight: 600;
             display: flex;
             align-items: center;
@@ -274,7 +219,7 @@
 
         /* ===== ASOSIY KONTENT ===== */
         .main-content {
-            padding: 3rem; 
+            padding: 1.5rem 2rem; /* PADDING KAMAYTIRILDI */
             width: 100%;
         }
 
@@ -282,14 +227,14 @@
         .stats-grid { 
             display: grid; 
             grid-template-columns: repeat(4, 1fr); 
-            gap: 2.5rem; 
-            margin-bottom: 3rem; 
+            gap: 1.5rem; /* MASOFA KAMAYTIRILDI */
+            margin-bottom: 2rem; /* MASOFA KAMAYTIRILDI */
         }
 
         .stat-card {
             background: var(--white);
             border-radius: var(--radius-xl);
-            padding: 2rem;
+            padding: 1.25rem; /* PADDING KAMAYTIRILDI */
             border: 1px solid var(--gray-200);
             box-shadow: var(--shadow-lg);
             transition: var(--transition);
@@ -305,12 +250,12 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 8px; 
+            height: 6px; /* O'LCHAM KAMAYTIRILDI */
             border-radius: var(--radius-xl) var(--radius-xl) 0 0;
         }
 
         .stat-card:hover {
-            transform: translateY(-10px); 
+            transform: translateY(-8px); /* EFFEKT KAMAYTIRILDI */
             box-shadow: var(--shadow-xl);
         }
         
@@ -324,25 +269,25 @@
             display: flex; 
             justify-content: space-between; 
             align-items: flex-start; 
-            margin-bottom: 1.5rem;
-            gap: 1rem; /* Ikonka va yozuv orasida minimal masofa */
+            margin-bottom: 1rem; /* MASOFA KAMAYTIRILDI */
+            gap: 1rem;
         }
 
         .stat-label { 
-            font-size: clamp(1rem, 1.4vw, 1.2rem); 
+            font-size: clamp(0.9rem, 1.2vw, 1.1rem); /* O'LCHAM KAMAYTIRILDI */
             font-weight: 700; 
             color: var(--gray-800); 
-            line-height: 1.4;
+            line-height: 1.3;
         }
 
         .stat-icon {
-            width: clamp(50px, 6vw, 60px);
-            height: clamp(50px, 6vw, 60px);
-            border-radius: var(--radius-lg);
+            width: clamp(45px, 5vw, 50px); /* O'LCHAM KAMAYTIRILDI */
+            height: clamp(45px, 5vw, 50px); /* O'LCHAM KAMAYTIRILDI */
+            border-radius: var(--radius-md);
             display: flex; 
             align-items: center; 
             justify-content: center;
-            font-size: clamp(1.6rem, 2.5vw, 2rem);
+            font-size: clamp(1.4rem, 2vw, 1.8rem); /* O'LCHAM KAMAYTIRILDI */
             position: relative;
             overflow: hidden;
             flex-shrink: 0;
@@ -352,7 +297,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            border-radius: var(--radius-lg);
+            border-radius: var(--radius-md);
             opacity: 0.1;
         }
         
@@ -371,7 +316,7 @@
                 transform: scale(1);
             }
             50% { 
-                box-shadow: 0 0 30px rgba(220, 38, 38, 0.4);
+                box-shadow: 0 0 25px rgba(220, 38, 38, 0.4);
                 transform: scale(1.02);
             }
         }
@@ -388,11 +333,11 @@
         }
 
         .stat-value { 
-            font-size: clamp(2.5rem, 5vw, 4.5rem); 
+            font-size: clamp(2.2rem, 4vw, 3.5rem); /* O'LCHAM KAMAYTIRILDI */
             font-weight: 900; 
             color: var(--gray-900); 
             line-height: 1; 
-            margin-bottom: 1.5rem; /* Pastki qismdan masofa ochildi */
+            margin-bottom: 1rem; /* MASOFA KAMAYTIRILDI */
             letter-spacing: -0.07em;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
@@ -402,11 +347,10 @@
             text-shadow: 0 4px 8px rgba(220, 38, 38, 0.3);
         }
 
-        /* ===== PREMIUM STAT DETAILS DIZAYNI ===== */
         .stat-details {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 0.75rem; /* MASOFA KAMAYTIRILDI */
         }
 
         .stat-breakdown {
@@ -415,7 +359,7 @@
             justify-content: space-between;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(248, 250, 252, 0.9) 100%);
             backdrop-filter: blur(10px);
-            padding: 1rem 1.2rem;
+            padding: 0.75rem 1rem; /* PADDING KAMAYTIRILDI */
             border-radius: var(--radius-md); 
             border: 1px solid;
             position: relative;
@@ -428,7 +372,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 6px; 
+            width: 5px; 
             height: 100%;
             border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
         }
@@ -449,30 +393,29 @@
         }
 
         .breakdown-label {
-            font-size: clamp(0.85rem, 1vw, 1rem); 
+            font-size: clamp(0.8rem, 0.9vw, 0.9rem); /* O'LCHAM KAMAYTIRILDI */
             font-weight: 600;
             color: var(--gray-700);
             display: flex;
             align-items: center;
-            gap: 0.8rem; /* Ikonka va yozuv orasidagi masofa kattalashtirildi */
+            gap: 0.6rem; 
             line-height: 1.3;
         }
 
-        .breakdown-label i { font-size: 1.2rem; opacity: 0.8; }
+        .breakdown-label i { font-size: 1.1rem; opacity: 0.8; }
 
         .breakdown-value {
-            font-size: clamp(1rem, 1.2vw, 1.1rem); 
+            font-size: clamp(0.9rem, 1.1vw, 1rem); /* O'LCHAM KAMAYTIRILDI */
             font-weight: 700;
             display: flex;
             align-items: center;
             gap: 0.75rem;
         }
 
-        /* ===== PREMIUM BADGE DIZAYNI ===== */
         .regional-badge, .new-badge, .critical-badge {
-            padding: 0.5rem 1.2rem; 
+            padding: 0.4rem 1rem; /* PADDING KAMAYTIRILDI */
             border-radius: 30px;
-            font-size: clamp(0.8rem, 0.9vw, 0.9rem); 
+            font-size: clamp(0.75rem, 0.8vw, 0.8rem); /* O'LCHAM KAMAYTIRILDI */
             font-weight: 700;
             border: 1px solid;
             box-shadow: var(--shadow-sm);
@@ -511,25 +454,25 @@
         }
 
         .panel-header { 
-            padding: 2rem 3rem; 
+            padding: 1.25rem 2rem; /* PADDING KAMAYTIRILDI */
             background: linear-gradient(135deg, var(--gov-blue-lightest) 0%, var(--white) 100%);
             border-bottom: 3px solid var(--gov-blue-primary); 
         }
 
         .panel-title { 
-            font-size: clamp(1.4rem, 2vw, 1.8rem); 
+            font-size: clamp(1.2rem, 1.8vw, 1.5rem); /* O'LCHAM KAMAYTIRILDI */
             font-weight: 800; 
             color: var(--gov-blue-dark); 
             margin: 0;
             display: flex;
             align-items: center;
-            gap: 1.2rem;
+            gap: 1rem;
         }
 
         .panel-title::before {
             content: '';
-            width: 6px;
-            height: 2.5rem;
+            width: 5px;
+            height: 2rem;
             background: linear-gradient(180deg, var(--gov-blue-primary), var(--gov-blue-medium));
             border-radius: 4px;
         }
@@ -537,7 +480,7 @@
         .table-container { 
             overflow-x: auto; 
             overflow-y: auto; 
-            max-height: 65vh; 
+            max-height: 60vh; /* BALANDLIK CHEKLOVI */
             background: var(--white);
             position: relative;
         }
@@ -551,10 +494,10 @@
         .official-table thead th {
             background: linear-gradient(135deg, var(--gov-blue-primary) 0%, var(--gov-blue-medium) 100%);
             color: var(--white);
-            padding: 1.5rem 2rem; 
+            padding: 1rem 1.5rem; /* PADDING KAMAYTIRILDI */
             text-align: center;
             font-weight: 700;
-            font-size: clamp(0.9rem, 1.1vw, 1rem); 
+            font-size: clamp(0.85rem, 1vw, 0.95rem); /* O'LCHAM KAMAYTIRILDI */
             text-transform: uppercase;
             letter-spacing: 0.5px;
             border: none;
@@ -588,7 +531,7 @@
         .official-table tbody tr:last-child { border-bottom: none; }
 
         .official-table tbody td { 
-            padding: 1.5rem 2rem; 
+            padding: 1rem 1.5rem; /* PADDING KAMAYTIRILDI */
             vertical-align: middle; 
             text-align: center; 
         }
@@ -597,13 +540,13 @@
         .employee-profile { 
             display: flex; 
             align-items: center; 
-            gap: 1.5rem; 
+            gap: 1rem; /* MASOFA KAMAYTIRILDI */
             text-align: left; 
         }
 
         .employee-avatar {
-            width: clamp(55px, 7vw, 70px); 
-            height: clamp(55px, 7vw, 70px); 
+            width: clamp(45px, 6vw, 55px); /* O'LCHAM KAMAYTIRILDI */
+            height: clamp(45px, 6vw, 55px); /* O'LCHAM KAMAYTIRILDI */
             border-radius: 50%;
             background: linear-gradient(135deg, var(--gov-blue-primary), var(--gov-blue-medium));
             color: var(--white);
@@ -611,7 +554,7 @@
             align-items: center; 
             justify-content: center;
             font-weight: 700; 
-            font-size: clamp(1.1rem, 1.8vw, 1.4rem); 
+            font-size: clamp(1rem, 1.5vw, 1.2rem); /* O'LCHAM KAMAYTIRILDI */
             flex-shrink: 0;
             border: 3px solid var(--white);
             box-shadow: var(--shadow-md);
@@ -623,14 +566,14 @@
 
         .employee-info h6 { 
             font-weight: 700; 
-            font-size: clamp(1rem, 1.2vw, 1.15rem); 
+            font-size: clamp(0.9rem, 1.1vw, 1rem); /* O'LCHAM KAMAYTIRILDI */
             color: var(--gray-800); 
-            margin: 0 0 0.4rem 0; 
+            margin: 0 0 0.25rem 0; /* MASOFA KAMAYTIRILDI */
             line-height: 1.3;
         }
 
         .employee-department { 
-            font-size: clamp(0.85rem, 1vw, 1rem); 
+            font-size: clamp(0.8rem, 0.9vw, 0.9rem); /* O'LCHAM KAMAYTIRILDI */
             color: var(--gray-500); 
             font-weight: 500; 
             line-height: 1.4; 
@@ -643,11 +586,11 @@
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            gap: 0.8rem; 
+            gap: 0.6rem; /* MASOFA KAMAYTIRILDI */
         }
 
         .task-number { 
-            font-size: clamp(1.6rem, 2.5vw, 2.2rem); 
+            font-size: clamp(1.4rem, 2.2vw, 1.8rem); /* O'LCHAM KAMAYTIRILDI */
             font-weight: 800; 
             color: var(--gray-800); 
             line-height: 1;
@@ -656,22 +599,22 @@
         .task-badges {
             display: flex;
             flex-direction: column;
-            gap: 0.5rem; 
+            gap: 0.4rem; 
             align-items: center;
         }
 
         .task-regional-tag { 
-            font-size: clamp(0.75rem, 0.9vw, 0.85rem); 
+            font-size: clamp(0.7rem, 0.8vw, 0.8rem); /* O'LCHAM KAMAYTIRILDI */
             font-weight: 600; 
             color: var(--gov-blue-primary); 
             background: var(--gov-blue-lightest);
-            padding: 0.4rem 1rem; 
+            padding: 0.3rem 0.8rem; /* PADDING KAMAYTIRILDI */
             border-radius: 25px; 
             border: 1px solid rgba(0, 56, 117, 0.2);
             display: flex;
             align-items: center;
             gap: 0.4rem;
-            min-width: 110px;
+            min-width: 100px;
             justify-content: center;
         }
         
@@ -684,14 +627,14 @@
             display: flex; 
             align-items: center; 
             justify-content: center;
-            gap: 0.8rem; 
+            gap: 0.6rem; 
             color: var(--danger-red); 
             font-weight: 800; 
-            font-size: clamp(1.6rem, 2.5vw, 2.2rem); 
+            font-size: clamp(1.4rem, 2.2vw, 1.8rem); /* O'LCHAM KAMAYTIRILDI */
         }
 
         .overdue-cell .fa-fire { 
-            font-size: clamp(1.2rem, 1.8vw, 1.6rem); 
+            font-size: clamp(1rem, 1.5vw, 1.4rem); 
             animation: pulse-fire 1.5s infinite ease-in-out;
         }
         
@@ -713,54 +656,53 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1rem; 
+            gap: 0.8rem; /* MASOFA KAMAYTIRILDI */
         }
 
         .new-appeals-tag { 
-            font-size: clamp(0.75rem, 0.9vw, 0.85rem); 
+            font-size: clamp(0.7rem, 0.8vw, 0.8rem); /* O'LCHAM KAMAYTIRILDI */
             font-weight: 600; 
             color: var(--success-green); 
             background: var(--success-light);
-            padding: 0.4rem 1rem; 
+            padding: 0.3rem 0.8rem; /* PADDING KAMAYTIRILDI */
             border-radius: 25px; 
             border: 1px solid rgba(5, 150, 105, 0.2);
             display: flex;
             align-items: center;
             gap: 0.4rem;
-            min-width: 110px;
+            min-width: 100px;
             justify-content: center;
         }
         
         /* ===== RESPONSIVE DIZAYN ===== */
         
-        /* O'rta o'lchamli ekranlar va planshetlar uchun (masalan, 1400px gacha) */
         @media (max-width: 1400px) {
             .stats-grid { 
-                grid-template-columns: repeat(2, 1fr); /* Kartalarni 2x2 qilib joylash */
-                gap: 2rem; 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 1.5rem; 
             }
-            .main-content { padding: 2.5rem; }
+            .main-content { padding: 1.5rem; }
             .official-table { min-width: 1200px; }
         }
 
         @media (max-width: 1024px) {
-            .official-header { padding: 1.5rem 2rem; }
-            .header-controls { gap: 1rem; }
-            .control-item { padding: 0.8rem 1.2rem; }
-            .main-content { padding: 2rem; }
-            .panel-header { padding: 1.5rem 2rem; }
-            .stats-grid { gap: 1.5rem; }
-            .stat-card { padding: 2rem; }
+            .official-header { padding: 1rem 1.5rem; }
+            .header-controls { gap: 0.8rem; }
+            .control-item { padding: 0.6rem 1rem; }
+            .main-content { padding: 1.5rem; }
+            .panel-header { padding: 1rem 1.5rem; }
+            .stats-grid { gap: 1rem; }
+            .stat-card { padding: 1.5rem; }
         }
 
         @media (max-width: 768px) {
             .stats-grid { 
-                grid-template-columns: 1fr; /* Kartalarni bitta ustunga joylash */
+                grid-template-columns: 1fr; 
             } 
             .official-table thead { display: none; } 
             .official-table, .official-table tbody, .official-table tr, .official-table td { display: block; width: 100%; }
-            .official-table tr { margin-bottom: 1.5rem; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1rem; }
-            .official-table td { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0.5rem; text-align: right; border-bottom: 1px dashed var(--gray-200); }
+            .official-table tr { margin-bottom: 1rem; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1rem; }
+            .official-table td { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.5rem; text-align: right; border-bottom: 1px dashed var(--gray-200); }
             .official-table tbody tr:nth-child(even) { background-color: var(--white); } 
             .official-table td:last-child { border-bottom: none; }
             .official-table td::before {
@@ -773,20 +715,13 @@
             .employee-profile { gap: 1rem; width: 100%; justify-content: flex-start; }
             .official-table td.profile-cell { justify-content: center; padding: 1rem 0; border: none; }
             .official-table td.profile-cell::before { display: none; }
-
-            .scroll-toggle-container {
-                position: static;
-                margin: 1rem auto;
-                justify-content: center;
-            }
         }
 
         @media (max-width: 480px) {
-            .official-header { padding: 1.5rem 1rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
-            .main-content { padding: 1.5rem 1rem; }
+            .official-header { padding: 1rem; flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .main-content { padding: 1rem; }
         }
 
-        /* ===== ANIMATSIYALAR ===== */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -798,111 +733,9 @@
         .stat-card:nth-child(4) { animation-delay: 0.4s; }
         .main-panel { animation-delay: 0.5s; }
 
-
-        /* ====================================================== */
-        /* == EKRANLAR (TV) UCHUN QO'SHIMCHA MAXSUS STIL KODLARI == */
-        /* ====================================================== */
-
-        /* Full HD (1920px) va undan kattaroq ekranlar uchun */
-        @media (min-width: 1920px) {
-            body {
-                font-size: 1.1rem; /* Umumiy shrift hajmini kattalashtirish */
-            }
-
-            .official-header { padding: 2rem 4rem; }
-            .government-emblem { width: 120px; height: 120px; }
-            .government-emblem i { font-size: 60px; }
-            .header-title { font-size: 3.5rem; }
-            .header-subtitle { font-size: 1.8rem; }
-            .control-item { padding: 1.2rem 2rem; font-size: 1.2rem; }
-
-            .main-content { padding: 4rem; }
-            .stats-grid { 
-                grid-template-columns: repeat(4, 1fr); /* 4 ta ustunni saqlab qolish */
-                gap: 3rem; 
-            }
-            .stat-card { padding: 2.5rem; }
-            .stat-label { font-size: 1.5rem; }
-            .stat-icon { width: 70px; height: 70px; font-size: 2.5rem; }
-            .stat-value { font-size: 5.5rem; }
-            .breakdown-label { font-size: 1.1rem; gap: 1.2rem; }
-            .breakdown-value { font-size: 1.3rem; }
-            .regional-badge, .new-badge, .critical-badge { font-size: 1rem; padding: 0.6rem 1.5rem; }
-
-            .panel-header { padding: 2.5rem 4rem; }
-            .panel-title { font-size: 2.2rem; }
-            .panel-title::before { height: 3rem; }
-            
-            .table-container { max-height: 70vh; }
-            .official-table { min-width: 1800px; }
-            .official-table thead th { padding: 2rem 2.5rem; font-size: 1.2rem; }
-            .official-table tbody td { padding: 2rem 2.5rem; }
-
-            .employee-avatar { width: 80px; height: 80px; font-size: 1.8rem; }
-            .employee-info h6 { font-size: 1.4rem; }
-            .employee-department { font-size: 1.1rem; }
-
-            .task-number { font-size: 2.8rem; }
-            .task-regional-tag, .new-appeals-tag { font-size: 1rem; padding: 0.5rem 1.2rem; }
-            .overdue-cell { font-size: 2.8rem; }
-            .overdue-cell .fa-fire { font-size: 2rem; }
-            .scroll-toggle-container { transform: scale(1.2); right: 4rem; top: 3rem; }
-        }
-
-        /* 4K (3840px) va undan kattaroq ekranlar uchun */
-        @media (min-width: 3840px) {
-            body {
-                font-size: 1.5rem; /* 4K uchun shriftlarni yanada kattalashtirish */
-            }
-
-            .official-header { padding: 3rem 6rem; }
-            .government-emblem { width: 160px; height: 160px; }
-            .government-emblem i { font-size: 80px; }
-            .header-title { font-size: 5rem; }
-            .header-subtitle { font-size: 2.5rem; }
-            .control-item { padding: 1.8rem 3rem; font-size: 1.8rem; border-radius: 100px; }
-
-            .main-content { padding: 6rem; }
-            .stats-grid { 
-                grid-template-columns: repeat(4, 1fr); /* 4 ta ustunni saqlab qolish */
-                gap: 5rem; 
-            }
-            .stat-card { padding: 4rem; border-radius: var(--radius-xl); }
-            .stat-label { font-size: 2.2rem; }
-            .stat-icon { width: 100px; height: 100px; font-size: 4rem; border-radius: var(--radius-xl); }
-            .stat-value { font-size: 8rem; }
-            .breakdown-label { font-size: 1.6rem; gap: 1.8rem;}
-            .breakdown-value { font-size: 1.8rem; }
-            .regional-badge, .new-badge, .critical-badge { font-size: 1.5rem; padding: 1rem 2.5rem; }
-
-            .panel-header { padding: 4rem 6rem; }
-            .panel-title { font-size: 3.5rem; }
-            .panel-title::before { height: 4.5rem; width: 10px; }
-
-            .official-table thead th { padding: 3rem; font-size: 1.8rem; }
-            .official-table tbody td { padding: 3rem; }
-
-            .employee-avatar { width: 110px; height: 110px; font-size: 2.5rem; }
-            .employee-info h6 { font-size: 2rem; }
-            .employee-department { font-size: 1.6rem; }
-
-            .task-number { font-size: 4rem; }
-            .task-regional-tag, .new-appeals-tag { font-size: 1.5rem; padding: 0.8rem 2rem; }
-            .overdue-cell { font-size: 4rem; }
-            .overdue-cell .fa-fire { font-size: 3rem; }
-            .scroll-toggle-container { transform: scale(1.5); right: 6rem; top: 4rem; }
-        }
     </style>
 </head>
 <body>
-    <!-- Auto Scroll Toggle Switch -->
-    <div class="scroll-toggle-container">
-        <label class="scroll-switch">
-            <input type="checkbox" id="scrollToggle">
-            <span class="scroll-slider"></span>
-        </label>
-    </div>
-
     <header class="official-header">
         <div class="full-width-container">
             <div class="header-content">
@@ -917,19 +750,16 @@
                         </div>
                     </div>
                     <div class="header-controls">
-                        <!-- FAOL INDIKATORI -->
                         <div class="control-item live-indicator-wrapper">
                             <div class="live-dot"></div>
                             <span>Faol</span>
                         </div>
-                        <!-- OXIRGI YANGILANISH VAQTI -->
                         <div class="control-item">
                             <i class="fa-regular fa-clock"></i>
                             <span>
                                 Oxirgi yangilanish: <span id="current-time">--:--</span>, <span id="current-date">-- --, ----</span>
                             </span>
                         </div>
-                        <!-- YANGILASH TUGMASI -->
                         <div id="refresh-button" class="control-item refresh-button-green" style="cursor: pointer;">
                             <i class="fa-solid fa-arrows-rotate"></i>
                             <span>Yangilash</span>
@@ -942,7 +772,6 @@
 
     <main class="main-content">
         <div class="stats-grid">
-            <!-- Stat Card 1 -->
             <div id="card-today" class="stat-card today">
                 <div class="stat-header">
                     <div class="stat-label">Bugungi topshiriqlar</div>
@@ -959,7 +788,6 @@
                 </div>
             </div>
             
-            <!-- Stat Card 2 -->
             <div id="card-tomorrow" class="stat-card tomorrow">
                 <div class="stat-header">
                     <div class="stat-label">Ertangi topshiriqlar</div>
@@ -976,7 +804,6 @@
                 </div>
             </div>
             
-            <!-- Stat Card 3 -->
             <div id="card-overdue-tasks" class="stat-card overdue">
                 <div class="stat-header">
                     <div class="stat-label">Muddati o'tgan topshiriqlar</div>
@@ -993,7 +820,6 @@
                 </div>
             </div>
             
-            <!-- Stat Card 4 -->
             <div id="card-overdue-appeals" class="stat-card appeals">
                 <div class="stat-header">
                     <div class="stat-label">Muddati o'tgan murojaatlar</div>
@@ -1038,41 +864,36 @@
     </main>
 
     <script>
-        // ======================================================
-        // GOOGLE SHEET'DAN MA'LUMOT OLISH VA INTEGRATSIYA SKRIPTI
-        // ======================================================
         document.addEventListener('DOMContentLoaded', function() {
             // MARK: - Konfiguratsiya
             const CONFIG = {
                 SHEET_ID: '1pfRrY0Z5JZvtClxWailRJ-Y0G5vnlYJNDiWSrrMkLHE',
                 API_KEY: 'AIzaSyB6GJvhEICw-6GG8pA5Jjhj79eZ1kQjxPc',
                 RANGE: 'Sheet2!A:J', 
-                REFRESH_INTERVAL: 60000, // AVTOMATIK YANGILANISH VAQTI (1 DAQIQA)
+                REFRESH_INTERVAL: 60000, // 60 sekund
             };
 
-            // MARK: - O'zgaruvchilar
-            let isAutoScrolling = false;
-            let scrollInterval = null;
-            let isPausedByHover = false;
-            let isFetching = false; // Ma'lumot olinayotganini tekshirish uchun bayroq
-            const scrollToggle = document.getElementById('scrollToggle');
+            // MARK: - Global o'zgaruvchilar
+            let isAutoScrolling = true; // Avtomatik aylanishni boshqarish uchun bayroq
+            let scrollInterval = null; // setInterval'ni saqlash uchun
+            let isPausedByHover = false; // Sichqoncha jadval ustida turganda pauza qilish uchun
+            let isFetching = false; // Bir vaqtda bir nechta so'rov yubormaslik uchun
             const tableContainer = document.getElementById('tableContainer');
             const refreshButton = document.getElementById('refresh-button');
 
 
             // MARK: - Asosiy funksiyalar
             function initializeApp() {
-                fetchDataFromGoogleSheet(); // Birinchi marta darhol yuklash
-                setInterval(fetchDataFromGoogleSheet, CONFIG.REFRESH_INTERVAL); // Avtomatik yangilashni o'rnatish
+                fetchDataFromGoogleSheet();
+                setInterval(fetchDataFromGoogleSheet, CONFIG.REFRESH_INTERVAL);
                 setupEventListeners();
                 updateDateTime();
             }
 
             async function fetchDataFromGoogleSheet() {
-                if (isFetching) return; // Agar ayni paytda ma'lumot olinayotgan bo'lsa, yangi so'rovni bekor qilish
+                if (isFetching) return;
                 isFetching = true;
 
-                // Yangilash tugmasini vaqtinchalik bloklash va animatsiya qo'shish
                 const refreshIcon = refreshButton.querySelector('i');
                 refreshButton.setAttribute('disabled', true);
                 refreshIcon.classList.add('fa-spin');
@@ -1098,10 +919,10 @@
                     console.error("Ma'lumotlarni yuklashda xatolik:", error);
                     showError("Ma'lumotlarni yuklab bo'lmadi. Internet aloqasini yoki API sozlamalarini tekshiring.");
                 } finally {
-                    // Yangilash tugmasini aktivlashtirish va animatsiyani olib tashlash
                     refreshButton.removeAttribute('disabled');
                     refreshIcon.classList.remove('fa-spin');
-                    isFetching = false; // Bayroqni tushirish
+                    isFetching = false;
+                    updateDateTime();
                 }
             }
             
@@ -1121,7 +942,6 @@
 
                 updateSummaryCards(employeeData);
                 updateTable(employeeData);
-                updateDateTime(); // Oxirgi yangilanish vaqtini ko'rsatish
             }
 
             function updateSummaryCards(data) {
@@ -1137,35 +957,23 @@
                     return acc;
                 }, { today_total: 0, today_regional: 0, tomorrow_total: 0, tomorrow_regional: 0, overdue_tasks_total: 0, overdue_tasks_regional: 0, overdue_appeals: 0, new_appeals: 0 });
 
-                const cardToday = document.getElementById('card-today');
-                cardToday.querySelector('.stat-value').textContent = totals.today_total;
-                cardToday.querySelector('.regional-badge').textContent = `${totals.today_regional} ta`;
+                document.getElementById('card-today').querySelector('.stat-value').textContent = totals.today_total;
+                document.getElementById('card-today').querySelector('.regional-badge').textContent = `${totals.today_regional} ta`;
                 
-                const cardTomorrow = document.getElementById('card-tomorrow');
-                cardTomorrow.querySelector('.stat-value').textContent = totals.tomorrow_total;
-                cardTomorrow.querySelector('.regional-badge').textContent = `${totals.tomorrow_regional} ta`;
+                document.getElementById('card-tomorrow').querySelector('.stat-value').textContent = totals.tomorrow_total;
+                document.getElementById('card-tomorrow').querySelector('.regional-badge').textContent = `${totals.tomorrow_regional} ta`;
                 
                 const cardOverdueTasks = document.getElementById('card-overdue-tasks');
                 cardOverdueTasks.querySelector('.stat-value').textContent = totals.overdue_tasks_total;
                 cardOverdueTasks.querySelector('.critical-badge').textContent = `${totals.overdue_tasks_regional} ta`;
-                if (totals.overdue_tasks_total > 0) {
-                    cardOverdueTasks.classList.add('critical');
-                    cardOverdueTasks.querySelector('.stat-value').classList.add('critical');
-                } else {
-                    cardOverdueTasks.classList.remove('critical');
-                    cardOverdueTasks.querySelector('.stat-value').classList.remove('critical');
-                }
+                cardOverdueTasks.classList.toggle('critical', totals.overdue_tasks_total > 0);
+                cardOverdueTasks.querySelector('.stat-value').classList.toggle('critical', totals.overdue_tasks_total > 0);
 
                 const cardOverdueAppeals = document.getElementById('card-overdue-appeals');
                 cardOverdueAppeals.querySelector('.stat-value').textContent = totals.overdue_appeals;
                 cardOverdueAppeals.querySelector('.new-badge').textContent = `${totals.new_appeals} ta`;
-                 if (totals.overdue_appeals > 0) {
-                    cardOverdueAppeals.classList.add('critical');
-                    cardOverdueAppeals.querySelector('.stat-value').classList.add('critical');
-                } else {
-                    cardOverdueAppeals.classList.remove('critical');
-                    cardOverdueAppeals.querySelector('.stat-value').classList.remove('critical');
-                }
+                cardOverdueAppeals.classList.toggle('critical', totals.overdue_appeals > 0);
+                cardOverdueAppeals.querySelector('.stat-value').classList.toggle('critical', totals.overdue_appeals > 0);
             }
 
             function updateTable(data) {
@@ -1176,6 +984,7 @@
                 
                 if(filteredData.length === 0) {
                     tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; padding: 5rem; font-size: 1.2rem; color: var(--success-green);"><i class="fa-solid fa-check-circle fa-2x mb-3"></i><br>Ayni vaqtda muddati o'tgan topshiriq yoki murojaati bor xodimlar aniqlanmadi.</td></tr>`;
+                    stopAutoScroll();
                     return;
                 }
 
@@ -1183,7 +992,6 @@
 
                 filteredData.forEach(emp => {
                     const initials = (emp.name || "NA").split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
-                    
                     tableHtml += `
                         <tr>
                             <td data-label="Xodim" class="profile-cell">
@@ -1223,29 +1031,56 @@
                     `;
                 });
                 tbody.innerHTML = tableHtml;
+                
+                // Ma'lumotlar jadvalga joylashtirilgach, biroz kutib, aylanishni boshlaymiz.
+                // Bu brauzerga jadvalning yangi balandligini to'g'ri hisoblashi uchun kerak.
+                setTimeout(startAutoScroll, 500); // Kichik pauza
             }
 
             function showError(message) {
                  const tbody = document.getElementById('employeeTableBody');
                  tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; padding: 5rem; font-size: 1.2rem; color: var(--danger-red);"><i class="fa-solid fa-triangle-exclamation fa-2x mb-3"></i><br>${message}</td></tr>`;
+                 stopAutoScroll();
             }
 
+            // --- AVTOMATIK AYLANISH MANTIG'I ---
+
             function startAutoScroll() {
-                if (scrollInterval) clearInterval(scrollInterval);
+                // 1. Boshqa ishlayotgan aylanish jarayonini to'xtatib qo'yish
+                stopAutoScroll();
+                
+                // 2. Agar foydalanuvchi to'xtatib qo'ygan bo'lsa, ishga tushirmaslik
                 if (!isAutoScrolling || isPausedByHover) return;
-                const scrollSpeed = 40;
-                const step = 1;
+
+                // 3. MUHIM TEKSHIRUV: Jadval balandligi konteyner balandligidan katta bo'lsagina aylantirish
+                if (tableContainer.scrollHeight <= tableContainer.clientHeight) {
+                    console.log("Kontent to'liq ko'rinib turibdi, aylantirishga hojat yo'q.");
+                    return; // Aylanishni boshlamaymiz, chunki hamma narsa sig'ib turibdi
+                }
+
+                console.log("Avtomatik aylanish boshlanmoqda...");
+
+                const scrollSpeed = 40; // Tezlik (millisekundda, qancha kichik bo'lsa, shuncha tez)
+                const step = 1; // Har bir qadamda necha pikselga siljish
+
                 scrollInterval = setInterval(() => {
                     const maxScroll = tableContainer.scrollHeight - tableContainer.clientHeight;
-                    if (tableContainer.scrollTop >= maxScroll - step) {
-                        clearInterval(scrollInterval);
+
+                    // Agar ro'yxat oxiriga yetib kelsa
+                    if (tableContainer.scrollTop >= maxScroll) {
+                        stopAutoScroll(); // Joriy aylanishni to'xtatamiz
+                        
+                        // Oxirida biroz kutib (3 soniya), boshiga qaytaramiz
                         setTimeout(() => {
-                            if (isAutoScrolling && !isPausedByHover) {
-                                tableContainer.scrollTo({ top: 0, behavior: 'smooth' });
-                                setTimeout(startAutoScroll, 2000);
-                            }
-                        }, 2500);
+                            if (!isAutoScrolling || isPausedByHover) return;
+                            
+                            tableContainer.scrollTo({ top: 0, behavior: 'smooth' }); // Boshiga silliq qaytish
+                            
+                            // Boshiga qaytib bo'lgach, yana biroz kutib (2 soniya), jarayonni qaytadan boshlaymiz
+                            setTimeout(startAutoScroll, 2000);
+                        }, 3000);
                     } else {
+                        // Ro'yxatni pastga qarab siljitamiz
                         tableContainer.scrollTop += step;
                     }
                 }, scrollSpeed);
@@ -1259,28 +1094,39 @@
             }
 
             function setupEventListeners() {
-                // Yangilash tugmasiga hodisa qo'shish
                 refreshButton.addEventListener('click', () => {
                     if (!isFetching) {
                         fetchDataFromGoogleSheet();
                     }
                 });
 
-                scrollToggle.addEventListener('change', function() {
-                    isAutoScrolling = this.checked;
-                    if (isAutoScrolling) {
+                // Sichqoncha jadval ustiga kelganda aylanishni vaqtincha to'xtatish
+                tableContainer.addEventListener('mouseenter', () => { 
+                    if (isAutoScrolling) { 
+                        isPausedByHover = true; 
+                        stopAutoScroll();
+                        console.log("Aylanish pauza qilindi (sichqoncha ustida).");
+                    } 
+                });
+
+                // Sichqoncha jadval ustidan ketganda aylanishni davom ettirish
+                tableContainer.addEventListener('mouseleave', () => { 
+                    if (isAutoScrolling && isPausedByHover) { 
                         isPausedByHover = false;
                         startAutoScroll();
-                    } else {
+                        console.log("Aylanish davom ettirildi.");
+                    } 
+                });
+                
+                // "Escape" tugmasi bosilganda aylanishni butunlay to'xtatish
+                document.addEventListener('keydown', e => {
+                    if (e.key === 'Escape' && isAutoScrolling) {
+                        isAutoScrolling = false;
                         stopAutoScroll();
+                        console.log("Avtomatik aylantirish 'Escape' tugmasi orqali to'xtatildi.");
                     }
                 });
-                tableContainer.addEventListener('mouseenter', () => { if (isAutoScrolling) { isPausedByHover = true; stopAutoScroll(); } });
-                tableContainer.addEventListener('mouseleave', () => { if (isAutoScrolling && isPausedByHover) { isPausedByHover = false; startAutoScroll(); } });
-                document.addEventListener('keydown', e => {
-                    if (e.code === 'Space' && e.target === document.body) { e.preventDefault(); scrollToggle.checked = !scrollToggle.checked; scrollToggle.dispatchEvent(new Event('change')); }
-                    if (e.key === 'Escape' && isAutoScrolling) { scrollToggle.checked = false; scrollToggle.dispatchEvent(new Event('change')); }
-                });
+
                 setupMobileTableLabels();
                 window.addEventListener('resize', setupMobileTableLabels);
             }
@@ -1320,8 +1166,9 @@
                 }
             }
             
+            // Dasturni ishga tushirish
             initializeApp();
-            console.log('🏛️ Nishon Tuman Hokimligi Dashboard yuklandi. Barcha o`zgarishlar kiritildi.');
+            console.log('🏛️ Nishon Tuman Hokimligi Dashboard yuklandi.');
         });
     </script>
 </body>
