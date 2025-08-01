@@ -31,7 +31,7 @@
             
             /* Neytral ranglar */
             --white: #FFFFFF;
-            --gray-50: #F8FAFC; /* Zebra uchun rang */
+            --gray-50: #F8FAFC;
             --gray-100: #F1F5F9;
             --gray-200: #E2E8F0;
             --gray-300: #CBD5E1;
@@ -69,7 +69,7 @@
             color: var(--gray-700);
             line-height: 1.6;
             min-height: 100vh;
-            overflow-x: auto;
+            overflow-x: hidden; /* Gorizontal skrollni bodidan olib tashlash */
         }
 
         /* ===== LIVE INDICATOR ===== */
@@ -103,7 +103,7 @@
         /* ===== RASMIY HEADER ===== */
         .official-header {
             background: linear-gradient(135deg, var(--gov-blue-darkest) 0%, var(--gov-blue-dark) 50%, var(--gov-blue-primary) 100%);
-            padding: 1rem 2rem; /* PADDING KAMAYTIRILDI */
+            padding: 1.5rem 2rem;
             color: var(--white);
             box-shadow: var(--shadow-xl);
             position: relative;
@@ -131,41 +131,45 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 50%;
-            padding: 1rem; /* PADDING KAMAYTIRILDI */
+            padding: 1rem;
             border: 2px solid rgba(255, 255, 255, 0.2);
-            width: 84px; /* O'LCHAM KAMAYTIRILDI */
-            height: 84px; /* O'LCHAM KAMAYTIRILDI */
+            width: 84px;
+            height: 84px;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
 
         .government-emblem i { 
-            font-size: 40px; /* O'LCHAM KAMAYTIRILDI */
+            font-size: 40px;
             color: var(--white);
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
         }
 
         .header-title { 
-            font-size: clamp(1.6rem, 2.5vw, 2.2rem); /* O'LCHAM KAMAYTIRILDI */
+            font-size: clamp(1.6rem, 2.5vw, 2.4rem);
             font-weight: 900; 
             margin-bottom: 0.1rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
             letter-spacing: -0.025em;
+            white-space: nowrap;
         }
 
         .header-subtitle { 
-            font-size: clamp(0.9rem, 1.2vw, 1.1rem); /* O'LCHAM KAMAYTIRILDI */
+            font-size: clamp(0.9rem, 1.2vw, 1.2rem);
             font-weight: 500; 
             opacity: 0.9;
             letter-spacing: 0.025em;
+            white-space: nowrap;
         }
 
         .header-controls { 
             display: flex; 
-            gap: 1rem; /* MASOFA KAMAYTIRILDI */
+            gap: 1.5rem;
             align-items: center; 
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+            flex-shrink: 0;
         }
 
         .control-item {
@@ -173,13 +177,19 @@
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 50px;
-            padding: 0.75rem 1.25rem; /* PADDING KAMAYTIRILDI */
-            font-size: clamp(0.85rem, 0.9vw, 0.9rem); /* O'LCHAM KAMAYTIRILDI */
+            padding: 0.8rem 1.5rem;
+            font-size: clamp(0.8rem, 0.9vw, 1rem);
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.8rem;
             transition: var(--transition);
+            white-space: nowrap;
+            min-width: max-content;
+        }
+
+        .control-item i {
+            flex-shrink: 0;
         }
 
         .control-item:hover {
@@ -202,7 +212,7 @@
         }
         .live-indicator-wrapper:hover {
             background: rgba(34, 197, 94, 0.2);
-            transform: translateY(0); /* Hoverda siljimaslik */
+            transform: translateY(0);
             box-shadow: none;
         }
         
@@ -219,22 +229,23 @@
 
         /* ===== ASOSIY KONTENT ===== */
         .main-content {
-            padding: 1.5rem 2rem; /* PADDING KAMAYTIRILDI */
+            padding: 2rem;
             width: 100%;
         }
 
         /* ===== STATISTIKA KARTLARI ===== */
         .stats-grid { 
             display: grid; 
-            grid-template-columns: repeat(4, 1fr); 
-            gap: 1.5rem; /* MASOFA KAMAYTIRILDI */
-            margin-bottom: 2rem; /* MASOFA KAMAYTIRILDI */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            width: 100%;
         }
 
         .stat-card {
             background: var(--white);
             border-radius: var(--radius-xl);
-            padding: 1.25rem; /* PADDING KAMAYTIRILDI */
+            padding: 1.5rem;
             border: 1px solid var(--gray-200);
             box-shadow: var(--shadow-lg);
             transition: var(--transition);
@@ -242,6 +253,7 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            min-height: 220px;
         }
 
         .stat-card::before {
@@ -250,12 +262,12 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 6px; /* O'LCHAM KAMAYTIRILDI */
+            height: 6px;
             border-radius: var(--radius-xl) var(--radius-xl) 0 0;
         }
 
         .stat-card:hover {
-            transform: translateY(-8px); /* EFFEKT KAMAYTIRILDI */
+            transform: translateY(-8px);
             box-shadow: var(--shadow-xl);
         }
         
@@ -264,30 +276,30 @@
         .stat-card.overdue::before { background: linear-gradient(90deg, var(--danger-red), #EF4444); }
         .stat-card.appeals::before { background: linear-gradient(90deg, var(--danger-red), #EF4444); }
 
-
         .stat-header { 
             display: flex; 
             justify-content: space-between; 
             align-items: flex-start; 
-            margin-bottom: 1rem; /* MASOFA KAMAYTIRILDI */
-            gap: 1rem;
+            margin-bottom: 1.2rem;
+            gap: 1.2rem;
         }
 
         .stat-label { 
-            font-size: clamp(0.9rem, 1.2vw, 1.1rem); /* O'LCHAM KAMAYTIRILDI */
+            font-size: clamp(0.9rem, 1.1vw, 1.1rem);
             font-weight: 700; 
             color: var(--gray-800); 
             line-height: 1.3;
+            flex-grow: 1;
         }
 
         .stat-icon {
-            width: clamp(45px, 5vw, 50px); /* O'LCHAM KAMAYTIRILDI */
-            height: clamp(45px, 5vw, 50px); /* O'LCHAM KAMAYTIRILDI */
+            width: clamp(50px, 4vw, 60px);
+            height: clamp(50px, 4vw, 60px);
             border-radius: var(--radius-md);
             display: flex; 
             align-items: center; 
             justify-content: center;
-            font-size: clamp(1.4rem, 2vw, 1.8rem); /* O'LCHAM KAMAYTIRILDI */
+            font-size: clamp(1.4rem, 2vw, 1.8rem);
             position: relative;
             overflow: hidden;
             flex-shrink: 0;
@@ -333,11 +345,11 @@
         }
 
         .stat-value { 
-            font-size: clamp(2.2rem, 4vw, 3.5rem); /* O'LCHAM KAMAYTIRILDI */
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
             font-weight: 900; 
             color: var(--gray-900); 
             line-height: 1; 
-            margin-bottom: 1rem; /* MASOFA KAMAYTIRILDI */
+            margin-bottom: 1.2rem;
             letter-spacing: -0.07em;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
@@ -350,7 +362,8 @@
         .stat-details {
             display: flex;
             flex-direction: column;
-            gap: 0.75rem; /* MASOFA KAMAYTIRILDI */
+            gap: 0.8rem;
+            flex-grow: 1;
         }
 
         .stat-breakdown {
@@ -359,12 +372,13 @@
             justify-content: space-between;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(248, 250, 252, 0.9) 100%);
             backdrop-filter: blur(10px);
-            padding: 0.75rem 1rem; /* PADDING KAMAYTIRILDI */
+            padding: 0.8rem 1.2rem;
             border-radius: var(--radius-md); 
             border: 1px solid;
             position: relative;
             overflow: hidden;
             transition: var(--transition);
+            min-height: 55px;
         }
 
         .stat-breakdown::before {
@@ -386,45 +400,52 @@
         .stat-card.appeals .stat-breakdown { border-color: rgba(220, 38, 38, 0.2); box-shadow: 0 2px 10px rgba(220, 38, 38, 0.05); }
         .stat-card.appeals .stat-breakdown::before { background: var(--danger-red); }
 
-
         .stat-breakdown:hover {
             transform: translateY(-2px) scale(1.02);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
 
         .breakdown-label {
-            font-size: clamp(0.8rem, 0.9vw, 0.9rem); /* O'LCHAM KAMAYTIRILDI */
+            font-size: clamp(0.75rem, 0.9vw, 0.9rem);
             font-weight: 600;
             color: var(--gray-700);
             display: flex;
             align-items: center;
-            gap: 0.6rem; 
+            gap: 0.7rem; 
             line-height: 1.3;
+            flex-grow: 1;
+            word-wrap: break-word;
         }
 
-        .breakdown-label i { font-size: 1.1rem; opacity: 0.8; }
+        .breakdown-label i { 
+            font-size: 1.1rem; 
+            opacity: 0.8;
+            flex-shrink: 0;
+        }
 
         .breakdown-value {
-            font-size: clamp(0.9rem, 1.1vw, 1rem); /* O'LCHAM KAMAYTIRILDI */
+            font-size: clamp(0.85rem, 1vw, 1rem);
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.8rem;
+            flex-shrink: 0;
         }
 
         .regional-badge, .new-badge, .critical-badge {
-            padding: 0.4rem 1rem; /* PADDING KAMAYTIRILDI */
+            padding: 0.5rem 1rem;
             border-radius: 30px;
-            font-size: clamp(0.75rem, 0.8vw, 0.8rem); /* O'LCHAM KAMAYTIRILDI */
+            font-size: clamp(0.7rem, 0.8vw, 0.8rem);
             font-weight: 700;
             border: 1px solid;
             box-shadow: var(--shadow-sm);
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             transition: var(--transition);
             position: relative;
             overflow: hidden;
+            white-space: nowrap;
         }
         
         .regional-badge { background: linear-gradient(135deg, var(--gov-blue-lightest) 0%, rgba(232, 242, 255, 0.8) 100%); color: var(--gov-blue-primary); border-color: rgba(0, 56, 117, 0.25); }
@@ -454,19 +475,19 @@
         }
 
         .panel-header { 
-            padding: 1.25rem 2rem; /* PADDING KAMAYTIRILDI */
+            padding: 1.5rem 2rem;
             background: linear-gradient(135deg, var(--gov-blue-lightest) 0%, var(--white) 100%);
             border-bottom: 3px solid var(--gov-blue-primary); 
         }
 
         .panel-title { 
-            font-size: clamp(1.2rem, 1.8vw, 1.5rem); /* O'LCHAM KAMAYTIRILDI */
+            font-size: clamp(1.2rem, 1.6vw, 1.6rem);
             font-weight: 800; 
             color: var(--gov-blue-dark); 
             margin: 0;
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
         .panel-title::before {
@@ -480,24 +501,24 @@
         .table-container { 
             overflow-x: auto; 
             overflow-y: auto; 
-            max-height: 60vh; /* BALANDLIK CHEKLOVI */
+            max-height: 60vh;
             background: var(--white);
             position: relative;
         }
 
         .official-table { 
             width: 100%; 
-            min-width: 1400px; 
+            min-width: 1200px; /* Planshetlar uchun minimal kenglik */
             border-collapse: collapse; 
         }
 
         .official-table thead th {
             background: linear-gradient(135deg, var(--gov-blue-primary) 0%, var(--gov-blue-medium) 100%);
             color: var(--white);
-            padding: 1rem 1.5rem; /* PADDING KAMAYTIRILDI */
+            padding: 1.2rem 1.5rem;
             text-align: center;
             font-weight: 700;
-            font-size: clamp(0.85rem, 1vw, 0.95rem); /* O'LCHAM KAMAYTIRILDI */
+            font-size: clamp(0.85rem, 1vw, 1rem);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             border: none;
@@ -531,7 +552,7 @@
         .official-table tbody tr:last-child { border-bottom: none; }
 
         .official-table tbody td { 
-            padding: 1rem 1.5rem; /* PADDING KAMAYTIRILDI */
+            padding: 1.2rem 1.5rem;
             vertical-align: middle; 
             text-align: center; 
         }
@@ -540,13 +561,13 @@
         .employee-profile { 
             display: flex; 
             align-items: center; 
-            gap: 1rem; /* MASOFA KAMAYTIRILDI */
+            gap: 1.2rem;
             text-align: left; 
         }
 
         .employee-avatar {
-            width: clamp(45px, 6vw, 55px); /* O'LCHAM KAMAYTIRILDI */
-            height: clamp(45px, 6vw, 55px); /* O'LCHAM KAMAYTIRILDI */
+            width: clamp(50px, 5vw, 60px);
+            height: clamp(50px, 5vw, 60px);
             border-radius: 50%;
             background: linear-gradient(135deg, var(--gov-blue-primary), var(--gov-blue-medium));
             color: var(--white);
@@ -554,7 +575,7 @@
             align-items: center; 
             justify-content: center;
             font-weight: 700; 
-            font-size: clamp(1rem, 1.5vw, 1.2rem); /* O'LCHAM KAMAYTIRILDI */
+            font-size: clamp(1.1rem, 1.4vw, 1.3rem);
             flex-shrink: 0;
             border: 3px solid var(--white);
             box-shadow: var(--shadow-md);
@@ -566,14 +587,14 @@
 
         .employee-info h6 { 
             font-weight: 700; 
-            font-size: clamp(0.9rem, 1.1vw, 1rem); /* O'LCHAM KAMAYTIRILDI */
+            font-size: clamp(0.95rem, 1.1vw, 1.1rem);
             color: var(--gray-800); 
-            margin: 0 0 0.25rem 0; /* MASOFA KAMAYTIRILDI */
+            margin: 0 0 0.3rem 0;
             line-height: 1.3;
         }
 
         .employee-department { 
-            font-size: clamp(0.8rem, 0.9vw, 0.9rem); /* O'LCHAM KAMAYTIRILDI */
+            font-size: clamp(0.85rem, 0.9vw, 0.95rem);
             color: var(--gray-500); 
             font-weight: 500; 
             line-height: 1.4; 
@@ -586,11 +607,11 @@
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            gap: 0.6rem; /* MASOFA KAMAYTIRILDI */
+            gap: 0.7rem;
         }
 
         .task-number { 
-            font-size: clamp(1.4rem, 2.2vw, 1.8rem); /* O'LCHAM KAMAYTIRILDI */
+            font-size: clamp(1.6rem, 2.2vw, 2rem);
             font-weight: 800; 
             color: var(--gray-800); 
             line-height: 1;
@@ -599,22 +620,22 @@
         .task-badges {
             display: flex;
             flex-direction: column;
-            gap: 0.4rem; 
+            gap: 0.5rem; 
             align-items: center;
         }
 
         .task-regional-tag { 
-            font-size: clamp(0.7rem, 0.8vw, 0.8rem); /* O'LCHAM KAMAYTIRILDI */
+            font-size: clamp(0.7rem, 0.8vw, 0.8rem);
             font-weight: 600; 
             color: var(--gov-blue-primary); 
             background: var(--gov-blue-lightest);
-            padding: 0.3rem 0.8rem; /* PADDING KAMAYTIRILDI */
+            padding: 0.4rem 0.9rem;
             border-radius: 25px; 
             border: 1px solid rgba(0, 56, 117, 0.2);
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            min-width: 100px;
+            gap: 0.5rem;
+            min-width: 110px;
             justify-content: center;
         }
         
@@ -627,14 +648,14 @@
             display: flex; 
             align-items: center; 
             justify-content: center;
-            gap: 0.6rem; 
+            gap: 0.7rem; 
             color: var(--danger-red); 
             font-weight: 800; 
-            font-size: clamp(1.4rem, 2.2vw, 1.8rem); /* O'LCHAM KAMAYTIRILDI */
+            font-size: clamp(1.6rem, 2.2vw, 2rem);
         }
 
         .overdue-cell .fa-fire { 
-            font-size: clamp(1rem, 1.5vw, 1.4rem); 
+            font-size: clamp(1.1rem, 1.5vw, 1.5rem); 
             animation: pulse-fire 1.5s infinite ease-in-out;
         }
         
@@ -656,83 +677,125 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.8rem; /* MASOFA KAMAYTIRILDI */
+            gap: 0.9rem;
         }
 
         .new-appeals-tag { 
-            font-size: clamp(0.7rem, 0.8vw, 0.8rem); /* O'LCHAM KAMAYTIRILDI */
+            font-size: clamp(0.7rem, 0.8vw, 0.8rem);
             font-weight: 600; 
             color: var(--success-green); 
             background: var(--success-light);
-            padding: 0.3rem 0.8rem; /* PADDING KAMAYTIRILDI */
+            padding: 0.4rem 0.9rem;
             border-radius: 25px; 
             border: 1px solid rgba(5, 150, 105, 0.2);
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            min-width: 100px;
+            gap: 0.5rem;
+            min-width: 110px;
             justify-content: center;
         }
         
         /* ===== RESPONSIVE DIZAYN ===== */
         
-        @media (max-width: 1400px) {
-            .stats-grid { 
-                grid-template-columns: repeat(2, 1fr); 
-                gap: 1.5rem; 
-            }
+        @media (max-width: 1200px) {
             .main-content { padding: 1.5rem; }
-            .official-table { min-width: 1200px; }
+            .official-table { min-width: 992px; }
+            .header-title { font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
+            .header-subtitle { font-size: clamp(0.75rem, 1.2vw, 0.95rem); }
         }
 
-        @media (max-width: 1024px) {
-            .official-header { padding: 1rem 1.5rem; }
-            .header-controls { gap: 0.8rem; }
-            .control-item { padding: 0.6rem 1rem; }
-            .main-content { padding: 1.5rem; }
-            .panel-header { padding: 1rem 1.5rem; }
-            .stats-grid { gap: 1rem; }
-            .stat-card { padding: 1.5rem; }
-        }
-
+        /* ===== MOBIL TELEFONLAR UCHUN KART VIEW ===== */
         @media (max-width: 768px) {
-            .stats-grid { 
-                grid-template-columns: 1fr; 
-            } 
-            .official-table thead { display: none; } 
-            .official-table, .official-table tbody, .official-table tr, .official-table td { display: block; width: 100%; }
-            .official-table tr { margin-bottom: 1rem; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1rem; }
-            .official-table td { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.5rem; text-align: right; border-bottom: 1px dashed var(--gray-200); }
-            .official-table tbody tr:nth-child(even) { background-color: var(--white); } 
-            .official-table td:last-child { border-bottom: none; }
+            .main-content { padding: 1rem; }
+            .panel-header { padding: 1rem 1.2rem; }
+            .panel-title { font-size: 1.2rem; }
+            .official-header { padding: 1rem; flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .header-controls { width: 100%; justify-content: flex-start; gap: 0.5rem; flex-wrap: wrap; }
+            .control-item { padding: 0.5rem 0.8rem; font-size: 0.8rem; }
+            
+            /* Jadvalni kartochkaga aylantirish */
+            .official-table {
+                min-width: 100%; /* Minimal kenglikni olib tashlash */
+                border: none;
+            }
+            .official-table thead { 
+                display: none; 
+            }
+            .official-table tbody, .official-table tr, .official-table td { 
+                display: block; 
+                width: 100%; 
+            }
+            .official-table tr { 
+                margin-bottom: 1rem; 
+                border: 1px solid var(--gray-200); 
+                border-radius: var(--radius-lg); 
+                padding: 1rem; 
+                background: var(--white) !important; /* Juft qator rangini bekor qilish */
+                box-shadow: var(--shadow-md);
+            }
+            .official-table td { 
+                display: flex; 
+                justify-content: space-between; 
+                align-items: center; 
+                padding: 0.8rem 0.5rem; 
+                text-align: right; 
+                border-bottom: 1px dashed var(--gray-200); 
+            }
+            .official-table td:last-child { 
+                border-bottom: none; 
+            }
             .official-table td::before {
                 content: attr(data-label);
                 font-weight: 600;
                 color: var(--gray-800);
                 text-align: left;
                 margin-right: 1rem;
+                flex-shrink: 0;
+                word-break: break-word; /* Uzun nomlarni keyingi qatorga o'tkazish */
             }
-            .employee-profile { gap: 1rem; width: 100%; justify-content: flex-start; }
-            .official-table td.profile-cell { justify-content: center; padding: 1rem 0; border: none; }
-            .official-table td.profile-cell::before { display: none; }
+            .official-table td.profile-cell { 
+                justify-content: flex-start;
+                padding: 0; 
+                border: none; 
+                margin-bottom: 1rem;
+            }
+            .official-table td.profile-cell::before { 
+                display: none; 
+            }
+            .employee-profile {
+                width: 100%;
+            }
         }
-
         @media (max-width: 480px) {
-            .official-header { padding: 1rem; flex-direction: column; align-items: flex-start; gap: 1rem; }
-            .main-content { padding: 1rem; }
+            .main-content { padding: 0.8rem; }
+            .panel-header { padding: 0.8rem 1rem; }
+            .panel-title { font-size: 1.1rem; }
+            .header-controls { flex-direction: column; align-items: stretch; }
         }
 
+        /* Animation keyframes */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .stat-card, .main-panel { animation: fadeInUp 0.6s ease-out backwards; }
+        .stat-card, .main-panel { 
+            animation: fadeInUp 0.6s ease-out backwards; 
+        }
         .stat-card:nth-child(1) { animation-delay: 0.1s; }
         .stat-card:nth-child(2) { animation-delay: 0.2s; }
         .stat-card:nth-child(3) { animation-delay: 0.3s; }
         .stat-card:nth-child(4) { animation-delay: 0.4s; }
         .main-panel { animation-delay: 0.5s; }
 
+        /* Print styles */
+        @media print {
+            body { overflow: visible; }
+            .official-header, .main-panel { break-inside: avoid; }
+            .stat-card { break-inside: avoid; box-shadow: none; border: 2px solid var(--gray-300); }
+            .official-header { background: var(--gov-blue-primary) !important; -webkit-print-color-adjust: exact; color-adjust: exact; }
+            .control-item { display: none; }
+            .table-container { max-height: none; overflow: visible; }
+        }
     </style>
 </head>
 <body>
@@ -781,7 +844,10 @@
                     <div class="stat-value">0</div>
                     <div class="stat-details">
                         <div class="stat-breakdown">
-                            <div class="breakdown-label"><i class="fa-solid fa-building"></i>Viloyat topshiriqlari</div>
+                            <div class="breakdown-label">
+                                <i class="fa-solid fa-building"></i>
+                                <span>Viloyat topshiriqlari</span>
+                            </div>
                             <div class="breakdown-value"><span class="regional-badge">0 ta</span></div>
                         </div>
                     </div>
@@ -797,7 +863,10 @@
                     <div class="stat-value">0</div>
                     <div class="stat-details">
                         <div class="stat-breakdown">
-                            <div class="breakdown-label"><i class="fa-solid fa-building"></i>Viloyat topshiriqlari</div>
+                            <div class="breakdown-label">
+                                <i class="fa-solid fa-building"></i>
+                                <span>Viloyat topshiriqlari</span>
+                            </div>
                             <div class="breakdown-value"><span class="regional-badge">0 ta</span></div>
                         </div>
                     </div>
@@ -813,7 +882,10 @@
                     <div class="stat-value">0</div>
                     <div class="stat-details">
                         <div class="stat-breakdown">
-                            <div class="breakdown-label"><i class="fa-solid fa-fire"></i>Viloyat topshiriqlari</div>
+                            <div class="breakdown-label">
+                                <i class="fa-solid fa-fire"></i>
+                                <span>Viloyat topshiriqlari</span>
+                            </div>
                             <div class="breakdown-value"><span class="critical-badge">0 ta</span></div>
                         </div>
                     </div>
@@ -829,7 +901,10 @@
                     <div class="stat-value">0</div>
                     <div class="stat-details">
                         <div class="stat-breakdown">
-                            <div class="breakdown-label"><i class="fa-solid fa-inbox"></i>Bugungi yangi murojaatlar</div>
+                            <div class="breakdown-label">
+                                <i class="fa-solid fa-inbox"></i>
+                                <span>Bugungi yangi murojaatlar</span>
+                            </div>
                             <div class="breakdown-value"><span class="new-badge">0 ta</span></div>
                         </div>
                     </div>
@@ -874,16 +949,17 @@
             };
 
             // MARK: - Global o'zgaruvchilar
-            let isAutoScrolling = true; // Avtomatik aylanishni boshqarish uchun bayroq
-            let scrollInterval = null; // setInterval'ni saqlash uchun
-            let isPausedByHover = false; // Sichqoncha jadval ustida turganda pauza qilish uchun
-            let isFetching = false; // Bir vaqtda bir nechta so'rov yubormaslik uchun
+            let isAutoScrolling = true;
+            let scrollInterval = null;
+            let isPausedByHover = false;
+            let isFetching = false;
             const tableContainer = document.getElementById('tableContainer');
             const refreshButton = document.getElementById('refresh-button');
-
+            const tableHeaders = [];
 
             // MARK: - Asosiy funksiyalar
             function initializeApp() {
+                cacheTableHeaders();
                 fetchDataFromGoogleSheet();
                 setInterval(fetchDataFromGoogleSheet, CONFIG.REFRESH_INTERVAL);
                 setupEventListeners();
@@ -988,13 +1064,20 @@
                     return;
                 }
 
-                filteredData.sort((a, b) => (b.overdue_tasks_total + b.overdue_appeals) - (a.overdue_tasks_total + a.overdue_appeals));
+                filteredData.sort((a, b) => {
+                    const totalA = a.overdue_tasks_total + a.overdue_appeals;
+                    const totalB = b.overdue_tasks_total + b.overdue_appeals;
+                    if (totalA !== totalB) {
+                        return totalB - totalA; // Eng ko'p muddati o'tganlar tepada
+                    }
+                    return b.overdue_tasks_regional - a.overdue_tasks_regional; // Viloyat topshiriqlari ustunroq
+                });
 
                 filteredData.forEach(emp => {
                     const initials = (emp.name || "NA").split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
                     tableHtml += `
                         <tr>
-                            <td data-label="Xodim" class="profile-cell">
+                            <td data-label="${tableHeaders[0]}" class="profile-cell">
                                 <div class="employee-profile">
                                     <div class="employee-avatar">${initials}</div>
                                     <div class="employee-info">
@@ -1003,25 +1086,25 @@
                                     </div>
                                 </div>
                             </td>
-                            <td data-label="Bugun">
+                            <td data-label="${tableHeaders[1]}">
                                 <div class="task-cell">
                                     <span class="task-number">${emp.today_total}</span>
                                     ${emp.today_regional > 0 ? `<div class="task-badges"><span class="task-regional-tag"><i class="fa-solid fa-building"></i>Viloyat: ${emp.today_regional}</span></div>` : ''}
                                 </div>
                             </td>
-                            <td data-label="Ertaga">
+                            <td data-label="${tableHeaders[2]}">
                                 <div class="task-cell">
                                     <span class="task-number">${emp.tomorrow_total}</span>
                                      ${emp.tomorrow_regional > 0 ? `<div class="task-badges"><span class="task-regional-tag"><i class="fa-solid fa-building"></i>Viloyat: ${emp.tomorrow_regional}</span></div>` : ''}
                                 </div>
                             </td>
-                            <td data-label="Muddati o'tgan">
+                            <td data-label="${tableHeaders[3]}">
                                 <div class="task-cell ${emp.overdue_tasks_total > 0 ? 'overdue' : ''}">
                                     <span class="task-number">${emp.overdue_tasks_total}</span>
                                     ${emp.overdue_tasks_regional > 0 ? `<div class="task-badges"><span class="task-regional-tag critical"><i class="fa-solid fa-fire"></i>Viloyat: ${emp.overdue_tasks_regional}</span></div>` : ''}
                                 </div>
                             </td>
-                            <td data-label="Murojaatlar">
+                            <td data-label="${tableHeaders[4]}">
                                 <div class="appeals-cell">
                                     ${emp.overdue_appeals > 0 ? `<div class="overdue-cell"><i class="fa-solid fa-fire"></i><span>${emp.overdue_appeals}</span></div>` : '<div class="task-cell"><span class="task-number">0</span></div>'}
                                     ${emp.new_appeals > 0 ? `<div class="new-appeals-tag"><i class="fa-solid fa-inbox"></i>${emp.new_appeals} yangi</div>` : ''}
@@ -1032,9 +1115,7 @@
                 });
                 tbody.innerHTML = tableHtml;
                 
-                // Ma'lumotlar jadvalga joylashtirilgach, biroz kutib, aylanishni boshlaymiz.
-                // Bu brauzerga jadvalning yangi balandligini to'g'ri hisoblashi uchun kerak.
-                setTimeout(startAutoScroll, 500); // Kichik pauza
+                setTimeout(startAutoScroll, 500);
             }
 
             function showError(message) {
@@ -1044,43 +1125,23 @@
             }
 
             // --- AVTOMATIK AYLANISH MANTIG'I ---
-
             function startAutoScroll() {
-                // 1. Boshqa ishlayotgan aylanish jarayonini to'xtatib qo'yish
                 stopAutoScroll();
-                
-                // 2. Agar foydalanuvchi to'xtatib qo'ygan bo'lsa, ishga tushirmaslik
-                if (!isAutoScrolling || isPausedByHover) return;
-
-                // 3. MUHIM TEKSHIRUV: Jadval balandligi konteyner balandligidan katta bo'lsagina aylantirish
-                if (tableContainer.scrollHeight <= tableContainer.clientHeight) {
-                    console.log("Kontent to'liq ko'rinib turibdi, aylantirishga hojat yo'q.");
-                    return; // Aylanishni boshlamaymiz, chunki hamma narsa sig'ib turibdi
+                if (!isAutoScrolling || isPausedByHover || tableContainer.scrollHeight <= tableContainer.clientHeight) {
+                    return;
                 }
-
-                console.log("Avtomatik aylanish boshlanmoqda...");
-
-                const scrollSpeed = 40; // Tezlik (millisekundda, qancha kichik bo'lsa, shuncha tez)
-                const step = 1; // Har bir qadamda necha pikselga siljish
+                const scrollSpeed = 40;
+                const step = 1;
 
                 scrollInterval = setInterval(() => {
-                    const maxScroll = tableContainer.scrollHeight - tableContainer.clientHeight;
-
-                    // Agar ro'yxat oxiriga yetib kelsa
-                    if (tableContainer.scrollTop >= maxScroll) {
-                        stopAutoScroll(); // Joriy aylanishni to'xtatamiz
-                        
-                        // Oxirida biroz kutib (3 soniya), boshiga qaytaramiz
+                    if (tableContainer.scrollTop >= tableContainer.scrollHeight - tableContainer.clientHeight) {
+                        stopAutoScroll();
                         setTimeout(() => {
                             if (!isAutoScrolling || isPausedByHover) return;
-                            
-                            tableContainer.scrollTo({ top: 0, behavior: 'smooth' }); // Boshiga silliq qaytish
-                            
-                            // Boshiga qaytib bo'lgach, yana biroz kutib (2 soniya), jarayonni qaytadan boshlaymiz
+                            tableContainer.scrollTo({ top: 0, behavior: 'smooth' });
                             setTimeout(startAutoScroll, 2000);
                         }, 3000);
                     } else {
-                        // Ro'yxatni pastga qarab siljitamiz
                         tableContainer.scrollTop += step;
                     }
                 }, scrollSpeed);
@@ -1092,33 +1153,28 @@
                     scrollInterval = null;
                 }
             }
+            
+            function cacheTableHeaders() {
+                const ths = document.querySelectorAll('.official-table thead th');
+                ths.forEach(th => tableHeaders.push(th.innerText.trim()));
+            }
 
             function setupEventListeners() {
                 refreshButton.addEventListener('click', () => {
-                    if (!isFetching) {
-                        fetchDataFromGoogleSheet();
-                    }
+                    if (!isFetching) fetchDataFromGoogleSheet();
                 });
-
-                // Sichqoncha jadval ustiga kelganda aylanishni vaqtincha to'xtatish
                 tableContainer.addEventListener('mouseenter', () => { 
                     if (isAutoScrolling) { 
                         isPausedByHover = true; 
                         stopAutoScroll();
-                        console.log("Aylanish pauza qilindi (sichqoncha ustida).");
                     } 
                 });
-
-                // Sichqoncha jadval ustidan ketganda aylanishni davom ettirish
                 tableContainer.addEventListener('mouseleave', () => { 
                     if (isAutoScrolling && isPausedByHover) { 
                         isPausedByHover = false;
                         startAutoScroll();
-                        console.log("Aylanish davom ettirildi.");
                     } 
                 });
-                
-                // "Escape" tugmasi bosilganda aylanishni butunlay to'xtatish
                 document.addEventListener('keydown', e => {
                     if (e.key === 'Escape' && isAutoScrolling) {
                         isAutoScrolling = false;
@@ -1126,49 +1182,21 @@
                         console.log("Avtomatik aylantirish 'Escape' tugmasi orqali to'xtatildi.");
                     }
                 });
-
-                setupMobileTableLabels();
-                window.addEventListener('resize', setupMobileTableLabels);
             }
             
             function updateDateTime() {
                 const now = new Date();
                 const timeEl = document.getElementById('current-time');
                 const dateEl = document.getElementById('current-date');
-                if (timeEl) {
-                    const hours = String(now.getHours()).padStart(2, '0');
-                    const minutes = String(now.getMinutes()).padStart(2, '0');
-                    timeEl.textContent = `${hours}:${minutes}`;
-                }
-                if (dateEl) {
-                    const months = ['Yanvar', 'Fevral', 'Mart', 'Aprel', 'May', 'Iyun', 'Iyul', 'Avgust', 'Sentabr', 'Oktabr', 'Noyabr', 'Dekabr'];
-                    const day = now.getDate();
-                    const month = months[now.getMonth()];
-                    const year = now.getFullYear();
-                    dateEl.textContent = `${day} ${month}, ${year}`;
-                }
-            }
-            
-            function setupMobileTableLabels() {
-                if (window.innerWidth <= 768) {
-                    const table = document.querySelector('.official-table');
-                    if(!table) return;
-                    const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.innerText.trim());
-                    const rows = table.querySelectorAll('tbody tr');
-                    rows.forEach(row => {
-                        const cells = row.querySelectorAll('td');
-                        cells.forEach((cell, index) => {
-                            if (!cell.classList.contains('profile-cell')) {
-                                cell.setAttribute('data-label', headers[index] || '');
-                            }
-                        });
-                    });
-                }
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                timeEl.textContent = `${hours}:${minutes}`;
+                const months = ['Yanvar', 'Fevral', 'Mart', 'Aprel', 'May', 'Iyun', 'Iyul', 'Avgust', 'Sentabr', 'Oktabr', 'Noyabr', 'Dekabr'];
+                dateEl.textContent = `${now.getDate()} ${months[now.getMonth()]}, ${now.getFullYear()}`;
             }
             
             // Dasturni ishga tushirish
             initializeApp();
-            console.log('🏛️ Nishon Tuman Hokimligi Dashboard yuklandi.');
         });
     </script>
 </body>
