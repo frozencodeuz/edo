@@ -69,7 +69,7 @@
             color: var(--gray-700);
             line-height: 1.6;
             min-height: 100vh;
-            overflow-x: auto;
+            overflow-x: hidden; /* Gorizontal skrollni bodidan olib tashlash */
         }
 
         /* ===== LIVE INDICATOR ===== */
@@ -233,77 +233,13 @@
             width: 100%;
         }
 
-        /* ===== STATISTIKA KARTLARI - KATTA EKRANLAR UCHUN TO'G'RILANGAN ===== */
+        /* ===== STATISTIKA KARTLARI ===== */
         .stats-grid { 
             display: grid; 
-            grid-template-columns: repeat(4, 1fr); 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
             width: 100%;
-        }
-
-        /* MUHIM: Katta ekranlar uchun 4 ustun ta'minlash */
-        @media (min-width: 1200px) {
-            .stats-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 2.5rem;
-            }
-        }
-
-        /* JUDA KATTA EKRANLAR (32+ inch TV) UCHUN */
-        @media (min-width: 1600px) {
-            .stats-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 3rem;
-                max-width: none;
-            }
-            
-            .main-content {
-                padding: 3rem;
-            }
-            
-            .official-header {
-                padding: 2rem 3rem;
-            }
-            
-            .header-controls {
-                gap: 2rem;
-            }
-            
-            .control-item {
-                padding: 1rem 2rem;
-                font-size: 1.1rem;
-                gap: 1rem;
-            }
-        }
-
-        /* ULTRA KATTA EKRANLAR (50+ inch TV) UCHUN */
-        @media (min-width: 2000px) {
-            .stats-grid {
-                gap: 4rem;
-            }
-            
-            .main-content {
-                padding: 4rem;
-            }
-            
-            .official-header {
-                padding: 3rem 4rem;
-            }
-            
-            .header-title {
-                font-size: 3rem;
-            }
-            
-            .header-subtitle {
-                font-size: 1.5rem;
-            }
-            
-            .control-item {
-                padding: 1.2rem 2.5rem;
-                font-size: 1.3rem;
-                gap: 1.2rem;
-            }
         }
 
         .stat-card {
@@ -572,7 +508,7 @@
 
         .official-table { 
             width: 100%; 
-            min-width: 1400px; 
+            min-width: 1200px; /* Planshetlar uchun minimal kenglik */
             border-collapse: collapse; 
         }
 
@@ -761,213 +697,53 @@
         
         /* ===== RESPONSIVE DIZAYN ===== */
         
-        /* KATTA EKRANLAR UCHUN MAXSUS QOIDALAR */
-        @media (min-width: 1400px) {
-            .stats-grid { 
-                grid-template-columns: repeat(4, 1fr) !important; /* MUHIM: 4 ustun majburiy */
-                gap: 2rem; 
-            }
-            .main-content { padding: 2rem; }
-            .official-table { min-width: 1600px; }
-        }
-
-        /* JUDA KATTA EKRANLAR (1600px+) */
-        @media (min-width: 1600px) {
-            .stats-grid { 
-                grid-template-columns: repeat(4, 1fr) !important;
-                gap: 3rem; 
-            }
-        }
-
-        /* ULTRA KATTA EKRANLAR (2000px+) */
-        @media (min-width: 2000px) {
-            .stats-grid { 
-                grid-template-columns: repeat(4, 1fr) !important;
-                gap: 4rem; 
-            }
-        }
-
-        /* FAQAT KICHIK EKRANLAR UCHUN 2 USTUN */
-        @media (max-width: 1199px) {
-            .stats-grid { 
-                grid-template-columns: repeat(2, 1fr); 
-                gap: 1.5rem; 
-            }
+        @media (max-width: 1200px) {
             .main-content { padding: 1.5rem; }
-            .official-table { min-width: 1200px; }
-            
-            /* Header responsive */
+            .official-table { min-width: 992px; }
             .header-title { font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
             .header-subtitle { font-size: clamp(0.75rem, 1.2vw, 0.95rem); }
         }
 
-        @media (max-width: 820px) {
-            .stats-grid { 
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-            
-            .stat-card {
-                padding: 1rem;
-                min-height: 170px;
-            }
-            
-            .stat-header {
-                margin-bottom: 0.8rem;
-                gap: 0.8rem;
-            }
-            
-            .stat-label {
-                font-size: clamp(0.8rem, 1.1vw, 0.9rem);
-                line-height: 1.2;
-            }
-            
-            .stat-value {
-                font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-                margin-bottom: 0.8rem;
-            }
-            
-            .breakdown-label {
-                font-size: clamp(0.65rem, 0.85vw, 0.8rem);
-                gap: 0.4rem;
-            }
-            
-            .breakdown-value {
-                font-size: clamp(0.75rem, 0.9vw, 0.85rem);
-            }
-            
-            .regional-badge, .new-badge, .critical-badge {
-                padding: 0.3rem 0.6rem;
-                font-size: clamp(0.6rem, 0.75vw, 0.7rem);
-                gap: 0.3rem;
-            }
-        }
-
+        /* ===== MOBIL TELEFONLAR UCHUN KART VIEW ===== */
         @media (max-width: 768px) {
-            .official-header {
-                padding: 1rem;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
+            .main-content { padding: 1rem; }
+            .panel-header { padding: 1rem 1.2rem; }
+            .panel-title { font-size: 1.2rem; }
+            .official-header { padding: 1rem; flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .header-controls { width: 100%; justify-content: flex-start; gap: 0.5rem; flex-wrap: wrap; }
+            .control-item { padding: 0.5rem 0.8rem; font-size: 0.8rem; }
             
-            .header-controls {
-                width: 100%;
-                justify-content: flex-start;
-                gap: 0.5rem;
-                flex-wrap: wrap;
+            /* Jadvalni kartochkaga aylantirish */
+            .official-table {
+                min-width: 100%; /* Minimal kenglikni olib tashlash */
+                border: none;
             }
-            
-            .control-item {
-                padding: 0.5rem 0.8rem;
-                font-size: 0.8rem;
-                gap: 0.5rem;
-            }
-            
-            .stats-grid { 
-                grid-template-columns: 1fr; 
-                gap: 1rem;
-            }
-            
-            .stat-card {
-                padding: 1.2rem;
-                min-height: 160px;
-                margin-bottom: 0;
-            }
-            
-            .stat-header {
-                margin-bottom: 1rem;
-                gap: 1rem;
-            }
-            
-            .stat-label {
-                font-size: 0.9rem;
-                line-height: 1.3;
-            }
-            
-            .stat-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 1.3rem;
-            }
-            
-            .stat-value {
-                font-size: 2.2rem;
-                margin-bottom: 1rem;
-            }
-            
-            .stat-breakdown {
-                padding: 0.8rem;
-                min-height: 45px;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
-            }
-            
-            .breakdown-label {
-                font-size: 0.8rem;
-                width: 100%;
-            }
-            
-            .breakdown-value {
-                font-size: 0.85rem;
-                width: 100%;
-                justify-content: flex-end;
-            }
-            
-            .regional-badge, .new-badge, .critical-badge {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.75rem;
-            }
-            
-            .main-content { 
-                padding: 1rem; 
-            }
-            
-            .panel-header {
-                padding: 1rem 1.2rem;
-            }
-            
-            .panel-title {
-                font-size: 1.2rem;
-                gap: 0.8rem;
-            }
-            
-            /* Mobile table styles */
             .official-table thead { 
                 display: none; 
-            } 
-            
-            .official-table, .official-table tbody, .official-table tr, .official-table td { 
+            }
+            .official-table tbody, .official-table tr, .official-table td { 
                 display: block; 
                 width: 100%; 
             }
-            
             .official-table tr { 
                 margin-bottom: 1rem; 
                 border: 1px solid var(--gray-200); 
                 border-radius: var(--radius-lg); 
                 padding: 1rem; 
-                background: var(--white);
+                background: var(--white) !important; /* Juft qator rangini bekor qilish */
+                box-shadow: var(--shadow-md);
             }
-            
             .official-table td { 
                 display: flex; 
                 justify-content: space-between; 
                 align-items: center; 
-                padding: 0.6rem 0.5rem; 
+                padding: 0.8rem 0.5rem; 
                 text-align: right; 
                 border-bottom: 1px dashed var(--gray-200); 
             }
-            
-            .official-table tbody tr:nth-child(even) { 
-                background-color: var(--white); 
-            } 
-            
             .official-table td:last-child { 
                 border-bottom: none; 
             }
-            
             .official-table td::before {
                 content: attr(data-label);
                 font-weight: 600;
@@ -975,193 +751,36 @@
                 text-align: left;
                 margin-right: 1rem;
                 flex-shrink: 0;
+                word-break: break-word; /* Uzun nomlarni keyingi qatorga o'tkazish */
             }
-            
-            .employee-profile { 
-                gap: 1rem; 
-                width: 100%; 
-                justify-content: flex-start; 
-            }
-            
             .official-table td.profile-cell { 
-                justify-content: center; 
-                padding: 1rem 0; 
+                justify-content: flex-start;
+                padding: 0; 
                 border: none; 
+                margin-bottom: 1rem;
             }
-            
             .official-table td.profile-cell::before { 
                 display: none; 
             }
+            .employee-profile {
+                width: 100%;
+            }
         }
-
         @media (max-width: 480px) {
-            .official-header { 
-                padding: 0.8rem; 
-            }
-            
-            .government-emblem {
-                width: 70px;
-                height: 70px;
-                padding: 0.8rem;
-            }
-            
-            .government-emblem i {
-                font-size: 32px;
-            }
-            
-            .header-title {
-                font-size: 1.3rem;
-            }
-            
-            .header-subtitle {
-                font-size: 0.8rem;
-            }
-            
-            .header-controls {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0.5rem;
-            }
-            
-            .control-item {
-                justify-content: center;
-                padding: 0.6rem;
-                font-size: 0.75rem;
-            }
-            
-            .main-content { 
-                padding: 0.8rem; 
-            }
-            
-            .stats-grid {
-                gap: 0.8rem;
-            }
-            
-            .stat-card {
-                padding: 1rem;
-                min-height: 150px;
-            }
-            
-            .stat-header {
-                margin-bottom: 0.8rem;
-                gap: 0.8rem;
-            }
-            
-            .stat-label {
-                font-size: 0.85rem;
-            }
-            
-            .stat-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-            
-            .stat-value {
-                font-size: 2rem;
-                margin-bottom: 0.8rem;
-            }
-            
-            .stat-breakdown {
-                padding: 0.7rem;
-                min-height: 40px;
-            }
-            
-            .breakdown-label {
-                font-size: 0.75rem;
-            }
-            
-            .breakdown-value {
-                font-size: 0.8rem;
-            }
-            
-            .regional-badge, .new-badge, .critical-badge {
-                padding: 0.3rem 0.6rem;
-                font-size: 0.7rem;
-            }
-            
-            .panel-header {
-                padding: 0.8rem 1rem;
-            }
-            
-            .panel-title {
-                font-size: 1.1rem;
-                gap: 0.6rem;
-            }
-            
-            .panel-title::before {
-                width: 4px;
-                height: 1.5rem;
-            }
-            
-            .employee-avatar {
-                width: 40px;
-                height: 40px;
-                font-size: 0.9rem;
-            }
-            
-            .employee-info h6 {
-                font-size: 0.85rem;
-            }
-            
-            .employee-department {
-                font-size: 0.75rem;
-            }
-        }
-
-        /* Ultra small screens */
-        @media (max-width: 360px) {
-            .stat-card {
-                min-height: 140px;
-            }
-            
-            .stat-value {
-                font-size: 1.8rem;
-            }
-            
-            .breakdown-label, .breakdown-value {
-                font-size: 0.7rem;
-            }
-            
-            .regional-badge, .new-badge, .critical-badge {
-                font-size: 0.65rem;
-                padding: 0.25rem 0.5rem;
-            }
-        }
-
-        /* Landscape orientation fixes */
-        @media (max-height: 500px) and (orientation: landscape) {
-            .stat-card {
-                min-height: 120px;
-            }
-            
-            .stat-value {
-                font-size: 1.8rem;
-                margin-bottom: 0.5rem;
-            }
-            
-            .stat-breakdown {
-                padding: 0.5rem;
-                min-height: 35px;
-            }
+            .main-content { padding: 0.8rem; }
+            .panel-header { padding: 0.8rem 1rem; }
+            .panel-title { font-size: 1.1rem; }
+            .header-controls { flex-direction: column; align-items: stretch; }
         }
 
         /* Animation keyframes */
         @keyframes fadeInUp {
-            from { 
-                opacity: 0; 
-                transform: translateY(20px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        
         .stat-card, .main-panel { 
             animation: fadeInUp 0.6s ease-out backwards; 
         }
-        
         .stat-card:nth-child(1) { animation-delay: 0.1s; }
         .stat-card:nth-child(2) { animation-delay: 0.2s; }
         .stat-card:nth-child(3) { animation-delay: 0.3s; }
@@ -1170,25 +789,12 @@
 
         /* Print styles */
         @media print {
-            .official-header {
-                background: var(--gov-blue-primary) !important;
-                -webkit-print-color-adjust: exact;
-                color-adjust: exact;
-            }
-            
-            .stat-card {
-                break-inside: avoid;
-                box-shadow: none;
-                border: 2px solid var(--gray-300);
-            }
-            
-            .main-panel {
-                break-inside: avoid;
-            }
-            
-            .control-item {
-                display: none;
-            }
+            body { overflow: visible; }
+            .official-header, .main-panel { break-inside: avoid; }
+            .stat-card { break-inside: avoid; box-shadow: none; border: 2px solid var(--gray-300); }
+            .official-header { background: var(--gov-blue-primary) !important; -webkit-print-color-adjust: exact; color-adjust: exact; }
+            .control-item { display: none; }
+            .table-container { max-height: none; overflow: visible; }
         }
     </style>
 </head>
@@ -1343,15 +949,17 @@
             };
 
             // MARK: - Global o'zgaruvchilar
-            let isAutoScrolling = true; // Avtomatik aylanishni boshqarish uchun bayroq
-            let scrollInterval = null; // setInterval'ni saqlash uchun
-            let isPausedByHover = false; // Sichqoncha jadval ustida turganda pauza qilish uchun
-            let isFetching = false; // Bir vaqtda bir nechta so'rov yubormaslik uchun
+            let isAutoScrolling = true;
+            let scrollInterval = null;
+            let isPausedByHover = false;
+            let isFetching = false;
             const tableContainer = document.getElementById('tableContainer');
             const refreshButton = document.getElementById('refresh-button');
+            const tableHeaders = [];
 
             // MARK: - Asosiy funksiyalar
             function initializeApp() {
+                cacheTableHeaders();
                 fetchDataFromGoogleSheet();
                 setInterval(fetchDataFromGoogleSheet, CONFIG.REFRESH_INTERVAL);
                 setupEventListeners();
@@ -1456,31 +1064,20 @@
                     return;
                 }
 
-                // YANGI SARALASH MANTIG'I
                 filteredData.sort((a, b) => {
-                    // 1-ustunlik: Muddati o'tgan topshiriqlar bo'yicha
-                    const a_has_overdue_tasks = a.overdue_tasks_total > 0;
-                    const b_has_overdue_tasks = b.overdue_tasks_total > 0;
-                    if (a_has_overdue_tasks && !b_has_overdue_tasks) return -1; // 'a' yuqoriga
-                    if (!a_has_overdue_tasks && b_has_overdue_tasks) return 1;  // 'b' yuqoriga
-
-                    // 2-ustunlik: Muddati o'tgan murojaatlar bo'yicha
-                    const a_has_overdue_appeals = a.overdue_appeals > 0;
-                    const b_has_overdue_appeals = b.overdue_appeals > 0;
-                    if (a_has_overdue_appeals && !b_has_overdue_appeals) return -1; // 'a' yuqoriga
-                    if (!a_has_overdue_appeals && b_has_overdue_appeals) return 1;  // 'b' yuqoriga
-
-                    // 3-ustunlik: Umumiy son bo'yicha (ko'pi yuqorida)
                     const totalA = a.overdue_tasks_total + a.overdue_appeals;
                     const totalB = b.overdue_tasks_total + b.overdue_appeals;
-                    return totalB - totalA;
+                    if (totalA !== totalB) {
+                        return totalB - totalA; // Eng ko'p muddati o'tganlar tepada
+                    }
+                    return b.overdue_tasks_regional - a.overdue_tasks_regional; // Viloyat topshiriqlari ustunroq
                 });
 
                 filteredData.forEach(emp => {
                     const initials = (emp.name || "NA").split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
                     tableHtml += `
                         <tr>
-                            <td data-label="Xodim" class="profile-cell">
+                            <td data-label="${tableHeaders[0]}" class="profile-cell">
                                 <div class="employee-profile">
                                     <div class="employee-avatar">${initials}</div>
                                     <div class="employee-info">
@@ -1489,25 +1086,25 @@
                                     </div>
                                 </div>
                             </td>
-                            <td data-label="Bugun">
+                            <td data-label="${tableHeaders[1]}">
                                 <div class="task-cell">
                                     <span class="task-number">${emp.today_total}</span>
                                     ${emp.today_regional > 0 ? `<div class="task-badges"><span class="task-regional-tag"><i class="fa-solid fa-building"></i>Viloyat: ${emp.today_regional}</span></div>` : ''}
                                 </div>
                             </td>
-                            <td data-label="Ertaga">
+                            <td data-label="${tableHeaders[2]}">
                                 <div class="task-cell">
                                     <span class="task-number">${emp.tomorrow_total}</span>
                                      ${emp.tomorrow_regional > 0 ? `<div class="task-badges"><span class="task-regional-tag"><i class="fa-solid fa-building"></i>Viloyat: ${emp.tomorrow_regional}</span></div>` : ''}
                                 </div>
                             </td>
-                            <td data-label="Muddati o'tgan">
+                            <td data-label="${tableHeaders[3]}">
                                 <div class="task-cell ${emp.overdue_tasks_total > 0 ? 'overdue' : ''}">
                                     <span class="task-number">${emp.overdue_tasks_total}</span>
                                     ${emp.overdue_tasks_regional > 0 ? `<div class="task-badges"><span class="task-regional-tag critical"><i class="fa-solid fa-fire"></i>Viloyat: ${emp.overdue_tasks_regional}</span></div>` : ''}
                                 </div>
                             </td>
-                            <td data-label="Murojaatlar">
+                            <td data-label="${tableHeaders[4]}">
                                 <div class="appeals-cell">
                                     ${emp.overdue_appeals > 0 ? `<div class="overdue-cell"><i class="fa-solid fa-fire"></i><span>${emp.overdue_appeals}</span></div>` : '<div class="task-cell"><span class="task-number">0</span></div>'}
                                     ${emp.new_appeals > 0 ? `<div class="new-appeals-tag"><i class="fa-solid fa-inbox"></i>${emp.new_appeals} yangi</div>` : ''}
@@ -1528,43 +1125,23 @@
             }
 
             // --- AVTOMATIK AYLANISH MANTIG'I ---
-
             function startAutoScroll() {
-                // 1. Boshqa ishlayotgan aylanish jarayonini to'xtatib qo'yish
                 stopAutoScroll();
-                
-                // 2. Agar foydalanuvchi to'xtatib qo'ygan bo'lsa, ishga tushirmaslik
-                if (!isAutoScrolling || isPausedByHover) return;
-
-                // 3. MUHIM TEKSHIRUV: Jadval balandligi konteyner balandligidan katta bo'lsagina aylantirish
-                if (tableContainer.scrollHeight <= tableContainer.clientHeight) {
-                    console.log("Kontent to'liq ko'rinib turibdi, aylantirishga hojat yo'q.");
-                    return; // Aylanishni boshlamaymiz, chunki hamma narsa sig'ib turibdi
+                if (!isAutoScrolling || isPausedByHover || tableContainer.scrollHeight <= tableContainer.clientHeight) {
+                    return;
                 }
-
-                console.log("Avtomatik aylanish boshlanmoqda...");
-
-                const scrollSpeed = 40; // Tezlik (millisekundda, qancha kichik bo'lsa, shuncha tez)
-                const step = 1; // Har bir qadamda necha pikselga siljish
+                const scrollSpeed = 40;
+                const step = 1;
 
                 scrollInterval = setInterval(() => {
-                    const maxScroll = tableContainer.scrollHeight - tableContainer.clientHeight;
-
-                    // Agar ro'yxat oxiriga yetib kelsa
-                    if (tableContainer.scrollTop >= maxScroll) {
-                        stopAutoScroll(); // Joriy aylanishni to'xtatamiz
-                        
-                        // Oxirida biroz kutib (3 soniya), boshiga qaytaramiz
+                    if (tableContainer.scrollTop >= tableContainer.scrollHeight - tableContainer.clientHeight) {
+                        stopAutoScroll();
                         setTimeout(() => {
                             if (!isAutoScrolling || isPausedByHover) return;
-                            
-                            tableContainer.scrollTo({ top: 0, behavior: 'smooth' }); // Boshiga silliq qaytish
-                            
-                            // Boshiga qaytib bo'lgach, yana biroz kutib (2 soniya), jarayonni qaytadan boshlaymiz
+                            tableContainer.scrollTo({ top: 0, behavior: 'smooth' });
                             setTimeout(startAutoScroll, 2000);
                         }, 3000);
                     } else {
-                        // Ro'yxatni pastga qarab siljitamiz
                         tableContainer.scrollTop += step;
                     }
                 }, scrollSpeed);
@@ -1576,33 +1153,28 @@
                     scrollInterval = null;
                 }
             }
+            
+            function cacheTableHeaders() {
+                const ths = document.querySelectorAll('.official-table thead th');
+                ths.forEach(th => tableHeaders.push(th.innerText.trim()));
+            }
 
             function setupEventListeners() {
                 refreshButton.addEventListener('click', () => {
-                    if (!isFetching) {
-                        fetchDataFromGoogleSheet();
-                    }
+                    if (!isFetching) fetchDataFromGoogleSheet();
                 });
-
-                // Sichqoncha jadval ustiga kelganda aylanishni vaqtincha to'xtatish
                 tableContainer.addEventListener('mouseenter', () => { 
                     if (isAutoScrolling) { 
                         isPausedByHover = true; 
                         stopAutoScroll();
-                        console.log("Aylanish pauza qilindi (sichqoncha ustida).");
                     } 
                 });
-
-                // Sichqoncha jadval ustidan ketganda aylanishni davom ettirish
                 tableContainer.addEventListener('mouseleave', () => { 
                     if (isAutoScrolling && isPausedByHover) { 
                         isPausedByHover = false;
                         startAutoScroll();
-                        console.log("Aylanish davom ettirildi.");
                     } 
                 });
-                
-                // "Escape" tugmasi bosilganda aylanishni butunlay to'xtatish
                 document.addEventListener('keydown', e => {
                     if (e.key === 'Escape' && isAutoScrolling) {
                         isAutoScrolling = false;
@@ -1610,49 +1182,21 @@
                         console.log("Avtomatik aylantirish 'Escape' tugmasi orqali to'xtatildi.");
                     }
                 });
-
-                setupMobileTableLabels();
-                window.addEventListener('resize', setupMobileTableLabels);
             }
             
             function updateDateTime() {
                 const now = new Date();
                 const timeEl = document.getElementById('current-time');
                 const dateEl = document.getElementById('current-date');
-                if (timeEl) {
-                    const hours = String(now.getHours()).padStart(2, '0');
-                    const minutes = String(now.getMinutes()).padStart(2, '0');
-                    timeEl.textContent = `${hours}:${minutes}`;
-                }
-                if (dateEl) {
-                    const months = ['Yanvar', 'Fevral', 'Mart', 'Aprel', 'May', 'Iyun', 'Iyul', 'Avgust', 'Sentabr', 'Oktabr', 'Noyabr', 'Dekabr'];
-                    const day = now.getDate();
-                    const month = months[now.getMonth()];
-                    const year = now.getFullYear();
-                    dateEl.textContent = `${day} ${month}, ${year}`;
-                }
-            }
-            
-            function setupMobileTableLabels() {
-                if (window.innerWidth <= 768) {
-                    const table = document.querySelector('.official-table');
-                    if(!table) return;
-                    const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.innerText.trim());
-                    const rows = table.querySelectorAll('tbody tr');
-                    rows.forEach(row => {
-                        const cells = row.querySelectorAll('td');
-                        cells.forEach((cell, index) => {
-                            if (!cell.classList.contains('profile-cell')) {
-                                cell.setAttribute('data-label', headers[index] || '');
-                            }
-                        });
-                    });
-                }
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                timeEl.textContent = `${hours}:${minutes}`;
+                const months = ['Yanvar', 'Fevral', 'Mart', 'Aprel', 'May', 'Iyun', 'Iyul', 'Avgust', 'Sentabr', 'Oktabr', 'Noyabr', 'Dekabr'];
+                dateEl.textContent = `${now.getDate()} ${months[now.getMonth()]}, ${now.getFullYear()}`;
             }
             
             // Dasturni ishga tushirish
             initializeApp();
-            console.log('🏛️ Nishon Tuman Hokimligi Dashboard yuklandi.');
         });
     </script>
 </body>
