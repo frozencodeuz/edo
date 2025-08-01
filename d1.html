@@ -56,10 +56,10 @@
             
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-            /* TV ekran o'lchamlari uchun dinamik qiymatlar */
-            --header-height: clamp(80px, 12vh, 140px);
-            --stats-height: clamp(120px, 18vh, 220px);
-            --table-height: calc(100vh - var(--header-height) - var(--stats-height) - 60px);
+            /* TV ekran o'lchamlari uchun dinamik qiymatlar - YANGI OPTIMALLASHTIRILGAN */
+            --header-height: clamp(70px, 8vh, 120px);
+            --stats-height: clamp(100px, 14vh, 180px);
+            --table-height: calc(100vh - var(--header-height) - var(--stats-height) - 40px);
         }
 
         * {
@@ -72,9 +72,9 @@
             font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, var(--gov-blue-lightest) 0%, var(--gray-50) 100%);
             color: var(--gray-700);
-            line-height: 1.6;
+            line-height: 1.4; /* Kamaytirildi */
             height: 100vh;
-            overflow: hidden; /* TV ekranlar uchun scroll yo'q */
+            overflow: hidden;
             position: fixed;
             width: 100%;
             top: 0;
@@ -83,12 +83,13 @@
 
         /* ===== LIVE INDICATOR ===== */
         .live-dot {
-            width: clamp(10px, 1.2vw, 16px);
-            height: clamp(10px, 1.2vw, 16px);
+            width: clamp(8px, 0.8vw, 12px);
+            height: clamp(8px, 0.8vw, 12px);
             background: #22C55E;
             border-radius: 50%;
             animation: pulse-live 2s infinite;
-            box-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+            flex-shrink: 0;
         }
 
         @keyframes pulse-live {
@@ -97,12 +98,12 @@
                 opacity: 1;
             }
             50% {
-                transform: scale(1.3);
-                opacity: 0.7;
+                transform: scale(1.2);
+                opacity: 0.8;
             }
         }
 
-        /* ===== TV UCHUN RASMIY HEADER ===== */
+        /* ===== TV UCHUN RASMIY HEADER - OPTIMALLASHTIRILGAN ===== */
         .official-header {
             background: linear-gradient(135deg, var(--gov-blue-darkest) 0%, var(--gov-blue-dark) 50%, var(--gov-blue-primary) 100%);
             height: var(--header-height);
@@ -113,7 +114,7 @@
             width: 100%;
             display: flex;
             align-items: center;
-            padding: 0 clamp(1rem, 3vw, 4rem);
+            padding: 0 clamp(0.8rem, 2vw, 2.5rem);
         }
 
         .official-header::before {
@@ -123,7 +124,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
             pointer-events: none;
         }
 
@@ -140,40 +141,43 @@
             background: rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(15px);
             border-radius: 50%;
-            padding: clamp(0.8rem, 1.5vw, 1.5rem);
+            padding: clamp(0.6rem, 1vw, 1rem);
             border: 2px solid rgba(255, 255, 255, 0.25);
-            width: clamp(60px, 8vw, 100px);
-            height: clamp(60px, 8vw, 100px);
+            width: clamp(45px, 5vw, 70px);
+            height: clamp(45px, 5vw, 70px);
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
         }
 
         .government-emblem i { 
-            font-size: clamp(1.8rem, 4vw, 3.5rem);
+            font-size: clamp(1.2rem, 2.5vw, 2.5rem);
             color: var(--white);
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
         }
 
         .header-title { 
-            font-size: clamp(1.8rem, 4vw, 3.5rem);
-            font-weight: 900; 
-            margin-bottom: 0.2rem;
+            font-size: clamp(1.2rem, 2.8vw, 2.5rem);
+            font-weight: 800; /* 900'dan kamaytirildi */
+            margin-bottom: 0.1rem;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-            letter-spacing: -0.025em;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
         }
 
         .header-subtitle { 
-            font-size: clamp(1rem, 2vw, 1.8rem);
+            font-size: clamp(0.75rem, 1.4vw, 1.2rem);
             font-weight: 500; 
             opacity: 0.9;
-            letter-spacing: 0.025em;
+            letter-spacing: 0.015em;
+            line-height: 1.2;
         }
 
         .header-controls { 
             display: flex; 
-            gap: clamp(1rem, 2vw, 2rem);
+            gap: clamp(0.6rem, 1.2vw, 1.5rem);
             align-items: center; 
         }
 
@@ -182,14 +186,15 @@
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 50px;
-            padding: clamp(0.8rem, 1.5vw, 1.2rem) clamp(1.2rem, 2.5vw, 2rem);
-            font-size: clamp(0.9rem, 1.4vw, 1.2rem);
+            padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.8rem, 1.5vw, 1.2rem);
+            font-size: clamp(0.7rem, 1.1vw, 0.9rem);
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: clamp(0.6rem, 1vw, 1rem);
+            gap: clamp(0.4rem, 0.8vw, 0.7rem);
             transition: var(--transition);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            white-space: nowrap;
         }
 
         .control-item:hover {
@@ -229,26 +234,26 @@
         /* ===== TV UCHUN ASOSIY KONTENT ===== */
         .main-content {
             height: calc(100vh - var(--header-height));
-            padding: clamp(1rem, 2vw, 2rem);
+            padding: clamp(0.8rem, 1.5vw, 1.5rem);
             display: flex;
             flex-direction: column;
-            gap: clamp(1rem, 2vh, 2rem);
+            gap: clamp(0.8rem, 1.5vh, 1.5rem);
             overflow: hidden;
         }
 
-        /* ===== TV UCHUN STATISTIKA KARTLARI (BIR QATORDA) ===== */
+        /* ===== TV UCHUN STATISTIKA KARTLARI - OPTIMALLASHTIRILGAN ===== */
         .stats-grid { 
             display: grid; 
             grid-template-columns: repeat(4, 1fr);
-            gap: clamp(1rem, 2vw, 2rem);
+            gap: clamp(0.8rem, 1.5vw, 1.5rem);
             height: var(--stats-height);
-            min-height: 120px;
+            min-height: 90px;
         }
 
         .stat-card {
             background: var(--white);
-            border-radius: var(--radius-xl);
-            padding: clamp(1rem, 2vw, 1.8rem);
+            border-radius: var(--radius-lg); /* xl'dan lg'ga */
+            padding: clamp(0.8rem, 1.2vw, 1.2rem);
             border: 1px solid var(--gray-200);
             box-shadow: var(--shadow-lg);
             transition: var(--transition);
@@ -265,12 +270,12 @@
             top: 0;
             left: 0;
             right: 0;
-            height: clamp(4px, 0.8vh, 8px);
-            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+            height: clamp(3px, 0.5vh, 5px);
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
         }
 
         .stat-card:hover {
-            transform: translateY(-4px) scale(1.02);
+            transform: translateY(-2px) scale(1.01);
             box-shadow: var(--shadow-xl);
         }
         
@@ -283,25 +288,26 @@
             display: flex; 
             justify-content: space-between; 
             align-items: flex-start; 
-            margin-bottom: clamp(0.8rem, 1.5vh, 1.2rem);
-            gap: 0.8rem;
+            margin-bottom: clamp(0.5rem, 1vh, 0.8rem);
+            gap: 0.6rem;
         }
 
         .stat-label { 
-            font-size: clamp(0.9rem, 1.4vw, 1.3rem);
+            font-size: clamp(0.7rem, 1.1vw, 1rem);
             font-weight: 700; 
             color: var(--gray-800); 
-            line-height: 1.2;
+            line-height: 1.1;
+            flex: 1;
         }
 
         .stat-icon {
-            width: clamp(40px, 6vw, 60px);
-            height: clamp(40px, 6vw, 60px);
+            width: clamp(28px, 4vw, 45px);
+            height: clamp(28px, 4vw, 45px);
             border-radius: var(--radius-md);
             display: flex; 
             align-items: center; 
             justify-content: center;
-            font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+            font-size: clamp(1rem, 1.8vw, 1.6rem);
             position: relative;
             overflow: hidden;
             flex-shrink: 0;
@@ -330,8 +336,8 @@
                 transform: scale(1);
             }
             50% { 
-                box-shadow: 0 0 30px rgba(220, 38, 38, 0.5);
-                transform: scale(1.03);
+                box-shadow: 0 0 25px rgba(220, 38, 38, 0.4);
+                transform: scale(1.02);
             }
         }
 
@@ -347,18 +353,18 @@
         }
 
         .stat-value { 
-            font-size: clamp(2rem, 5vw, 4rem);
-            font-weight: 900; 
+            font-size: clamp(1.4rem, 3.5vw, 2.8rem);
+            font-weight: 800; /* 900'dan kamaytirildi */
             color: var(--gray-900); 
             line-height: 1; 
-            margin-bottom: clamp(0.8rem, 1.5vh, 1.2rem);
-            letter-spacing: -0.05em;
+            margin-bottom: clamp(0.5rem, 1vh, 0.8rem);
+            letter-spacing: -0.03em;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .stat-value.critical { 
             color: var(--danger-red); 
-            text-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+            text-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
         }
 
         .stat-breakdown {
@@ -367,7 +373,7 @@
             justify-content: space-between;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.95) 100%);
             backdrop-filter: blur(15px);
-            padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem);
+            padding: clamp(0.4rem, 0.8vw, 0.7rem) clamp(0.6rem, 1vw, 0.9rem);
             border-radius: var(--radius-md); 
             border: 1px solid;
             position: relative;
@@ -380,9 +386,9 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: clamp(3px, 0.5vw, 6px);
+            width: clamp(2px, 0.3vw, 4px);
             height: 100%;
-            border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
         }
 
         .stat-card.today .stat-breakdown { border-color: rgba(0, 56, 117, 0.25); box-shadow: 0 4px 15px rgba(0, 56, 117, 0.08); }
@@ -395,36 +401,40 @@
         .stat-card.appeals .stat-breakdown::before { background: var(--danger-red); }
 
         .breakdown-label {
-            font-size: clamp(0.75rem, 1.1vw, 1rem);
+            font-size: clamp(0.6rem, 0.9vw, 0.8rem);
             font-weight: 600;
             color: var(--gray-700);
             display: flex;
             align-items: center;
-            gap: clamp(0.4rem, 0.8vw, 0.8rem);
-            line-height: 1.2;
+            gap: clamp(0.3rem, 0.5vw, 0.5rem);
+            line-height: 1.1;
+            flex: 1;
         }
 
         .breakdown-label i { 
-            font-size: clamp(0.9rem, 1.3vw, 1.2rem);
+            font-size: clamp(0.7rem, 1vw, 0.9rem);
             opacity: 0.8; 
+            flex-shrink: 0;
         }
 
         .breakdown-value {
-            font-size: clamp(0.8rem, 1.2vw, 1.1rem);
+            font-size: clamp(0.65rem, 1vw, 0.85rem);
             font-weight: 700;
+            flex-shrink: 0;
         }
 
         .regional-badge, .new-badge, .critical-badge {
-            padding: clamp(0.3rem, 0.6vw, 0.6rem) clamp(0.8rem, 1.5vw, 1.2rem);
-            border-radius: 30px;
-            font-size: clamp(0.7rem, 1vw, 0.9rem);
+            padding: clamp(0.2rem, 0.4vw, 0.4rem) clamp(0.5rem, 1vw, 0.8rem);
+            border-radius: 20px;
+            font-size: clamp(0.55rem, 0.8vw, 0.7rem);
             font-weight: 700;
             border: 1px solid;
             box-shadow: var(--shadow-sm);
             display: flex;
             align-items: center;
-            gap: clamp(0.3rem, 0.6vw, 0.6rem);
+            gap: clamp(0.2rem, 0.4vw, 0.4rem);
             transition: var(--transition);
+            white-space: nowrap;
         }
         
         .regional-badge { background: linear-gradient(135deg, var(--gov-blue-lightest) 0%, rgba(232, 242, 255, 0.9) 100%); color: var(--gov-blue-primary); border-color: rgba(0, 56, 117, 0.3); }
@@ -434,7 +444,7 @@
         /* ===== TV UCHUN ASOSIY JADVAL PANELI ===== */
         .main-panel {
             background: var(--white);
-            border-radius: var(--radius-xl);
+            border-radius: var(--radius-lg); /* xl'dan lg'ga */
             box-shadow: var(--shadow-lg);
             overflow: hidden;
             border: 1px solid var(--gray-200);
@@ -445,32 +455,35 @@
         }
 
         .panel-header { 
-            padding: clamp(1rem, 2vw, 1.5rem) clamp(1.5rem, 3vw, 2.5rem);
+            padding: clamp(0.8rem, 1.2vw, 1.2rem) clamp(1rem, 2vw, 1.8rem);
             background: linear-gradient(135deg, var(--gov-blue-lightest) 0%, var(--white) 100%);
-            border-bottom: clamp(2px, 0.4vw, 4px) solid var(--gov-blue-primary);
+            border-bottom: clamp(2px, 0.3vw, 3px) solid var(--gov-blue-primary);
             flex-shrink: 0;
         }
 
         .panel-title { 
-            font-size: clamp(1.2rem, 2.2vw, 2rem);
+            font-size: clamp(1rem, 1.6vw, 1.5rem);
             font-weight: 800; 
             color: var(--gov-blue-dark); 
             margin: 0;
             display: flex;
             align-items: center;
-            gap: clamp(0.8rem, 1.5vw, 1.5rem);
+            gap: clamp(0.6rem, 1vw, 1rem);
+            line-height: 1.2;
         }
 
         .panel-title::before {
             content: '';
-            width: clamp(4px, 0.6vw, 8px);
-            height: clamp(1.5rem, 3vw, 2.5rem);
+            width: clamp(3px, 0.4vw, 5px);
+            height: clamp(1.2rem, 2vw, 1.8rem);
             background: linear-gradient(180deg, var(--gov-blue-primary), var(--gov-blue-medium));
-            border-radius: 4px;
+            border-radius: 3px;
+            flex-shrink: 0;
         }
 
         .panel-title i {
-            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            font-size: clamp(1rem, 1.4vw, 1.3rem);
+            flex-shrink: 0;
         }
 
         .table-container { 
@@ -489,17 +502,18 @@
         .official-table thead th {
             background: linear-gradient(135deg, var(--gov-blue-primary) 0%, var(--gov-blue-medium) 100%);
             color: var(--white);
-            padding: clamp(1rem, 2vw, 1.5rem) clamp(1.2rem, 2.5vw, 2rem);
+            padding: clamp(0.7rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem);
             text-align: center;
             font-weight: 700;
-            font-size: clamp(0.9rem, 1.4vw, 1.2rem);
+            font-size: clamp(0.7rem, 1.1vw, 0.9rem);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
             border: none;
             position: sticky; 
             top: 0; 
             z-index: 10;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            line-height: 1.2;
         }
 
         .official-table thead th:first-child { 
@@ -523,8 +537,8 @@
 
         .official-table tbody tr:hover {
             background: var(--gov-blue-lightest);
-            transform: scale(1.005);
-            box-shadow: 0 4px 20px rgba(0, 56, 117, 0.15);
+            transform: scale(1.002);
+            box-shadow: 0 4px 15px rgba(0, 56, 117, 0.12);
             z-index: 5;
             position: relative;
         }
@@ -532,23 +546,24 @@
         .official-table tbody tr:last-child { border-bottom: none; }
 
         .official-table tbody td { 
-            padding: clamp(1rem, 2vw, 1.5rem) clamp(1.2rem, 2.5vw, 2rem);
+            padding: clamp(0.7rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem);
             vertical-align: middle; 
             text-align: center;
-            font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+            font-size: clamp(0.7rem, 1.05vw, 0.9rem);
+            line-height: 1.3;
         }
 
-        /* ===== TV UCHUN XODIM PROFILI ===== */
+        /* ===== TV UCHUN XODIM PROFILI - OPTIMALLASHTIRILGAN ===== */
         .employee-profile { 
             display: flex; 
             align-items: center; 
-            gap: clamp(1rem, 2vw, 1.5rem);
+            gap: clamp(0.6rem, 1.2vw, 1rem);
             text-align: left; 
         }
 
         .employee-avatar {
-            width: clamp(50px, 7vw, 70px);
-            height: clamp(50px, 7vw, 70px);
+            width: clamp(35px, 4.5vw, 50px);
+            height: clamp(35px, 4.5vw, 50px);
             border-radius: 50%;
             background: linear-gradient(135deg, var(--gov-blue-primary), var(--gov-blue-medium));
             color: var(--white);
@@ -556,41 +571,48 @@
             align-items: center; 
             justify-content: center;
             font-weight: 700; 
-            font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+            font-size: clamp(0.8rem, 1.2vw, 1.1rem);
             flex-shrink: 0;
-            border: 3px solid var(--white);
+            border: 2px solid var(--white);
             box-shadow: var(--shadow-md);
         }
         
         .employee-info {
             max-width: 70%; 
+            min-width: 0;
         }
 
         .employee-info h6 { 
             font-weight: 700; 
-            font-size: clamp(1rem, 1.5vw, 1.3rem);
+            font-size: clamp(0.8rem, 1.15vw, 1rem);
             color: var(--gray-800); 
-            margin: 0 0 0.3rem 0;
+            margin: 0 0 0.2rem 0;
             line-height: 1.2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .employee-department { 
-            font-size: clamp(0.85rem, 1.2vw, 1rem);
+            font-size: clamp(0.65rem, 0.95vw, 0.8rem);
             color: var(--gray-500); 
             font-weight: 500; 
-            line-height: 1.3; 
+            line-height: 1.2; 
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
         
-        /* ===== TV UCHUN VAZIFA VA MUROJAAT HUJAYRALARI ===== */
+        /* ===== TV UCHUN VAZIFA VA MUROJAAT HUJAYRALARI - OPTIMALLASHTIRILGAN ===== */
         .task-cell { 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            gap: clamp(0.6rem, 1.2vw, 1rem);
+            gap: clamp(0.4rem, 0.8vw, 0.7rem);
         }
 
         .task-number { 
-            font-size: clamp(1.6rem, 3vw, 2.5rem);
+            font-size: clamp(1.2rem, 2.2vw, 1.8rem);
             font-weight: 800; 
             color: var(--gray-800); 
             line-height: 1;
@@ -599,21 +621,21 @@
         .task-badges {
             display: flex;
             flex-direction: column;
-            gap: 0.5rem; 
+            gap: 0.3rem; 
             align-items: center;
         }
 
         .task-regional-tag { 
-            font-size: clamp(0.75rem, 1.1vw, 0.9rem);
+            font-size: clamp(0.6rem, 0.85vw, 0.7rem);
             font-weight: 600; 
             color: var(--gov-blue-primary); 
             background: var(--gov-blue-lightest);
-            padding: clamp(0.3rem, 0.6vw, 0.5rem) clamp(0.8rem, 1.4vw, 1rem);
-            border-radius: 25px; 
+            padding: clamp(0.2rem, 0.4vw, 0.35rem) clamp(0.5rem, 1vw, 0.7rem);
+            border-radius: 15px; 
             border: 1px solid rgba(0, 56, 117, 0.25);
             display: flex;
             align-items: center;
-            gap: clamp(0.3rem, 0.6vw, 0.5rem);
+            gap: clamp(0.2rem, 0.4vw, 0.35rem);
             min-width: fit-content;
             justify-content: center;
             white-space: nowrap;
@@ -621,21 +643,21 @@
         
         @keyframes pulse-fire {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
+            50% { transform: scale(1.15); }
         }
 
         .overdue-cell { 
             display: flex; 
             align-items: center; 
             justify-content: center;
-            gap: clamp(0.6rem, 1.1vw, 0.8rem);
+            gap: clamp(0.4rem, 0.8vw, 0.6rem);
             color: var(--danger-red); 
             font-weight: 800; 
-            font-size: clamp(1.6rem, 3vw, 2.5rem);
+            font-size: clamp(1.2rem, 2.2vw, 1.8rem);
         }
 
         .overdue-cell .fa-fire { 
-            font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+            font-size: clamp(0.9rem, 1.6vw, 1.3rem);
             animation: pulse-fire 1.5s infinite ease-in-out;
         }
         
@@ -657,32 +679,57 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: clamp(0.8rem, 1.4vw, 1.2rem);
+            gap: clamp(0.5rem, 1vw, 0.8rem);
         }
 
         .new-appeals-tag { 
-            font-size: clamp(0.75rem, 1.1vw, 0.9rem);
+            font-size: clamp(0.6rem, 0.85vw, 0.7rem);
             font-weight: 600; 
             color: var(--success-green); 
             background: var(--success-light);
-            padding: clamp(0.3rem, 0.6vw, 0.5rem) clamp(0.8rem, 1.4vw, 1rem);
-            border-radius: 25px; 
+            padding: clamp(0.2rem, 0.4vw, 0.35rem) clamp(0.5rem, 1vw, 0.7rem);
+            border-radius: 15px; 
             border: 1px solid rgba(5, 150, 105, 0.25);
             display: flex;
             align-items: center;
-            gap: clamp(0.3rem, 0.6vw, 0.5rem);
+            gap: clamp(0.2rem, 0.4vw, 0.35rem);
             min-width: fit-content;
             justify-content: center;
             white-space: nowrap;
         }
         
-        /* ===== TV EKRANLAR UCHUN MAXSUS OPTIMIZATSIYA ===== */
+        /* ===== TV EKRANLAR UCHUN MAXSUS OPTIMIZATSIYA - YANGILANGAN ===== */
         
-        /* 32" TV (1366x768) */
-        @media screen and (min-width: 1200px) and (max-width: 1400px) and (min-height: 600px) and (max-height: 800px) {
+        /* Kichik TV ekranlar (32" - 1366x768) */
+        @media screen and (max-width: 1400px) and (min-width: 1200px) {
             :root {
-                --header-height: 100px;
-                --stats-height: 140px;
+                --header-height: 65px;
+                --stats-height: 90px;
+            }
+            
+            .header-title {
+                font-size: 1.5rem;
+            }
+            
+            .header-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .stat-value {
+                font-size: 1.8rem;
+            }
+            
+            .control-item {
+                padding: 0.4rem 0.7rem;
+                font-size: 0.75rem;
+            }
+        }
+        
+        /* O'rta TV ekranlar (43" - 1920x1080) */
+        @media screen and (min-width: 1600px) and (max-width: 2000px) {
+            :root {
+                --header-height: 85px;
+                --stats-height: 130px;
             }
             
             .stats-grid {
@@ -690,125 +737,53 @@
             }
             
             .stat-card {
-                padding: 1.2rem;
-            }
-            
-            .official-table thead th {
-                padding: 1rem 1.5rem;
-                font-size: 0.95rem;
-            }
-            
-            .official-table tbody td {
-                padding: 1rem 1.5rem;
-                font-size: 0.95rem;
+                padding: 1rem;
             }
         }
         
-        /* 43" TV (1920x1080) */
-        @media screen and (min-width: 1600px) and (max-width: 2000px) and (min-height: 900px) and (max-height: 1200px) {
+        /* Katta TV ekranlar (55" - 3840x2160 4K) */
+        @media screen and (min-width: 3000px) and (max-width: 4000px) {
             :root {
-                --header-height: 120px;
-                --stats-height: 180px;
+                --header-height: 110px;
+                --stats-height: 160px;
             }
             
-            .stats-grid {
-                gap: 1.8rem;
-            }
-            
-            .stat-card {
-                padding: 1.6rem;
-            }
-            
-            .official-table thead th {
-                padding: 1.3rem 2rem;
-                font-size: 1.1rem;
-            }
-            
-            .official-table tbody td {
-                padding: 1.3rem 2rem;
-                font-size: 1.05rem;
-            }
-            
-            .employee-avatar {
-                width: 65px;
-                height: 65px;
-                font-size: 1.4rem;
-            }
-        }
-        
-        /* 55" TV (3840x2160 - 4K) */
-        @media screen and (min-width: 3000px) and (max-width: 4000px) and (min-height: 1800px) and (max-height: 2400px) {
-            :root {
-                --header-height: 160px;
-                --stats-height: 240px;
-            }
-            
-            .stats-grid {
-                gap: 2.5rem;
-            }
-            
-            .stat-card {
-                padding: 2.2rem;
-            }
-            
-            .official-table thead th {
-                padding: 1.8rem 2.5rem;
-                font-size: 1.4rem;
-            }
-            
-            .official-table tbody td {
-                padding: 1.8rem 2.5rem;
-                font-size: 1.3rem;
-            }
-            
-            .employee-avatar {
-                width: 80px;
-                height: 80px;
-                font-size: 1.8rem;
-            }
-            
-            .task-number {
-                font-size: 3rem;
-            }
-        }
-        
-        /* 65" TV (3840x2160 - 4K Large) */
-        @media screen and (min-width: 3800px) and (min-height: 2100px) {
-            :root {
-                --header-height: 180px;
-                --stats-height: 280px;
-            }
-            
-            .stats-grid {
-                gap: 3rem;
-            }
-            
-            .stat-card {
-                padding: 2.5rem;
-            }
-            
-            .official-table thead th {
-                padding: 2rem 3rem;
-                font-size: 1.6rem;
-            }
-            
-            .official-table tbody td {
-                padding: 2rem 3rem;
-                font-size: 1.5rem;
-            }
-            
-            .employee-avatar {
-                width: 90px;
-                height: 90px;
-                font-size: 2rem;
-            }
-            
-            .task-number {
-                font-size: 3.5rem;
+            .header-title {
+                font-size: 2.2rem;
             }
             
             .stat-value {
-                font-size: 4.5rem;
+                font-size: 2.5rem;
+            }
+            
+            .task-number {
+                font-size: 1.6rem;
+            }
+        }
+        
+        /* Juda katta TV ekranlar (65"+ - 3840x2160+) */
+        @media screen and (min-width: 3800px) {
+            :root {
+                --header-height: 130px;
+                --stats-height: 200px;
+            }
+            
+            .header-title {
+                font-size: 2.8rem;
+            }
+            
+            .stat-value {
+                font-size: 3.2rem;
+            }
+            
+            .task-number {
+                font-size: 2rem;
+            }
+            
+            .employee-avatar {
+                width: 55px;
+                height: 55px;
+                font-size: 1.2rem;
             }
         }
         
@@ -816,7 +791,7 @@
         @media screen and (min-aspect-ratio: 21/9) {
             .stats-grid {
                 grid-template-columns: repeat(4, 1fr);
-                max-width: 85%;
+                max-width: 90%;
                 margin: 0 auto;
             }
             
@@ -826,7 +801,7 @@
             }
         }
         
-        /* Vertikal orientatsiya uchun (agar kerak bo'lsa) */
+        /* Vertikal orientatsiya (agar kerak bo'lsa) */
         @media screen and (orientation: portrait) {
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -834,7 +809,36 @@
             }
             
             :root {
-                --stats-height: 25vh;
+                --stats-height: 20vh;
+            }
+        }
+        
+        /* Juda kichik ekranlar uchun */
+        @media screen and (max-width: 1200px) {
+            :root {
+                --header-height: 60px;
+                --stats-height: 80px;
+            }
+            
+            .header-controls {
+                gap: 0.5rem;
+            }
+            
+            .control-item {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.7rem;
+            }
+            
+            .stats-grid {
+                gap: 0.6rem;
+            }
+            
+            .stat-card {
+                padding: 0.6rem;
+            }
+            
+            .stat-value {
+                font-size: 1.4rem;
             }
         }
         
@@ -842,7 +846,7 @@
         @keyframes fadeInUp {
             from { 
                 opacity: 0; 
-                transform: translateY(30px); 
+                transform: translateY(20px); 
             }
             to { 
                 opacity: 1; 
@@ -853,18 +857,7 @@
         @keyframes slideInLeft {
             from {
                 opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
+                transform: translateX(-30px);
             }
             to {
                 opacity: 1;
@@ -873,7 +866,7 @@
         }
         
         .stat-card { 
-            animation: fadeInUp 0.8s ease-out backwards; 
+            animation: fadeInUp 0.6s ease-out backwards; 
         }
         .stat-card:nth-child(1) { animation-delay: 0.1s; }
         .stat-card:nth-child(2) { animation-delay: 0.2s; }
@@ -881,27 +874,27 @@
         .stat-card:nth-child(4) { animation-delay: 0.4s; }
         
         .main-panel { 
-            animation: fadeInUp 0.8s ease-out 0.5s backwards; 
+            animation: fadeInUp 0.6s ease-out 0.4s backwards; 
         }
         
         .official-header {
-            animation: slideInLeft 0.6s ease-out;
+            animation: slideInLeft 0.5s ease-out;
         }
         
         /* ===== SCROLLBAR STYLING FOR TV ===== */
         .table-container::-webkit-scrollbar {
-            width: clamp(8px, 1vw, 12px);
+            width: clamp(6px, 0.8vw, 10px);
         }
         
         .table-container::-webkit-scrollbar-track {
             background: var(--gray-100);
-            border-radius: 10px;
+            border-radius: 8px;
         }
         
         .table-container::-webkit-scrollbar-thumb {
             background: linear-gradient(135deg, var(--gov-blue-primary), var(--gov-blue-medium));
-            border-radius: 10px;
-            border: 2px solid var(--gray-100);
+            border-radius: 8px;
+            border: 1px solid var(--gray-100);
         }
         
         .table-container::-webkit-scrollbar-thumb:hover {
@@ -920,16 +913,16 @@
             -moz-osx-font-smoothing: grayscale;
         }
         
-        /* TV'da yaxshi ko'rinish uchun kontrast yaxshilash */
+        /* TV'da yaxshi ko'rinish uchun kontrast */
         .official-table tbody tr:hover {
-            background: rgba(30, 95, 168, 0.08);
+            background: rgba(30, 95, 168, 0.06);
         }
         
-        /* TV remote control navigatsiya uchun fokus indikatori */
+        /* TV remote control navigatsiya uchun fokus */
         .control-item:focus,
         .stat-card:focus,
         .official-table tbody tr:focus {
-            outline: 3px solid var(--gov-gold);
+            outline: 2px solid var(--gov-gold);
             outline-offset: 2px;
         }
         
@@ -971,12 +964,57 @@
             }
         }
 
+        /* ===== MAXSUS RESPONSIVE OPTIMIZATSIYALAR ===== */
+        
+        /* 768px dan kichik ekranlar uchun (planshetlar) */
+        @media screen and (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+            }
+            
+            .header-controls {
+                flex-direction: column;
+                gap: 0.4rem;
+            }
+            
+            .official-table thead th {
+                font-size: 0.6rem;
+                padding: 0.5rem 0.3rem;
+            }
+            
+            .official-table tbody td {
+                font-size: 0.6rem;
+                padding: 0.5rem 0.3rem;
+            }
+        }
+        
+        /* 480px dan kichik ekranlar uchun (mobil) */
+        @media screen and (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 1fr);
+            }
+            
+            .header-title {
+                font-size: 1rem;
+            }
+            
+            .header-subtitle {
+                font-size: 0.7rem;
+            }
+            
+            .stat-value {
+                font-size: 1.2rem;
+            }
+        }
+
     </style>
 </head>
 <body>
     <header class="official-header">
         <div class="header-content">
-            <div class="d-flex align-items-center gap-4">
+            <div class="d-flex align-items-center gap-3">
                 <div class="government-emblem">
                      <i class="fas fa-university"></i>
                 </div>
@@ -993,7 +1031,7 @@
                 <div class="control-item">
                     <i class="fa-regular fa-clock"></i>
                     <span>
-                        Oxirgi yangilanish: <span id="current-time">--:--</span>, <span id="current-date">-- --, ----</span>
+                        <span id="current-time">--:--</span>, <span id="current-date">-- --, ----</span>
                     </span>
                 </div>
                 <div id="refresh-button" class="control-item refresh-button-green" style="cursor: pointer;">
@@ -1014,7 +1052,7 @@
                 <div class="stat-body">
                     <div class="stat-value">0</div>
                     <div class="stat-breakdown">
-                        <div class="breakdown-label"><i class="fa-solid fa-building"></i>Viloyat topshiriqlari</div>
+                        <div class="breakdown-label"><i class="fa-solid fa-building"></i>Viloyat</div>
                         <div class="breakdown-value"><span class="regional-badge">0 ta</span></div>
                     </div>
                 </div>
@@ -1028,7 +1066,7 @@
                 <div class="stat-body">
                     <div class="stat-value">0</div>
                     <div class="stat-breakdown">
-                        <div class="breakdown-label"><i class="fa-solid fa-building"></i>Viloyat topshiriqlari</div>
+                        <div class="breakdown-label"><i class="fa-solid fa-building"></i>Viloyat</div>
                         <div class="breakdown-value"><span class="regional-badge">0 ta</span></div>
                     </div>
                 </div>
@@ -1042,7 +1080,7 @@
                 <div class="stat-body">
                     <div class="stat-value">0</div>
                     <div class="stat-breakdown">
-                        <div class="breakdown-label"><i class="fa-solid fa-fire"></i>Viloyat topshiriqlari</div>
+                        <div class="breakdown-label"><i class="fa-solid fa-fire"></i>Viloyat</div>
                         <div class="breakdown-value"><span class="critical-badge">0 ta</span></div>
                     </div>
                 </div>
@@ -1056,7 +1094,7 @@
                 <div class="stat-body">
                     <div class="stat-value">0</div>
                     <div class="stat-breakdown">
-                        <div class="breakdown-label"><i class="fa-solid fa-inbox"></i>Bugungi yangi murojaatlar</div>
+                        <div class="breakdown-label"><i class="fa-solid fa-inbox"></i>Yangi</div>
                         <div class="breakdown-value"><span class="new-badge">0 ta</span></div>
                     </div>
                 </div>
@@ -1074,7 +1112,7 @@
                 <table class="official-table">
                     <thead>
                         <tr>
-                            <th><i class="fa-solid fa-user-tie me-2"></i>Xodim ma'lumotlari</th>
+                            <th><i class="fa-solid fa-user-tie me-2"></i>Xodim</th>
                             <th><i class="fa-solid fa-calendar-day me-2"></i>Bugun</th>
                             <th><i class="fa-solid fa-calendar-plus me-2"></i>Ertaga</th>
                             <th><i class="fa-solid fa-exclamation-triangle me-2"></i>Muddati o'tgan</th>
@@ -1082,7 +1120,7 @@
                         </tr>
                     </thead>
                     <tbody id="employeeTableBody">
-                         <tr><td colspan="5" style="text-align: center; padding: 5rem;">Ma'lumotlar yuklanmoqda...</td></tr>
+                         <tr><td colspan="5" style="text-align: center; padding: 3rem;">Ma'lumotlar yuklanmoqda...</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -1256,7 +1294,7 @@
                 const filteredData = data.filter(emp => emp.overdue_tasks_total > 0 || emp.overdue_appeals > 0);
                 
                 if(filteredData.length === 0) {
-                    tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; padding: 5rem; font-size: clamp(1.1rem, 1.8vw, 1.5rem); color: var(--success-green);"><i class="fa-solid fa-check-circle" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; display: block;"></i>Ayni vaqtda muddati o'tgan topshiriq yoki murojaati bor xodimlar aniqlanmadi.</td></tr>`;
+                    tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; padding: 3rem; font-size: clamp(0.9rem, 1.4vw, 1.2rem); color: var(--success-green);"><i class="fa-solid fa-check-circle" style="font-size: clamp(1.5rem, 3vw, 2.5rem); margin-bottom: 1rem; display: block;"></i>Ayni vaqtda muddati o'tgan topshiriq yoki murojaati bor xodimlar aniqlanmadi.</td></tr>`;
                     stopAutoScroll();
                     return;
                 }
@@ -1280,25 +1318,25 @@
                             <td data-label="Bugun">
                                 <div class="task-cell">
                                     <span class="task-number">${emp.today_total}</span>
-                                    ${emp.today_regional > 0 ? `<div class="task-badges"><span class="task-regional-tag"><i class="fa-solid fa-building"></i>Viloyat: ${emp.today_regional}</span></div>` : ''}
+                                    ${emp.today_regional > 0 ? `<div class="task-badges"><span class="task-regional-tag"><i class="fa-solid fa-building"></i>${emp.today_regional}</span></div>` : ''}
                                 </div>
                             </td>
                             <td data-label="Ertaga">
                                 <div class="task-cell">
                                     <span class="task-number">${emp.tomorrow_total}</span>
-                                     ${emp.tomorrow_regional > 0 ? `<div class="task-badges"><span class="task-regional-tag"><i class="fa-solid fa-building"></i>Viloyat: ${emp.tomorrow_regional}</span></div>` : ''}
+                                     ${emp.tomorrow_regional > 0 ? `<div class="task-badges"><span class="task-regional-tag"><i class="fa-solid fa-building"></i>${emp.tomorrow_regional}</span></div>` : ''}
                                 </div>
                             </td>
                             <td data-label="Muddati o'tgan">
                                 <div class="task-cell ${emp.overdue_tasks_total > 0 ? 'overdue' : ''}">
                                     <span class="task-number">${emp.overdue_tasks_total}</span>
-                                    ${emp.overdue_tasks_regional > 0 ? `<div class="task-badges"><span class="task-regional-tag critical"><i class="fa-solid fa-fire"></i>Viloyat: ${emp.overdue_tasks_regional}</span></div>` : ''}
+                                    ${emp.overdue_tasks_regional > 0 ? `<div class="task-badges"><span class="task-regional-tag critical"><i class="fa-solid fa-fire"></i>${emp.overdue_tasks_regional}</span></div>` : ''}
                                 </div>
                             </td>
                             <td data-label="Murojaatlar">
                                 <div class="appeals-cell">
                                     ${emp.overdue_appeals > 0 ? `<div class="overdue-cell"><i class="fa-solid fa-fire"></i><span>${emp.overdue_appeals}</span></div>` : '<div class="task-cell"><span class="task-number">0</span></div>'}
-                                    ${emp.new_appeals > 0 ? `<div class="new-appeals-tag"><i class="fa-solid fa-inbox"></i>${emp.new_appeals} yangi</div>` : ''}
+                                    ${emp.new_appeals > 0 ? `<div class="new-appeals-tag"><i class="fa-solid fa-inbox"></i>${emp.new_appeals}</div>` : ''}
                                 </div>
                             </td>
                         </tr>
@@ -1312,7 +1350,7 @@
 
             function showError(message) {
                  const tbody = document.getElementById('employeeTableBody');
-                 tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; padding: 5rem; font-size: clamp(1.1rem, 1.8vw, 1.5rem); color: var(--danger-red);"><i class="fa-solid fa-triangle-exclamation" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; display: block;"></i>${message}</td></tr>`;
+                 tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; padding: 3rem; font-size: clamp(0.9rem, 1.4vw, 1.2rem); color: var(--danger-red);"><i class="fa-solid fa-triangle-exclamation" style="font-size: clamp(1.5rem, 3vw, 2.5rem); margin-bottom: 1rem; display: block;"></i>${message}</td></tr>`;
                  stopAutoScroll();
             }
 
@@ -1324,25 +1362,25 @@
 
                 // TV uchun scroll tezligini optimallashtirish
                 const tvSize = detectTVSize();
-                let scrollSpeed = 50; // Default
-                let pauseTime = 3000; // Default
+                let scrollSpeed = 40; // Default - tezroq
+                let pauseTime = 2500; // Default - qisqaroq
                 
                 switch(tvSize) {
                     case '65inch-4k':
-                        scrollSpeed = 80;
-                        pauseTime = 4000;
-                        break;
-                    case '55inch-4k':
-                        scrollSpeed = 70;
+                        scrollSpeed = 60;
                         pauseTime = 3500;
                         break;
-                    case '43inch-fhd':
-                        scrollSpeed = 60;
+                    case '55inch-4k':
+                        scrollSpeed = 50;
                         pauseTime = 3000;
                         break;
-                    case '32inch-hd':
-                        scrollSpeed = 50;
+                    case '43inch-fhd':
+                        scrollSpeed = 45;
                         pauseTime = 2500;
+                        break;
+                    case '32inch-hd':
+                        scrollSpeed = 40;
+                        pauseTime = 2000;
                         break;
                 }
 
@@ -1398,7 +1436,7 @@
                 tableContainer.addEventListener('mouseleave', () => { 
                     if (isAutoScrolling && isPausedByHover) { 
                         isPausedByHover = false;
-                        setTimeout(startAutoScroll, 1000); // TV uchun biroz kutish
+                        setTimeout(startAutoScroll, 800); // TV uchun qisqaroq kutish
                         console.log("📺 TV scroll davom ettirildi.");
                     } 
                 });
@@ -1425,11 +1463,11 @@
                             break;
                         case 'ArrowUp':
                             e.preventDefault();
-                            tableContainer.scrollTop -= 50;
+                            tableContainer.scrollTop -= 40;
                             break;
                         case 'ArrowDown':
                             e.preventDefault();
-                            tableContainer.scrollTop += 50;
+                            tableContainer.scrollTop += 40;
                             break;
                         case 'F5':
                         case 'r':
@@ -1448,9 +1486,9 @@
                         optimizeForTV();
                         if (isAutoScrolling && !isPausedByHover) {
                             stopAutoScroll();
-                            setTimeout(startAutoScroll, 1000);
+                            setTimeout(startAutoScroll, 800);
                         }
-                    }, 500);
+                    }, 300);
                 });
 
                 // TV uchun fullscreen API
@@ -1520,7 +1558,7 @@
                     if (currentTime >= lastTime + 1000) {
                         const fps = Math.round((frames * 1000) / (currentTime - lastTime));
                         if (fps < 30) {
-                            console.warn(`⚠️ Katta FPS: ${fps} (TV uchun minimal 30 FPS tavsiya etiladi)`);
+                            console.warn(`⚠️ Past FPS: ${fps} (TV uchun minimal 30 FPS tavsiya etiladi)`);
                         }
                         frames = 0;
                         lastTime = currentTime;
@@ -1587,7 +1625,7 @@
                     console.log("📺 Ekran qayta faollashtirildi - scroll qayta boshlandi");
                     startAutoScroll();
                 }
-            }, 5000);
+            }, 3000); // Qisqaroq interval
         });
 
         // TV CSS animatsiyalari uchun qo'shimcha stillar
@@ -1604,7 +1642,7 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
                 color: white;
-                font-size: clamp(2rem, 4vw, 4rem);
+                font-size: clamp(1.5rem, 3vw, 3rem);
                 font-weight: 900;
                 text-align: center;
                 white-space: pre-line;
@@ -1615,14 +1653,14 @@
             
             @keyframes screenSaverPulse {
                 0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
-                50% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+                50% { opacity: 1; transform: translate(-50%, -50%) scale(1.03); }
             }
             
             /* TV fokus ko'rsatkichlari */
             .tv-focus-indicator {
-                outline: 3px solid var(--gov-gold) !important;
-                outline-offset: 3px !important;
-                box-shadow: 0 0 15px rgba(255, 215, 0, 0.5) !important;
+                outline: 2px solid var(--gov-gold) !important;
+                outline-offset: 2px !important;
+                box-shadow: 0 0 12px rgba(255, 215, 0, 0.4) !important;
             }
             
             /* TV loading animatsiyasi */
@@ -1642,13 +1680,13 @@
             }
             
             .tv-loading-spinner {
-                width: clamp(60px, 8vw, 100px);
-                height: clamp(60px, 8vw, 100px);
-                border: 4px solid rgba(255, 255, 255, 0.3);
-                border-top: 4px solid white;
+                width: clamp(50px, 6vw, 80px);
+                height: clamp(50px, 6vw, 80px);
+                border: 3px solid rgba(255, 255, 255, 0.3);
+                border-top: 3px solid white;
                 border-radius: 50%;
                 animation: tvSpin 1s linear infinite;
-                margin-bottom: 2rem;
+                margin-bottom: 1.5rem;
             }
             
             @keyframes tvSpin {
@@ -1657,14 +1695,14 @@
             }
             
             .tv-loading-text {
-                font-size: clamp(1.5rem, 3vw, 2.5rem);
+                font-size: clamp(1.2rem, 2.5vw, 2rem);
                 font-weight: 700;
                 text-align: center;
-                margin-bottom: 1rem;
+                margin-bottom: 0.8rem;
             }
             
             .tv-loading-subtext {
-                font-size: clamp(1rem, 2vw, 1.5rem);
+                font-size: clamp(0.9rem, 1.8vw, 1.3rem);
                 opacity: 0.8;
                 text-align: center;
             }
