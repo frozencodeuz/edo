@@ -103,7 +103,7 @@
         /* ===== RASMIY HEADER ===== */
         .official-header {
             background: linear-gradient(135deg, var(--gov-blue-darkest) 0%, var(--gov-blue-dark) 50%, var(--gov-blue-primary) 100%);
-            padding: 1rem 2rem;
+            padding: 1.5rem 2rem;
             color: var(--white);
             box-shadow: var(--shadow-xl);
             position: relative;
@@ -138,6 +138,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
 
         .government-emblem i { 
@@ -147,25 +148,28 @@
         }
 
         .header-title { 
-            font-size: clamp(1.4rem, 3vw, 2.2rem);
+            font-size: clamp(1.6rem, 2.5vw, 2.4rem);
             font-weight: 900; 
             margin-bottom: 0.1rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
             letter-spacing: -0.025em;
+            white-space: nowrap;
         }
 
         .header-subtitle { 
-            font-size: clamp(0.8rem, 1.5vw, 1.1rem);
+            font-size: clamp(0.9rem, 1.2vw, 1.2rem);
             font-weight: 500; 
             opacity: 0.9;
             letter-spacing: 0.025em;
+            white-space: nowrap;
         }
 
         .header-controls { 
             display: flex; 
-            gap: 1rem;
+            gap: 1.5rem;
             align-items: center; 
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+            flex-shrink: 0;
         }
 
         .control-item {
@@ -173,13 +177,19 @@
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 50px;
-            padding: 0.75rem 1.25rem;
-            font-size: clamp(0.75rem, 1vw, 0.9rem);
+            padding: 0.8rem 1.5rem;
+            font-size: clamp(0.8rem, 0.9vw, 1rem);
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.8rem;
             transition: var(--transition);
+            white-space: nowrap;
+            min-width: max-content;
+        }
+
+        .control-item i {
+            flex-shrink: 0;
         }
 
         .control-item:hover {
@@ -219,22 +229,87 @@
 
         /* ===== ASOSIY KONTENT ===== */
         .main-content {
-            padding: 1.5rem 2rem;
+            padding: 2rem;
             width: 100%;
         }
 
-        /* ===== STATISTIKA KARTLARI ===== */
+        /* ===== STATISTIKA KARTLARI - KATTA EKRANLAR UCHUN TO'G'RILANGAN ===== */
         .stats-grid { 
             display: grid; 
             grid-template-columns: repeat(4, 1fr); 
-            gap: 1.5rem;
+            gap: 2rem;
             margin-bottom: 2rem;
+            width: 100%;
+        }
+
+        /* MUHIM: Katta ekranlar uchun 4 ustun ta'minlash */
+        @media (min-width: 1200px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2.5rem;
+            }
+        }
+
+        /* JUDA KATTA EKRANLAR (32+ inch TV) UCHUN */
+        @media (min-width: 1600px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 3rem;
+                max-width: none;
+            }
+            
+            .main-content {
+                padding: 3rem;
+            }
+            
+            .official-header {
+                padding: 2rem 3rem;
+            }
+            
+            .header-controls {
+                gap: 2rem;
+            }
+            
+            .control-item {
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+                gap: 1rem;
+            }
+        }
+
+        /* ULTRA KATTA EKRANLAR (50+ inch TV) UCHUN */
+        @media (min-width: 2000px) {
+            .stats-grid {
+                gap: 4rem;
+            }
+            
+            .main-content {
+                padding: 4rem;
+            }
+            
+            .official-header {
+                padding: 3rem 4rem;
+            }
+            
+            .header-title {
+                font-size: 3rem;
+            }
+            
+            .header-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .control-item {
+                padding: 1.2rem 2.5rem;
+                font-size: 1.3rem;
+                gap: 1.2rem;
+            }
         }
 
         .stat-card {
             background: var(--white);
             border-radius: var(--radius-xl);
-            padding: 1.25rem;
+            padding: 1.5rem;
             border: 1px solid var(--gray-200);
             box-shadow: var(--shadow-lg);
             transition: var(--transition);
@@ -242,7 +317,7 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            min-height: 200px; /* Minimum balandlik */
+            min-height: 220px;
         }
 
         .stat-card::before {
@@ -269,26 +344,26 @@
             display: flex; 
             justify-content: space-between; 
             align-items: flex-start; 
-            margin-bottom: 1rem;
-            gap: 1rem;
+            margin-bottom: 1.2rem;
+            gap: 1.2rem;
         }
 
         .stat-label { 
-            font-size: clamp(0.85rem, 1.2vw, 1rem);
+            font-size: clamp(0.9rem, 1.1vw, 1.1rem);
             font-weight: 700; 
             color: var(--gray-800); 
             line-height: 1.3;
-            flex-grow: 1; /* Hajmini kengaytirish */
+            flex-grow: 1;
         }
 
         .stat-icon {
-            width: clamp(40px, 5vw, 50px);
-            height: clamp(40px, 5vw, 50px);
+            width: clamp(50px, 4vw, 60px);
+            height: clamp(50px, 4vw, 60px);
             border-radius: var(--radius-md);
             display: flex; 
             align-items: center; 
             justify-content: center;
-            font-size: clamp(1.2rem, 2vw, 1.6rem);
+            font-size: clamp(1.4rem, 2vw, 1.8rem);
             position: relative;
             overflow: hidden;
             flex-shrink: 0;
@@ -334,11 +409,11 @@
         }
 
         .stat-value { 
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
             font-weight: 900; 
             color: var(--gray-900); 
             line-height: 1; 
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             letter-spacing: -0.07em;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
@@ -351,8 +426,8 @@
         .stat-details {
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
-            flex-grow: 1; /* O'z hajmini to'ldiradi */
+            gap: 0.8rem;
+            flex-grow: 1;
         }
 
         .stat-breakdown {
@@ -361,13 +436,13 @@
             justify-content: space-between;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(248, 250, 252, 0.9) 100%);
             backdrop-filter: blur(10px);
-            padding: 0.75rem 1rem;
+            padding: 0.8rem 1.2rem;
             border-radius: var(--radius-md); 
             border: 1px solid;
             position: relative;
             overflow: hidden;
             transition: var(--transition);
-            min-height: 50px; /* Minimum balandlik */
+            min-height: 55px;
         }
 
         .stat-breakdown::before {
@@ -395,46 +470,46 @@
         }
 
         .breakdown-label {
-            font-size: clamp(0.7rem, 0.9vw, 0.85rem);
+            font-size: clamp(0.75rem, 0.9vw, 0.9rem);
             font-weight: 600;
             color: var(--gray-700);
             display: flex;
             align-items: center;
-            gap: 0.6rem; 
+            gap: 0.7rem; 
             line-height: 1.3;
-            flex-grow: 1; /* Hajmini kengaytirish */
-            word-wrap: break-word; /* Uzun matnni yangi qatorga o'tkazish */
+            flex-grow: 1;
+            word-wrap: break-word;
         }
 
         .breakdown-label i { 
-            font-size: 1rem; 
+            font-size: 1.1rem; 
             opacity: 0.8;
-            flex-shrink: 0; /* Ikonka hajmi o'zgarmaydi */
+            flex-shrink: 0;
         }
 
         .breakdown-value {
-            font-size: clamp(0.8rem, 1vw, 0.9rem);
+            font-size: clamp(0.85rem, 1vw, 1rem);
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            flex-shrink: 0; /* Qiymat qismi siqilmaydi */
+            gap: 0.8rem;
+            flex-shrink: 0;
         }
 
         .regional-badge, .new-badge, .critical-badge {
-            padding: 0.4rem 0.8rem;
+            padding: 0.5rem 1rem;
             border-radius: 30px;
-            font-size: clamp(0.65rem, 0.8vw, 0.75rem);
+            font-size: clamp(0.7rem, 0.8vw, 0.8rem);
             font-weight: 700;
             border: 1px solid;
             box-shadow: var(--shadow-sm);
-            display: inline-flex; /* flex o'rniga inline-flex */
+            display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             transition: var(--transition);
             position: relative;
             overflow: hidden;
-            white-space: nowrap; /* Matnni bir qatorda saqlash */
+            white-space: nowrap;
         }
         
         .regional-badge { background: linear-gradient(135deg, var(--gov-blue-lightest) 0%, rgba(232, 242, 255, 0.8) 100%); color: var(--gov-blue-primary); border-color: rgba(0, 56, 117, 0.25); }
@@ -464,19 +539,19 @@
         }
 
         .panel-header { 
-            padding: 1.25rem 2rem;
+            padding: 1.5rem 2rem;
             background: linear-gradient(135deg, var(--gov-blue-lightest) 0%, var(--white) 100%);
             border-bottom: 3px solid var(--gov-blue-primary); 
         }
 
         .panel-title { 
-            font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+            font-size: clamp(1.2rem, 1.6vw, 1.6rem);
             font-weight: 800; 
             color: var(--gov-blue-dark); 
             margin: 0;
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
         .panel-title::before {
@@ -504,10 +579,10 @@
         .official-table thead th {
             background: linear-gradient(135deg, var(--gov-blue-primary) 0%, var(--gov-blue-medium) 100%);
             color: var(--white);
-            padding: 1rem 1.5rem;
+            padding: 1.2rem 1.5rem;
             text-align: center;
             font-weight: 700;
-            font-size: clamp(0.8rem, 1vw, 0.95rem);
+            font-size: clamp(0.85rem, 1vw, 1rem);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             border: none;
@@ -541,7 +616,7 @@
         .official-table tbody tr:last-child { border-bottom: none; }
 
         .official-table tbody td { 
-            padding: 1rem 1.5rem;
+            padding: 1.2rem 1.5rem;
             vertical-align: middle; 
             text-align: center; 
         }
@@ -550,13 +625,13 @@
         .employee-profile { 
             display: flex; 
             align-items: center; 
-            gap: 1rem;
+            gap: 1.2rem;
             text-align: left; 
         }
 
         .employee-avatar {
-            width: clamp(45px, 6vw, 55px);
-            height: clamp(45px, 6vw, 55px);
+            width: clamp(50px, 5vw, 60px);
+            height: clamp(50px, 5vw, 60px);
             border-radius: 50%;
             background: linear-gradient(135deg, var(--gov-blue-primary), var(--gov-blue-medium));
             color: var(--white);
@@ -564,7 +639,7 @@
             align-items: center; 
             justify-content: center;
             font-weight: 700; 
-            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            font-size: clamp(1.1rem, 1.4vw, 1.3rem);
             flex-shrink: 0;
             border: 3px solid var(--white);
             box-shadow: var(--shadow-md);
@@ -576,14 +651,14 @@
 
         .employee-info h6 { 
             font-weight: 700; 
-            font-size: clamp(0.9rem, 1.1vw, 1rem);
+            font-size: clamp(0.95rem, 1.1vw, 1.1rem);
             color: var(--gray-800); 
-            margin: 0 0 0.25rem 0;
+            margin: 0 0 0.3rem 0;
             line-height: 1.3;
         }
 
         .employee-department { 
-            font-size: clamp(0.8rem, 0.9vw, 0.9rem);
+            font-size: clamp(0.85rem, 0.9vw, 0.95rem);
             color: var(--gray-500); 
             font-weight: 500; 
             line-height: 1.4; 
@@ -596,11 +671,11 @@
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            gap: 0.6rem;
+            gap: 0.7rem;
         }
 
         .task-number { 
-            font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+            font-size: clamp(1.6rem, 2.2vw, 2rem);
             font-weight: 800; 
             color: var(--gray-800); 
             line-height: 1;
@@ -609,22 +684,22 @@
         .task-badges {
             display: flex;
             flex-direction: column;
-            gap: 0.4rem; 
+            gap: 0.5rem; 
             align-items: center;
         }
 
         .task-regional-tag { 
-            font-size: clamp(0.65rem, 0.8vw, 0.75rem);
+            font-size: clamp(0.7rem, 0.8vw, 0.8rem);
             font-weight: 600; 
             color: var(--gov-blue-primary); 
             background: var(--gov-blue-lightest);
-            padding: 0.3rem 0.8rem;
+            padding: 0.4rem 0.9rem;
             border-radius: 25px; 
             border: 1px solid rgba(0, 56, 117, 0.2);
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            min-width: 100px;
+            gap: 0.5rem;
+            min-width: 110px;
             justify-content: center;
         }
         
@@ -637,14 +712,14 @@
             display: flex; 
             align-items: center; 
             justify-content: center;
-            gap: 0.6rem; 
+            gap: 0.7rem; 
             color: var(--danger-red); 
             font-weight: 800; 
-            font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+            font-size: clamp(1.6rem, 2.2vw, 2rem);
         }
 
         .overdue-cell .fa-fire { 
-            font-size: clamp(1rem, 1.5vw, 1.4rem); 
+            font-size: clamp(1.1rem, 1.5vw, 1.5rem); 
             animation: pulse-fire 1.5s infinite ease-in-out;
         }
         
@@ -666,34 +741,60 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.9rem;
         }
 
         .new-appeals-tag { 
-            font-size: clamp(0.65rem, 0.8vw, 0.75rem);
+            font-size: clamp(0.7rem, 0.8vw, 0.8rem);
             font-weight: 600; 
             color: var(--success-green); 
             background: var(--success-light);
-            padding: 0.3rem 0.8rem;
+            padding: 0.4rem 0.9rem;
             border-radius: 25px; 
             border: 1px solid rgba(5, 150, 105, 0.2);
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            min-width: 100px;
+            gap: 0.5rem;
+            min-width: 110px;
             justify-content: center;
         }
         
         /* ===== RESPONSIVE DIZAYN ===== */
         
-        @media (max-width: 1400px) {
+        /* KATTA EKRANLAR UCHUN MAXSUS QOIDALAR */
+        @media (min-width: 1400px) {
+            .stats-grid { 
+                grid-template-columns: repeat(4, 1fr) !important; /* MUHIM: 4 ustun majburiy */
+                gap: 2rem; 
+            }
+            .main-content { padding: 2rem; }
+            .official-table { min-width: 1600px; }
+        }
+
+        /* JUDA KATTA EKRANLAR (1600px+) */
+        @media (min-width: 1600px) {
+            .stats-grid { 
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 3rem; 
+            }
+        }
+
+        /* ULTRA KATTA EKRANLAR (2000px+) */
+        @media (min-width: 2000px) {
+            .stats-grid { 
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 4rem; 
+            }
+        }
+
+        /* FAQAT KICHIK EKRANLAR UCHUN 2 USTUN */
+        @media (max-width: 1199px) {
             .stats-grid { 
                 grid-template-columns: repeat(2, 1fr); 
                 gap: 1.5rem; 
             }
             .main-content { padding: 1.5rem; }
             .official-table { min-width: 1200px; }
-
             
             /* Header responsive */
             .header-title { font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
@@ -754,6 +855,7 @@
                 width: 100%;
                 justify-content: flex-start;
                 gap: 0.5rem;
+                flex-wrap: wrap;
             }
             
             .control-item {
