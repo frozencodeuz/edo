@@ -1354,7 +1354,25 @@
                     return;
                 }
 
-                filteredData.sort((a, b) => (b.overdue_tasks_total + b.overdue_appeals) - (a.overdue_tasks_total + a.overdue_appeals));
+                // YANGI SARALASH MANTIG'I
+                filteredData.sort((a, b) => {
+                    // 1-ustunlik: Muddati o'tgan topshiriqlar bo'yicha
+                    const a_has_overdue_tasks = a.overdue_tasks_total > 0;
+                    const b_has_overdue_tasks = b.overdue_tasks_total > 0;
+                    if (a_has_overdue_tasks && !b_has_overdue_tasks) return -1; // 'a' yuqoriga
+                    if (!a_has_overdue_tasks && b_has_overdue_tasks) return 1;  // 'b' yuqoriga
+
+                    // 2-ustunlik: Muddati o'tgan murojaatlar bo'yicha
+                    const a_has_overdue_appeals = a.overdue_appeals > 0;
+                    const b_has_overdue_appeals = b.overdue_appeals > 0;
+                    if (a_has_overdue_appeals && !b_has_overdue_appeals) return -1; // 'a' yuqoriga
+                    if (!a_has_overdue_appeals && b_has_overdue_appeals) return 1;  // 'b' yuqoriga
+
+                    // 3-ustunlik: Umumiy son bo'yicha (ko'pi yuqorida)
+                    const totalA = a.overdue_tasks_total + a.overdue_appeals;
+                    const totalB = b.overdue_tasks_total + b.overdue_appeals;
+                    return totalB - totalA;
+                });
 
                 filteredData.forEach(emp => {
                     const initials = (emp.name || "NA").split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
