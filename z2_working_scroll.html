@@ -27,9 +27,9 @@
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             display: flex;
+            flex-direction: column;
             position: relative;
             overflow: hidden;
-            height: 250px;
             border: 1px solid #cbd5e1;
         }
 
@@ -42,6 +42,11 @@
             width: 6px;
             background-color: #dc2626;
             z-index: 10;
+        }
+
+        .card-main-content {
+            display: flex;
+            height: 250px;
         }
 
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -60,29 +65,25 @@
             scroll-behavior: smooth;
         }
         
-        /* Mutaxassislar bo'limi */
-        .specialists-section {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
+        /* Mutaxassislar bo'limi - cardning tagida */
+        .specialists-footer {
             border-top: 1px solid #e2e8f0;
-            padding: 6px 8px;
+            background: #f8fafc;
+            padding: 8px 12px;
         }
         
         .specialist-avatar {
-            width: 44px;
-            height: 44px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             border: 2px solid white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             object-fit: cover;
         }
         
         .specialist-divider {
             width: 2px;
-            height: 44px;
+            height: 40px;
             background-color: #dc2626;
         }
     </style>
@@ -316,23 +317,19 @@
             return `https://drive.google.com/thumbnail?id=${fileId.trim()}&sz=w400`;
         }
 
-        // MUTAXASSISLAR RASMLARINI PARSE QILISH
         function parseSpecialists(specialistsStr) {
             if (!specialistsStr || specialistsStr.trim() === '') {
                 return [];
             }
             
-            // Vergul bilan ajratilgan ID larni olish
             const ids = specialistsStr.split(',').map(id => id.trim()).filter(id => id !== '');
-            
-            // Maksimal 3 tagacha
             return ids.slice(0, 3).map(id => buildGoogleDriveUrl(id));
         }
 
         function processData(rows) {
             const employees = rows.map(row => {
                 const photoId = (row[2] || '').replace(/^"|"$/g, '');
-                const specialistsStr = (row[8] || '').replace(/^"|"$/g, ''); // I ustun (index 8) - photo_assits
+                const specialistsStr = (row[8] || '').replace(/^"|"$/g, '');
                 
                 return {
                     name: (row[0] || 'Noma\'lum').replace(/^"|"$/g, ''),
@@ -365,11 +362,10 @@
         }
 
         function createCard(emp) {
-            // Mutaxassislar bo'limini yaratish
-            let specialistsSection = '';
+            // Mutaxassislar footeri - cardning tagida
+            let specialistsFooter = '';
             
             if (emp.specialists.length > 0) {
-                // Rasmlar orasiga qizil chiziq qo'shish
                 const specialistItems = emp.specialists.map((url, index) => {
                     const divider = index < emp.specialists.length - 1 
                         ? '<div class="specialist-divider"></div>' 
@@ -385,9 +381,9 @@
                     `;
                 }).join('');
                 
-                specialistsSection = `
-                    <div class="specialists-section">
-                        <div class="text-[9px] text-gray-500 font-semibold mb-1 text-center">Mutaxassislari</div>
+                specialistsFooter = `
+                    <div class="specialists-footer">
+                        <div class="text-[9px] text-gray-500 font-semibold mb-1.5 text-center">Mutaxassislari</div>
                         <div class="flex items-center justify-center gap-2">
                             ${specialistItems}
                         </div>
@@ -397,66 +393,68 @@
 
             return `
                 <div class="tv-card">
-                    <div class="w-[160px] h-full flex-shrink-0 bg-slate-100 border-r border-slate-200 relative">
-                        <img 
-                            src="${emp.photo}" 
-                            alt="${emp.name}" 
-                            class="w-full h-full object-cover object-top absolute inset-0"
-                            onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(emp.name)}&background=e2e8f0&color=475569&size=400'"
-                        >
-                        ${specialistsSection}
-                    </div>
-
-                    <div class="flex-1 p-4 flex flex-col justify-between h-full bg-white">
-                        <div>
-                            <h2 class="text-xl font-[800] text-slate-900 leading-tight mb-1">
-                                ${emp.name}
-                            </h2>
-                            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wide line-clamp-2 leading-snug">
-                                ${emp.department}
-                            </p>
+                    <div class="card-main-content">
+                        <div class="w-[160px] h-full flex-shrink-0 bg-slate-100 border-r border-slate-200 relative">
+                            <img 
+                                src="${emp.photo}" 
+                                alt="${emp.name}" 
+                                class="w-full h-full object-cover object-top absolute inset-0"
+                                onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(emp.name)}&background=e2e8f0&color=475569&size=400'"
+                            >
                         </div>
 
-                        <div class="flex flex-col gap-0 border-t border-slate-100 pt-1">
-                            
-                            <div class="flex items-center justify-between py-1.5 border-b border-slate-200">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-7 h-7 rounded bg-red-50 flex items-center justify-center border border-red-100">
-                                        <i class="fa-solid fa-file-circle-exclamation text-red-600 text-sm"></i>
-                                    </div>
-                                    <span class="text-slate-700 font-bold text-sm">Muddati o'tgan</span>
-                                </div>
-                                <span class="text-2xl font-[900] text-red-600 tabular-nums">
-                                    ${emp.overdue_tasks}
-                                </span>
+                        <div class="flex-1 p-4 flex flex-col justify-between h-full bg-white">
+                            <div>
+                                <h2 class="text-xl font-[800] text-slate-900 leading-tight mb-1">
+                                    ${emp.name}
+                                </h2>
+                                <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wide line-clamp-2 leading-snug">
+                                    ${emp.department}
+                                </p>
                             </div>
 
-                            <div class="flex items-center justify-between py-1.5 border-b border-slate-200">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-7 h-7 rounded bg-orange-50 flex items-center justify-center border border-orange-100">
-                                        <i class="fa-solid fa-hourglass-half text-orange-500 text-sm"></i>
+                            <div class="flex flex-col gap-0 border-t border-slate-100 pt-1">
+                                
+                                <div class="flex items-center justify-between py-1.5 border-b border-slate-200">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-7 h-7 rounded bg-red-50 flex items-center justify-center border border-red-100">
+                                            <i class="fa-solid fa-file-circle-exclamation text-red-600 text-sm"></i>
+                                        </div>
+                                        <span class="text-slate-700 font-bold text-sm">Muddati o'tgan</span>
                                     </div>
-                                    <span class="text-slate-700 font-bold text-sm">3 kundan ortiq</span>
+                                    <span class="text-2xl font-[900] text-red-600 tabular-nums">
+                                        ${emp.overdue_tasks}
+                                    </span>
                                 </div>
-                                <span class="text-2xl font-[900] ${emp.overdue_3days > 0 ? 'text-orange-500' : 'text-slate-300'} tabular-nums">
-                                    ${emp.overdue_3days}
-                                </span>
-                            </div>
 
-                            <div class="flex items-center justify-between py-1.5 pt-2">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-7 h-7 rounded bg-blue-50 flex items-center justify-center border border-blue-100">
-                                        <i class="fa-solid fa-envelope-open-text text-blue-600 text-sm"></i>
+                                <div class="flex items-center justify-between py-1.5 border-b border-slate-200">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-7 h-7 rounded bg-orange-50 flex items-center justify-center border border-orange-100">
+                                            <i class="fa-solid fa-hourglass-half text-orange-500 text-sm"></i>
+                                        </div>
+                                        <span class="text-slate-700 font-bold text-sm">3 kundan ortiq</span>
                                     </div>
-                                    <span class="text-slate-700 font-bold text-sm">Murojaatlar</span>
+                                    <span class="text-2xl font-[900] ${emp.overdue_3days > 0 ? 'text-orange-500' : 'text-slate-300'} tabular-nums">
+                                        ${emp.overdue_3days}
+                                    </span>
                                 </div>
-                                <span class="text-2xl font-[900] ${emp.overdue_appeals > 0 ? 'text-red-600' : 'text-slate-300'} tabular-nums">
-                                    ${emp.overdue_appeals}
-                                </span>
-                            </div>
 
+                                <div class="flex items-center justify-between py-1.5 pt-2">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-7 h-7 rounded bg-blue-50 flex items-center justify-center border border-blue-100">
+                                            <i class="fa-solid fa-envelope-open-text text-blue-600 text-sm"></i>
+                                        </div>
+                                        <span class="text-slate-700 font-bold text-sm">Murojaatlar</span>
+                                    </div>
+                                    <span class="text-2xl font-[900] ${emp.overdue_appeals > 0 ? 'text-red-600' : 'text-slate-300'} tabular-nums">
+                                        ${emp.overdue_appeals}
+                                    </span>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
+                    ${specialistsFooter}
                 </div>
             `;
         }
