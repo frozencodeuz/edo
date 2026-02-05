@@ -60,14 +60,30 @@
             scroll-behavior: smooth;
         }
         
-        /* Mutaxassislar rasmlari uchun */
+        /* Mutaxassislar bo'limi */
+        .specialists-section {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            border-top: 1px solid #e2e8f0;
+            padding: 6px 8px;
+        }
+        
         .specialist-avatar {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             border: 2px solid white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
             object-fit: cover;
+        }
+        
+        .specialist-divider {
+            width: 2px;
+            height: 44px;
+            background-color: #dc2626;
         }
     </style>
 </head>
@@ -316,13 +332,13 @@
         function processData(rows) {
             const employees = rows.map(row => {
                 const photoId = (row[2] || '').replace(/^"|"$/g, '');
-                const specialistsStr = (row[7] || '').replace(/^"|"$/g, ''); // 8-ustun (index 7)
+                const specialistsStr = (row[8] || '').replace(/^"|"$/g, ''); // I ustun (index 8) - photo_assits
                 
                 return {
                     name: (row[0] || 'Noma\'lum').replace(/^"|"$/g, ''),
                     department: (row[1] || '').replace(/^"|"$/g, ''),
                     photo: buildGoogleDriveUrl(photoId),
-                    specialists: parseSpecialists(specialistsStr), // Mutaxassislar rasmlari
+                    specialists: parseSpecialists(specialistsStr),
                     overdue_tasks: parseInt(row[3]) || 0,
                     overdue_3days: parseInt(row[4]) || 0,
                     open_tasks: parseInt(row[5]) || 0,
@@ -349,18 +365,35 @@
         }
 
         function createCard(emp) {
-            // Mutaxassislar HTML
-            const specialistsHtml = emp.specialists.length > 0 ? `
-                <div class="absolute bottom-2 left-2 flex gap-1 z-20">
-                    ${emp.specialists.map(url => `
+            // Mutaxassislar bo'limini yaratish
+            let specialistsSection = '';
+            
+            if (emp.specialists.length > 0) {
+                // Rasmlar orasiga qizil chiziq qo'shish
+                const specialistItems = emp.specialists.map((url, index) => {
+                    const divider = index < emp.specialists.length - 1 
+                        ? '<div class="specialist-divider"></div>' 
+                        : '';
+                    
+                    return `
                         <img 
                             src="${url}" 
                             class="specialist-avatar"
                             onerror="this.style.display='none'"
                         >
-                    `).join('')}
-                </div>
-            ` : '';
+                        ${divider}
+                    `;
+                }).join('');
+                
+                specialistsSection = `
+                    <div class="specialists-section">
+                        <div class="text-[9px] text-gray-500 font-semibold mb-1 text-center">Mutaxassislari</div>
+                        <div class="flex items-center justify-center gap-2">
+                            ${specialistItems}
+                        </div>
+                    </div>
+                `;
+            }
 
             return `
                 <div class="tv-card">
@@ -371,7 +404,7 @@
                             class="w-full h-full object-cover object-top absolute inset-0"
                             onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(emp.name)}&background=e2e8f0&color=475569&size=400'"
                         >
-                        ${specialistsHtml}
+                        ${specialistsSection}
                     </div>
 
                     <div class="flex-1 p-4 flex flex-col justify-between h-full bg-white">
