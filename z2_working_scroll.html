@@ -59,6 +59,16 @@
         html {
             scroll-behavior: smooth;
         }
+        
+        /* Mutaxassislar rasmlari uchun */
+        .specialist-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -79,7 +89,7 @@
                 </div>
 
                 <div class="flex flex-col text-white">
-                    <h1 class="text-4xl font-black leading-none tracking-tight">Nishon tumani</h1>
+                    <h1 class="text-3xl font-black leading-none tracking-tight whitespace-nowrap">Nishon tumani hokimligi</h1>
                     <p class="text-sm text-blue-100 font-medium tracking-wide mt-1 opacity-90">Ijro intizomi monitoring tizimi</p>
                 </div>
             </div>
@@ -131,9 +141,9 @@
         // SCROLL CONFIG
         let scrolling = {
             isActive: false,
-            direction: 1, // 1 = down, -1 = up
-            speed: 0.5, // pixels per frame
-            pauseTime: 4000, // 4 seconds pause
+            direction: 1,
+            speed: 0.5,
+            pauseTime: 4000,
             isPaused: false,
             pauseStart: 0
         };
@@ -144,7 +154,31 @@
             document.getElementById('current-time').textContent = timeString;
         }
 
-        // START AUTO SCROLL
+        function getScrollableHeight() {
+            const body = document.body;
+            const html = document.documentElement;
+            
+            const scrollHeight = Math.max(
+                body.scrollHeight,
+                body.offsetHeight,
+                html.clientHeight,
+                html.scrollHeight,
+                html.offsetHeight
+            );
+            
+            const clientHeight = Math.max(
+                window.innerHeight,
+                html.clientHeight,
+                body.clientHeight
+            );
+            
+            return {
+                max: scrollHeight - clientHeight,
+                scrollHeight: scrollHeight,
+                clientHeight: clientHeight
+            };
+        }
+
         function startAutoScroll() {
             scrolling.isActive = true;
             console.log('Auto scroll started');
@@ -154,50 +188,45 @@
         function doScroll() {
             if (!scrolling.isActive) return;
 
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const heights = getScrollableHeight();
+            const maxScroll = heights.max;
             
-            // Check if there's content to scroll
             if (maxScroll <= 10) {
                 setTimeout(doScroll, 100);
                 return;
             }
 
-            const currentScroll = window.scrollY;
+            const currentScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
 
-            // If paused
             if (scrolling.isPaused) {
                 const now = Date.now();
                 if (now - scrolling.pauseStart >= scrolling.pauseTime) {
                     scrolling.isPaused = false;
-                    scrolling.direction *= -1; // Change direction
+                    scrolling.direction *= -1;
                     console.log('Direction changed to:', scrolling.direction === 1 ? 'DOWN' : 'UP');
                 }
                 requestAnimationFrame(doScroll);
                 return;
             }
 
-            // Scroll down
             if (scrolling.direction === 1) {
-                if (currentScroll < maxScroll - 5) {
+                if (currentScroll < maxScroll - 10) {
                     window.scrollBy(0, scrolling.speed);
                 } else {
-                    // Reached bottom - pause
                     console.log('Reached BOTTOM - pausing');
                     scrolling.isPaused = true;
                     scrolling.pauseStart = Date.now();
-                    window.scrollTo(0, maxScroll); // Ensure at bottom
+                    window.scrollTo(0, maxScroll);
                 }
             } 
-            // Scroll up
             else {
-                if (currentScroll > 5) {
+                if (currentScroll > 10) {
                     window.scrollBy(0, -scrolling.speed);
                 } else {
-                    // Reached top - pause
                     console.log('Reached TOP - pausing');
                     scrolling.isPaused = true;
                     scrolling.pauseStart = Date.now();
-                    window.scrollTo(0, 0); // Ensure at top
+                    window.scrollTo(0, 0);
                 }
             }
 
@@ -259,22 +288,47 @@
             }).filter(row => row.length > 1);
         }
 
-        function processData(rows) {
-            const employees = rows.map(row => ({
-                name: (row[0] || 'Noma\'lum').replace(/^"|"$/g, ''),
-                department: (row[1] || '').replace(/^"|"$/g, ''),
-                photo: (row[2] || '').replace(/^"|"$/g, ''),
-                overdue_tasks: parseInt(row[3]) || 0,
-                overdue_3days: parseInt(row[4]) || 0,
-                open_tasks: parseInt(row[5]) || 0,
-                overdue_appeals: parseInt(row[6]) || 0
-            })).filter(emp => emp.overdue_tasks > 0 || emp.overdue_3days > 0 || emp.overdue_appeals > 0);
+        function buildGoogleDriveUrl(fileId) {
+            if (!fileId || fileId.trim() === '') {
+                return '';
+            }
+            
+            if (fileId.startsWith('http://') || fileId.startsWith('https://')) {
+                return fileId;
+            }
+            
+            return `https://drive.google.com/thumbnail?id=${fileId.trim()}&sz=w400`;
+        }
 
-            employees.sort((a, b) => {
-                const totalA = a.overdue_tasks + a.overdue_3days + a.overdue_appeals;
-                const totalB = b.overdue_tasks + b.overdue_3days + b.overdue_appeals;
-                return totalB - totalA;
-            });
+        // MUTAXASSISLAR RASMLARINI PARSE QILISH
+        function parseSpecialists(specialistsStr) {
+            if (!specialistsStr || specialistsStr.trim() === '') {
+                return [];
+            }
+            
+            // Vergul bilan ajratilgan ID larni olish
+            const ids = specialistsStr.split(',').map(id => id.trim()).filter(id => id !== '');
+            
+            // Maksimal 3 tagacha
+            return ids.slice(0, 3).map(id => buildGoogleDriveUrl(id));
+        }
+
+        function processData(rows) {
+            const employees = rows.map(row => {
+                const photoId = (row[2] || '').replace(/^"|"$/g, '');
+                const specialistsStr = (row[7] || '').replace(/^"|"$/g, ''); // 8-ustun (index 7)
+                
+                return {
+                    name: (row[0] || 'Noma\'lum').replace(/^"|"$/g, ''),
+                    department: (row[1] || '').replace(/^"|"$/g, ''),
+                    photo: buildGoogleDriveUrl(photoId),
+                    specialists: parseSpecialists(specialistsStr), // Mutaxassislar rasmlari
+                    overdue_tasks: parseInt(row[3]) || 0,
+                    overdue_3days: parseInt(row[4]) || 0,
+                    open_tasks: parseInt(row[5]) || 0,
+                    overdue_appeals: parseInt(row[6]) || 0
+                };
+            }).filter(emp => emp.overdue_tasks > 0 || emp.overdue_3days > 0 || emp.overdue_appeals > 0);
 
             if (employees.length === 0) { showNoData(); } 
             else { displayEmployees(employees); }
@@ -288,14 +342,26 @@
             `;
             contentContainer.innerHTML = html;
             
-            // START SCROLL after content is loaded
             setTimeout(() => {
                 console.log('Content loaded, starting scroll...');
                 startAutoScroll();
-            }, 1000);
+            }, 1500);
         }
 
         function createCard(emp) {
+            // Mutaxassislar HTML
+            const specialistsHtml = emp.specialists.length > 0 ? `
+                <div class="absolute bottom-2 left-2 flex gap-1 z-20">
+                    ${emp.specialists.map(url => `
+                        <img 
+                            src="${url}" 
+                            class="specialist-avatar"
+                            onerror="this.style.display='none'"
+                        >
+                    `).join('')}
+                </div>
+            ` : '';
+
             return `
                 <div class="tv-card">
                     <div class="w-[160px] h-full flex-shrink-0 bg-slate-100 border-r border-slate-200 relative">
@@ -305,6 +371,7 @@
                             class="w-full h-full object-cover object-top absolute inset-0"
                             onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(emp.name)}&background=e2e8f0&color=475569&size=400'"
                         >
+                        ${specialistsHtml}
                     </div>
 
                     <div class="flex-1 p-4 flex flex-col justify-between h-full bg-white">
