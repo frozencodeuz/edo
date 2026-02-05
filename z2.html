@@ -131,9 +131,9 @@
         // SCROLL CONFIG
         let scrolling = {
             isActive: false,
-            direction: 1, // 1 = down, -1 = up
-            speed: 0.5, // pixels per frame
-            pauseTime: 4000, // 4 seconds pause
+            direction: 1,
+            speed: 0.5,
+            pauseTime: 4000,
             isPaused: false,
             pauseStart: 0
         };
@@ -144,7 +144,6 @@
             document.getElementById('current-time').textContent = timeString;
         }
 
-        // START AUTO SCROLL
         function startAutoScroll() {
             scrolling.isActive = true;
             console.log('Auto scroll started');
@@ -156,7 +155,6 @@
 
             const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
             
-            // Check if there's content to scroll
             if (maxScroll <= 10) {
                 setTimeout(doScroll, 100);
                 return;
@@ -164,40 +162,35 @@
 
             const currentScroll = window.scrollY;
 
-            // If paused
             if (scrolling.isPaused) {
                 const now = Date.now();
                 if (now - scrolling.pauseStart >= scrolling.pauseTime) {
                     scrolling.isPaused = false;
-                    scrolling.direction *= -1; // Change direction
+                    scrolling.direction *= -1;
                     console.log('Direction changed to:', scrolling.direction === 1 ? 'DOWN' : 'UP');
                 }
                 requestAnimationFrame(doScroll);
                 return;
             }
 
-            // Scroll down
             if (scrolling.direction === 1) {
                 if (currentScroll < maxScroll - 5) {
                     window.scrollBy(0, scrolling.speed);
                 } else {
-                    // Reached bottom - pause
                     console.log('Reached BOTTOM - pausing');
                     scrolling.isPaused = true;
                     scrolling.pauseStart = Date.now();
-                    window.scrollTo(0, maxScroll); // Ensure at bottom
+                    window.scrollTo(0, maxScroll);
                 }
             } 
-            // Scroll up
             else {
                 if (currentScroll > 5) {
                     window.scrollBy(0, -scrolling.speed);
                 } else {
-                    // Reached top - pause
                     console.log('Reached TOP - pausing');
                     scrolling.isPaused = true;
                     scrolling.pauseStart = Date.now();
-                    window.scrollTo(0, 0); // Ensure at top
+                    window.scrollTo(0, 0);
                 }
             }
 
@@ -260,6 +253,7 @@
         }
 
         function processData(rows) {
+            // EXCEL TARTIBINI SAQLASH - SORT QILMASLIK!
             const employees = rows.map(row => ({
                 name: (row[0] || 'Noma\'lum').replace(/^"|"$/g, ''),
                 department: (row[1] || '').replace(/^"|"$/g, ''),
@@ -270,11 +264,8 @@
                 overdue_appeals: parseInt(row[6]) || 0
             })).filter(emp => emp.overdue_tasks > 0 || emp.overdue_3days > 0 || emp.overdue_appeals > 0);
 
-            employees.sort((a, b) => {
-                const totalA = a.overdue_tasks + a.overdue_3days + a.overdue_appeals;
-                const totalB = b.overdue_tasks + b.overdue_3days + b.overdue_appeals;
-                return totalB - totalA;
-            });
+            // SORT O'CHIRILDI - Excel'dagi tartib saqlanadi!
+            // Faqat filterlangan ma'lumotlarni ko'rsatamiz
 
             if (employees.length === 0) { showNoData(); } 
             else { displayEmployees(employees); }
@@ -288,7 +279,6 @@
             `;
             contentContainer.innerHTML = html;
             
-            // START SCROLL after content is loaded
             setTimeout(() => {
                 console.log('Content loaded, starting scroll...');
                 startAutoScroll();
