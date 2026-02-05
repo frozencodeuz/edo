@@ -10,11 +10,10 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f1f5f9; /* Slate-100 */
+            background-color: #f1f5f9;
             overflow-x: hidden;
         }
         
-        /* HEADER PATTERN */
         .header-bg-pattern {
             background-color: #001329;
             background-image: 
@@ -23,7 +22,6 @@
             background-size: 40px 40px;
         }
 
-        /* CARD STYLES - IXCHAMLASHTIRILGAN */
         .tv-card {
             background: white;
             border-radius: 12px;
@@ -31,11 +29,10 @@
             display: flex;
             position: relative;
             overflow: hidden;
-            height: 250px; /* Balandlik kamaytirildi (optimallashtirildi) */
+            height: 250px;
             border: 1px solid #cbd5e1;
         }
 
-        /* Chap tomondagi qizil chiziq */
         .tv-card::before {
             content: '';
             position: absolute;
@@ -57,10 +54,8 @@
             overflow: hidden;
         }
 
-        /* Scrollbar yashirish */
         ::-webkit-scrollbar { width: 0px; background: transparent; }
         
-        /* Smooth scroll */
         html {
             scroll-behavior: smooth;
         }
@@ -72,30 +67,24 @@
     <header class="header-bg-pattern shadow-lg z-50 py-4 px-6 sticky top-0 w-full border-b-2 border-blue-900">
         <div class="w-full mx-auto flex items-center justify-between">
             
-            <!-- CHAP TOMON -->
             <div class="flex items-center gap-5">
-                <!-- Gerb -->
                 <div class="w-16 h-16 rounded-full bg-[#ffffff10] border border-[#ffffff30] flex items-center justify-center backdrop-blur-sm">
                     <img src="https://taskman.uz/gerb.png" alt="Gerb" class="w-12 h-12 object-contain">
                 </div>
 
-                <!-- Separator -->
                 <div class="flex flex-col justify-center gap-1.5 h-12 opacity-90">
                     <div class="w-1.5 h-3 bg-blue-500 rounded-full"></div>
                     <div class="w-1.5 h-3 bg-red-600 rounded-full"></div>
                     <div class="w-1.5 h-3 bg-green-500 rounded-full"></div>
                 </div>
 
-                <!-- Text -->
                 <div class="flex flex-col text-white">
-                    <h1 class="text-4xl font-black leading-none tracking-tight">Nishon tumani</h1>
+                    <h1 class="text-3xl font-black leading-none tracking-tight whitespace-nowrap">Nishon tumani hokimligi</h1>
                     <p class="text-sm text-blue-100 font-medium tracking-wide mt-1 opacity-90">Ijro intizomi monitoring tizimi</p>
                 </div>
             </div>
 
-            <!-- O'NG TOMON -->
             <div class="flex items-center gap-4">
-                <!-- Badge -->
                 <div class="bg-white rounded-full py-2 pl-5 pr-2 flex items-center gap-3 shadow-md border border-gray-200">
                     <span class="text-[#001329] text-sm font-bold">
                         Nishon tuman hokimligi tomonidan ishlab chiqildi
@@ -105,7 +94,6 @@
                     </div>
                 </div>
 
-                <!-- Clock -->
                 <div class="bg-[#0f172a] border border-slate-600 rounded-xl px-5 py-2 flex items-center gap-3 min-w-[180px]">
                     <i class="fa-regular fa-clock text-blue-400 text-xl"></i>
                     <div class="flex flex-col justify-center">
@@ -114,7 +102,6 @@
                     </div>
                 </div>
 
-                <!-- Refresh -->
                 <button id="refreshBtn" class="bg-[#16a34a] hover:bg-[#15803d] text-white rounded-xl w-12 h-12 flex items-center justify-center shadow-lg active:scale-95">
                     <i class="fa-solid fa-rotate-right text-xl"></i>
                 </button>
@@ -125,7 +112,6 @@
     <!-- BODY CONTENT -->
     <main class="flex-grow p-6 w-full">
         <div id="content-container" class="max-w-[1920px] mx-auto pb-10">
-            <!-- Loading -->
             <div class="flex flex-col items-center justify-center h-[60vh]">
                 <div class="w-20 h-20 border-8 border-slate-200 border-t-blue-600 rounded-full animate-spin mb-6"></div>
                 <p class="text-2xl text-slate-600 font-bold">Ma'lumotlar yuklanmoqda...</p>
@@ -136,27 +122,79 @@
     <script>
         const SPREADSHEET_ID = '1pfRrY0Z5JZvtClxWailRJ-Y0G5vnlYJNDiWSrrMkLHE';
         const SHEET_GID = '0';
-        const REFRESH_INTERVAL = 600000; // 10 daqiqa
+        const REFRESH_INTERVAL = 600000;
         
         let isFetching = false;
         const refreshButton = document.getElementById('refreshBtn');
         const contentContainer = document.getElementById('content-container');
 
-        // YANGI SCROLL TIZIMI - SMOOTH VA TUSHUNARLI
-        let scrollState = {
-            position: 0,
-            direction: 1, // 1 = pastga, -1 = tepaga
+        // SCROLL CONFIG
+        let scrolling = {
+            isActive: false,
+            direction: 1,
+            speed: 0.5,
+            pauseTime: 4000,
             isPaused: false,
-            pauseStartTime: 0,
-            scrollSpeed: 0.3, // Sekin va smooth scroll (har kadrda 0.3px)
-            pauseDuration: 5000, // Yuqorida va pastda 5 soniya kutish
-            lastFrameTime: 0
+            pauseStart: 0
         };
 
         function updateDateTime() {
             const now = new Date();
             const timeString = now.toLocaleTimeString('uz-UZ', { hour: '2-digit', minute: '2-digit' });
             document.getElementById('current-time').textContent = timeString;
+        }
+
+        function startAutoScroll() {
+            scrolling.isActive = true;
+            console.log('Auto scroll started');
+            doScroll();
+        }
+
+        function doScroll() {
+            if (!scrolling.isActive) return;
+
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            
+            if (maxScroll <= 10) {
+                setTimeout(doScroll, 100);
+                return;
+            }
+
+            const currentScroll = window.scrollY;
+
+            if (scrolling.isPaused) {
+                const now = Date.now();
+                if (now - scrolling.pauseStart >= scrolling.pauseTime) {
+                    scrolling.isPaused = false;
+                    scrolling.direction *= -1;
+                    console.log('Direction changed to:', scrolling.direction === 1 ? 'DOWN' : 'UP');
+                }
+                requestAnimationFrame(doScroll);
+                return;
+            }
+
+            if (scrolling.direction === 1) {
+                if (currentScroll < maxScroll - 5) {
+                    window.scrollBy(0, scrolling.speed);
+                } else {
+                    console.log('Reached BOTTOM - pausing');
+                    scrolling.isPaused = true;
+                    scrolling.pauseStart = Date.now();
+                    window.scrollTo(0, maxScroll);
+                }
+            } 
+            else {
+                if (currentScroll > 5) {
+                    window.scrollBy(0, -scrolling.speed);
+                } else {
+                    console.log('Reached TOP - pausing');
+                    scrolling.isPaused = true;
+                    scrolling.pauseStart = Date.now();
+                    window.scrollTo(0, 0);
+                }
+            }
+
+            requestAnimationFrame(doScroll);
         }
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -169,62 +207,7 @@
             
             fetchData();
             setInterval(fetchData, REFRESH_INTERVAL);
-            
-            // Scroll boshlash
-            requestAnimationFrame(smoothAutoScroll);
         });
-
-        function smoothAutoScroll(currentTime) {
-            // Agar pauza holatida bo'lsa
-            if (scrollState.isPaused) {
-                if (currentTime - scrollState.pauseStartTime >= scrollState.pauseDuration) {
-                    scrollState.isPaused = false;
-                    scrollState.direction *= -1; // Yo'nalishni o'zgartirish
-                }
-                requestAnimationFrame(smoothAutoScroll);
-                return;
-            }
-
-            // Scroll balandligini hisoblash
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            
-            // Agar scroll qilish kerak bo'lmasa
-            if (maxScroll <= 0) {
-                requestAnimationFrame(smoothAutoScroll);
-                return;
-            }
-
-            const currentScroll = window.scrollY;
-
-            // Pastga scroll
-            if (scrollState.direction === 1) {
-                if (currentScroll < maxScroll - 1) {
-                    window.scrollBy({
-                        top: scrollState.scrollSpeed,
-                        behavior: 'auto' // Smooth scroll CSS orqali boshqariladi
-                    });
-                } else {
-                    // Pastga yetdi - pauza
-                    scrollState.isPaused = true;
-                    scrollState.pauseStartTime = currentTime;
-                }
-            } 
-            // Tepaga scroll
-            else {
-                if (currentScroll > 1) {
-                    window.scrollBy({
-                        top: -scrollState.scrollSpeed,
-                        behavior: 'auto'
-                    });
-                } else {
-                    // Tepaga yetdi - pauza
-                    scrollState.isPaused = true;
-                    scrollState.pauseStartTime = currentTime;
-                }
-            }
-
-            requestAnimationFrame(smoothAutoScroll);
-        }
 
         async function fetchData() {
             if (isFetching) return;
@@ -269,22 +252,36 @@
             }).filter(row => row.length > 1);
         }
 
-        function processData(rows) {
-            const employees = rows.map(row => ({
-                name: (row[0] || 'Noma\'lum').replace(/^"|"$/g, ''),
-                department: (row[1] || '').replace(/^"|"$/g, ''),
-                photo: (row[2] || '').replace(/^"|"$/g, ''),
-                overdue_tasks: parseInt(row[3]) || 0,
-                overdue_3days: parseInt(row[4]) || 0,
-                open_tasks: parseInt(row[5]) || 0,
-                overdue_appeals: parseInt(row[6]) || 0
-            })).filter(emp => emp.overdue_tasks > 0 || emp.overdue_3days > 0 || emp.overdue_appeals > 0);
+        // GOOGLE DRIVE URL YARATISH - THUMBNAIL VERSIYASI
+        function buildGoogleDriveUrl(fileId) {
+            // Agar bo'sh bo'lsa
+            if (!fileId || fileId.trim() === '') {
+                return '';
+            }
+            
+            // Agar allaqachon to'liq URL bo'lsa
+            if (fileId.startsWith('http://') || fileId.startsWith('https://')) {
+                return fileId;
+            }
+            
+            // Google Drive THUMBNAIL URL (bu CORS muammosini hal qiladi)
+            return `https://drive.google.com/thumbnail?id=${fileId.trim()}&sz=w400`;
+        }
 
-            employees.sort((a, b) => {
-                const totalA = a.overdue_tasks + a.overdue_3days + a.overdue_appeals;
-                const totalB = b.overdue_tasks + b.overdue_3days + b.overdue_appeals;
-                return totalB - totalA;
-            });
+        function processData(rows) {
+            // EXCEL TARTIBINI SAQLASH
+            const employees = rows.map(row => {
+                const photoId = (row[2] || '').replace(/^"|"$/g, '');
+                return {
+                    name: (row[0] || 'Noma\'lum').replace(/^"|"$/g, ''),
+                    department: (row[1] || '').replace(/^"|"$/g, ''),
+                    photo: buildGoogleDriveUrl(photoId),
+                    overdue_tasks: parseInt(row[3]) || 0,
+                    overdue_3days: parseInt(row[4]) || 0,
+                    open_tasks: parseInt(row[5]) || 0,
+                    overdue_appeals: parseInt(row[6]) || 0
+                };
+            }).filter(emp => emp.overdue_tasks > 0 || emp.overdue_3days > 0 || emp.overdue_appeals > 0);
 
             if (employees.length === 0) { showNoData(); } 
             else { displayEmployees(employees); }
@@ -297,12 +294,16 @@
                 </div>
             `;
             contentContainer.innerHTML = html;
+            
+            setTimeout(() => {
+                console.log('Content loaded, starting scroll...');
+                startAutoScroll();
+            }, 1000);
         }
 
         function createCard(emp) {
             return `
                 <div class="tv-card">
-                    <!-- Rasm qismi (Ixchamroq - 160px) -->
                     <div class="w-[160px] h-full flex-shrink-0 bg-slate-100 border-r border-slate-200 relative">
                         <img 
                             src="${emp.photo}" 
@@ -312,10 +313,7 @@
                         >
                     </div>
 
-                    <!-- Ma'lumot qismi -->
                     <div class="flex-1 p-4 flex flex-col justify-between h-full bg-white">
-                        
-                        <!-- Header: Ism & Lavozim -->
                         <div>
                             <h2 class="text-xl font-[800] text-slate-900 leading-tight mb-1">
                                 ${emp.name}
@@ -325,10 +323,8 @@
                             </p>
                         </div>
 
-                        <!-- Statistika (Ixcham va aniq) -->
                         <div class="flex flex-col gap-0 border-t border-slate-100 pt-1">
                             
-                            <!-- Row 1 -->
                             <div class="flex items-center justify-between py-1.5 border-b border-slate-200">
                                 <div class="flex items-center gap-2">
                                     <div class="w-7 h-7 rounded bg-red-50 flex items-center justify-center border border-red-100">
@@ -341,7 +337,6 @@
                                 </span>
                             </div>
 
-                            <!-- Row 2 -->
                             <div class="flex items-center justify-between py-1.5 border-b border-slate-200">
                                 <div class="flex items-center gap-2">
                                     <div class="w-7 h-7 rounded bg-orange-50 flex items-center justify-center border border-orange-100">
@@ -354,7 +349,6 @@
                                 </span>
                             </div>
 
-                            <!-- Row 3 -->
                             <div class="flex items-center justify-between py-1.5 pt-2">
                                 <div class="flex items-center gap-2">
                                     <div class="w-7 h-7 rounded bg-blue-50 flex items-center justify-center border border-blue-100">
