@@ -128,7 +128,7 @@
         const refreshButton = document.getElementById('refreshBtn');
         const contentContainer = document.getElementById('content-container');
 
-        // SCROLL CONFIG
+        // SCROLL CONFIG - HAR QANDAY MASSHTABDA ISHLAYDI
         let scrolling = {
             isActive: false,
             direction: 1,
@@ -144,6 +144,34 @@
             document.getElementById('current-time').textContent = timeString;
         }
 
+        // MASSHTABDAN QATIY NAZAR TO'G'RI SCROLL BALANDLIGINI TOPISH
+        function getScrollableHeight() {
+            // Barcha mumkin bo'lgan usullar
+            const body = document.body;
+            const html = document.documentElement;
+            
+            // Eng katta qiymatni olish
+            const scrollHeight = Math.max(
+                body.scrollHeight,
+                body.offsetHeight,
+                html.clientHeight,
+                html.scrollHeight,
+                html.offsetHeight
+            );
+            
+            const clientHeight = Math.max(
+                window.innerHeight,
+                html.clientHeight,
+                body.clientHeight
+            );
+            
+            return {
+                max: scrollHeight - clientHeight,
+                scrollHeight: scrollHeight,
+                clientHeight: clientHeight
+            };
+        }
+
         function startAutoScroll() {
             scrolling.isActive = true;
             console.log('Auto scroll started');
@@ -153,14 +181,25 @@
         function doScroll() {
             if (!scrolling.isActive) return;
 
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            // YANGI USUL - masshtabdan qatiy nazar ishlaydi
+            const heights = getScrollableHeight();
+            const maxScroll = heights.max;
             
+            console.log('Scroll info:', {
+                scrollHeight: heights.scrollHeight,
+                clientHeight: heights.clientHeight,
+                maxScroll: maxScroll,
+                currentScroll: window.scrollY,
+                zoom: window.devicePixelRatio || 1
+            });
+            
+            // Agar scroll qilish kerak bo'lmasa
             if (maxScroll <= 10) {
                 setTimeout(doScroll, 100);
                 return;
             }
 
-            const currentScroll = window.scrollY;
+            const currentScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
 
             if (scrolling.isPaused) {
                 const now = Date.now();
@@ -173,8 +212,9 @@
                 return;
             }
 
+            // Pastga scroll
             if (scrolling.direction === 1) {
-                if (currentScroll < maxScroll - 5) {
+                if (currentScroll < maxScroll - 10) {
                     window.scrollBy(0, scrolling.speed);
                 } else {
                     console.log('Reached BOTTOM - pausing');
@@ -183,8 +223,9 @@
                     window.scrollTo(0, maxScroll);
                 }
             } 
+            // Tepaga scroll
             else {
-                if (currentScroll > 5) {
+                if (currentScroll > 10) {
                     window.scrollBy(0, -scrolling.speed);
                 } else {
                     console.log('Reached TOP - pausing');
@@ -252,24 +293,19 @@
             }).filter(row => row.length > 1);
         }
 
-        // GOOGLE DRIVE URL YARATISH - THUMBNAIL VERSIYASI
         function buildGoogleDriveUrl(fileId) {
-            // Agar bo'sh bo'lsa
             if (!fileId || fileId.trim() === '') {
                 return '';
             }
             
-            // Agar allaqachon to'liq URL bo'lsa
             if (fileId.startsWith('http://') || fileId.startsWith('https://')) {
                 return fileId;
             }
             
-            // Google Drive THUMBNAIL URL (bu CORS muammosini hal qiladi)
             return `https://drive.google.com/thumbnail?id=${fileId.trim()}&sz=w400`;
         }
 
         function processData(rows) {
-            // EXCEL TARTIBINI SAQLASH
             const employees = rows.map(row => {
                 const photoId = (row[2] || '').replace(/^"|"$/g, '');
                 return {
@@ -297,8 +333,9 @@
             
             setTimeout(() => {
                 console.log('Content loaded, starting scroll...');
+                console.log('Current zoom level:', window.devicePixelRatio || 1);
                 startAutoScroll();
-            }, 1000);
+            }, 1500);
         }
 
         function createCard(emp) {
