@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nishon Tuman Hokimligi - Ijro Nazorati (TV Optimized)</title>
+    <title>Nishon Tuman Hokimligi - Ijro Nazorati</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f1f5f9; /* Slate-100 */
+            background-color: #f1f5f9;
             overflow-x: hidden;
         }
         
-        /* HEADER PATTERN */
         .header-bg-pattern {
             background-color: #001329;
             background-image: 
@@ -23,7 +22,6 @@
             background-size: 40px 40px;
         }
 
-        /* CARD STYLES - IXCHAMLASHTIRILGAN */
         .tv-card {
             background: white;
             border-radius: 12px;
@@ -31,11 +29,10 @@
             display: flex;
             position: relative;
             overflow: hidden;
-            height: 250px; /* Balandlik kamaytirildi (optimallashtirildi) */
+            height: 250px;
             border: 1px solid #cbd5e1;
         }
 
-        /* Chap tomondagi qizil chiziq */
         .tv-card::before {
             content: '';
             position: absolute;
@@ -57,8 +54,11 @@
             overflow: hidden;
         }
 
-        /* Scrollbar yashirish */
         ::-webkit-scrollbar { width: 0px; background: transparent; }
+        
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -67,30 +67,24 @@
     <header class="header-bg-pattern shadow-lg z-50 py-4 px-6 sticky top-0 w-full border-b-2 border-blue-900">
         <div class="w-full mx-auto flex items-center justify-between">
             
-            <!-- CHAP TOMON -->
             <div class="flex items-center gap-5">
-                <!-- Gerb -->
                 <div class="w-16 h-16 rounded-full bg-[#ffffff10] border border-[#ffffff30] flex items-center justify-center backdrop-blur-sm">
                     <img src="https://taskman.uz/gerb.png" alt="Gerb" class="w-12 h-12 object-contain">
                 </div>
 
-                <!-- Separator -->
                 <div class="flex flex-col justify-center gap-1.5 h-12 opacity-90">
                     <div class="w-1.5 h-3 bg-blue-500 rounded-full"></div>
                     <div class="w-1.5 h-3 bg-red-600 rounded-full"></div>
                     <div class="w-1.5 h-3 bg-green-500 rounded-full"></div>
                 </div>
 
-                <!-- Text -->
                 <div class="flex flex-col text-white">
-                    <h1 class="text-4xl font-black leading-none tracking-tight">Nishon tumani</h1>
+                    <h1 class="text-4xl font-black leading-none tracking-tight">Nishon tumani hokimligi</h1>
                     <p class="text-sm text-blue-100 font-medium tracking-wide mt-1 opacity-90">Ijro intizomi monitoring tizimi</p>
                 </div>
             </div>
 
-            <!-- O'NG TOMON -->
             <div class="flex items-center gap-4">
-                <!-- Badge -->
                 <div class="bg-white rounded-full py-2 pl-5 pr-2 flex items-center gap-3 shadow-md border border-gray-200">
                     <span class="text-[#001329] text-sm font-bold">
                         Nishon tuman hokimligi tomonidan ishlab chiqildi
@@ -100,7 +94,6 @@
                     </div>
                 </div>
 
-                <!-- Clock -->
                 <div class="bg-[#0f172a] border border-slate-600 rounded-xl px-5 py-2 flex items-center gap-3 min-w-[180px]">
                     <i class="fa-regular fa-clock text-blue-400 text-xl"></i>
                     <div class="flex flex-col justify-center">
@@ -109,7 +102,6 @@
                     </div>
                 </div>
 
-                <!-- Refresh -->
                 <button id="refreshBtn" class="bg-[#16a34a] hover:bg-[#15803d] text-white rounded-xl w-12 h-12 flex items-center justify-center shadow-lg active:scale-95">
                     <i class="fa-solid fa-rotate-right text-xl"></i>
                 </button>
@@ -120,7 +112,6 @@
     <!-- BODY CONTENT -->
     <main class="flex-grow p-6 w-full">
         <div id="content-container" class="max-w-[1920px] mx-auto pb-10">
-            <!-- Loading -->
             <div class="flex flex-col items-center justify-center h-[60vh]">
                 <div class="w-20 h-20 border-8 border-slate-200 border-t-blue-600 rounded-full animate-spin mb-6"></div>
                 <p class="text-2xl text-slate-600 font-bold">Ma'lumotlar yuklanmoqda...</p>
@@ -131,17 +122,87 @@
     <script>
         const SPREADSHEET_ID = '1pfRrY0Z5JZvtClxWailRJ-Y0G5vnlYJNDiWSrrMkLHE';
         const SHEET_GID = '0';
-        const REFRESH_INTERVAL = 600000; // 10 daqiqa
+        const REFRESH_INTERVAL = 600000;
         
         let isFetching = false;
         const refreshButton = document.getElementById('refreshBtn');
         const contentContainer = document.getElementById('content-container');
 
-        // Scroll variables
-        let scrollDirection = 1;
-        let isPaused = false;
-        // SCROLL TEZLIGI SEKINLASHTIRILDI
-        let scrollSpeed = 0.2; // 0.5 dan 0.2 ga o'zgartirildi
+        // SCROLL CONFIG
+        let scrolling = {
+            isActive: false,
+            direction: 1, // 1 = down, -1 = up
+            speed: 0.5, // pixels per frame
+            pauseTime: 4000, // 4 seconds pause
+            isPaused: false,
+            pauseStart: 0
+        };
+
+        function updateDateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('uz-UZ', { hour: '2-digit', minute: '2-digit' });
+            document.getElementById('current-time').textContent = timeString;
+        }
+
+        // START AUTO SCROLL
+        function startAutoScroll() {
+            scrolling.isActive = true;
+            console.log('Auto scroll started');
+            doScroll();
+        }
+
+        function doScroll() {
+            if (!scrolling.isActive) return;
+
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            
+            // Check if there's content to scroll
+            if (maxScroll <= 10) {
+                setTimeout(doScroll, 100);
+                return;
+            }
+
+            const currentScroll = window.scrollY;
+
+            // If paused
+            if (scrolling.isPaused) {
+                const now = Date.now();
+                if (now - scrolling.pauseStart >= scrolling.pauseTime) {
+                    scrolling.isPaused = false;
+                    scrolling.direction *= -1; // Change direction
+                    console.log('Direction changed to:', scrolling.direction === 1 ? 'DOWN' : 'UP');
+                }
+                requestAnimationFrame(doScroll);
+                return;
+            }
+
+            // Scroll down
+            if (scrolling.direction === 1) {
+                if (currentScroll < maxScroll - 5) {
+                    window.scrollBy(0, scrolling.speed);
+                } else {
+                    // Reached bottom - pause
+                    console.log('Reached BOTTOM - pausing');
+                    scrolling.isPaused = true;
+                    scrolling.pauseStart = Date.now();
+                    window.scrollTo(0, maxScroll); // Ensure at bottom
+                }
+            } 
+            // Scroll up
+            else {
+                if (currentScroll > 5) {
+                    window.scrollBy(0, -scrolling.speed);
+                } else {
+                    // Reached top - pause
+                    console.log('Reached TOP - pausing');
+                    scrolling.isPaused = true;
+                    scrolling.pauseStart = Date.now();
+                    window.scrollTo(0, 0); // Ensure at top
+                }
+            }
+
+            requestAnimationFrame(doScroll);
+        }
 
         document.addEventListener('DOMContentLoaded', function() {
             updateDateTime();
@@ -153,44 +214,7 @@
             
             fetchData();
             setInterval(fetchData, REFRESH_INTERVAL);
-            requestAnimationFrame(autoScroll);
         });
-
-        function autoScroll() {
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            if (maxScroll <= 0) {
-                requestAnimationFrame(autoScroll);
-                return;
-            }
-
-            if (!isPaused) {
-                const currentScroll = window.scrollY;
-                if (scrollDirection === 1) {
-                    if (currentScroll < maxScroll) {
-                        window.scrollBy(0, scrollSpeed);
-                    } else {
-                        isPaused = true;
-                        setTimeout(() => { scrollDirection = -1; isPaused = false; }, 4000);
-                    }
-                } else {
-                    if (currentScroll > 0) {
-                        // Tepaga ham sekin chiqadi
-                        window.scrollBy(0, -scrollSpeed); 
-                    } else {
-                        isPaused = true;
-                        setTimeout(() => { scrollDirection = 1; isPaused = false; }, 4000);
-                    }
-                }
-            }
-            requestAnimationFrame(autoScroll);
-        }
-
-        function updateDateTime() {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            document.getElementById('current-time').textContent = `${hours}:${minutes}`;
-        }
 
         async function fetchData() {
             if (isFetching) return;
@@ -209,9 +233,8 @@
         }
 
         async function fetchDataFromCSV() {
-            // PROXY OLIB TASHLANDI
             const targetUrl = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/export?format=csv&gid=${SHEET_GID}`;
-            const response = await fetch(targetUrl); // To'g'ridan-to'g'ri so'rov
+            const response = await fetch(targetUrl);
             if (!response.ok) throw new Error('Network response was not ok');
             const csvText = await response.text();
             const rows = parseCSV(csvText);
@@ -264,12 +287,17 @@
                 </div>
             `;
             contentContainer.innerHTML = html;
+            
+            // START SCROLL after content is loaded
+            setTimeout(() => {
+                console.log('Content loaded, starting scroll...');
+                startAutoScroll();
+            }, 1000);
         }
 
         function createCard(emp) {
             return `
                 <div class="tv-card">
-                    <!-- Rasm qismi (Ixchamroq - 160px) -->
                     <div class="w-[160px] h-full flex-shrink-0 bg-slate-100 border-r border-slate-200 relative">
                         <img 
                             src="${emp.photo}" 
@@ -279,10 +307,7 @@
                         >
                     </div>
 
-                    <!-- Ma'lumot qismi -->
                     <div class="flex-1 p-4 flex flex-col justify-between h-full bg-white">
-                        
-                        <!-- Header: Ism & Lavozim -->
                         <div>
                             <h2 class="text-xl font-[800] text-slate-900 leading-tight mb-1">
                                 ${emp.name}
@@ -292,10 +317,8 @@
                             </p>
                         </div>
 
-                        <!-- Statistika (Ixcham va aniq) -->
                         <div class="flex flex-col gap-0 border-t border-slate-100 pt-1">
                             
-                            <!-- Row 1 -->
                             <div class="flex items-center justify-between py-1.5 border-b border-slate-200">
                                 <div class="flex items-center gap-2">
                                     <div class="w-7 h-7 rounded bg-red-50 flex items-center justify-center border border-red-100">
@@ -308,7 +331,6 @@
                                 </span>
                             </div>
 
-                            <!-- Row 2 -->
                             <div class="flex items-center justify-between py-1.5 border-b border-slate-200">
                                 <div class="flex items-center gap-2">
                                     <div class="w-7 h-7 rounded bg-orange-50 flex items-center justify-center border border-orange-100">
@@ -321,7 +343,6 @@
                                 </span>
                             </div>
 
-                            <!-- Row 3 -->
                             <div class="flex items-center justify-between py-1.5 pt-2">
                                 <div class="flex items-center gap-2">
                                     <div class="w-7 h-7 rounded bg-blue-50 flex items-center justify-center border border-blue-100">
