@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nishon Tuman Hokimligi - Ijro Nazorati</title>
+    <title>Nishon Tuman Hokimligi - Ijro Nazorati (TV Optimized)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -79,7 +79,7 @@
                 </div>
 
                 <div class="flex flex-col text-white">
-                    <h1 class="text-4xl font-black leading-none tracking-tight">Nishon tumani hokimligi</h1>
+                    <h1 class="text-4xl font-black leading-none tracking-tight">Nishon tumani</h1>
                     <p class="text-sm text-blue-100 font-medium tracking-wide mt-1 opacity-90">Ijro intizomi monitoring tizimi</p>
                 </div>
             </div>
@@ -252,20 +252,34 @@
             }).filter(row => row.length > 1);
         }
 
-        function processData(rows) {
-            // EXCEL TARTIBINI SAQLASH - SORT QILMASLIK!
-            const employees = rows.map(row => ({
-                name: (row[0] || 'Noma\'lum').replace(/^"|"$/g, ''),
-                department: (row[1] || '').replace(/^"|"$/g, ''),
-                photo: (row[2] || '').replace(/^"|"$/g, ''),
-                overdue_tasks: parseInt(row[3]) || 0,
-                overdue_3days: parseInt(row[4]) || 0,
-                open_tasks: parseInt(row[5]) || 0,
-                overdue_appeals: parseInt(row[6]) || 0
-            })).filter(emp => emp.overdue_tasks > 0 || emp.overdue_3days > 0 || emp.overdue_appeals > 0);
+        // GOOGLE DRIVE URL YARATISH FUNKSIYASI
+        function buildGoogleDriveUrl(fileId) {
+            // Agar bo'sh bo'lsa yoki faqat bo'shliq bo'lsa
+            if (!fileId || fileId.trim() === '') {
+                return '';
+            }
+            // Agar to'liq URL berilgan bo'lsa, o'zini qaytarish
+            if (fileId.startsWith('http://') || fileId.startsWith('https://')) {
+                return fileId;
+            }
+            // Google Drive URL yaratish
+            return `https://drive.usercontent.google.com/download?id=${fileId.trim()}`;
+        }
 
-            // SORT O'CHIRILDI - Excel'dagi tartib saqlanadi!
-            // Faqat filterlangan ma'lumotlarni ko'rsatamiz
+        function processData(rows) {
+            // EXCEL TARTIBINI SAQLASH
+            const employees = rows.map(row => {
+                const photoId = (row[2] || '').replace(/^"|"$/g, '');
+                return {
+                    name: (row[0] || 'Noma\'lum').replace(/^"|"$/g, ''),
+                    department: (row[1] || '').replace(/^"|"$/g, ''),
+                    photo: buildGoogleDriveUrl(photoId), // Google Drive URL yaratish
+                    overdue_tasks: parseInt(row[3]) || 0,
+                    overdue_3days: parseInt(row[4]) || 0,
+                    open_tasks: parseInt(row[5]) || 0,
+                    overdue_appeals: parseInt(row[6]) || 0
+                };
+            }).filter(emp => emp.overdue_tasks > 0 || emp.overdue_3days > 0 || emp.overdue_appeals > 0);
 
             if (employees.length === 0) { showNoData(); } 
             else { displayEmployees(employees); }
