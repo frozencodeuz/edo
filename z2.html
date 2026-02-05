@@ -252,18 +252,21 @@
             }).filter(row => row.length > 1);
         }
 
-        // GOOGLE DRIVE URL YARATISH FUNKSIYASI
+        // GOOGLE DRIVE URL YARATISH - THUMBNAIL VERSIYASI
         function buildGoogleDriveUrl(fileId) {
-            // Agar bo'sh bo'lsa yoki faqat bo'shliq bo'lsa
+            // Agar bo'sh bo'lsa
             if (!fileId || fileId.trim() === '') {
                 return '';
             }
-            // Agar to'liq URL berilgan bo'lsa, o'zini qaytarish
+            
+            // Agar allaqachon to'liq URL bo'lsa
             if (fileId.startsWith('http://') || fileId.startsWith('https://')) {
                 return fileId;
             }
-            // Google Drive URL yaratish
-            return `https://drive.usercontent.google.com/download?id=${fileId.trim()}`;
+            
+            // Google Drive THUMBNAIL URL (bu CORS muammosini hal qiladi)
+            // Bu format rasmni to'g'ridan-to'g'ri ko'rsatadi
+            return `https://drive.google.com/thumbnail?id=${fileId.trim()}&sz=w400`;
         }
 
         function processData(rows) {
@@ -273,7 +276,7 @@
                 return {
                     name: (row[0] || 'Noma\'lum').replace(/^"|"$/g, ''),
                     department: (row[1] || '').replace(/^"|"$/g, ''),
-                    photo: buildGoogleDriveUrl(photoId), // Google Drive URL yaratish
+                    photo: buildGoogleDriveUrl(photoId),
                     overdue_tasks: parseInt(row[3]) || 0,
                     overdue_3days: parseInt(row[4]) || 0,
                     open_tasks: parseInt(row[5]) || 0,
