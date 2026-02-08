@@ -21,6 +21,42 @@
             background-size: 40px 40px;
         }
 
+        /* COUNTDOWN TIMER */
+        .countdown-timer {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            padding: 12px 20px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            border: 2px solid #0ea5e9;
+        }
+
+        .countdown-timer .timer-text {
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            text-align: center;
+        }
+
+        .countdown-timer .timer-value {
+            color: #0ea5e9;
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-align: center;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .countdown-timer .next-screen {
+            color: #94a3b8;
+            font-size: 0.75rem;
+            margin-top: 4px;
+            text-align: center;
+        }
+
         /* IJRO INTIZOMI STYLES */
         .tv-card {
             background: white;
@@ -247,6 +283,12 @@
 </head>
 <body class="min-h-screen flex flex-col ijro-mode">
     
+    <!-- COUNTDOWN TIMER -->
+    <div class="countdown-timer">
+        <div class="timer-value" id="countdown-display">5:00</div>
+        <div class="next-screen" id="next-screen-text">Turniket</div>
+    </div>
+
     <!-- HEADER -->
     <header class="header-bg-pattern shadow-lg z-50 py-4 px-6 sticky top-0 w-full border-b-2 border-blue-900">
         <div class="w-full mx-auto flex items-center justify-between">
@@ -307,22 +349,18 @@
         // CONFIGURATION
         const IJRO_SPREADSHEET_ID = '1pfRrY0Z5JZvtClxWailRJ-Y0G5vnlYJNDiWSrrMkLHE';
         const IJRO_SHEET_GID = '0';
-        const SCREEN_SWITCH_INTERVAL = 300000; // 5 minutes in milliseconds
+        const SCREEN_SWITCH_INTERVAL = 300000; // 5 minutes
         
-        let currentMode = 'ijro'; // 'ijro' or 'turniket'
-        let scrolling = {
-            isActive: false,
-            direction: 1,
-            speed: 0.5,
-            pauseTime: 4000,
-            isPaused: false,
-            pauseStart: 0,
-            intervalId: null
-        };
+        let currentMode = 'ijro';
+        let scrollInterval = null;
+        let countdownInterval = null;
+        let remainingTime = SCREEN_SWITCH_INTERVAL;
 
         const contentContainer = document.getElementById('content-container');
         const headerSubtitle = document.getElementById('header-subtitle');
         const refreshButton = document.getElementById('refreshBtn');
+        const countdownDisplay = document.getElementById('countdown-display');
+        const nextScreenText = document.getElementById('next-screen-text');
 
         // TURNIKET EMPLOYEES DATA
         const turniketEmployees = [
@@ -342,6 +380,27 @@
             { name: "Amirkulov Olimjon Adham o'g'li", photo: "" }
         ];
 
+        // COUNTDOWN TIMER
+        function updateCountdown() {
+            remainingTime -= 1000;
+            
+            if (remainingTime <= 0) {
+                remainingTime = SCREEN_SWITCH_INTERVAL;
+                switchScreen();
+            }
+            
+            const minutes = Math.floor(remainingTime / 60000);
+            const seconds = Math.floor((remainingTime % 60000) / 1000);
+            countdownDisplay.textContent = `${minutes}:${String(seconds).padStart(2, '0')}`;
+        }
+
+        function startCountdown() {
+            if (countdownInterval) clearInterval(countdownInterval);
+            remainingTime = SCREEN_SWITCH_INTERVAL;
+            countdownInterval = setInterval(updateCountdown, 1000);
+            updateCountdown();
+        }
+
         // UPDATE TIME
         function updateDateTime() {
             const now = new Date();
@@ -349,57 +408,51 @@
             document.getElementById('current-time').textContent = timeString;
         }
 
-        // SCROLL FUNCTIONS
-        function getScrollableHeight() {
-            const body = document.body;
-            const html = document.documentElement;
-            const scrollHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-            const clientHeight = Math.max(window.innerHeight, html.clientHeight, body.clientHeight);
-            return {
-                max: scrollHeight - clientHeight,
-                scrollHeight: scrollHeight,
-                clientHeight: clientHeight
-            };
-        }
-
+        // AUTO SCROLL
         function startAutoScroll() {
-            scrolling.isActive = true;
-            doScroll();
-        }
-
-        function doScroll() {
-            if (!scrolling.isActive) return;
-
-            const scrollInfo = getScrollableHeight();
-            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (scrolling.isPaused) {
-                const elapsed = Date.now() - scrolling.pauseStart;
-                if (elapsed >= scrolling.pauseTime) {
-                    scrolling.isPaused = false;
-                    scrolling.direction *= -1;
+            if (scrollInterval) clearInterval(scrollInterval);
+            
+            let scrollDirection = 1;
+            let isPaused = false;
+            let pauseStart = 0;
+            const scrollSpeed = 1;
+            const pauseTime = 3000;
+            
+            scrollInterval = setInterval(() => {
+                if (isPaused) {
+                    if (Date.now() - pauseStart >= pauseTime) {
+                        isPaused = false;
+                        scrollDirection *= -1;
+                    }
+                    return;
                 }
-            } else {
-                const newScroll = currentScroll + (scrolling.speed * scrolling.direction);
-
-                if (newScroll >= scrollInfo.max && scrolling.direction === 1) {
-                    window.scrollTo(0, scrollInfo.max);
-                    scrolling.isPaused = true;
-                    scrolling.pauseStart = Date.now();
-                } else if (newScroll <= 0 && scrolling.direction === -1) {
-                    window.scrollTo(0, 0);
-                    scrolling.isPaused = true;
-                    scrolling.pauseStart = Date.now();
+                
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                
+                if (scrollDirection === 1) {
+                    if (currentScroll >= maxScroll - 10) {
+                        isPaused = true;
+                        pauseStart = Date.now();
+                    } else {
+                        window.scrollBy(0, scrollSpeed);
+                    }
                 } else {
-                    window.scrollTo(0, newScroll);
+                    if (currentScroll <= 10) {
+                        isPaused = true;
+                        pauseStart = Date.now();
+                    } else {
+                        window.scrollBy(0, -scrollSpeed);
+                    }
                 }
-            }
-
-            requestAnimationFrame(doScroll);
+            }, 20);
         }
 
         function stopAutoScroll() {
-            scrolling.isActive = false;
+            if (scrollInterval) {
+                clearInterval(scrollInterval);
+                scrollInterval = null;
+            }
             window.scrollTo(0, 0);
         }
 
@@ -648,18 +701,16 @@
             stopAutoScroll();
             
             if (currentMode === 'ijro') {
-                // Switch to Turniket
                 currentMode = 'turniket';
                 document.body.className = 'min-h-screen flex flex-col turniket-mode';
                 headerSubtitle.textContent = 'Turniket davomat tizimi';
-                contentContainer.style.maxWidth = '1920px';
+                nextScreenText.textContent = 'Ijro intizomi';
                 loadTurniketData();
             } else {
-                // Switch to Ijro
                 currentMode = 'ijro';
                 document.body.className = 'min-h-screen flex flex-col ijro-mode';
                 headerSubtitle.textContent = 'Ijro intizomi monitoring tizimi';
-                contentContainer.style.maxWidth = '1920px';
+                nextScreenText.textContent = 'Turniket';
                 await loadIjroData();
             }
         }
@@ -684,11 +735,8 @@
             updateDateTime();
             setInterval(updateDateTime, 1000);
             
-            // Load initial screen (Ijro)
             await loadIjroData();
-            
-            // Switch screens every 5 minutes
-            setInterval(switchScreen, SCREEN_SWITCH_INTERVAL);
+            startCountdown();
         }
 
         init();
