@@ -95,6 +95,7 @@
                 0 20px 60px rgba(0, 0, 0, 0.1),
                 0 0 100px rgba(255, 255, 255, 0.1) inset;
             overflow: hidden;
+            margin-bottom: 50px; /* Scroll uchun joy */
         }
 
         .table-row {
@@ -185,22 +186,6 @@
             font-weight: 800;
             color: #1e293b;
             line-height: 1.2;
-        }
-
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 18px;
-            border-radius: 12px;
-            font-size: 1.125rem;
-            font-weight: 700;
-            margin-top: 10px;
-        }
-
-        .status-badge.late {
-            background: #fecaca;
-            color: #7f1d1d;
         }
 
         thead th {
@@ -410,8 +395,8 @@
             let scrollDirection = 1;
             let isPaused = false;
             let pauseStart = 0;
-            const scrollSpeed = 1; // Tezlikni biroz oshirdim
-            const pauseTime = 3000;
+            const scrollSpeed = 1; // Speed
+            const pauseTime = 3000; // Pause at top/bottom
             
             scrollInterval = setInterval(() => {
                 if (isPaused) {
@@ -425,7 +410,7 @@
                 const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
                 const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
                 
-                // Sahifa uzunligi ekran uzunligidan kichik bo'lsa scroll qilinmasin
+                // Agar ekran balandligi kontentdan katta bo'lsa, scroll kerak emas
                 if (maxScroll <= 0) return;
 
                 if (scrollDirection === 1) {
@@ -521,7 +506,7 @@
                 </div>
             `;
             contentContainer.innerHTML = html;
-            setTimeout(() => startAutoScroll(), 1500);
+            setTimeout(() => startAutoScroll(), 2000);
         }
 
         function createIjroCard(emp) {
@@ -607,7 +592,7 @@
             const month = String(today.getMonth() + 1).padStart(2, '0');
             const year = today.getFullYear();
             return `${day}-${month}-${year}`;
-            // Test uchun sana qo'lda yozilishi mumkin: return "13-02-2026";
+            // return "13-02-2026"; // Test uchun
         }
 
         // O'zbek tilida chiroyli sana
@@ -632,6 +617,7 @@
 
         async function loadTurniketData() {
             const sheetName = getTodaySheetName();
+            // out:csv barcha ma'lumotlarni olib keladi
             const url = `https://docs.google.com/spreadsheets/d/${TURNIKET_SPREADSHEET_ID}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
 
             try {
@@ -654,7 +640,7 @@
                 // Ustunlar: A=0(ID), B=1(FIO), C=2(Lavozim-SKIP), D=3(Rasmi), E=4(Keldi), F=5(Ketdi)
                 const employees = rows.slice(1).map(row => {
                     const id = (row[0] || '').replace(/^"|"$/g, '');
-                    const name = (row[1] || 'Noma\'lum').replace(/^"|"$/g, '');
+                    const name = (row[1] || '').replace(/^"|"$/g, '');
                     const photo = (row[3] || '').replace(/^"|"$/g, '');
                     const inTime = (row[4] || '').replace(/^"|"$/g, '');
                     const outTime = (row[5] || '').replace(/^"|"$/g, '');
@@ -675,9 +661,13 @@
                         isLate: isLate,
                         isEarlyLeave: isEarlyLeave
                     };
-                }).filter(e => e.id); // ID si borlarni olamiz
+                }).filter(e => e.name && e.name.length > 2); // Ismi bor qatorlarni olamiz (ID bo'lmasa ham chiqadi)
 
-                displayTurniketData(employees);
+                if (employees.length === 0) {
+                    showNoDataTurniket(sheetName);
+                } else {
+                    displayTurniketData(employees);
+                }
 
             } catch (error) {
                 console.error("Turniket Load Error:", error);
@@ -705,7 +695,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                ${attendanceData.map(record => {
+                                ${attendanceData.map((record, index) => {
                                     // Qator rangi logikasi: Kechiksa qizg'ish
                                     const rowClass = record.isLate ? 'late' : 'on-time';
                                     
@@ -719,15 +709,17 @@
                                            <div class="avatar-placeholder" style="display: none;">${record.name.charAt(0)}</div>`
                                         : `<div class="avatar-placeholder">${record.name.charAt(0)}</div>`;
                                     
+                                    // Agar ID bo'lmasa, tartib raqami (index+1) qo'yiladi
+                                    const displayId = record.id ? record.id : (index + 1);
+
                                     return `
                                         <tr class="table-row ${rowClass}">
-                                            <td class="row-number">${record.id}</td>
+                                            <td class="row-number">${displayId}</td>
                                             <td>
                                                 <div class="flex items-center gap-6">
                                                     <div class="avatar-container">${avatarHtml}</div>
                                                     <div>
                                                         <p class="employee-name">${record.name}</p>
-                                                        ${record.isLate ? '<span class="status-badge late"><i class="fa-solid fa-clock"></i>Kechikdi</span>' : ''}
                                                     </div>
                                                 </div>
                                             </td>
@@ -754,7 +746,8 @@
                 </div>
             `;
             contentContainer.innerHTML = html;
-            setTimeout(() => startAutoScroll(), 2000);
+            // Scroll sal kechroq ishga tushsin, rasm/content yuklanib olishi uchun
+            setTimeout(() => startAutoScroll(), 3000);
         }
 
         function showNoDataTurniket(sheetName) {
@@ -764,7 +757,7 @@
                         <i class="fa-regular fa-calendar-xmark text-slate-500 text-5xl"></i>
                     </div>
                     <h3 class="text-3xl font-black text-slate-800">Ma'lumot topilmadi</h3>
-                    <p class="text-xl text-slate-500 mt-2 font-medium">"${sheetName}" nomli list mavjud emas.</p>
+                    <p class="text-xl text-slate-500 mt-2 font-medium">"${sheetName}" nomli list bo'sh yoki mavjud emas.</p>
                 </div>
             `;
         }
