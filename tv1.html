@@ -32,15 +32,54 @@ html{font-size:15px;-webkit-text-size-adjust:100%}
 body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#eef3fb;color:#1a2744;min-height:100vh;overscroll-behavior:none}
 :root{--nv:#0b1e4b;--bl:#1540a0;--md:#2563eb;--gr:#059669;--rd:#dc2626;--am:#d97706;--bd:#dde8ff;--wh:#fff;--r:14px;--sh:0 2px 12px rgba(11,30,75,.09)}
 .app{max-width:480px;margin:0 auto;padding-bottom:78px}
-/* HEADER */
-.hdr{background:linear-gradient(155deg,#0b1e4b 0%,#1540a0 55%,#2563eb 100%);padding:48px 18px 20px;position:relative;overflow:hidden}
+/* HEADER - FIXED FOR VISIBILITY */
+.hdr{
+  background:linear-gradient(155deg,#0b1e4b 0%,#1540a0 55%,#2563eb 100%);
+  padding:48px 18px 20px;
+  position:relative;
+  overflow:hidden;
+}
 .hdr::before{content:'';position:absolute;top:-70px;right:-50px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.05)}
 .hi{position:relative;z-index:2;display:flex;align-items:flex-start;justify-content:space-between}
-.ho{font-size:.63rem;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px}
-.ht{font-family:'Sora',sans-serif;font-size:1.2rem;font-weight:800;color:#fff;line-height:1.2}
-.hd{font-size:.7rem;font-weight:600;color:rgba(255,255,255,.6);margin-top:5px}
-.hs{display:flex;align-items:center;gap:6px;margin-top:11px;font-size:.67rem;color:rgba(255,255,255,.5);font-weight:600;position:relative;z-index:2}
-.pd{width:7px;height:7px;border-radius:50%;background:#4ade80;animation:pulse 2s infinite}
+.ho{
+  font-size:.7rem;
+  font-weight:800;
+  color:#fff;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+  text-shadow:0 2px 4px rgba(0,0,0,0.4);
+}
+.ht{
+  font-family:'Sora',sans-serif;
+  font-size:1.35rem;
+  font-weight:900;
+  color:#fff;
+  line-height:1.3;
+  text-shadow:0 2px 6px rgba(0,0,0,0.4);
+}
+.hd{
+  font-size:.78rem;
+  font-weight:700;
+  color:#fff;
+  margin-top:6px;
+  opacity:0.95;
+  text-shadow:0 1px 3px rgba(0,0,0,0.3);
+}
+.hs{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-top:11px;
+  font-size:.72rem;
+  color:#fff;
+  font-weight:700;
+  position:relative;
+  z-index:2;
+  opacity:0.9;
+  text-shadow:0 1px 2px rgba(0,0,0,0.3);
+}
+.pd{width:7px;height:7px;border-radius:50%;background:#4ade80;animation:pulse 2s infinite;box-shadow:0 0 8px rgba(74,222,128,0.6)}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 .rfb{width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
 .rfb svg{width:18px;height:18px;color:#fff}
@@ -97,9 +136,29 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#eef3fb;col
 .ld{width:10px;height:10px;border-radius:50%;flex-shrink:0}
 .ln{font-size:.75rem;font-weight:700;color:#334155;flex:1}
 .lv{font-size:.77rem;font-weight:800;color:var(--nv)}
-/* STAFF */
+/* STAFF CARD - WITH IMAGE SUPPORT */
 .scd{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:11px 12px;display:flex;align-items:center;gap:11px;margin-bottom:8px;box-shadow:var(--sh)}
-.av{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:.94rem;font-weight:800;flex-shrink:0;background:#dbeafe;color:var(--bl)}
+.av{
+  width:48px;
+  height:48px;
+  border-radius:11px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Sora',sans-serif;
+  font-size:.94rem;
+  font-weight:800;
+  flex-shrink:0;
+  background:#dbeafe;
+  color:var(--bl);
+  overflow:hidden;
+  border:2px solid #dbeafe;
+}
+.av img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 .si{flex:1;min-width:0}
 .sn{font-size:.81rem;font-weight:800;color:#0f172a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:2px}
 .sp{font-size:.65rem;color:#94a3b8;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -137,11 +196,29 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#eef3fb;col
 .h2{background:#93c5fd;color:#1e40af}.h3{background:#60a5fa;color:#fff}
 .h4{background:#3b82f6;color:#fff}.h5{background:#2563eb;color:#fff}
 .h6{background:#1d4ed8;color:#fff}.htd{box-shadow:0 0 0 2px #f59e0b}
-/* XULOSA */
+/* XULOSA - EXPANDED CARD */
 .xe{background:#fff;border:1px solid var(--bd);border-radius:var(--r);margin-bottom:10px;box-shadow:var(--sh);overflow:hidden}
 .xeh{display:flex;align-items:center;gap:10px;padding:12px 13px;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .xeh:active{background:#f8faff}
-.xav{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:.93rem;font-weight:800;flex-shrink:0}
+.xav{
+  width:48px;
+  height:48px;
+  border-radius:11px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Sora',sans-serif;
+  font-size:.93rem;
+  font-weight:800;
+  flex-shrink:0;
+  overflow:hidden;
+  border:2px solid rgba(0,0,0,0.05);
+}
+.xav img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 .xin{flex:1;min-width:0}
 .xnm{font-size:.82rem;font-weight:800;color:#0f172a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:2px}
 .xps{font-size:.65rem;color:#94a3b8}
@@ -244,6 +321,41 @@ const MN=['Yanvar','Fevral','Mart','Aprel','May','Iyun','Iyul','Avgust','Sentabr
 const DN=['Yakshanba','Dushanba','Seshanba','Chorshanba','Payshanba','Juma','Shanba'];
 const DS=['Yak','Dush','Ses','Chor','Pay','Jum','Sha'];
 const AC=[['#dbeafe','#1540a0'],['#d1fae5','#065f46'],['#fef3c7','#92400e'],['#ede9fe','#4c1d95'],['#fce7f3','#9d174d'],['#ecfdf5','#064e3b']];
+
+// GOOGLE DRIVE IMAGE URL CONVERTER
+function gdImg(url) {
+  if (!url || typeof url !== 'string') return '';
+  url = url.trim();
+  
+  // Already direct link
+  if (url.includes('/uc?id=') || url.includes('/uc?export=view')) {
+    return url;
+  }
+  
+  // Extract file ID from various Google Drive URL formats
+  let fileId = null;
+  
+  // Format: https://drive.google.com/file/d/FILE_ID/view
+  let match = url.match(/\/file\/d\/([^\/]+)/);
+  if (match) fileId = match[1];
+  
+  // Format: https://drive.google.com/open?id=FILE_ID
+  if (!fileId) {
+    match = url.match(/[?&]id=([^&]+)/);
+    if (match) fileId = match[1];
+  }
+  
+  // Format: direct file ID
+  if (!fileId && url.length > 20 && url.length < 50 && !url.includes('/') && !url.includes('http')) {
+    fileId = url;
+  }
+  
+  if (fileId) {
+    return `https://drive.google.com/uc?export=view&id=${fileId}`;
+  }
+  
+  return url;
+}
 
 // "DD-MM-YYYY" → Date (midnight local), null if bad
 function pd(s){
@@ -383,8 +495,7 @@ async function fetchSheet(name){
   } else {
     /* Title has no recognizable date.
        Fallback check: verify the sheet name appears somewhere in the
-       first few rows (any cell). If completely absent → likely wrong sheet.
-       Extract just day+month from name for a looser check. */
+       first few rows (any cell). If completely absent → likely wrong sheet. */
     const reqD=pd(name);
     if(reqD){
       const first4=rows.slice(0,4).map(r=>r.join(' ')).join(' ');
@@ -560,15 +671,25 @@ const A={
     H+=`<div class="sh"><div class="sht">Eng erta kelganlar</div><span class="shb">top ${Math.min(5,srt.length)}</span></div>`;
     srt.slice(0,5).forEach((r,i)=>{
       const[bg,fg]=ac(i),L=isLate(r.keldi);
-      H+=`<div class="scd an"><div class="av" style="background:${bg};color:${fg};">${ini(r.fio)}</div>
+      const imgUrl = gdImg(r.card);
+      const avatarContent = imgUrl 
+        ? `<img src="${imgUrl}" alt="${r.fio}" onerror="this.style.display='none';this.parentElement.textContent='${ini(r.fio)}';this.parentElement.style.background='${bg}';this.parentElement.style.color='${fg}';">`
+        : ini(r.fio);
+      H+=`<div class="scd an"><div class="av" style="${imgUrl ? 'background:#fff;color:transparent;' : `background:${bg};color:${fg};`}">${avatarContent}</div>
       <div class="si"><div class="sn">${r.fio}</div><div class="sp">${r.lavozim}</div>${L?`<span class="tg">Kechikdi</span>`:''}</div>
       <div class="st"><span class="pl ${L?'lt':'ok'}">${fT(r.keldi)}</span>${!isAbs(r.ketdi)?`<div style="font-size:.62rem;color:#94a3b8;margin-top:3px;">${fT(r.ketdi)}</div>`:''}</div></div>`;
     });
 
     if(late.length){
       H+=`<div class="sh"><div class="sht" style="color:#d97706;">Kechikkan xodimlar</div><span class="shb" style="background:#fef3c7;color:#d97706;border-color:#fde68a;">${late.length} nafar</span></div>`;
-      late.forEach(r=>{const ml=lm(r.keldi);
-        H+=`<div class="scd an"><div class="av" style="background:#fef3c7;color:#d97706;">${ini(r.fio)}</div>
+      late.forEach(r=>{
+        const ml=lm(r.keldi);
+        const imgUrl = gdImg(r.card);
+        const[bg,fg]=ac(0);
+        const avatarContent = imgUrl 
+          ? `<img src="${imgUrl}" alt="${r.fio}" onerror="this.style.display='none';this.parentElement.textContent='${ini(r.fio)}';this.parentElement.style.background='#fef3c7';this.parentElement.style.color='#d97706';">`
+          : ini(r.fio);
+        H+=`<div class="scd an"><div class="av" style="${imgUrl ? 'background:#fff;color:transparent;' : 'background:#fef3c7;color:#d97706;'}">${avatarContent}</div>
         <div class="si"><div class="sn">${r.fio}</div><div class="sp">${r.lavozim}</div></div>
         <div class="st"><span class="pl lt">${fT(r.keldi)}</span><div class="tg" style="margin-top:3px;">+${ml} daqiqa</div></div></div>`;
       });
@@ -740,9 +861,9 @@ const A={
     // Registry: use active sheet's employee list (preserves order)
     const reg=S.sheets[S.active]||[];
     const em={};
-    reg.forEach(r=>{if(!r.fio)return;em[r.fio]={fio:r.fio,id:r.id,lavozim:r.lavozim,absC:0,latC:0,latTot:0,days:{}}});
+    reg.forEach(r=>{if(!r.fio)return;em[r.fio]={fio:r.fio,id:r.id,lavozim:r.lavozim,card:r.card,absC:0,latC:0,latTot:0,days:{}}});
     // Add employees from range not in active
-    inR.forEach(name=>{(S.sheets[name]||[]).forEach(r=>{if(!r.fio||em[r.fio])return;em[r.fio]={fio:r.fio,id:r.id,lavozim:r.lavozim,absC:0,latC:0,latTot:0,days:{}}})});
+    inR.forEach(name=>{(S.sheets[name]||[]).forEach(r=>{if(!r.fio||em[r.fio])return;em[r.fio]={fio:r.fio,id:r.id,lavozim:r.lavozim,card:r.card,absC:0,latC:0,latTot:0,days:{}}})});
 
     inR.forEach(name=>{
       (S.sheets[name]||[]).forEach(r=>{
@@ -775,8 +896,12 @@ const A={
         const[bg,fg]=ac(i),uid=`ab${i}`;
         const aD=Object.entries(e.days).filter(([,v])=>v.absent).sort(([a],[b])=>(pd(b)?.getTime()||0)-(pd(a)?.getTime()||0));
         const lD=Object.entries(e.days).filter(([,v])=>v.late).sort(([a],[b])=>(pd(b)?.getTime()||0)-(pd(a)?.getTime()||0));
+        const imgUrl = gdImg(e.card);
+        const avatarContent = imgUrl 
+          ? `<img src="${imgUrl}" alt="${e.fio}" onerror="this.style.display='none';this.parentElement.textContent='${ini(e.fio)}';this.parentElement.style.background='${bg}';this.parentElement.style.color='${fg}';">`
+          : ini(e.fio);
         H+=`<div class="xe an"><div class="xeh" onclick="tx('${uid}')">
-          <div class="xav" style="background:${bg};color:${fg};">${ini(e.fio)}</div>
+          <div class="xav" style="${imgUrl ? 'background:#fff;color:transparent;' : `background:${bg};color:${fg};`}">${avatarContent}</div>
           <div class="xin"><div class="xnm">${e.fio}</div><div class="xps">${e.lavozim}</div></div>
           <div class="xst"><span class="xb xba">${e.absC} kun kelmadi</span>${e.latC>0?`<span class="xb xbl">${e.latC}x kech</span>`:''}</div>
           <div class="xar" id="xa${uid}"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></div>
@@ -801,8 +926,12 @@ const A={
         const[bg,fg]=ac((i+3)%6),uid=`la${i}`;
         const avg=e.latC>0?Math.round(e.latTot/e.latC):0;
         const lD=Object.entries(e.days).filter(([,v])=>v.late).sort(([a],[b])=>(pd(b)?.getTime()||0)-(pd(a)?.getTime()||0));
+        const imgUrl = gdImg(e.card);
+        const avatarContent = imgUrl 
+          ? `<img src="${imgUrl}" alt="${e.fio}" onerror="this.style.display='none';this.parentElement.textContent='${ini(e.fio)}';this.parentElement.style.background='${bg}';this.parentElement.style.color='${fg}';">`
+          : ini(e.fio);
         H+=`<div class="xe an"><div class="xeh" onclick="tx('${uid}')">
-          <div class="xav" style="background:${bg};color:${fg};">${ini(e.fio)}</div>
+          <div class="xav" style="${imgUrl ? 'background:#fff;color:transparent;' : `background:${bg};color:${fg};`}">${avatarContent}</div>
           <div class="xin"><div class="xnm">${e.fio}</div><div class="xps">${e.lavozim}</div></div>
           <div class="xst"><span class="xb xbl">${e.latC} marta kech</span><span style="font-size:.62rem;color:#94a3b8;font-weight:600;">o'rt +${avg}d</span></div>
           <div class="xar" id="xa${uid}"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></div>
