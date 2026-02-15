@@ -171,7 +171,8 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#eef3fb;col
 .tg{font-size:.59rem;font-weight:700;color:#92400e;background:#fef3c7;border-radius:4px;padding:1px 5px;display:inline-block;margin-top:2px}
 /* ABSENT */
 .acd{background:#fff7f7;border:1.5px solid #fecaca;border-radius:12px;padding:11px 12px;display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.an2{width:27px;height:27px;border-radius:8px;background:#fee2e2;color:var(--rd);font-size:.73rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.an2{width:48px;height:48px;border-radius:11px;background:#fee2e2;color:var(--rd);font-size:.73rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;border:2px solid #fecaca}
+.an2 img{width:100%;height:100%;object-fit:cover}
 /* TABLE */
 .tw{border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);border:1px solid var(--bd);margin-bottom:12px;overflow-x:auto}
 .ft{width:100%;border-collapse:collapse;font-size:.77rem}
@@ -327,30 +328,24 @@ function gdImg(url) {
   if (!url || typeof url !== 'string') return '';
   url = url.trim();
   
-  // Already a thumbnail URL
   if (url.includes('/thumbnail?id=')) {
     return url;
   }
   
-  // Extract file ID from various Google Drive URL formats
   let fileId = null;
   
-  // Format: https://drive.google.com/file/d/FILE_ID/view
   let match = url.match(/\/file\/d\/([^\/]+)/);
   if (match) fileId = match[1];
   
-  // Format: https://drive.google.com/open?id=FILE_ID
   if (!fileId) {
     match = url.match(/[?&]id=([^&]+)/);
     if (match) fileId = match[1];
   }
   
-  // Format: direct file ID (if 20-50 chars, no slashes, no http)
   if (!fileId && url.length > 20 && url.length < 50 && !url.includes('/') && !url.includes('http')) {
     fileId = url;
   }
   
-  // Return thumbnail URL format
   if (fileId) {
     return `https://drive.google.com/thumbnail?id=${fileId}&sz=w400`;
   }
@@ -358,7 +353,6 @@ function gdImg(url) {
   return url;
 }
 
-// "DD-MM-YYYY" → Date (midnight local), null if bad
 function pd(s){
   if(!s)return null;
   const m=String(s).trim().match(/^(\d{2})-(\d{2})-(\d{4})$/);
@@ -366,11 +360,8 @@ function pd(s){
   const d=new Date(+m[3],+m[2]-1,+m[1]);
   return isNaN(d)?null:d;
 }
-// Date → "DD-MM-YYYY"
 function dk(d){return`${z(d.getDate())}-${z(d.getMonth()+1)}-${d.getFullYear()}`}
-// Date → "DD.MM"
 function ds2(d){return`${z(d.getDate())}.${z(d.getMonth()+1)}`}
-// Date → full label
 function df(d){return`${d.getDate()} ${MN[d.getMonth()]} ${d.getFullYear()} — ${DN[d.getDay()]}`}
 function z(n){return String(n).padStart(2,'0')}
 function nowS(){const n=new Date();return`${z(n.getHours())}:${z(n.getMinutes())}:${z(n.getSeconds())}`}
@@ -383,7 +374,6 @@ function tabL(name){
   if(dif===0)return'Bugun';if(dif===1)return'Kecha';return ds2(d);
 }
 
-// "HH:MM" → minutes, null if absent/invalid
 function tm(raw){
   if(!raw)return null;
   const s=String(raw).trim();
@@ -421,23 +411,20 @@ function csv(txt){
   return rows;
 }
 
-/* ── PARSE ROWS → staff[] (sheet order preserved, ALL NAMES CAPTURED) ── */
+/* ── PARSE ROWS → staff[] - CAPTURE ALL FROM ROW 4 TO END ── */
 function parseRows(csvRows){
   const staff=[];
+  // Start from CFG.DATA_START_ROW (row 4, index 3) and go to the very end
   for(let i=CFG.DATA_START_ROW;i<csvRows.length;i++){
     const r=csvRows[i];
     if(!r||r.length<2)continue;
     
     const fio=String(r[CFG.COL_FIO]||'').trim();
     
-    // RELAXED VALIDATION - capture all names with at least 2 characters
+    // Very minimal validation - just skip empty or obvious headers
     if(!fio)continue;
     if(fio.length<2)continue;
-    
-    // Skip only obvious header patterns
     if(/^(f\.?i\.?o\.?|fio|ф\.?и\.?о\.?)$/i.test(fio))continue;
-    
-    // Skip if it's just a number
     if(/^\d+$/.test(fio))continue;
     
     const id=String(r[CFG.COL_ID]||'').trim();
@@ -453,11 +440,7 @@ function parseRows(csvRows){
   return staff;
 }
 
-/* ================================================================
-   FETCH + VALIDATE one sheet
-   ================================================================ */
 async function fetchSheet(name){
-  // Skip non-date names
   const nl=name.toLowerCase();
   if(CFG.SKIP.some(s=>nl.includes(s)))throw new Error('skip');
 
@@ -466,15 +449,12 @@ async function fetchSheet(name){
   if(!res.ok)throw new Error(`HTTP ${res.status}`);
   const txt=await res.text();
 
-  // Guard: error page
   if(!txt||txt.trim().startsWith('<!'))throw new Error('HTML error');
-  // Guard: GViz JSON error = sheet not found
   if(txt.trim().startsWith('{"version"')||txt.trim().startsWith('google.vis'))throw new Error('Not found');
 
   const rows=csv(txt);
   if(rows.length<4)throw new Error('Too few rows');
 
-  /* ── DATE VERIFICATION ── */
   const titleRow=rows[0].join(' ');
   const dateInTitle=titleRow.match(/(\d{1,2})[.\-\/](\d{1,2})[.\-\/](\d{4})/);
 
@@ -507,14 +487,10 @@ async function fetchSheet(name){
   return staff;
 }
 
-/* ================================================================
-   DISCOVER: try only the last 31 days, collect only truly valid sheets
-   ================================================================ */
 async function discover(){
   const t=today0();
   const cutoff=new Date(t);cutoff.setDate(cutoff.getDate()-31);
 
-  // Build candidate list: today → 31 days ago
   const cands=[];
   const cur=new Date(t);
   while(cur>=cutoff){cands.push(dk(cur));cur.setDate(cur.getDate()-1)}
@@ -527,7 +503,6 @@ async function discover(){
     }catch(_){}
   }));
 
-  // Sort newest first
   valid.sort((a,b)=>(pd(b)?.getTime()||0)-(pd(a)?.getTime()||0));
   return{sheets,names:valid};
 }
@@ -685,7 +660,12 @@ const A={
     if(absent.length){
       H+=`<div class="sh"><div class="sht" style="color:#dc2626;">Kelmagan xodimlar</div><span class="shb" style="background:#fee2e2;color:#dc2626;border-color:#fca5a5;">${absent.length} nafar</span></div>`;
       absent.forEach((r,i)=>{
-        H+=`<div class="acd an"><div class="an2">${i+1}</div>
+        const imgUrl = gdImg(r.card);
+        const[bg,fg]=ac(i);
+        const avatarContent = imgUrl 
+          ? `<img src="${imgUrl}" alt="${r.fio}" onerror="this.style.display='none';this.parentElement.textContent='${i+1}';this.parentElement.style.background='#fee2e2';this.parentElement.style.color='#dc2626';">`
+          : (i+1);
+        H+=`<div class="acd an"><div class="an2" style="${imgUrl ? 'background:#fff;color:transparent;' : 'background:#fee2e2;color:#dc2626;'}">${avatarContent}</div>
         <div><div style="font-size:.81rem;font-weight:800;color:#0f172a;margin-bottom:2px;">${r.fio}</div><div style="font-size:.65rem;color:#94a3b8;">${r.lavozim}</div></div>
         <span class="pl ab" style="margin-left:auto;flex-shrink:0;min-width:0;">KELMADI</span></div>`;
       });
@@ -698,7 +678,7 @@ const A={
     A.dBar('bcv',bk);
   },
 
-  /* ── PAGE: RO'YXAT ── */
+  /* ── PAGE: RO'YXAT - MAINTAIN SHEET ORDER, USE SEQUENTIAL NUMBERS ── */
   rList(data){S.lc=data||[];A.drawList(S.lc)},
   fl(){const q=document.getElementById('sI').value.toLowerCase().trim();A.drawList(!q?S.lc:S.lc.filter(r=>r.fio.toLowerCase().includes(q)||r.lavozim.toLowerCase().includes(q)))},
   drawList(data){
@@ -707,12 +687,13 @@ const A={
     const d=pd(S.active);
     let H=`<div style="font-size:.72rem;color:#64748b;font-weight:700;margin-bottom:8px;">${d?df(d):S.active} — jami ${data.length} xodim</div>`;
     H+=`<div class="tw"><table class="ft"><thead><tr><th>#</th><th>F.I.O</th><th>Keldi</th><th>Ketdi</th><th>Holat</th></tr></thead><tbody>`;
+    // MAINTAIN SHEET ORDER - use index+1 as sequential number
     data.forEach((r,i)=>{
       const has=!isAbs(r.keldi),L=has&&isLate(r.keldi);
       const pc=!has?'ab':L?'lt':'ok';
       const pl=!has?'KELMADI':L?'Kechikdi':"O'z vaqtida";
       const tc=!has?'#dc2626':L?'#d97706':'#059669';
-      H+=`<tr><td class="ti">${r.id||(i+1)}</td><td style="font-weight:700;max-width:128px;word-break:break-word;font-size:.75rem;">${r.fio}</td><td class="tt" style="color:${tc};">${fT(r.keldi)}</td><td class="tt" style="color:#64748b;">${fT(r.ketdi)}</td><td><span class="pl ${pc}" style="min-width:0;font-size:.66rem;padding:3px 8px;">${pl}</span></td></tr>`;
+      H+=`<tr><td class="ti">${i+1}</td><td style="font-weight:700;max-width:128px;word-break:break-word;font-size:.75rem;">${r.fio}</td><td class="tt" style="color:${tc};">${fT(r.keldi)}</td><td class="tt" style="color:#64748b;">${fT(r.ketdi)}</td><td><span class="pl ${pc}" style="min-width:0;font-size:.66rem;padding:3px 8px;">${pl}</span></td></tr>`;
     });
     H+=`</tbody></table></div>`;
     el.innerHTML=H;
