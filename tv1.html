@@ -352,7 +352,7 @@ async function fetchSheet(name){
   // Guard: error page
   if(!txt||txt.trim().startsWith('<!'))throw new Error('HTML error');
   // Guard: GViz JSON error = sheet not found
-  if(txt.trim().startsWith('{"version")||txt.trim().startsWith('google.vis'))throw new Error('Not found');
+  if(txt.trim().startsWith('{"version"')||txt.trim().startsWith('google.vis'))throw new Error('Not found');
 
   const rows=csv(txt);
   if(rows.length<4)throw new Error('Too few rows');
