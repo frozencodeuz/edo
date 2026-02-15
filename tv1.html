@@ -10,7 +10,7 @@
 <script>
 const CFG = {
   SHEET_ID:      '1QPJoqOpm6Cihu1GcVkgaPu9AjTQOQ9Wf3G3Pq3ilqv4',
-  DATA_START_ROW: 3,   // 0-indexed: row 4 (after title, blank, header)
+  DATA_START_ROW: 1,   // 0-indexed: row 2 (sarlavhadan keyin). Headerni o'zi topib o'tkazib yuboradi.
   COL_ID:      0,      // A
   COL_FIO:     1,      // B
   COL_LAVOZIM: 2,      // C
@@ -411,17 +411,16 @@ function csv(txt){
   return rows;
 }
 
-/* ── PARSE ROWS → staff[] - CAPTURE ALL FROM ROW 4 TO END ── */
+/* ── PARSE ROWS → staff[] ── */
 function parseRows(csvRows){
   const staff=[];
-  // Start from CFG.DATA_START_ROW (row 4, index 3) and go to the very end
   for(let i=CFG.DATA_START_ROW;i<csvRows.length;i++){
     const r=csvRows[i];
     if(!r||r.length<2)continue;
     
     const fio=String(r[CFG.COL_FIO]||'').trim();
     
-    // Very minimal validation - just skip empty or obvious headers
+    // Minimal validation to skip empty rows or headers
     if(!fio)continue;
     if(fio.length<2)continue;
     if(/^(f\.?i\.?o\.?|fio|ф\.?и\.?о\.?)$/i.test(fio))continue;
@@ -453,7 +452,7 @@ async function fetchSheet(name){
   if(txt.trim().startsWith('{"version"')||txt.trim().startsWith('google.vis'))throw new Error('Not found');
 
   const rows=csv(txt);
-  if(rows.length<4)throw new Error('Too few rows');
+  if(rows.length<2)throw new Error('Too few rows');
 
   const titleRow=rows[0].join(' ');
   const dateInTitle=titleRow.match(/(\d{1,2})[.\-\/](\d{1,2})[.\-\/](\d{4})/);
