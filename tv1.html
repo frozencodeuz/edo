@@ -322,13 +322,13 @@ const DN=['Yakshanba','Dushanba','Seshanba','Chorshanba','Payshanba','Juma','Sha
 const DS=['Yak','Dush','Ses','Chor','Pay','Jum','Sha'];
 const AC=[['#dbeafe','#1540a0'],['#d1fae5','#065f46'],['#fef3c7','#92400e'],['#ede9fe','#4c1d95'],['#fce7f3','#9d174d'],['#ecfdf5','#064e3b']];
 
-// GOOGLE DRIVE IMAGE URL CONVERTER
+// GOOGLE DRIVE THUMBNAIL URL CONVERTER
 function gdImg(url) {
   if (!url || typeof url !== 'string') return '';
   url = url.trim();
   
-  // Already direct link
-  if (url.includes('/uc?id=') || url.includes('/uc?export=view')) {
+  // Already a thumbnail URL
+  if (url.includes('/thumbnail?id=')) {
     return url;
   }
   
@@ -345,13 +345,14 @@ function gdImg(url) {
     if (match) fileId = match[1];
   }
   
-  // Format: direct file ID
+  // Format: direct file ID (if 20-50 chars, no slashes, no http)
   if (!fileId && url.length > 20 && url.length < 50 && !url.includes('/') && !url.includes('http')) {
     fileId = url;
   }
   
+  // Return thumbnail URL format
   if (fileId) {
-    return `https://drive.google.com/uc?export=view&id=${fileId}`;
+    return `https://drive.google.com/thumbnail?id=${fileId}&sz=w400`;
   }
   
   return url;
@@ -420,17 +421,29 @@ function csv(txt){
   return rows;
 }
 
-/* ── PARSE ROWS → staff[] (sheet order preserved) ── */
+/* ── PARSE ROWS → staff[] (sheet order preserved, ALL NAMES CAPTURED) ── */
 function parseRows(csvRows){
   const staff=[];
   for(let i=CFG.DATA_START_ROW;i<csvRows.length;i++){
-    const r=csvRows[i];if(!r||r.length<2)continue;
+    const r=csvRows[i];
+    if(!r||r.length<2)continue;
+    
     const fio=String(r[CFG.COL_FIO]||'').trim();
-    if(!fio||/^(f\.?i\.?o|fio)$/i.test(fio)||/^\d+$/.test(fio))continue;
-    if(fio.length<3)continue;
+    
+    // RELAXED VALIDATION - capture all names with at least 2 characters
+    if(!fio)continue;
+    if(fio.length<2)continue;
+    
+    // Skip only obvious header patterns
+    if(/^(f\.?i\.?o\.?|fio|ф\.?и\.?о\.?)$/i.test(fio))continue;
+    
+    // Skip if it's just a number
+    if(/^\d+$/.test(fio))continue;
+    
     const id=String(r[CFG.COL_ID]||'').trim();
     staff.push({
-      id,fio,
+      id,
+      fio,
       lavozim:String(r[CFG.COL_LAVOZIM]||'').trim(),
       card:String(r[CFG.COL_CARD]||'').trim(),
       keldi:String(r[CFG.COL_KELDI]!==undefined?r[CFG.COL_KELDI]:'').trim(),
@@ -442,14 +455,6 @@ function parseRows(csvRows){
 
 /* ================================================================
    FETCH + VALIDATE one sheet
-   
-   KEY INSIGHT: When a sheet name doesn't exist, Google Sheets
-   silently returns the FIRST sheet (or default sheet) instead.
-   
-   To detect this, we check ROW 0 (the title row) of the CSV.
-   The title contains the date like "14.02.2026".
-   We extract this date and compare it to the requested sheet name.
-   If they don't match → wrong sheet was returned → REJECT.
    ================================================================ */
 async function fetchSheet(name){
   // Skip non-date names
@@ -469,23 +474,14 @@ async function fetchSheet(name){
   const rows=csv(txt);
   if(rows.length<4)throw new Error('Too few rows');
 
-  /* ── DATE VERIFICATION ──────────────────────────────────────────
-     Row 0 (first row) contains the sheet title, e.g.:
-       "Tuman hokimligi apparat xodimlarining 14.02.2026 sanasidagi..."
-     We extract any date in format DD.MM.YYYY from this title.
-     Then we compare to the requested sheet name (DD-MM-YYYY).
-     If the date in title ≠ requested date → Google returned wrong sheet → REJECT.
-  ─────────────────────────────────────────────────────────────────*/
+  /* ── DATE VERIFICATION ── */
   const titleRow=rows[0].join(' ');
   const dateInTitle=titleRow.match(/(\d{1,2})[.\-\/](\d{1,2})[.\-\/](\d{4})/);
 
   if(dateInTitle){
-    // Extract date from title
     const td=new Date(+dateInTitle[3],+dateInTitle[2]-1,+dateInTitle[1]);
-    // Extract date from requested name
     const nd=pd(name);
     if(nd&&!isNaN(td)){
-      // Compare year, month, day
       if(td.getFullYear()!==nd.getFullYear()||
          td.getMonth()!==nd.getMonth()||
          td.getDate()!==nd.getDate()){
@@ -493,28 +489,20 @@ async function fetchSheet(name){
       }
     }
   } else {
-    /* Title has no recognizable date.
-       Fallback check: verify the sheet name appears somewhere in the
-       first few rows (any cell). If completely absent → likely wrong sheet. */
     const reqD=pd(name);
     if(reqD){
       const first4=rows.slice(0,4).map(r=>r.join(' ')).join(' ');
       const dd=z(reqD.getDate()),mm=z(reqD.getMonth()+1),yyyy=String(reqD.getFullYear());
-      // Check for DD.MM.YYYY or DD-MM-YYYY or DD/MM/YYYY in any format
       const hasDate=first4.includes(`${dd}.${mm}.${yyyy}`)||
                     first4.includes(`${dd}-${mm}-${yyyy}`)||
                     first4.includes(`${dd}/${mm}/${yyyy}`)||
-                    first4.includes(`${dd}.${mm}`);  // at minimum DD.MM
+                    first4.includes(`${dd}.${mm}`);
       if(!hasDate)throw new Error('Date not found in title rows');
     }
   }
 
   const staff=parseRows(rows);
-  if(staff.length<2)throw new Error('Too few staff rows');
-
-  // At least one staff must have a name with letters
-  const hasNames=staff.some(r=>/[a-zA-ZʻʼА-Яа-яЎўҚқҒғҲҳ]/u.test(r.fio));
-  if(!hasNames)throw new Error('No valid names');
+  if(staff.length<1)throw new Error('No staff found');
 
   return staff;
 }
@@ -536,7 +524,7 @@ async function discover(){
     try{
       const data=await fetchSheet(name);
       sheets[name]=data;valid.push(name);
-    }catch(_){}  // not found or invalid — skip
+    }catch(_){}
   }));
 
   // Sort newest first
@@ -593,7 +581,6 @@ const A={
     document.getElementById('hdrD').textContent=d?df(d):S.active;
   },
 
-  // Only show sheets that actually exist in S.names
   tabs(){
     const c=document.getElementById('dTbs');c.innerHTML='';
     S.names.forEach((name,i)=>{
@@ -720,7 +707,6 @@ const A={
     const d=pd(S.active);
     let H=`<div style="font-size:.72rem;color:#64748b;font-weight:700;margin-bottom:8px;">${d?df(d):S.active} — jami ${data.length} xodim</div>`;
     H+=`<div class="tw"><table class="ft"><thead><tr><th>#</th><th>F.I.O</th><th>Keldi</th><th>Ketdi</th><th>Holat</th></tr></thead><tbody>`;
-    // EXACT sheet order — NO sort
     data.forEach((r,i)=>{
       const has=!isAbs(r.keldi),L=has&&isLate(r.keldi);
       const pc=!has?'ab':L?'lt':'ok';
@@ -732,10 +718,6 @@ const A={
     el.innerHTML=H;
   },
 
-  /* ── HELPER: get sheets that exist AND fall within last N days ──
-     "last 30 days" = from (today - 29 days) to today inclusive
-     "last 7 days"  = from (today - 6 days) to today inclusive
-  ── */
   inRange(days){
     const t=today0();
     const from=new Date(t);from.setDate(from.getDate()-(days-1));
@@ -744,16 +726,10 @@ const A={
       if(!d)return false;
       return d>=from&&d<=t;
     });
-    // S.names is already sorted desc, so result is also desc
   },
 
-  /* ── PAGE: OYLIK ──
-     Shows only existing sheets within last 30 days.
-     Date range: (today - 29 days) .. today
-  ── */
   rMonthly(){
     const el=document.getElementById('cM');
-    // Get only sheets that exist AND are within last 30 days
     const inR=A.inRange(30);
 
     if(!inR.length){
@@ -761,14 +737,12 @@ const A={
       return;
     }
 
-    // Day stats — desc order (newest first for table)
     const daysD=inR.map(name=>{
       const d=pd(name),rows=S.sheets[name]||[];
       const pres=rows.filter(r=>!isAbs(r.keldi)).length;
       const tot=rows.length,late=rows.filter(r=>!isAbs(r.keldi)&&isLate(r.keldi)).length;
       return{name,d,pres,tot,late,abs:tot-pres,pct:tot>0?Math.round(pres/tot*100):0};
     });
-    // Ascending order for chart
     const daysA=[...daysD].reverse();
     const avg=daysD.length?Math.round(daysD.reduce((s,x)=>s+x.pct,0)/daysD.length):0;
 
@@ -783,7 +757,6 @@ const A={
     H+=`<div class="sh"><div class="sht">Davomat xaritasi</div></div>
     <div class="hmc an">${A.heatmap(inR)}</div>`;
 
-    // Table — newest first (daysD order), only existing sheets
     H+=`<div class="sh"><div class="sht">Kunlik jadval</div><span class="shb">${daysD.length} kun</span></div>
     <div class="tw an"><table class="ft"><thead><tr><th>Sana</th><th>Kun</th><th>Keldi</th><th>Kelmadi</th><th>Kech</th><th>%</th></tr></thead><tbody>`;
     daysD.forEach(s=>{
@@ -815,7 +788,6 @@ const A={
     const dates=inR.map(n=>pd(n)).filter(Boolean).sort((a,b)=>a-b);
     if(!dates.length)return'';
     const first=new Date(dates[0]),last=new Date(dates[dates.length-1]);
-    // Start from Monday of first week
     const st=new Date(first);const dw=st.getDay()===0?6:st.getDay()-1;st.setDate(st.getDate()-dw);
     const td=today0();
     let h=`<div style="display:flex;gap:3px;font-size:.59rem;color:#94a3b8;font-weight:800;margin-bottom:4px;">${DS.map(d=>`<div style="flex:1;text-align:center;">${d}</div>`).join('')}</div>`;
@@ -833,10 +805,6 @@ const A={
     return h;
   },
 
-  /* ── PAGE: XULOSA ──
-     Uses either last 7 days (weekly) or last 30 days (monthly)
-     ONLY existing sheets are used — no invented data
-  ── */
   rXulosa(){
     const el=document.getElementById('cX');
     if(!S.names.length){el.innerHTML=`<div class="emp"><p>Ma'lumot yo'q.</p></div>`;return}
@@ -857,12 +825,9 @@ const A={
 
     H+=`<div style="font-size:.71rem;color:#64748b;font-weight:700;margin-bottom:10px;">📊 ${inR.length} kun tahlil qilindi (faqat mavjud ma'lumotlar)</div>`;
 
-    // Build per-employee stats
-    // Registry: use active sheet's employee list (preserves order)
     const reg=S.sheets[S.active]||[];
     const em={};
     reg.forEach(r=>{if(!r.fio)return;em[r.fio]={fio:r.fio,id:r.id,lavozim:r.lavozim,card:r.card,absC:0,latC:0,latTot:0,days:{}}});
-    // Add employees from range not in active
     inR.forEach(name=>{(S.sheets[name]||[]).forEach(r=>{if(!r.fio||em[r.fio])return;em[r.fio]={fio:r.fio,id:r.id,lavozim:r.lavozim,card:r.card,absC:0,latC:0,latTot:0,days:{}}})});
 
     inR.forEach(name=>{
@@ -885,7 +850,6 @@ const A={
       <div class="sc am an"><div class="lbl">Jami kechikish</div><div class="val" style="color:#d97706;">${totLat}</div><div class="sub">${tot} kun ichida</div></div>
     </div>`;
 
-    // Ko'p kelmagan
     const byAb=all.filter(e=>e.absC>0).sort((a,b)=>b.absC-a.absC||b.latC-a.latC);
     H+=`<div class="sh" style="margin-top:6px;"><div class="sht" style="color:#dc2626;">Ko'p kelmagan xodimlar</div><span class="shb" style="background:#fee2e2;color:#dc2626;border-color:#fca5a5;">${byAb.length} nafar</span></div>`;
 
@@ -915,7 +879,6 @@ const A={
       });
     }
 
-    // Ko'p kechikkan
     const byLa=all.filter(e=>e.latC>0).sort((a,b)=>b.latC-a.latC||b.latTot-a.latTot);
     H+=`<div class="sh" style="margin-top:8px;"><div class="sht" style="color:#d97706;">Ko'p kechikkan xodimlar</div><span class="shb" style="background:#fef3c7;color:#d97706;border-color:#fde68a;">${byLa.length} nafar</span></div>`;
 
@@ -949,7 +912,6 @@ const A={
 
   xf(f){S.xf=f;A.rXulosa()},
 
-  /* ── CHARTS ── */
   dDonut(id,onT,late,abs){
     dc(id);const ctx=document.getElementById(id);if(!ctx)return;
     CH[id]=new Chart(ctx,{type:'doughnut',
@@ -985,13 +947,11 @@ const A={
   },
 };
 
-/* ── ACCORDION ── */
 function tx(uid){
   const p=document.getElementById(uid),a=document.getElementById('xa'+uid);
   if(!p)return;const op=p.classList.toggle('op');if(a)a.classList.toggle('op',op);
 }
 
-/* ── BOOT ── */
 document.addEventListener('DOMContentLoaded',()=>{
   A.init();
   setInterval(()=>A.init(),5*60*1000);
