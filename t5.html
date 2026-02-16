@@ -8,6 +8,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
+        /* UMUMIY MASSHTABNI KICHRAYTIRISH */
+        html {
+            font-size: 75%; /* 100% dan 75% ga o'zgartirildi (25% kichikroq) */
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
@@ -27,8 +32,8 @@
             bottom: 20px;
             right: 20px;
             background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            padding: 12px 20px;
-            border-radius: 16px;
+            padding: 1rem 1.5rem; /* rem ishlatildi */
+            border-radius: 1rem;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
             z-index: 1000;
             border: 2px solid #0ea5e9;
@@ -44,7 +49,7 @@
 
         .countdown-timer .timer-value {
             color: #0ea5e9;
-            font-size: 1.5rem;
+            font-size: 1.75rem; /* O'zgartirildi */
             font-weight: 900;
             text-align: center;
             font-variant-numeric: tabular-nums;
@@ -57,7 +62,7 @@
             text-align: center;
         }
 
-        /* IJRO INTIZOMI STYLES */
+        /* IJRO INTIZOMI STYLES (O'lchamlar o'zgartirildi) */
         .tv-card {
             background: white;
             border-radius: 12px;
@@ -65,7 +70,7 @@
             display: flex;
             position: relative;
             overflow: hidden;
-            height: 250px;
+            height: 190px; /* O'zgartirildi */
             border: 1px solid #cbd5e1;
         }
 
@@ -75,7 +80,7 @@
             left: 0;
             top: 0;
             bottom: 0;
-            width: 6px;
+            width: 5px; /* O'zgartirildi */
             background-color: #dc2626;
             z-index: 10;
         }
@@ -87,25 +92,30 @@
             overflow: hidden;
         }
 
-        /* TURNIKET STYLES */
+        /* TURNIKET STYLES (Masshtab va dizayn o'zgartirildi) */
         .attendance-card {
             background: white;
-            border-radius: 24px;
+            border-radius: 20px; /* O'zgartirildi */
             box-shadow: 
-                0 20px 60px rgba(0, 0, 0, 0.1),
-                0 0 100px rgba(255, 255, 255, 0.1) inset;
+                0 15px 50px rgba(0, 0, 0, 0.1),
+                0 0 80px rgba(255, 255, 255, 0.1) inset;
             overflow: hidden;
-            margin-bottom: 50px; /* Scroll uchun joy */
+            margin-bottom: 40px;
         }
 
         .table-row {
-            border-left: 6px solid transparent;
-            border-bottom: 3px solid #e2e8f0;
+            border-left: 5px solid transparent; /* O'zgartirildi */
+            border-bottom: 2px solid #e2e8f0; /* O'zgartirildi */
             transition: all 0.2s ease;
         }
 
         .table-row:last-child {
             border-bottom: none;
+        }
+        
+        .table-row.absent {
+             background: rgba(254, 202, 202, 0.4); /* Kelmaganlar uchun qizg'ish fon */
+             border-left-color: #b91c1c;
         }
 
         .table-row.late {
@@ -119,11 +129,11 @@
         }
 
         .avatar-container {
-            width: 90px;
-            height: 90px;
-            border-radius: 20px;
+            width: 70px; /* O'zgartirildi */
+            height: 70px; /* O'zgartirildi */
+            border-radius: 16px; /* O'zgartirildi */
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
             position: relative;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             flex-shrink: 0;
@@ -141,7 +151,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.25rem;
+            font-size: 2rem; /* O'zgartirildi */
             font-weight: 900;
             color: white;
             text-transform: uppercase;
@@ -150,14 +160,14 @@
         .time-badge {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            padding: 18px 32px;
-            border-radius: 16px;
-            font-size: 2rem;
+            gap: 10px; /* O'zgartirildi */
+            padding: 12px 24px; /* O'zgartirildi */
+            border-radius: 12px; /* O'zgartirildi */
+            font-size: 1.5rem; /* O'zgartirildi */
             font-weight: 800;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
-            min-width: 180px;
+            min-width: 150px; /* O'zgartirildi */
             justify-content: center;
         }
 
@@ -182,7 +192,7 @@
         }
 
         .employee-name {
-            font-size: 2rem;
+            font-size: 1.5rem; /* O'zgartirildi */
             font-weight: 800;
             color: #1e293b;
             line-height: 1.2;
@@ -191,57 +201,54 @@
         thead th {
             background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
             color: white;
-            font-size: 2rem;
+            font-size: 1.5rem; /* O'zgartirildi */
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            padding: 28px 24px;
-            border-bottom: 5px solid #0ea5e9;
+            padding: 20px 24px; /* O'zgartirildi */
+            border-bottom: 4px solid #0ea5e9; /* O'zgartirildi */
         }
 
         tbody td {
-            padding: 32px 28px;
-            font-size: 1.5rem;
+            padding: 20px 24px; /* O'zgartirildi */
+            font-size: 1.25rem; /* O'zgartirildi */
             vertical-align: middle;
         }
 
         .row-number {
-            font-size: 2.5rem;
+            font-size: 2rem; /* O'zgartirildi */
             font-weight: 900;
             color: #64748b;
             text-align: center;
-            width: 120px;
+            width: 80px; /* O'zgartirildi */
         }
 
         .table-header-title {
             background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
-            padding: 36px;
-            border-radius: 24px 24px 0 0;
+            padding: 28px; /* O'zgartirildi */
+            border-radius: 20px 20px 0 0; /* O'zgartirildi */
         }
 
         .table-header-title h2 {
-            font-size: 3.25rem;
+            font-size: 2.5rem; /* O'zgartirildi */
             font-weight: 900;
             color: white;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .table-header-title p {
-            font-size: 1.5rem;
+            font-size: 1.25rem; /* O'zgartirildi */
             color: rgba(255, 255, 255, 0.95);
             font-weight: 600;
-            margin-top: 10px;
+            margin-top: 8px; /* O'zgartirildi */
         }
 
-        .icon-in {
-            color: #14532d;
-            font-size: 1.5rem;
+        .icon-in, .icon-out {
+            font-size: 1.25rem; /* O'zgartirildi */
         }
 
-        .icon-out {
-            color: #312e81;
-            font-size: 1.5rem;
-        }
+        .icon-in { color: #14532d; }
+        .icon-out { color: #312e81; }
 
         @keyframes spin { 
             from { transform: rotate(0deg); } 
@@ -280,12 +287,12 @@
     </div>
 
     <!-- HEADER -->
-    <header class="header-bg-pattern shadow-lg z-50 py-4 px-6 sticky top-0 w-full border-b-2 border-blue-900">
+    <header class="header-bg-pattern shadow-lg z-50 py-3 px-6 sticky top-0 w-full border-b-2 border-blue-900">
         <div class="w-full mx-auto flex items-center justify-between">
             
-            <div class="flex items-center gap-5">
-                <div class="w-16 h-16 rounded-full bg-[#ffffff10] border border-[#ffffff30] flex items-center justify-center backdrop-blur-sm">
-                    <img src="https://taskman.uz/gerb.png" alt="Gerb" class="w-12 h-12 object-contain">
+            <div class="flex items-center gap-4">
+                <div class="w-14 h-14 rounded-full bg-[#ffffff10] border border-[#ffffff30] flex items-center justify-center backdrop-blur-sm">
+                    <img src="https://taskman.uz/gerb.png" alt="Gerb" class="w-10 h-10 object-contain">
                 </div>
 
                 <div class="flex flex-col justify-center gap-1.5 h-12 opacity-90">
@@ -340,14 +347,12 @@
         const IJRO_SPREADSHEET_ID = '1pfRrY0Z5JZvtClxWailRJ-Y0G5vnlYJNDiWSrrMkLHE';
         const IJRO_SHEET_GID = '0';
         
-        // YANGI TURNIKET ID SI
         const TURNIKET_SPREADSHEET_ID = '1QPJoqOpm6Cihu1GcVkgaPu9AjTQOQ9Wf3G3Pq3ilqv4';
         
         const SCREEN_SWITCH_INTERVAL = 300000; // 5 minutes
         
-        // ISH VAQTI SOZLAMALARI
-        const WORK_START_TIME = "09:00"; // Undan kech kelsa qizil
-        const WORK_END_TIME = "18:00";   // Undan oldin ketsa sariq
+        const WORK_START_TIME = "09:00";
+        const WORK_END_TIME = "18:00";
         
         let currentMode = 'ijro';
         let scrollInterval = null;
@@ -360,15 +365,12 @@
         const countdownDisplay = document.getElementById('countdown-display');
         const nextScreenText = document.getElementById('next-screen-text');
 
-        // COUNTDOWN TIMER
         function updateCountdown() {
             remainingTime -= 1000;
-            
             if (remainingTime <= 0) {
                 remainingTime = SCREEN_SWITCH_INTERVAL;
                 switchScreen();
             }
-            
             const minutes = Math.floor(remainingTime / 60000);
             const seconds = Math.floor((remainingTime % 60000) / 1000);
             countdownDisplay.textContent = `${minutes}:${String(seconds).padStart(2, '0')}`;
@@ -381,22 +383,19 @@
             updateCountdown();
         }
 
-        // UPDATE TIME
         function updateDateTime() {
             const now = new Date();
             const timeString = now.toLocaleTimeString('uz-UZ', { hour: '2-digit', minute: '2-digit' });
             document.getElementById('current-time').textContent = timeString;
         }
 
-        // AUTO SCROLL
         function startAutoScroll() {
             if (scrollInterval) clearInterval(scrollInterval);
-            
             let scrollDirection = 1;
             let isPaused = false;
             let pauseStart = 0;
-            const scrollSpeed = 1; // Speed
-            const pauseTime = 3000; // Pause at top/bottom
+            const scrollSpeed = 1;
+            const pauseTime = 3000;
             
             scrollInterval = setInterval(() => {
                 if (isPaused) {
@@ -406,13 +405,9 @@
                     }
                     return;
                 }
-                
                 const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
                 const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-                
-                // Agar ekran balandligi kontentdan katta bo'lsa, scroll kerak emas
                 if (maxScroll <= 0) return;
-
                 if (scrollDirection === 1) {
                     if (currentScroll >= maxScroll - 5) {
                         isPaused = true;
@@ -439,7 +434,6 @@
             window.scrollTo(0, 0);
         }
 
-        // CSV PARSER
         function parseCSV(csv) {
             const lines = csv.split('\n');
             return lines.map(line => {
@@ -461,8 +455,12 @@
             if (fileId.startsWith('http://') || fileId.startsWith('https://')) return fileId;
             return `https://drive.google.com/thumbnail?id=${fileId.trim()}&sz=w400`;
         }
+        
+        function formatTime(timeStr) {
+            if (!timeStr || !timeStr.includes(':')) return '';
+            return timeStr.split(':').slice(0, 2).join(':'); // "07:01:32" -> "07:01"
+        }
 
-        // --- IJRO INTIZOMI FUNCTIONS (O'ZGARISHSIZ) ---
         async function loadIjroData() {
             try {
                 const targetUrl = `https://docs.google.com/spreadsheets/d/${IJRO_SPREADSHEET_ID}/export?format=csv&gid=${IJRO_SHEET_GID}`;
@@ -475,18 +473,15 @@
                     return;
                 }
                 const dataRows = rows.slice(1);
-                const employees = dataRows.map(row => {
-                    const photoId = (row[2] || '').replace(/^"|"$/g, '');
-                    return {
-                        name: (row[0] || 'Noma\'lum').replace(/^"|"$/g, ''),
-                        department: (row[1] || '').replace(/^"|"$/g, ''),
-                        photo: buildGoogleDriveUrl(photoId),
-                        overdue_tasks: parseInt(row[3]) || 0,
-                        overdue_3days: parseInt(row[4]) || 0,
-                        open_tasks: parseInt(row[5]) || 0,
-                        overdue_appeals: parseInt(row[6]) || 0
-                    };
-                }).filter(emp => emp.overdue_tasks > 0 || emp.overdue_3days > 0 || emp.overdue_appeals > 0);
+                const employees = dataRows.map(row => ({
+                    name: (row[0] || 'Noma\'lum').replace(/^"|"$/g, ''),
+                    department: (row[1] || '').replace(/^"|"$/g, ''),
+                    photo: buildGoogleDriveUrl((row[2] || '').replace(/^"|"$/g, '')),
+                    overdue_tasks: parseInt(row[3]) || 0,
+                    overdue_3days: parseInt(row[4]) || 0,
+                    open_tasks: parseInt(row[5]) || 0,
+                    overdue_appeals: parseInt(row[6]) || 0
+                })).filter(emp => emp.overdue_tasks > 0 || emp.overdue_3days > 0 || emp.overdue_appeals > 0);
 
                 if (employees.length === 0) {
                     showNoDataIjro();
@@ -500,11 +495,7 @@
         }
 
         function displayIjroEmployees(employees) {
-            const html = `
-                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 pb-10">
-                    ${employees.map(emp => createIjroCard(emp)).join('')}
-                </div>
-            `;
+            const html = `<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 pb-10">${employees.map(createIjroCard).join('')}</div>`;
             contentContainer.innerHTML = html;
             setTimeout(() => startAutoScroll(), 2000);
         }
@@ -512,163 +503,83 @@
         function createIjroCard(emp) {
             return `
                 <div class="tv-card">
-                    <div class="w-[160px] h-full flex-shrink-0 bg-slate-100 border-r border-slate-200 relative">
-                        <img 
-                            src="${emp.photo}" 
-                            alt="${emp.name}" 
-                            class="w-full h-full object-cover object-top absolute inset-0"
-                            onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(emp.name)}&background=e2e8f0&color=475569&size=400'"
-                        >
+                    <div class="w-[120px] h-full flex-shrink-0 bg-slate-100 border-r border-slate-200 relative">
+                        <img src="${emp.photo}" alt="${emp.name}" class="w-full h-full object-cover object-top absolute inset-0" onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(emp.name)}&background=e2e8f0&color=475569&size=240'">
                     </div>
-                    <div class="flex-1 p-4 flex flex-col justify-between h-full bg-white">
+                    <div class="flex-1 p-3 flex flex-col justify-between h-full bg-white">
                         <div>
                             <h2 class="text-xl font-[800] text-slate-900 leading-tight mb-1">${emp.name}</h2>
-                            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wide line-clamp-2 leading-snug">${emp.department}</p>
+                            <p class="text-xs font-bold text-slate-500 uppercase tracking-wide line-clamp-2 leading-snug">${emp.department}</p>
                         </div>
                         <div class="flex flex-col gap-0 border-t border-slate-100 pt-1">
                             <div class="flex items-center justify-between py-1.5 border-b border-slate-200">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-7 h-7 rounded bg-red-50 flex items-center justify-center border border-red-100">
-                                        <i class="fa-solid fa-file-circle-exclamation text-red-600 text-sm"></i>
-                                    </div>
-                                    <span class="text-slate-700 font-bold text-sm">Muddati o'tgan</span>
-                                </div>
-                                <span class="text-2xl font-[900] text-red-600 tabular-nums">${emp.overdue_tasks}</span>
+                                <div class="flex items-center gap-2"><div class="w-6 h-6 rounded bg-red-50 flex items-center justify-center border border-red-100"><i class="fa-solid fa-file-circle-exclamation text-red-600 text-sm"></i></div><span class="text-slate-700 font-bold text-sm">Muddati o'tgan</span></div><span class="text-2xl font-[900] text-red-600 tabular-nums">${emp.overdue_tasks}</span>
                             </div>
                             <div class="flex items-center justify-between py-1.5 border-b border-slate-200">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-7 h-7 rounded bg-orange-50 flex items-center justify-center border border-orange-100">
-                                        <i class="fa-solid fa-hourglass-half text-orange-500 text-sm"></i>
-                                    </div>
-                                    <span class="text-slate-700 font-bold text-sm">3 kundan ortiq</span>
-                                </div>
-                                <span class="text-2xl font-[900] ${emp.overdue_3days > 0 ? 'text-orange-500' : 'text-slate-300'} tabular-nums">${emp.overdue_3days}</span>
+                                <div class="flex items-center gap-2"><div class="w-6 h-6 rounded bg-orange-50 flex items-center justify-center border border-orange-100"><i class="fa-solid fa-hourglass-half text-orange-500 text-sm"></i></div><span class="text-slate-700 font-bold text-sm">3 kundan ortiq</span></div><span class="text-2xl font-[900] ${emp.overdue_3days > 0 ? 'text-orange-500' : 'text-slate-300'} tabular-nums">${emp.overdue_3days}</span>
                             </div>
                             <div class="flex items-center justify-between py-1.5 pt-2">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-7 h-7 rounded bg-blue-50 flex items-center justify-center border border-blue-100">
-                                        <i class="fa-solid fa-envelope-open-text text-blue-600 text-sm"></i>
-                                    </div>
-                                    <span class="text-slate-700 font-bold text-sm">Murojaatlar</span>
-                                </div>
-                                <span class="text-2xl font-[900] ${emp.overdue_appeals > 0 ? 'text-red-600' : 'text-slate-300'} tabular-nums">${emp.overdue_appeals}</span>
+                                <div class="flex items-center gap-2"><div class="w-6 h-6 rounded bg-blue-50 flex items-center justify-center border border-blue-100"><i class="fa-solid fa-envelope-open-text text-blue-600 text-sm"></i></div><span class="text-slate-700 font-bold text-sm">Murojaatlar</span></div><span class="text-2xl font-[900] ${emp.overdue_appeals > 0 ? 'text-red-600' : 'text-slate-300'} tabular-nums">${emp.overdue_appeals}</span>
                             </div>
                         </div>
                     </div>
-                </div>
-            `;
+                </div>`;
         }
 
         function showNoDataIjro() {
-            contentContainer.innerHTML = `
-                <div class="h-[60vh] flex flex-col items-center justify-center">
-                    <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
-                        <i class="fa-solid fa-check text-green-600 text-5xl"></i>
-                    </div>
-                    <h3 class="text-3xl font-black text-slate-800">Ajoyib natija!</h3>
-                    <p class="text-xl text-slate-500 mt-2 font-medium">Muddati o'tgan hujjatlar mavjud emas.</p>
-                </div>
-            `;
+            contentContainer.innerHTML = `<div class="h-[60vh] flex flex-col items-center justify-center"><div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg"><i class="fa-solid fa-check text-green-600 text-5xl"></i></div><h3 class="text-3xl font-black text-slate-800">Ajoyib natija!</h3><p class="text-xl text-slate-500 mt-2 font-medium">Muddati o'tgan hujjatlar mavjud emas.</p></div>`;
         }
 
         function showErrorIjro() {
-            contentContainer.innerHTML = `
-                <div class="h-[60vh] flex flex-col items-center justify-center text-center">
-                    <div class="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
-                         <i class="fa-solid fa-triangle-exclamation text-red-600 text-5xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-black text-slate-800">Xatolik yuz berdi</h3>
-                    <p class="text-lg text-slate-500 mt-2">Ma'lumotlar yuklanmadi.</p>
-                </div>
-            `;
+            contentContainer.innerHTML = `<div class="h-[60vh] flex flex-col items-center justify-center text-center"><div class="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg"><i class="fa-solid fa-triangle-exclamation text-red-600 text-5xl"></i></div><h3 class="text-2xl font-black text-slate-800">Xatolik yuz berdi</h3><p class="text-lg text-slate-500 mt-2">Ma'lumotlar yuklanmadi.</p></div>`;
         }
 
-        // --- TURNIKET FUNCTIONS (YANGI VA DINAMIK) ---
-
-        // Bugungi sanani DD-MM-YYYY formatda oluvchi funksiya
         function getTodaySheetName() {
             const today = new Date();
             const day = String(today.getDate()).padStart(2, '0');
             const month = String(today.getMonth() + 1).padStart(2, '0');
             const year = today.getFullYear();
             return `${day}-${month}-${year}`;
-            // return "13-02-2026"; // Test uchun
         }
 
-        // O'zbek tilida chiroyli sana
         function getFormattedDateUz() {
             const date = new Date();
-            const months = [
-                "Yanvar", "Fevral", "Mart", "Aprel", "May", "Iyun",
-                "Iyul", "Avgust", "Sentabr", "Oktabr", "Noyabr", "Dekabr"
-            ];
-            const days = [
-                "Yakshanba", "Dushanba", "Seshanba", "Chorshanba", 
-                "Payshanba", "Juma", "Shanba"
-            ];
-            
-            const d = date.getDate();
-            const m = months[date.getMonth()];
-            const y = date.getFullYear();
-            const dayName = days[date.getDay()];
-            
-            return `${y}-yil ${d}-${m}, ${dayName}`;
+            const months = ["Yanvar", "Fevral", "Mart", "Aprel", "May", "Iyun", "Iyul", "Avgust", "Sentabr", "Oktabr", "Noyabr", "Dekabr"];
+            const days = ["Yakshanba", "Dushanba", "Seshanba", "Chorshanba", "Payshanba", "Juma", "Shanba"];
+            return `${date.getFullYear()}-yil ${date.getDate()}-${months[date.getMonth()]}, ${days[date.getDay()]}`;
         }
 
         async function loadTurniketData() {
             const sheetName = getTodaySheetName();
-            // out:csv barcha ma'lumotlarni olib keladi
             const url = `https://docs.google.com/spreadsheets/d/${TURNIKET_SPREADSHEET_ID}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
-
             try {
                 const response = await fetch(url);
-                
-                if (!response.ok) {
-                    throw new Error("Sheet topilmadi (Bugungi sana bilan nomlangan list yo'q)");
-                }
-
+                if (!response.ok) throw new Error("Sheet topilmadi");
                 const csvText = await response.text();
                 const rows = parseCSV(csvText);
-
-                // Agar list bo'sh bo'lsa yoki faqat sarlavha bo'lsa
                 if (rows.length <= 1) {
                     showNoDataTurniket(sheetName);
                     return;
                 }
-
-                // Sarlavhani (0-qator) tashlab ketamiz
-                // Ustunlar: A=0(ID), B=1(FIO), C=2(Lavozim-SKIP), D=3(Rasmi), E=4(Keldi), F=5(Ketdi)
                 const employees = rows.slice(1).map(row => {
-                    const id = (row[0] || '').replace(/^"|"$/g, '');
-                    const name = (row[1] || '').replace(/^"|"$/g, '');
-                    const photo = (row[3] || '').replace(/^"|"$/g, '');
-                    const inTime = (row[4] || '').replace(/^"|"$/g, '');
-                    const outTime = (row[5] || '').replace(/^"|"$/g, '');
-
-                    // Vaqt logikasi
-                    // 09:00 dan kech kelsa -> Late (Qizil)
-                    const isLate = inTime && inTime > WORK_START_TIME;
-                    
-                    // 18:00 dan oldin ketsa -> Early Leave (Sariq)
-                    const isEarlyLeave = outTime && outTime < WORK_END_TIME;
-
+                    const inTime = formatTime((row[4] || '').replace(/^"|"$/g, ''));
+                    const outTime = formatTime((row[5] || '').replace(/^"|"$/g, ''));
                     return {
-                        id: id,
-                        name: name,
-                        photo: buildGoogleDriveUrl(photo),
+                        name: (row[1] || '').replace(/^"|"$/g, ''),
+                        photo: buildGoogleDriveUrl((row[3] || '').replace(/^"|"$/g, '')),
                         firstIn: inTime,
                         lastOut: outTime,
-                        isLate: isLate,
-                        isEarlyLeave: isEarlyLeave
+                        isLate: inTime && inTime > WORK_START_TIME,
+                        isEarlyLeave: outTime && outTime < WORK_END_TIME,
+                        isAbsent: !inTime // Kelmagan deb hisoblaymiz
                     };
-                }).filter(e => e.name && e.name.length > 2); // Ismi bor qatorlarni olamiz (ID bo'lmasa ham chiqadi)
+                }).filter(e => e.name && e.name.length > 2);
 
                 if (employees.length === 0) {
                     showNoDataTurniket(sheetName);
                 } else {
                     displayTurniketData(employees);
                 }
-
             } catch (error) {
                 console.error("Turniket Load Error:", error);
                 showErrorTurniket(sheetName);
@@ -677,113 +588,55 @@
 
         function displayTurniketData(attendanceData) {
             const dateStr = getFormattedDateUz();
-
             const html = `
                 <div class="max-w-[96%] mx-auto">
                     <div class="attendance-card">
-                        <div class="table-header-title">
-                            <h2><i class="fa-solid fa-clipboard-check mr-4"></i>Xodimlar davomati</h2>
-                            <p><i class="fa-solid fa-calendar-day mr-2"></i>${dateStr}</p>
-                        </div>
+                        <div class="table-header-title"><h2><i class="fa-solid fa-clipboard-check mr-4"></i>Xodimlar davomati</h2><p><i class="fa-solid fa-calendar-day mr-2"></i>${dateStr}</p></div>
                         <table class="w-full border-collapse">
-                            <thead>
-                                <tr>
-                                    <th style="width: 100px;">#</th>
-                                    <th class="text-left">Xodim</th>
-                                    <th style="width: 280px;">Keldi</th>
-                                    <th style="width: 280px;">Ketdi</th>
-                                </tr>
-                            </thead>
+                            <thead><tr><th style="width: 80px;">T/R</th><th class="text-left">Xodim</th><th style="width: 220px;">Keldi</th><th style="width: 220px;">Ketdi</th></tr></thead>
                             <tbody>
                                 ${attendanceData.map((record, index) => {
-                                    // Qator rangi logikasi: Kechiksa qizg'ish
-                                    const rowClass = record.isLate ? 'late' : 'on-time';
+                                    let rowClass = 'on-time';
+                                    if (record.isAbsent) rowClass = 'absent';
+                                    else if (record.isLate) rowClass = 'late';
                                     
-                                    // Vaqt badge rangi
                                     const inTimeClass = record.isLate ? 'late' : 'on-time';
                                     const outTimeClass = record.isEarlyLeave ? 'early-leave' : (record.lastOut ? 'neutral' : '');
 
-                                    // Avatar
-                                    const avatarHtml = record.photo 
-                                        ? `<img src="${record.photo}" alt="${record.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                           <div class="avatar-placeholder" style="display: none;">${record.name.charAt(0)}</div>`
-                                        : `<div class="avatar-placeholder">${record.name.charAt(0)}</div>`;
+                                    const avatarHtml = record.photo ? `<img src="${record.photo}" alt="${record.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="avatar-placeholder" style="display: none;">${record.name.charAt(0)}</div>` : `<div class="avatar-placeholder">${record.name.charAt(0)}</div>`;
                                     
-                                    // Agar ID bo'lmasa, tartib raqami (index+1) qo'yiladi
-                                    const displayId = record.id ? record.id : (index + 1);
-
                                     return `
                                         <tr class="table-row ${rowClass}">
-                                            <td class="row-number">${displayId}</td>
-                                            <td>
-                                                <div class="flex items-center gap-6">
-                                                    <div class="avatar-container">${avatarHtml}</div>
-                                                    <div>
-                                                        <p class="employee-name">${record.name}</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="text-center">
-                                                ${record.firstIn ? `
-                                                <span class="time-badge ${inTimeClass}">
-                                                    <i class="fa-solid fa-arrow-right-to-bracket icon-in"></i>
-                                                    ${record.firstIn}
-                                                </span>` : '<span class="text-slate-400 font-bold text-xl">-</span>'}
-                                            </td>
-                                            <td class="text-center">
-                                                ${record.lastOut ? `
-                                                <span class="time-badge ${outTimeClass}">
-                                                    <i class="fa-solid fa-arrow-right-from-bracket icon-out"></i>
-                                                    ${record.lastOut}
-                                                </span>` : '<span class="text-slate-400 font-bold text-xl">-</span>'}
-                                            </td>
-                                        </tr>
-                                    `;
+                                            <td class="row-number">${index + 1}</td>
+                                            <td><div class="flex items-center gap-5"><div class="avatar-container">${avatarHtml}</div><div><p class="employee-name">${record.name}</p></div></div></td>
+                                            <td class="text-center">${record.firstIn ? `<span class="time-badge ${inTimeClass}"><i class="fa-solid fa-arrow-right-to-bracket icon-in"></i> ${record.firstIn}</span>` : '<span class="font-bold text-xl text-red-800">KELMAGAN</span>'}</td>
+                                            <td class="text-center">${record.lastOut ? `<span class="time-badge ${outTimeClass}"><i class="fa-solid fa-arrow-right-from-bracket icon-out"></i> ${record.lastOut}</span>` : '<span class="text-slate-400 font-bold text-xl">-</span>'}</td>
+                                        </tr>`;
                                 }).join('')}
                             </tbody>
                         </table>
                     </div>
-                </div>
-            `;
+                </div>`;
             contentContainer.innerHTML = html;
-            // Scroll sal kechroq ishga tushsin, rasm/content yuklanib olishi uchun
             setTimeout(() => startAutoScroll(), 3000);
         }
 
         function showNoDataTurniket(sheetName) {
-            contentContainer.innerHTML = `
-                <div class="h-[60vh] flex flex-col items-center justify-center">
-                    <div class="w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
-                        <i class="fa-regular fa-calendar-xmark text-slate-500 text-5xl"></i>
-                    </div>
-                    <h3 class="text-3xl font-black text-slate-800">Ma'lumot topilmadi</h3>
-                    <p class="text-xl text-slate-500 mt-2 font-medium">"${sheetName}" nomli list bo'sh yoki mavjud emas.</p>
-                </div>
-            `;
+            contentContainer.innerHTML = `<div class="h-[60vh] flex flex-col items-center justify-center"><div class="w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg"><i class="fa-regular fa-calendar-xmark text-slate-500 text-5xl"></i></div><h3 class="text-3xl font-black text-slate-800">Ma'lumot topilmadi</h3><p class="text-xl text-slate-500 mt-2 font-medium">"${sheetName}" nomli list bo'sh yoki mavjud emas.</p></div>`;
         }
 
         function showErrorTurniket(sheetName) {
-            contentContainer.innerHTML = `
-                <div class="h-[60vh] flex flex-col items-center justify-center text-center">
-                    <div class="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg">
-                         <i class="fa-solid fa-wifi text-red-600 text-5xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-black text-slate-800">Ulanishda xatolik</h3>
-                    <p class="text-lg text-slate-500 mt-2">Internetni tekshiring yoki "${sheetName}" listi mavjudligiga ishonch hosil qiling.</p>
-                </div>
-            `;
+            contentContainer.innerHTML = `<div class="h-[60vh] flex flex-col items-center justify-center text-center"><div class="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg"><i class="fa-solid fa-wifi text-red-600 text-5xl"></i></div><h3 class="text-2xl font-black text-slate-800">Ulanishda xatolik</h3><p class="text-lg text-slate-500 mt-2">Internetni tekshiring yoki "${sheetName}" listi mavjudligiga ishonch hosil qiling.</p></div>`;
         }
 
-        // SCREEN SWITCHING
         async function switchScreen() {
             stopAutoScroll();
-            
             if (currentMode === 'ijro') {
                 currentMode = 'turniket';
                 document.body.className = 'min-h-screen flex flex-col turniket-mode';
                 headerSubtitle.textContent = 'Turniket davomat tizimi';
                 nextScreenText.textContent = 'Ijro intizomi';
-                await loadTurniketData(); // Async call
+                await loadTurniketData();
             } else {
                 currentMode = 'ijro';
                 document.body.className = 'min-h-screen flex flex-col ijro-mode';
@@ -793,27 +646,21 @@
             }
         }
 
-        // REFRESH BUTTON
         refreshButton.addEventListener('click', async function() {
             const icon = this.querySelector('i');
             icon.classList.add('refreshing');
             stopAutoScroll();
-            
             if (currentMode === 'ijro') {
                 await loadIjroData();
             } else {
                 await loadTurniketData();
             }
-            
             setTimeout(() => icon.classList.remove('refreshing'), 500);
         });
 
-        // INITIALIZATION
         async function init() {
             updateDateTime();
             setInterval(updateDateTime, 1000);
-            
-            // Dastlab Ijro intizomini yuklaymiz
             await loadIjroData();
             startCountdown();
         }
