@@ -180,11 +180,18 @@
             background: linear-gradient(135deg, #86efac 0%, #6ee7b7 100%);
             color: #14532d;
         }
-
+        
+        /* YANGI O'ZGARTIRISHLAR */
         .time-badge.early-leave {
-            background: linear-gradient(135deg, #fef08a 0%, #fde047 100%);
+            background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%); /* Qizil rang */
+            color: #7f1d1d;
+        }
+        
+        .time-badge.warning {
+            background: linear-gradient(135deg, #fef08a 0%, #fde047 100%); /* Sariq rang */
             color: #854d0e;
         }
+        /* YANGI O'ZGARTIRISHLAR TUGADI */
 
         .time-badge.neutral {
             background: linear-gradient(135deg, #c7d2fe 0%, #a5b4fc 100%);
@@ -351,7 +358,9 @@
         
         const SCREEN_SWITCH_INTERVAL = 300000; // 5 minutes
         
-        const WORK_START_TIME = "09:00";
+        // YANGI O'ZGARTIRISH: VAQT QOIDALARI
+        const ON_TIME_DEADLINE = "07:00";
+        const LATE_WARNING_DEADLINE = "07:10";
         const WORK_END_TIME = "18:00";
         
         let currentMode = 'ijro';
@@ -394,7 +403,7 @@
             let scrollDirection = 1;
             let isPaused = false;
             let pauseStart = 0;
-            const scrollSpeed = 1;
+            const scrollSpeed = 2; // YANGI O'ZGARTIRISH: TEZLIK OSHIRILDI
             const pauseTime = 3000;
             
             scrollInterval = setInterval(() => {
@@ -564,14 +573,25 @@
                 const employees = rows.slice(1).map(row => {
                     const inTime = formatTime((row[4] || '').replace(/^"|"$/g, ''));
                     const outTime = formatTime((row[5] || '').replace(/^"|"$/g, ''));
+                    
+                    // YANGI O'ZGARTIRISH: KELISH VAQTI STATUSINI ANIQLASH
+                    let inStatus = 'on-time';
+                    if (!inTime) {
+                        inStatus = 'absent';
+                    } else if (inTime > LATE_WARNING_DEADLINE) {
+                        inStatus = 'late'; // qizil
+                    } else if (inTime > ON_TIME_DEADLINE) {
+                        inStatus = 'warning'; // sarg'ish
+                    }
+
                     return {
                         name: (row[1] || '').replace(/^"|"$/g, ''),
                         photo: buildGoogleDriveUrl((row[3] || '').replace(/^"|"$/g, '')),
                         firstIn: inTime,
                         lastOut: outTime,
-                        isLate: inTime && inTime > WORK_START_TIME,
+                        inStatus: inStatus, // yangi status propertisi
                         isEarlyLeave: outTime && outTime < WORK_END_TIME,
-                        isAbsent: !inTime // Kelmagan deb hisoblaymiz
+                        isAbsent: !inTime
                     };
                 }).filter(e => e.name && e.name.length > 2);
 
@@ -596,11 +616,15 @@
                             <thead><tr><th style="width: 80px;">T/R</th><th class="text-left">Xodim</th><th style="width: 220px;">Keldi</th><th style="width: 220px;">Ketdi</th></tr></thead>
                             <tbody>
                                 ${attendanceData.map((record, index) => {
+                                    // YANGI O'ZGARTIRISH: QATOR KLASSINI ANIQLASH
                                     let rowClass = 'on-time';
-                                    if (record.isAbsent) rowClass = 'absent';
-                                    else if (record.isLate) rowClass = 'late';
+                                    if (record.isAbsent) {
+                                        rowClass = 'absent';
+                                    } else if (record.inStatus === 'late' || record.inStatus === 'warning') {
+                                        rowClass = 'late';
+                                    }
                                     
-                                    const inTimeClass = record.isLate ? 'late' : 'on-time';
+                                    const inTimeClass = record.inStatus; // 'on-time', 'warning', 'late' bo'lishi mumkin
                                     const outTimeClass = record.isEarlyLeave ? 'early-leave' : (record.lastOut ? 'neutral' : '');
 
                                     const avatarHtml = record.photo ? `<img src="${record.photo}" alt="${record.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="avatar-placeholder" style="display: none;">${record.name.charAt(0)}</div>` : `<div class="avatar-placeholder">${record.name.charAt(0)}</div>`;
