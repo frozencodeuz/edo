@@ -276,10 +276,9 @@
             background: transparent; 
         }
         
-        /* 2-TUZATISH: scroll-behavior olib tashlandi */
-        /* html {
+        html {
             scroll-behavior: smooth;
-        } */
+        }
 
         /* Screen backgrounds */
         body.ijro-mode {
@@ -587,9 +586,8 @@
                     return;
                 }
                 const employees = rows.slice(1).map(row => {
-                    // 1-TUZATISH: Ustunlar (kolonkalar) uchun to'g'ri indekslar qo'yildi
-                    const inTime = formatTime((row[3] || '').replace(/^"|"$/g, ''));
-                    const outTime = formatTime((row[4] || '').replace(/^"|"$/g, ''));
+                    const inTime = formatTime((row[4] || '').replace(/^"|"$/g, ''));
+                    const outTime = formatTime((row[5] || '').replace(/^"|"$/g, ''));
                     
                     // === KELISH VAQTI STATUSINI ANIQLASH (son bilan taqqoslash) ===
                     const ON_TIME_MINS = timeToMinutes(ON_TIME_DEADLINE);       // 7*60 = 420
@@ -611,7 +609,7 @@
 
                     return {
                         name: (row[1] || '').replace(/^"|"$/g, ''),
-                        photo: buildGoogleDriveUrl((row[2] || '').replace(/^"|"$/g, '')), // Rasm uchun ham indeks to'g'irlandi
+                        photo: buildGoogleDriveUrl((row[3] || '').replace(/^"|"$/g, '')),
                         firstIn: inTime,
                         lastOut: outTime,
                         inStatus: inStatus,
