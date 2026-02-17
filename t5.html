@@ -171,28 +171,37 @@
             justify-content: center;
         }
 
-        /* === YANGI O'ZGARTIRISH: RANG STILLARI === */
-        .time-badge.late,
-        .time-badge.early-leave {
+        /* === RANG STILLARI === */
+        /* KELISH: 7:10+ dan kech = QIZIL */
+        .time-badge.late {
             background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%);
             color: #7f1d1d;
         }
         
+        /* KELISH: 7:00 dan 7:10 gacha = SARG'ISH */
         .time-badge.warning {
              background: linear-gradient(135deg, #fef08a 0%, #fde047 100%);
              color: #854d0e;
         }
-        /* ========================================= */
 
+        /* KELISH: 7:00 gacha = YASHIL */
         .time-badge.on-time {
             background: linear-gradient(135deg, #86efac 0%, #6ee7b7 100%);
             color: #14532d;
         }
 
-        .time-badge.neutral {
-            background: linear-gradient(135deg, #c7d2fe 0%, #a5b4fc 100%);
-            color: #312e81;
+        /* CHIQISH: 18:00 gacha ketgan = QIZIL */
+        .time-badge.early-leave {
+            background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%);
+            color: #7f1d1d;
         }
+
+        /* CHIQISH: 18:00 dan keyin ketgan = NEYTRAL (ko'kimtir) */
+        .time-badge.neutral {
+            background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+            color: #1e293b;
+        }
+        /* ==================== */
 
         .employee-name {
             font-size: 1.5rem; /* O'zgartirildi */
@@ -251,7 +260,7 @@
         }
 
         .icon-in { color: #14532d; }
-        .icon-out { color: #312e81; }
+        .icon-out { color: #1e293b; }
 
         @keyframes spin { 
             from { transform: rotate(0deg); } 
@@ -590,6 +599,7 @@
                         firstIn: inTime,
                         lastOut: outTime,
                         inStatus: inStatus, 
+                        // 18:00 gacha ketgan bo'lsa = erta ketish (qizil), 18:00 dan keyin = normal (neytral)
                         isEarlyLeave: outTime && outTime < WORK_END_TIME,
                         isAbsent: !inTime
                     };
@@ -624,6 +634,7 @@
                                     }
                                     
                                     const inTimeClass = record.inStatus; 
+                                    // CHIQISH: 18:00 gacha = qizil (early-leave), 18:00 dan keyin = neytral
                                     const outTimeClass = record.isEarlyLeave ? 'early-leave' : (record.lastOut ? 'neutral' : '');
 
                                     const avatarHtml = record.photo ? `<img src="${record.photo}" alt="${record.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="avatar-placeholder" style="display: none;">${record.name.charAt(0)}</div>` : `<div class="avatar-placeholder">${record.name.charAt(0)}</div>`;
