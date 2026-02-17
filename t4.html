@@ -409,9 +409,7 @@
             let scrollDirection = 1;
             let isPaused = false;
             let pauseStart = 0;
-            // === YANGI O'ZGARTIRISH: SCROLL TEZLIGI OSHIRILDI ===
             const scrollSpeed = 2; 
-            // ====================================================
             const pauseTime = 3000;
             
             scrollInterval = setInterval(() => {
@@ -451,20 +449,42 @@
             window.scrollTo(0, 0);
         }
 
-        function parseCSV(csv) {
-            const lines = csv.split('\n');
-            return lines.map(line => {
-                const values = [];
-                let current = '';
-                let quote = false;
-                for (let i = 0; i < line.length; i++) {
-                    if (line[i] === '"') { quote = !quote; }
-                    else if (line[i] === ',' && !quote) { values.push(current.trim()); current = ''; }
-                    else { current += line[i]; }
+        // === YANGI CSV PARSER: Qo'shtirnoq ichidagi enterlarni to'g'ri o'qish uchun ===
+        function parseCSV(text) {
+            const rows = [];
+            let currentRow = [];
+            let currentField = '';
+            let insideQuotes = false;
+            
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                const nextChar = text[i + 1];
+                
+                if (char === '"') {
+                    if (insideQuotes && nextChar === '"') {
+                        currentField += '"';
+                        i++; 
+                    } else {
+                        insideQuotes = !insideQuotes;
+                    }
+                } else if (char === ',' && !insideQuotes) {
+                    currentRow.push(currentField.trim());
+                    currentField = '';
+                } else if ((char === '\r' || char === '\n') && !insideQuotes) {
+                    if (char === '\r' && nextChar === '\n') i++;
+                    currentRow.push(currentField.trim());
+                    rows.push(currentRow);
+                    currentRow = [];
+                    currentField = '';
+                } else {
+                    currentField += char;
                 }
-                values.push(current.trim());
-                return values;
-            }).filter(row => row.length > 1);
+            }
+            if (currentField || currentRow.length > 0) {
+                currentRow.push(currentField.trim());
+                rows.push(currentRow);
+            }
+            return rows.filter(row => row.length > 1);
         }
 
         function buildGoogleDriveUrl(fileId) {
@@ -478,7 +498,6 @@
             return timeStr.split(':').slice(0, 2).join(':'); // "07:01:32" -> "07:01"
         }
 
-        // Vaqtni daqiqalarga o'tkazish (string taqqoslash noto'g'ri: "6:30" > "07:00" = true!)
         function timeToMinutes(timeStr) {
             if (!timeStr) return -1;
             const parts = timeStr.split(':');
@@ -580,11 +599,15 @@
                 const response = await fetch(url);
                 if (!response.ok) throw new Error("Sheet topilmadi");
                 const csvText = await response.text();
+                
+                // Yangi Parser ishlatilmoqda
                 const rows = parseCSV(csvText);
+                
                 if (rows.length <= 1) {
                     showNoDataTurniket(sheetName);
                     return;
                 }
+                
                 const employees = rows.slice(1).map(row => {
                     const inTime = formatTime((row[4] || '').replace(/^"|"$/g, ''));
                     const outTime = formatTime((row[5] || '').replace(/^"|"$/g, ''));
@@ -605,8 +628,6 @@
                     }
 
                     return {
-                        // ▼▼▼ 1-O'ZGARTIRISH: personId o'qib olinadi, lekin ishlatilmaydi ▼▼▼
-                        personId: (row[0] || '').replace(/^"|"$/g, ''),
                         name: (row[1] || '').replace(/^"|"$/g, ''),
                         photo: buildGoogleDriveUrl((row[3] || '').replace(/^"|"$/g, '')),
                         firstIn: inTime,
@@ -652,7 +673,6 @@
                                     
                                     return `
                                         <tr class="table-row ${rowClass}">
-                                            <!-- ▼▼▼ 2-O'ZGARTIRISH: Oddiy tartib raqami (1, 2, 3...) chiqarildi ▼▼▼ -->
                                             <td class="row-number">${index + 1}</td>
                                             <td><div class="flex items-center gap-5"><div class="avatar-container">${avatarHtml}</div><div><p class="employee-name">${record.name}</p></div></div></td>
                                             <td class="text-center">${record.firstIn ? `<span class="time-badge ${inTimeClass}"><i class="fa-solid fa-arrow-right-to-bracket icon-in"></i> ${record.firstIn}</span>` : '<span class="font-bold text-xl text-red-800">KELMAGAN</span>'}</td>
