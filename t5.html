@@ -177,11 +177,11 @@
             background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%);
             color: #7f1d1d;
         }
-        
+
         /* KELISH: 7:00 dan 7:10 gacha = SARG'ISH */
         .time-badge.warning {
-             background: linear-gradient(135deg, #fef08a 0%, #fde047 100%);
-             color: #854d0e;
+            background: linear-gradient(135deg, #fef08a 0%, #fde047 100%);
+            color: #854d0e;
         }
 
         /* KELISH: 7:00 gacha = YASHIL */
@@ -196,7 +196,7 @@
             color: #7f1d1d;
         }
 
-        /* CHIQISH: 18:00 dan keyin ketgan = NEYTRAL (ko'kimtir) */
+        /* CHIQISH: 18:00 dan keyin ketgan = NEYTRAL kulrang */
         .time-badge.neutral {
             background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
             color: #1e293b;
@@ -478,6 +478,13 @@
             return timeStr.split(':').slice(0, 2).join(':'); // "07:01:32" -> "07:01"
         }
 
+        // Vaqtni daqiqalarga o'tkazish (string taqqoslash noto'g'ri: "6:30" > "07:00" = true!)
+        function timeToMinutes(timeStr) {
+            if (!timeStr) return -1;
+            const parts = timeStr.split(':');
+            return parseInt(parts[0]) * 60 + parseInt(parts[1] || 0);
+        }
+
         async function loadIjroData() {
             try {
                 const targetUrl = `https://docs.google.com/spreadsheets/d/${IJRO_SPREADSHEET_ID}/export?format=csv&gid=${IJRO_SHEET_GID}`;
@@ -582,25 +589,32 @@
                     const inTime = formatTime((row[4] || '').replace(/^"|"$/g, ''));
                     const outTime = formatTime((row[5] || '').replace(/^"|"$/g, ''));
                     
-                    // === YANGI O'ZGARTIRISH: KELISH VAQTI STATUSINI ANIQLASH ===
+                    // === KELISH VAQTI STATUSINI ANIQLASH (son bilan taqqoslash) ===
+                    const ON_TIME_MINS = timeToMinutes(ON_TIME_DEADLINE);       // 7*60 = 420
+                    const LATE_WARNING_MINS = timeToMinutes(LATE_WARNING_DEADLINE); // 7*60+10 = 430
+                    const WORK_END_MINS = timeToMinutes(WORK_END_TIME);         // 18*60 = 1080
+                    const inMins = timeToMinutes(inTime);
+                    const outMins = timeToMinutes(outTime);
+
                     let inStatus = 'on-time';
                     if (!inTime) {
                         inStatus = 'absent';
-                    } else if (inTime > LATE_WARNING_DEADLINE) {
-                        inStatus = 'late'; // Qizil
-                    } else if (inTime > ON_TIME_DEADLINE) {
-                        inStatus = 'warning'; // Sarg'ish
+                    } else if (inMins > LATE_WARNING_MINS) {
+                        inStatus = 'late';    // 7:10 dan keyin = QIZIL
+                    } else if (inMins > ON_TIME_MINS) {
+                        inStatus = 'warning'; // 7:00 dan 7:10 gacha = SARG'ISH
                     }
-                    // ==========================================================
+                    // else: 7:00 gacha = YASHIL (on-time)
+                    // ============================================================
 
                     return {
                         name: (row[1] || '').replace(/^"|"$/g, ''),
                         photo: buildGoogleDriveUrl((row[3] || '').replace(/^"|"$/g, '')),
                         firstIn: inTime,
                         lastOut: outTime,
-                        inStatus: inStatus, 
-                        // 18:00 gacha ketgan bo'lsa = erta ketish (qizil), 18:00 dan keyin = normal (neytral)
-                        isEarlyLeave: outTime && outTime < WORK_END_TIME,
+                        inStatus: inStatus,
+                        // 18:00 gacha ketgan = erta ketish (qizil), 18:00 dan keyin = normal (neytral)
+                        isEarlyLeave: outTime && outMins < WORK_END_MINS,
                         isAbsent: !inTime
                     };
                 }).filter(e => e.name && e.name.length > 2);
@@ -634,7 +648,6 @@
                                     }
                                     
                                     const inTimeClass = record.inStatus; 
-                                    // CHIQISH: 18:00 gacha = qizil (early-leave), 18:00 dan keyin = neytral
                                     const outTimeClass = record.isEarlyLeave ? 'early-leave' : (record.lastOut ? 'neutral' : '');
 
                                     const avatarHtml = record.photo ? `<img src="${record.photo}" alt="${record.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="avatar-placeholder" style="display: none;">${record.name.charAt(0)}</div>` : `<div class="avatar-placeholder">${record.name.charAt(0)}</div>`;
