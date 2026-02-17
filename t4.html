@@ -605,7 +605,7 @@
                     }
 
                     return {
-                        // ▼▼▼ 1-O'ZGARTIRISH: Google Sheet'ning birinchi ustunidan 'personId' o'qib olindi ▼▼▼
+                        // ▼▼▼ 1-O'ZGARTIRISH: personId o'qib olinadi, lekin ishlatilmaydi ▼▼▼
                         personId: (row[0] || '').replace(/^"|"$/g, ''),
                         name: (row[1] || '').replace(/^"|"$/g, ''),
                         photo: buildGoogleDriveUrl((row[3] || '').replace(/^"|"$/g, '')),
@@ -652,8 +652,8 @@
                                     
                                     return `
                                         <tr class="table-row ${rowClass}">
-                                            <!-- ▼▼▼ 2-O'ZGARTIRISH: Tartib raqami o'rniga 'personId' chiqarildi ▼▼▼ -->
-                                            <td class="row-number">${record.personId}</td>
+                                            <!-- ▼▼▼ 2-O'ZGARTIRISH: Oddiy tartib raqami (1, 2, 3...) chiqarildi ▼▼▼ -->
+                                            <td class="row-number">${index + 1}</td>
                                             <td><div class="flex items-center gap-5"><div class="avatar-container">${avatarHtml}</div><div><p class="employee-name">${record.name}</p></div></div></td>
                                             <td class="text-center">${record.firstIn ? `<span class="time-badge ${inTimeClass}"><i class="fa-solid fa-arrow-right-to-bracket icon-in"></i> ${record.firstIn}</span>` : '<span class="font-bold text-xl text-red-800">KELMAGAN</span>'}</td>
                                             <td class="text-center">${record.lastOut ? `<span class="time-badge ${outTimeClass}"><i class="fa-solid fa-arrow-right-from-bracket icon-out"></i> ${record.lastOut}</span>` : '<span class="text-slate-400 font-bold text-xl">-</span>'}</td>
