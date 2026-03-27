@@ -1,0 +1,1339 @@
+1-bet: Tarix va davlat tili
+N2 Savol Javob
+1. O'zbekiston  hududi ma'ruzada qaysi daryolar oralig'idagi mintaqa sifatida ta'riflanadi? Amudaryo va Sirdaryo oralig'i
+2. O'zbekistonning sivilizatsiya beshigi ekanligini isbotlovchi jihatlar ro'yxatida birinchi  bo'lib qaysi bandi keltirilgan? Ibtidoiy odamning mavjudligi
+3. O'zbekistonning xalqaro tan olinishi asosan qaysi yo'nalish orqali izohlanadi? Diplomatik tan olinish
+"4. O'zbekiston etnogenezi haqidagi fikrda qaysi uch irq atamalari tilga olingan? Mongoloid,  evropoid, negroid"
+5. Ibtidoiy madaniyatning  eng qadimiy dalillaridan biri qaysi joyda topilgani aytiladi? Teshiktosh g'ori
+6. Neolit davri ma'ruzada qaysi vaqt oralig'i bilan belgilanadi? Miloddan avvalgi 6000-4000 yillar
+7. Eneolit davri ma'ruzada qaysi vaqt oralig'i bilan ko'rsatiladi? Miloddan avvalgi 4000-3000 yillar
+8. Jezdavrida qaysi jarayonlar shakllangani  alohida ta'kidlangan? Hunarmandchilik va dehqonchilik
+9. Temir davri yodgorliklari  qaysi hududda ko'proq namoyon bo'lgani aytilgan? Farg'ona vodiysi
+"10. VI-VIII asrlarda e'tiqodlar xilma-xilligida qaysi dinlar birga tilga olingan? Zardushtiylik, buddizm, xristianlik"
+11. Movarounnahrning VIII asr boshlaridagi  siyosiy taqdiri qanday ta'riflangan?  Arab istilosi va islom dinining kirib kelishi
+12. X asr o'rtalarida tashkil topgan davlat sifatida qaysi sulola keltirilgan? Somoniylar
+13. Dandanakonjangi natijasi qanday bo'lgan? Saljuqiylar g'alabasi
+14. XIII asr boshida Xorazm  haqida qaysi tavsif berilgan? Kuchli markazlashgan davlat
+"15. Mo'g'illar istilosi oqibati qanday umumiy natija bilan tavsiflangan?  Shaharlar vayron bo'ldi, aholi qirg'in qilindi"
+16. XIV asr 40-yillarida Chig'atoy ulusining taqsimlanishi  qay yo'nalishda ko'rsatilgan? Sharqiy va G'arbiy qismlarga bo'linishi
+17. Mirzo Ulug'bek davrida qaysi soha jahonshumul  ahamiyat kasb etgani aytilgan? Astronomiya
+18. Temuriylardan so'ng hokimiyatga kelgan sulola va davlat nomi qanday keltirilgan?  Shayboniylar sulolasi
+19. Ashtarxoniylar sulolasi davri qaysi yillarga to'g'ri keladi? 1599-1753 yillar
+20. Mang'itlar sulolasi davri qaysi yillarga to'g'ri keladi? 1753-1920 yillar 21 O'zbekiston Respublikasining davlat tili qaysi? O'zbek tili
+"22 Davlat tilida ish yuritish qaysi qonun bilan tartibga solinadi? ""Davlat tili to'g'risida""gi Qonun 23 Tashkilotda ish hujjatlari qaysi tilda yuritilishi shart? O'zbek tilida"
+24 Buyruq hujjati kim tomonidan chiqariladi? Rahbar (direktor)
+"25 Xizmat hujjatlari qaysi uslubda yoziladi? Rasmiy, qat'iy uslubda"
+26 Farmoyish hujjati qanday masalalar uchun chiqariladi? Muhim operativ masalalar uchun 27 Ariza odatda kimning nomiga yoziladi? Yuqori rahbar yoki tashkilot nomiga
+28 Bayonnoma qaysi jarayonni aks ettiradi? Muayyan jarayon yoki hodisani ro'yxatga olish 29 Dalolatnoma qanday hujjat turiga kiradi? Dalolatchilik hujjati
+"30 Ish hujjatlarida sana qanday tartibda yoziladi? Kun.oy.yil (masalan, 03.02.2025) 31 Ish hujjatlarida imzo nimani bildiradi? Hujjatning qonuniyligi va javobgarlik"
+"32 Buyruq matni qaysi so'z bilan boshlanadi? ""Buyuraman"""
+"33 Rasmiy hujjatlarning tili qanday bo'lishi kerak? Aniq, qisqa, rasmiy"
+"34 Ish hujjatlarida qisqartmalar qanday qo'llaniladi? Faqat standart qisqartmalar 35 Hujjat rekvizitlariga qaysilar kiradi? Sana, imzo, muhur, nomer"
+"36 Tashkilot blankasi  nimani o'z  ichiga oladi? Tashkilot nomi, manzili, logotipi"
+"37 Xizmat yozishmalarida murojaat shakli qanday bo'lishi kerak? ""Hurmatli"", ""ehtirom bilan"""
+38 Ish hujjatlarida grammatik xatolarga yo'l qo'yilsa nima bo'ladi? Hujjat qonuniyligiga  putur etadi 39 Hujjatlarning  saqlanish muddati nimaga bog'liq? Hujjat turi va mazmuniga
+"40 Rahbar kadrlar uchun davlat tilini mukammal  bilish nimani ta'minlaydi? Ishlash samaradorligini oshiradi 41 ""Tizim"" tushunchasiga  eng mos ta'rif qaysi? Bir-biri  bilan bog'langan elementlar majmui"
+"42 Tizimli tahlilning asosiy elementlari qaysi to'plamda to'g'ri berilgan? Maqsad, resurs, natija, nazorat 43 ""Dekompozitsiya"" deganda nima tushuniladi? Murakkab tizimni oddiy qismlarga ajratish"
+44 Strategik rejalashtirishda birinchi bosqich qaysi? Muhtiyot tahlili (SWOT)
+"45 ""Missiya"" tushunchasi  nimani anglatadi? Tashkilotning asosiy maqsadi va vazifasi"
+"46 ""Vizion"" tushunchasi  nimani anglatadi? Tashkilotning kelajakdagi  orzu qilingan holati 47 SWOT tahlilda ""S""  nimani bildiradi? Kuchli tomonlar (Strengths)"
+"48 PESTEL tahlilda ""T""  nimani bildiradi? Texnologik omillar"
+49 Balanced  Scorecardning asosiy vazifasi qaysi? Strategik maqsadlarni  moliyaviy  ko'rsatkichlar bilan bog'lash 50 Ssenariyli  rejalashtirishning mohiyati  qaysi? Turli holatlar uchun alternativ variantlarni ishlab chiqish
+51 Shell misoli qaysi xulosani asoslaydi? Global energiya o'zgarishlarini bashorat qilish
+"52 Raqamli monitoring platformasining asosiy ustunligi qaysi? Real vaqtda ma'lumotlarni  yig'ish va tahlil qilish 53 ""Raqamli egizak"" (digital twin) nima? Jismoniy ob'ektning raqamli nusxasi"
+"54 Big Data va AI strategik rejalashtirishda nimani kuchaytiradi? Ma'lumotlarni tahlil qilish va bashorat qilish qobiliyati 55 ""Maqsadli  strategik rejalashtirish""ning markaziy g'oyasi qaysi? Aniq natijalarga erishish"
+56 Agile strategik boshqaruv qaysi sharoitda ayniqsa mos? Tez o'zgaruvchan muhitda
+"57 ""Silosindrom"" mazmuniga eng yaqin ta'rif qaysi? Bo'limlar o'rtasida hamkorlikning yetishmasligi"
+"58. KPI ko'rsatkichlarining strategik boshqaruvdagi  asosiy roli qaysi? Strategik maqsadlami  o'lchash va nazorat qilish 59 ""Maqsadlar daraxti"" uslubi nima uchun qo'llanadi? Maqsadlami iyerarxik tuzilishda ifodalash"
+"60 ""Loyiha asosida rejalashtirish"" nimani anglatadi? Muayyan loyihalar asosida rejalashtirish"
+61 Sun'iy intellekt tushunchasi  qaysi ta'rifga eng yaqin? Mashinalaming inson kabi fikrlash qobiliyati
+62 Davlat boshqaruvida sun'iy intellektdan foydalanishning asosiy maqsadi nima? Qaror qabul qilish samaradorligini oshirish  63 Mashinali o'rganish (Machine Leaming) nimani anglatadi? Mashinalaming  ma'lumotlar asosida o'zini o'zi takomillashtirishi 64 Sun'iy intellekt natijalarining ishonchliligi asosan nimaga bog'liq? Ma'lumotlaming sifatiga
+65 Davlat organlarida Sijoriy etishda ustuvor cheklov qaysi? Maxfiylik va xavfsizlik talablari
+66 Quyidagilardan qaysi biri SI uchun mos vazifa hisoblanadi? Belgilangan ma'lumotlami  saralash va tasniflash 67 Algoritmik xolislik (bias) muammosi  nimani anglatadi? Algoritmda adolatsizlik yoki noaniqlik
+68 Davlat ma'lumotlaridan SI da foydalanishda qaysi tamoyil muhim? Shaffoflik va javobgarlik
+"69 Sun'iy intellekt qaror qabul qilish jarayonida qanday rol o'ynaydi? Yordamchi vosita, yakuniy qaror insonga tegishli 70 Quyidagilardan qaysi biri SI ga asoslangan tizim? Chatbotlar (masalan, ChatGPT)"
+71 Sun'iy intellektning  asosiy cheklovi nimada? Ma'lumotlarga qaramlik va inson nazorati zarurati 72 SI natijalari davlat boshqaruvida qanday xarakterga ega? Tavsiya xarakterida
+73 Sun'iy intellektni joriy etish qaysi yondashuvni  talab qiladi? Bosqichma-bosqich va sinov asosida 74 SI davlat xizmatida qaysi jarayonlarda  samaraliroq? Murojaatlami  avtomatik qayta ishlash
+"75 Sun'iy intellektdan foydalanishdan kutiladigan asosiy natija qaysi? Vaqt va resurslar tejash, qarorlar sifati"
+76 SI bilan ishlovchi davlat xizmatchisi uchun qaysi ko'nikma muhim? Ma'lumotlami tahlil qilish va talqin qilish 77 Sun'iy intellekt asosida qabul qilingan tavsiyalar uchun kim mas'ul? Qaror qabul qiluvchi shaxs
+"78 ""Inson nazorati"" tamoyili  nimani anglatadi? SI tavsiyalarini inson tasdiqlashi kerak 79 Quyidagilardan qaysi biri sun'iy intellekt emas? Oddiy kalkulyator"
+80 Davlat xizmatchilari uchun SI bo'yicha bilimlar nima uchun zarur? Zamonaviy texnologiyalardan samarali foydalanish uchun 81 Ijtimoiy davlat deganda nimani tushunasiz? Fuqarolaming ijtimoiy huquqlarini kafolatlash
+82 Huquqiy davlat deganda nimani tushunasiz? Konstitutsiya va qonun ustuvorligi
+83 Demokratik davlat deganda deganda nimani tushunasiz? Xalq hokimiyati va ko'p partiyaviylik
+84 Dunyoviy davlat tushunchasi to'g'ri ko'rsatilganjavobni belgilang. Din va davlat ishlarining ajralishi 85 Davlatning oliy maqsadi nima? Fuqarolaming farovonligi va huquqlarini ta'minlash
+86 Konstitutsiyaga muvofiq jinoyat sodir etganlikda ayblanayotgan  shaxs uning aybi sudning qonuniy kuchga kirgan hukmi bilan aniqlanmaguncha aybsiz deb hisoblanishi  qanday nomlanadi? Aybsizlik prezumpsiyasi
+87 Davlat o'z  faoliyatini  birdamlik prinsipi asosida amalga oshiradi. Shunga ko'ra birdamlik  prinsipi nimani anglatadi? Butun mamlakat bo'ylab birlashgan davlat siyosati
+88 Davlat xizmatiga kirishda teng huquqlilik deganda nimani tushunasiz? Barcha uchun teng imkoniyatlar 89 Fuqarolar qanday holatlarda uy-joyidan mahrum etilishi mumkin? Faqat sud qarori asosida
+90 O'zbekiston Respublikasi Konstitutsiyasining to'g'ridan-to'g'ri amal qilishi deganda nimani tushunasiz? Konstitutsiya barcha uchun to'g'ridan-to'g'ri amal qiladi
+91 Davlat suvereniteti  nima bilan ifodalanadi? Mustaqil tashqi va ichiy siyosat 92 Demokratiya tushunchasi  nimani anglatadi? Xalq hokimiyati
+93 Huquqiy davlat tushunchasini  belgilovchi eng asosiy mezon qaysi? Konstitutsiyaviy nazorat va vakolatlar bo'linishi 94 Konstitutsiyada inson huquqlarining e'tirof etilishi qanday prinsipga asoslanadi? Inson qadr-qimmati  prinsipiga
+95 Davlat hokimiyati  qay tarzda amalga oshiriladi? Vakillik organlari orqali 96 Inson huquqlari qanday xususiyatga ega? Buzilmaslik va universalilik
+97 Sudlar qay tarzda faoliyat yuritadi? Mustaqil va faqat qonunga bo'ysunadi 98 Qonun ustuvorligi  prinsipi qaysi davlatga xos? Huquqiy davlat
+99 Fuqarolikjamiyati nima? Davlat va fuqarolik o'rtasidagi muvozanat 100 Ijtimoiy davlatning asosiy maqsadi? Fuqarolaming ijtimoiy ta'minoti 101 Davlat hokimiyati  qanday cheklanadi? Konstitutsiya va qonunlar bilan
+"102 O'zbekistonning ""Yashil iqtisodiyotga o'tish strategiyasi""da 2030-yilgacha asosiy maqsadlardan  biri sifatida qaysi ko'rsatkich  belgilangan?  Issiqlik elektr stansiyalarining samaradorligini 5% ga oshirish"
+"103 Yashil iqtisodiyotni  rivojlantirishda ""raqamlashtirish"" qanday rol o'ynaydi? Energiya sarfini monitoring qilish va boshqarish 104 Yashil iqtisodiyot strategiyasida qaysi sohalami ""energiya samaradorligi"" tamoyili  asosida isloh qilish belgilangan?  Qurilish va transport"
+"105 ""Yashil iqtisodiyotga o'tish strategiyasi""da ta'lim sohasiga qaysi vazifa yuklatilgan? ""Yashil"" kadrlami tayyorlash 106 Qaysi loyiha to'g'ridan-to'g'ri yashil iqtisodiyotni  qo'llab-quvvatlashga qaratilgan? ""Yashil obligatsiyalar"" chiqarish 107 Yashil iqtisodiyot strategiyasida ""hududiy yondashuv"" deganda nima nazarda tutiladi? Har bir viloyatning o'ziga xos imkoniyatlaridan foydalanish"
+"108 ""Yashil iqtisodiyotga o'tish strategiyasi"" ijrosini amalga oshirish uchun qaysi indikatorlar belgilangan? Energiya tejamkorligi"
+va chiqindilami  qayta ishlash ko'rsatkichlari
+109 Qaysi qonun hujjatida yashil iqtisodiyotga oid normalar kuchaytirilgan? Ekologik kodeks
+110 Yashil iqtisodiyot sohasida faoliyat yurituvchi  startaplar uchun qanday rag'batlar nazarda tutilgan?  Soliq imtiyozlari va subsidiyalar
+111 O'zbekiston Respublikasi Prezidentning 23.06.2025-yildagi PF-95-son Farmonida davlat fuqarolik xizmatini isloh qilishning ustuvor maqsadi sifatida nima belgilangan? Professional va samarali davlat xizmatini  shakllantirish
+112 O'zbekiston Respublikasi Prezidentning PF-243-son Farmonining PF-95ga nisbatan asosiy farqlovchi jihati nimada? Raqamlashtirish va KPI tizimiga e'tibor
+"113 ""Meritokratiya"" tamoyili  davlat fuqarolik xizmatida qaysi yondashuvni  ifoda etadi? Bilim va ko'nikmalarga asoslangan tanlov"
+114 KPI tizimini joriy etishdan ko'zlangan asosiy maqsad qaysi? Natijalarni o'lchash va baholash
+115 PF-243ga muvofiq davlat xizmatchilari faoliyatini  baholashda qaysi instrument asosiy hisoblanadi? KPI (Asosiy ko'rsatkichlar)
+"116 Davlat xizmatida ""halollik vaksinasi"" tushunchasi qanday mazmunni anglatadi? Korrupsiyaga qarshi kurashish va axloqiy xulq"
+117 Davlat xizmatini raqamlashtirish orqali erishiladigan  asosiy natija qaysi? Jarayonlarning soddalashuvi  va shaffofligi
+118 Vazirlar Mahkamasining  2022-yil 14-oktyabrdagi 595-son Qarori asosan qaysi yo'nalishni tartibga soladi? Davlat xizmatida raqamlashtirish
+"119 Kompetensiya tushunchasi quyidagilarning qaysini to'liq qamrab oladi? Bilim, ko'nikma va xulq-atvor"
+"120 ""Maqsad -  harakat -  natija"" tamoyili davlat boshqaruvida qaysi yondashuvni ta'minlaydi?  Natijalarga yo'naltirilgan boshqaruv"
+121 Inklyuziv davlat xizmati tushunchasi nimaga qaratilgan? Barcha fuqarolar uchun teng imkoniyatlar
+122 O'zbekiston Respublikasi Prezidentning PF-95da 2030-yilgacha  davlat fuqarolik xizmatida xotin-qizlar ulushi bo'yicha qanday maqsad belgilangan?  30% ga yetkazish
+123 Kadrlar zaxirasini shakllantirishda asosiy talab qaysi? Malaka va professional  xususiyatlar
+124 O'zbekiston Respublikasi Prezidentning PF-243 ga muvofiq tanlov jarayonlarida qaysi mexanizm  shaffoflikni ta'minlaydi? Ochiq tanlov va raqamli platformalar
+125 Malaka darajasini berishda hal qiluvchi mezon sifatida nima hisoblanadi?  Amaliy ko'rsatkichlar va natijalar 126 Uzluksiz kasbiy rivojlanish deganda nima tushuniladi? Doimiy o'qish va o'z  bilimini yangilash
+127 Raqamli reyestrlarni joriy etish korrupsiya xavfini qanday kamaytiradi?  Shaffoflikni  oshiradi va inson aralashuvini kamaytiradi
+"128 KPI davlat xizmatchilarini emas, asosan nimani baholashga xizmat qiladi? Tashkilotning strategik maqsadlariga erishish 129 Davlat xizmatchilari etikasi va halolligi qaysi hujjatlarda ustuvor tamoyil sifatida belgilangan? ""Davlat xizmatchilari etika kodeksi"""
+"130 O'zbekiston Respublikasi Prezidentning PF-95 va PF-243 uyg'un amalga oshirilishi  natijasida qanday davlat xizmati modeli shakllanadi? Professional,  shaffof va natijaga yo'naltirilgan model"
+131 Self-menejment tushunchasi  ilk bor kim tomonidan taklif etilgan? Lorens Zayvert
+132 O'z-o'zini boshqarishning L. Zayvert tomonidan ilgari surilgan birinchi konsepsiyasiga ko'ra self-menejmentning birinchi vazifasi  nimadan iborat? O'z-o'zini tushunish va maqsadlarni aniqlash
+133 Rivojlanish uchburchagida  hard skills nimani anglatadi? Kasbiy bilim va ko'nikmalar
+"134 Kouching asoschisi  Tomas Leonardning fikriga ko'ra, muvaffaqiyat formulasida muvaffaqiyatning necha foizi fikrlash tarziga bog'liq? 80%"
+135 Self-menejment o'z-o'zini boshqarishga oid bilimlar va ko'nikmalar majmuai sifatida quyidagilarning qaysi birini nazarda tutmaydi? Boshqalarni  boshqarish
+136 O'z-o'zini boshqarishning L. Zayvert tomonidan ilgari surilgan konsepsiyasiga ko'ra qaysi vazifa self-menejmentning barcha bosqichlarida zarur? Vaqtni boshqarish
+137 Self-menejmentning hayotiy maqsadlarni  aniqlash va shakllantirish jarayoni qaysi xususiyatlarni o'z  ichiga oladi? Uzoq muddatli va real bo'lishi
+138 Self-menejmentning inson hayotiga ta' sir ko'rsatuvchi ko'plab omillarni  kompleks hisobga olish va o'zaro ta'sirini nazarda tutish tamoyili insonning qaysi qobiliyatiga asoslanadi?  Tizimli fikrlash
+139 O'z  iroda kuchini mashq qildirish va kelgusi ishlar uchun harakatga chorlovchi  kuchni shakllantirish -  bu... Irodani mustahkamlash
+"140 Quyidagilardan qaysilari shaxsiy ishlarning texnika va texnologiyasiga kiradi? Rejalashtirish, tartibga solish, nazorat"
+"141 Emotsional  holatidan qat'iy nazar, ishda o'zini qat'iy tartibga, aniqlik va rejaga muvofiq holda harakat qilishga majbur qila olish qobiliyati bu - ... O'zini intizomga solish"
+"142 Zamonaviy  rahbarlarga ishning bir xilliligi, doimiy asabiy zo'riqish, bir faoliyatdan boshqasiga tezda o'ta olmaslik orqasidan kelib chiqadigan asab va immun tizimini zaiflashishiga qarshi kurashishda yordam beradigan usulni ko'rsating Vaqtni boshqarish va dam olish rejimi"
+143 Self-menejmentda qaror qabul qilish nimani anglatadi? Variantlar orasidan tanlash
+144 Self-menejmentda nazorat bu - ... Natijalarni  reja bilan solishtirish
+145 Self-menejmentda muvofiqlashtirish (koordinatsiya) -  bu... Harakatlami uyg'unlashtirish 146 Self-menedjmentning birinchi tamoyili nima? Maqsadlarga yo'naltirilganlik
+"147 A.Maslouning ehtiyojlar iyerarhiyasi  nimalardan iborat? Fiziologik, xavfsizlik, ijtimoiy, hurmat, o'zini amalga oshirish"
+"148 S.Kovi fikriga asosan ""Proaktiv bo'lish"" -  inson sifatiga ta'rif bering O'z  qarorlari uchunjavobgarlikni o'z zimmasiga olish 149 B. Shefer self menedjmentda shaxsni yangi g'oyani amalga oshirish muddati deb qancha vaqtni belgilaydi? 72 soat"
+"150 WOOP metodining ketma-ketligi qaysi javobda to'g'ri berilgan? Orzu, natija, to'siq, reja"
+"151 Forsaytda bashorat qilishning necha asosiy uslubi mavjud? 4 ta (tarixiy, ekspert, tizimli, ishtirokchi) 152 Forsaytda qaysi usul o'tmish tendensiyalariga asoslanib kelajakni modellashtiradi? Trend tahlili"
+153 Bashoratlashda chiziqli usulning asosiy kamchiligi  nimada? Nochiziqli  hodisalami  hisobga olmasligi
+"154 Bashoratlashda ""tizimlar usuli""ning asosiy g'oyasi nimadan iborat? Turli omillarning o'zaro ta'sirini hisobga olish 155 Forsaytda ""kritik (tanqidiy) usul""ni qo'llashdan asosiy maqsad nima? Mavjud taxminlarni  shubha ostiga olish"
+"156 Bashoratlashning ""ishtirokli usuli""da kimlar qatnashishi lozim? Mutaxassislar va manfaatdor tomonlar 157 Bashoratlashning qaysi usulida intervyu va anketa keng qo'llaniladi? Ekspert baholash usuli"
+"158 Bashoratlashning ""tajribali usuli""da bashorat qanday amalga oshiriladi? Mutaxassislarning tajriba va bilimlariga asoslanadi 159 Forsayt ta'limoti taxminan qancha vaqt davomida rivojlanib kelgan? 50 yildan ortiq"
+"160 Forsaytda ""uchta ufq"" mashqining asosiy maqsadi nima? Uzoq muddatli istiqbollarni  ko'rish 161 Birinchi ufqda asosan nimalar tahlil qilinadi? Hozirgi tendensiyalar va yaqin kelajak"
+162 Dominant deganda nima tushuniladi? Hozirgi paytda ustun bo'lgan tendensiya 163 Ikkinchi ufq qaysi davmi qamrab oladi? 5-15 yil
+"164 Uchinchi  ufqda nima sodir bo'ladi? Uzoq muddatli o'zgarishlar va yangi tendensiyalar 165 ""Qora fil"" tushunchasi nimaga ishora qiladi? Kutilmagan va og'ir ogibatli hodisa"
+"166 Telefon va internetning yoshlar tarbiyasiga salbiy ta'siri qaysi toifaga kiradi? ""Qora fil"" (yosh avlod muammosi) 167 ""Polak o'yini""ning asosiy g'oyasi nimada? Kelajak tasavvurlariningjamiyat rivojiga ta'siri"
+"168 Frederik Polak fikricha, pessimistik kayfiyat ustun bo'lsa, jamiyatda nima ro'y beradi? Jamiyat tanazzulga uchraydi 169 Postnormal  davrda qaysi fazilatlar ahamiyatli hisoblanadi? Moslashuvchanlik, hamkorlik, ijodkorlik"
+"170 Quyidagilardan qaysi biri ""Qora oqqush""ga misol bo'la oladi? COVID-19 pandemiyasi 171 ""Qora oqqush"" deganda nima tushuniladi? Kutilmagan va katta ta'sirli hodisa"
+"172 Qora meduza deganda nima tushuniladi? Asta-sekin rivojlanadigan, ammo hal qilib bo'lmaydigan  muammo 173 Quyidagilardan qaysi biri ""Qora meduza""ga misol bo'ladi? Iqlim o'zgarishi"
+"174 Forsaytda ""O'zgarishlar modeli""ga ko'ra yangi reallik qaysi omillarning o'zaro kesishuvi natijasida shakllanadi? Texnologiya,  iqtisod, madaniyat, siyosat"
+175 Tanqidiy fikrlashning nechta qoidasi mavjud? 9 ta
+176 Samarali qaror qabul qilish san'ati deganda nimani tushunasiz? Eng maqbul variantni tanlash
+177 Muammoni  hal qilishning asosiy strategiyasi  berilgan to'g'ri javobni toping? Muammoni tahlil qilish va yechimlarni ishlab chiqish
+178 Fikrlash ko'nikmalarini rivojlantirish degani bu -  Fikrlash usullarini takomillashtirish
+"179 Boshqaruvda kreativlik deganda nimani tushunasiz? Yangi g' oyalar yaratish va muammolami  yechish 180 Kreativlik to'siqlari  keltirilgan to'g'ri javobni toping. Stereotiplar,  qo'rquv, konformizm"
+181 1926-yilda G. Uolles ijodiy jarayonning  nechta bosqichini  belgilab bergan? 4 ta bosqich
+"182 XXI asr ko'nikmalari  to'g'ri keltirilganjavobni toping. Tanqidiy fikrlash, ijodkorlik, hamkorlik"
+183 Birinchilardan bo'lib 1926-yilda G. Uolles ijodiy jarayonning  nechta bosqichini  belgilab bergan? 4 ta bosqich
+"184 Biror kishi boshqa masalalar bilan shug'ullanganda va muammoni  hal qilish uchun to'g'ridan-to'g'ri urinishlar qilmasa, ammo ongsiz darajada uning yechimini izlashda davom etsa, muammoni vaqtincha qoldirish bu -  Inkubatsiya bosqichi"
+185 Kreativlik tamoyillaridan biri bo'lgan metaijodkorlikning mohiyati nimadan iborat? Bir sohadagi ijodiy yondashuvni  boshqa sohaga qo'llash
+186 Quyidagilardan qaysi biri kreativ izlanishga yo'naltirilgan fikrlashga xos emas? Stereotipli fikrlash
+"187 G. Uolles tomonidan  belgilab berilgan ijodiy jarayon bosqichlari to'g'ri ketma-ketlikda ko'rsatilganjavobni aniqlang. Tayyorgarlik,  inkubatsiya, yoritilish, tasdiqlash"
+"188 ""Tanqidiy fikrlash"" atamasi dastlab kim tomonidan qo'llanilgan? Jon Dyu"
+"189 ""SCAMRER""  usulida ""Put to Other Uses"" nimani anglatadi? Boshqa maqsadlarda qo'llash"
+"190 Mustaqil, dalillangan, har bir yangi faktni tanqidiy mushohada qilish qobiliyatiga ega fikrlash ... deb ataladi? Tanqidiy fikrlash"
+191 Ilk bor kreativlik tushunchasi kim tomonidan tomonidan qolipli fikrlash usulidan voz kechish xususiyatini ifodalash uchun qo'llanilgan? J. Gilford
+192 Tanqidiy fikrlashni rivojlantirish uchun qo'llaniladigan usullaridan biri bo'lgan metakognitivlik- bu... O'z  fikrlashjarayoni haqida fikr yuritish
+193 Kreativ fikrlashjarayonida ijodiy yechim yuzaga keladigan insayt fenomeni nimani anglatadi? Birdan yechimning paydo
+"bo'lishi (""Aha! moment"")"
+"194 Kreativ va tanqidiy fikrlashning eng samarali yo'llaridan biri ""Aqliy hujum"" (breynstorming) usuli kim tomonidan ishlab chiqilgan? Aleks Osborn"
+"195 Uolt Disney usuli deb nom olgan rolli o'yin shaklida o'tkaziladigan kreativlik metodikasi ... Dreamer, realist, critic rollari 196 Bob Eberle tomonidan 1997-yilda ishlab chiqilgan ""SCAMRER""  usuli... Kreativlikni rivojlantirish usuli"
+"197 Tanqidiy fikrlashga ega shaxslarga xos xususiyatlami  ko'rsating?  So'roqchanlik, ishonch, adolatlilik"
+"198 U. Gordon tomonidan XX asming 50-yillari o'rtalarida ortodoksal fikrlash uslubini yengish uchun, muammoni  yechishning an'anaviy yo'l va usullari chegarasidan chiqish maqsadida taklif etilgan sinektika uslubi ... Turli sohalar g'oyalarini birlashtirish 199 Kreativ fikrlashni rivojlantirish unga xalal beradigan to'siqlardan biri bo'lgan konformizm  nimani anglatadi? Boshqalar fikriga ko'p e'tibor berish"
+"200 Quyidagilardan qaysi biri ""Tanqidiy fikrlash""ga xos? Stereotipli fikrlashdan voz kechish"
+N2 Savol Javob
+l.Davlat fuqarolik xizmatchilari odob-axloqining namunaviy qoidalari nimani belgilaydi?  Xizmat va shaxsiy xulq-atvor me'yorlari
+2 Odob-axloq qoidalari qaysi sohalarni qamrab oladi? Xizmat va shaxsiy hayotni
+3 Davlat xizmatchilari  mehnat faoliyati davomida va xizmatdan tashqari vaqtda qanday xulq-atvorga rioya qilishi lozim? Namuna bo'ladigan xulq-atvor
+4 Davlat xizmatchilari o' z kasbiy faoliyatini amalga oshirishda nimani ustuvor deb bilishi shart? Davlat va jamoatchilik manfaatini
+"5 Davlat xizmatchilari fuqarolar bilan munosabatda qanday bo'lishi lozim? Hurmatli, halol va adolatli"
+"6 Davlat xizmatchilari o'z  vakolatlarini amalga oshirishda qaysi hujjatlarga amal qiladi? Konstitutsiya, qonun va me'yoriy hujjatlar"
+7 Davlat fuqarolik xizmatchilari odob-axloq qoidalari nimaga qaratilgan?  Xizmatchilarning axloqiy kamoloti
+8 Odob-axloq qoidalariga rioya qilish nima uchun muhim? Davlat obro'sini saqlash va xalq ishonchini oshirish 9 Quyidagilardan qaysi biri davlat xizmatchilari uchun taqiqlangan? Korrupsiya va poraxo'rlik
+10 Davlat xizmatchilari  bo'ysunuvchi  xodimlardan  nima talab qilishga haqli emas? Vakolatidan tashqari ishlarni 11 Davlat xizmatchilari  qaror qabul qilishjarayonida qaysi talablarni ta'minlashi shart? Obyektivlik va adolat  12 Favoritizm  nima? Qarindoshlarga imtiyoz berish
+13 Davlat xizmatchilari fuqarolarga nisbatan qanday talabga rioya qilishi lozim? Teng huquqlilik
+14 Davlat xizmatchilari jamoatchilik tanqidiga nisbatan qanday munosabatda bo'lishi shart? Tanqidni e'tiborga olgan holda
+15 Quyidagilardan qaysi biri davlat xizmatchisi  tanqidga uchraganda uning majburiyati  hisoblanadi?  Xatoni tan olish va tuzatish 16 Davlat xizmatchisi o'z  xizmat mavqeidan qaysi maqsadda foydalanishi taqiqlanadi?  Shaxsiy manfaat uchun
+17 Davlat fuqarolik xizmatchisi  sovg'a olishi mumkinmi Faqat nominal qadriyati kichik
+18 Davlat xizmatchilari o'z  vakolatlaridan qachon foydalanmasligi kerak? Shaxsiy maqsadlar uchun
+19 Davlat xizmatchisi davlat mulki bilan qanday munosabatda bo'lishi kerak? Ehtiyotkorona va tejamlilik 20 Davlat xizmatchisi qaysi odob me'yorlarga  rioya qilishi kerak? Jamoat odob-axloq me'yorlari
+21 Davlat xizmatchisi qanday holatda o'z  rahbariga zudlik bilan ma'lumot berishi kerak Muammo va noqonuniy  holatlar to' g'risida
+22 Davlat xizmatchisi internet va ijtimoiy tarmoqlarda  nima qila olmaydi? Davlat sirini oshkor qilish
+23 Davlat xizmatchisi fuqarolar va hamkasblarning sha'ni va qadr-qimmatiga qanday munosabatda bo'lishi kerak emas? Kamsituvchi va haqoratli
+"24 Davlat xizmatchisi davlat siri va xizmatga oid ma'lumotlar bilan qanday munosabatda  bo'lishi kerak? Maxfiylikni saqlash 25 Davlat xizmatchisi davlat mulki va moliyaviy  mablag'larga qanday munosabatda bo'lishi kerak? Tejamlilik va samaradorlik 26 Davlat xizmatchisi o'z  vakolatlari  doirasida fuqarolarni  qanday holatda kamsitmasligi  kerak? Irqiy, milliy, diniy asosda"
+27 Davlat xizmatchisi mehnat jamoasida qanday muhitni  shakllantirishi kerak? Ishonch va hamkorlik muhiti 28 Rahbar bo'ysunuvidagi davlat xizmatchilariga qaysi fazilatlarda o'rnak bo'lishi kerak? Halollik va adolatda 29 Qaysi holat rahbar uchun taqiqlanadi? Qarindoshlarga imtiyoz berish
+"30 Rahbar kadrlarni qanday mezonlar asosida tanlash, tayinlash yoki tavsiya etishi mumkin emas? Qarindoshlik va ayrimchilik 31 Rahbar jamoada qanday holatlarga yo'l qo'yilmasligi  kerak? Ayrimchilik va nepotizm"
+32 Rahbar davlat xizmatchilari faoliyatiga qanday munosabatda bo'lishi kerak? Obyektiv baholash va rag'batlantirish 33 Rahbar bo'ysunuvidagi davlat xizmatchilarini qanday jihatdan himoya qilishi kerak? Noasosiy da'volardan
+34 Rahbar vakolati doirasida shartnomalar tuzishda qanday asosga tayanib amalga oshirish kerak? Raqobat asosida 35 Rahbar jamoada qanday muhitni shakllantirishi kerak? Ishonch va ochiqlik muhiti
+36 Rahbar bo'ysunuvidagi davlat xizmatchilariga qanday munosabatda  bo'lishi taqiqlanadi? Zulm va haqoratli munosabat 37 Quyidagilardan qaysi harakat rahbar uchun taqiqlanadi? Vakolatni suiiste'mol qilish
+38 Ishdan tashqari vaqtda davlat xizmatchisi qanday salbiy odatlarga yo'l qo'ymasligi kerak? Mast holdajamoatjoylariga chiqish 39 Davlat xizmatchisi jamoat joylarida qanday harakatlardan saqlanishi  kerak? Noqonuniy va axloqsiz harakatlar
+40 Ishdan tashqari vaqtda davlat xizmatchisi kimdan qimmatbaho sovg'a olishi mumkin? YaQin qarindoshlardan 41 Xizmat guvohnomalaridan qachon foydalanish mumkin emas? Shaxsiy maqsadlar uchun
+42 Davlat xizmatchisi shaxsiy transport vositalaridan qachon foydalanishi  mumkin? Xizmat vazifalarini  bajarishda 43 Ishdan tashqari vaqtda davlat xizmatchisi qanday tadbirlar bilan shug'ullanmasligi kerak? Qonunga xilof faoliyat 44 Ishdan tashqari vaqtda davlat xizmatchisi tashqi ko'rinishini qanday saqlashi kerak? Kamida soz va ozoda
+"45 Davlat xizmatchisi rasmiy e'lon qilinmagan davlat xizmati faoliyati masalalarini  muhokama qilish mumkinmi? Yo'q, maxfiy ma'lumotlar"
+46 Davlat darajasida delegatsiyalarni qabul qilish dasturini kimlar tayyorlaydi?  Tashqi ishlar vazirligi
+"47 Agar xorijiy delegatsiya tashrifni o'z  mablag'lari  hisobidan amalga oshirsa, qabul qiluvchi tomon qaysi xarajatlarni qoplaydi? Mehmondo' stlik xarajatlari"
+48 Xorijiy mehmon turmush o'rtog'i bilan kelganda qanday tartib qo'llaniladi? Rasmiy dasturga kiritiladi 49 Rasmiy tashriflar davomida esdalik sovg'alar qachon taqdim etiladi? Tashrif yakunida
+"50 Xalqaro protokolga muvofiq, faxriy mehmonni  kutib olishda birinchi bo'lib kim salomlashadi? Mehmon"
+51 Davlat tili O'zbekiston Respublikasida ... O'zbek tili
+"52 Rasmiy ish hujjatlarini yuritishda asosiy qonun qaysi? ""Davlat tili to'g'risida""gi qonun 53 Hujjatlarni ro'yxatga olish uchun ... ishlatiladi Reestr"
+54 Qaysi hujjat rasmiy hisoblanadi?  Tashkilot rahbari tasdiqlagan 55 Ish hujjatlari necha yil saqlanishi mumkin? Hujjat turiga qarab 56 Hujjatni kim tasdiqlaydi? Rahbar yoki vakolatli  shaxs
+57 Rasmiy hujjatlarda qaysi tildan foydalaniladi? Davlat tili (o' zbek) 58 Hujjatlarni yuritishjarayoni ... bilan boshlanadi Hujjatni  qabul qilish
+"59 Ish hujjatlari tizimida ""kadrlar hujjatlari""ga misol ... Mehnat shartnomasi"
+60 Hujjatni qayta ishlash va rasmiylashtirish qoidalari ... Me'yoriy hujjatlarda belgilangan 61 Hujjatlarni elektron shaklda saqlash ... Ruxsat etilgan
+62 Tashkilotlarda ish hujjatlari ... bilan tartibga solinadi Ichki me'yoriy hujjatlar 63 Hujjatni tayyorlashda  asosiy talab ... Aniqlik va qonuniylik
+"64 Hujjatlar qaysi tartibda saqlanadi? Tizimlashtirilgan tartibda 65 ""Xat"" hujjat turi ... Murojaat hujjati"
+66 Davlat tili qoidalariga rioya qilmaslik ... Ma'muriy javobgarlik 67 Hujjatlarni rasmiylashtirishda ...  ishlatiladi Muhur va imzo
+68 Hujjatlarning amal qilish muddati  ...  bilan belgilanadi Hujjat matnida
+69 Qabul qilingan hujjatni ro'yxatga olish uchun ...  zarur Reestr raqami berish 70 Ish hujjatlarini saqlashda  ...  muhim ahamiyatga ega Maxfiylik va tartib
+71 Ish hujjatlarini elektron shaklda saqlashda qaysi omil muhim? Xavfsizlik
+72 Hujjatlarni arxivlash nima uchun kerak? Ma'lumotlarni  saqlash va qayta foydalanish 73 Tashkilotda ish hujjatlari qabul qilinishi  ...  Reestrga olinishi kerak
+74 Hujjatni yozishda rasmiy tilda bo'lishi  ...  Majburiy
+75 Ish hujjatlarini ro'yxatga olishda ...  ishlatiladi Ish hujjatlari jurnali
+76 Hujjatni rasmiylashtirish qoidalariga rioya qilmaslik  ...  olib keladi Hujjatning qonuniyligiga  putur 77 Ish hujjatlari saqlanish muddati  ...  Hujjat turiga bog'liq
+78 Rasmiy xatlar va qarorlar qaysi tartibda saqlanadi? Nomer va sana tartibida 79 Hujjatning muallifi ...  Hujjatni tuzgan shaxs
+80 Hujjatlarda ishlatiladigan so'zlar ...  bo'lishi kerak Aniq va qisqa
+81 Tashkilotlarda ish hujjatlari yuritishning asosiy maqsadi  ...  Ma'lumotlarni tizimlashtirish 82 Hujjatlarni elektron shaklda yuborishda  ...  zarur Elektron imzo
+83 Ish hujjatlari arxivlashdan  oldin ...  qilinadi Tasniflash 84 Ish hujjatlarda sana va raqam ko'rsatilishi  ...  Majburiy
+85 Davlat tili qonuniga ko'ra barcha rasmiy hujjatlar ...  bo'lishi kerak O'zbek tilida 86 Hujjatlar bilan ishlashda xodim ...  Maxfiylikni saqlashi kerak
+87 Rasmiy ish hujjatlarda qaysi turdagi ma'lumot bo'lmasligi  kerak? Yolg'on va subyektiv 88 Hujjatlarni elektron shaklda saqlash qachon afzal? Katta hajmdagi ma'lumotlarda
+89 Tashkilotlarda ish hujjatlari yuritish bo'yicha asosiy hujjat ...  Ish hujjatlari yuritish qoidalari 90 Hujjatlarni rasmiylashtirishda ...  muhim ahamiyatga ega Imzo va muhur
+91 Ish hujjatlari  bilan ishlashda xodimning asosiy vazifasi  ...  Hujjatlarni to'g'ri rasmiylashtirish 92 Hujjatlarni qabul qilishdan oldin ...  tekshiriladi Toliqligi va to'g'riligi
+93 Rasmiy ish hujjatlarda  ...  bo'lishi kerak Aniq va qisqa matn
+94 Hujjatlarni saqlash va arxivlash muddati  ...  bilan belgilanadi  Qonun va me'yoriy hujjatlar 95 Ish hujjatlarda shaxsiy fikrlar ...  Ifodalanishi  mumkin emas
+96 Hujjatlarni rasmiylashtirishda ishlatiladigan blanklar ...  Standartlashtirilgan bo'lishi 97 Tashkilotlarda ish hujjatlari yuritish ...  uchun zarur Tashkiliy faoliyatni tartibga solish 98 Ish hujjatlari elektron shaklda yuborishda  ...  muhim Xavfsizlik va maxfiylik
+99 Hujjatlarni yuritish qoidalariga rioya qilmaslik ...  Ma'muriy javobgarlik 100 Davlat tili va ish hujjatlari yuritish qoidalariga amal qilish ...  Majburiy
+101 Korrupsiyaga oid huquqbuzarlik deganda nima tushuniladi? Poraxo'rlik va suiiste'mol
+"102 Korrupsiyaga qarshi kurashish sohasidagi davlat siyosatining asosiy yo'nalishlari to'g'ri ko'rsatilgan qatorni ko'rsating? Oldini olish, aniqlash, jazolash"
+103 Tashkilotlarning korrupsiyaga qarshi kurashish  bo'yicha siyosati mazmuni kim tomonidan shakllantiriladi? Rahbariyat 104 Quyidagilardan qaysi biri joylarda korrupsiyaning oldini olishga qaratilgan hududiy dasturlar ishlab chiqilishi va amalga oshirilishini tashkil etadi? Mahalliy hokimiyat
+105 Davlat xizmatchilarining korrupsiyaga qarshi kurashish sohasidagi  huquqiy savodxonligini oshirish kimning zimmasiga
+yuklatilagan?  Tashkilot rahbari
+106 Davlat organlarida xodimlarining faoliyatida konupsiyaga oid huquqbuzarliklarga yo'l qo'ymaslik kimning zimmasiga yuklatilgan? Tashkilot rahbari
+107 Manfaatlar to'qnashuviga  berilgan ta'rifni ko'rsating Shaxsiy manfaatning rasmiy vazifaga ta'siri
+108 Agar davlat fuqarolik xizmatchisi konupsiya faktlari to'g'risidagi  axborotga ega bo'lsa qaysi harakatlarni  amalga oshirishi kerak? Maxsus organlarga xabar berish
+109 Davlat organining xodimiga pora olish evaziga yordam berish haqida fuqaro murojaat etganida davlat organi xodimi majburiyati  nimadan iborat bo'ladi? Darhol tergov organlariga xabar berish
+110 Korrupsiyaga oid huquqbuzarliklar to'g'risidagi  axborotni xabar qiluvchi shaxslar va ularning yaqin qarindoshlari  kimning himoyasida bo'ladi? Davlat
+"111 Korrupsiyaga oid huquqbuzarliklar natijasida qabul qilingan qaror bekor qilingan taqdirda, uning qabul qilinishi natijasida jismoniy va yuridik shaxslarga yetkazilgan zarar qoplanadimi?  Ha, qoplanadi"
+"112 Normativ-huquqiy hujjatlardagi va ularning loyihalaridagi korrupsiyani  keltirib chiqaruvchi  omillar, deb nimaga aytiladi? Konuptsion omillar"
+113 Quyidagilardan qaysi biri korrupsiyaga qarshi kurashish to'g'risidagi qonun hujjatlarining ijro etilishi ustidanjamoatchilik nazoratini amalga oshiradi? Jamoat birlashmalari
+114 Korrupsiyaga qarshi kurashish bo'yicha faoliyatni amalga oshiruvchi  va unda ishtirok etuvchi organlar hamda tashkilotlarning faoliyatini muvofiqlashtirish uchun Korrupsiyaga qarshi kurashish bo'yicha qanday tuzilma tashkil etilgan? Korrupsiyaga qarshi kurashish agentligi
+"115 O'zbekiston Respublikasining ""Korrupsiyaga qarshi kurashish to'g'risida""gi Qonunning maqsadi nima? Korrupsiyaning oldini olish va bartaraf etish"
+116 Korrupsiyaga qarshi kurashishning asosiy prinsiplaridan biri qaysi? Qonun ustuvorligi
+117 Korrupsiyaga qarshi davlat siyosatining asosiy yo'nalishlaridan biri? Konupsiyaning iqtisodiy asoslarini yo'q qilish
+118 Qaysi organ korrupsiyaga qarshi kurashish bo'yicha faoliyatni  bevosita amalga oshiruvchi organ hisoblanadi? Korrupsiyaga qarshi kurashish agentligi
+119 O'zbekiston Respublikasining Korrupsiyaga qarshi kurashish  bo'yicha milliy kengashining asosiy vazifalaridan  biri? Siyosatni muvofiqlashtirish
+120 Ichki ishlar vazirligi  korrupsiyaga qarshi qanday vakolatni amalga oshiradi? Jinoyatlarni tergov qilish
+"121 Ommaviy  axborot vositalari  korrupsiyaga qarshi kurashishda qaysi yo'l bilan ishtirok etadi? Jamoatchilikni ogohlantirish 122 ""Manfaatlar to'qnashuvi"" tushunchasi  qanday izohlanadi? Shaxsiy manfaatning rasmiy vazifaga ta'siri"
+"123 ""Manfaatlar to'qnashuvi to'g'risida""gi Qonunga ko'ra, ""shaxsiy manfaatdorlik"" deganda nima tushuniladi?  Xodimning moliyaviy yoki boshqa manfaatlari"
+"124 ""Manfaatlar to'qnashuvi to'g'risida""gi Qonunga ko'ra, maxsus bo'linma deganda nima tushuniladi? Manfaatlar to'qnashuvini tartibga soluvchi bo'lim"
+"125 ""Manfaatlar to'qnashuvi to'g'risida""gi Qonunga ko'ra, xodim manfaatlar to'qnashuviga yo'l qo'ymaslik uchun kimni xabardor qilishi shart? O'z  rahbarini"
+"126 Manfaatlar to'qnashuvi to'g'risidagi deklaratsiya qachon topshiriladi? Ishga kirishda va har yili 127 Mavjud manfaatlar to'qnashuvi  aniqlansa, xodim nima qilishi kerak? Rahbariga xabar berish 128 Mavjud manfaatlar to'qnashuvi to'g'risidagi xabarnoma kimga topshiriladi? Maxsus bo'linmaga 129 Xodim o'ziga aloqador shaxslarning manfaatini  ko'zlab ish tutsa -    bu? Manfaatlar to'qnashuvi"
+"130 ""Manfaatlar to'qnashuvi to'g'risida""gi Qonunga ko'ra, ""nazorat"" nimani anglatadi? Kuzatish va tekshirish"
+"131 ""Manfaatlar to'qnashuvi to'g'risida""gi Qonunga ko'ra, xodimga aloqador shaxslarning majburiyati nima? Manfaatlar to'g'risida ma'lumot berish"
+"132 ""Manfaatlar to'qnashuvi to'g'risida""gi Qonunga ko'ra, ""yaqin qarindoshlar""  qaysi shaxslarni o'z  ichiga oladi? Ota-ona, farzandlar, turmush o'rtog'i"
+"133 ""Manfaatlar to'qnashuvi to'g'risida""gi Qonunga ko'ra, manfaatlar to'qnashuvi  munosabatlarini tartibga solishning asosiy prinsiplari orasida qaysi biri mavjud emas? Shaxsiy manfaat ustuvorligi"
+134 Qaysi holatda manfaatlar to'qnashuvi yuzaga kelmaydi? Ochiq tenderda
+"135 ""Manfaatlar to'qnashuvi to'g'risida""gi Qonunga ko'ra, ehtimoliy manfaatlar to'qnashuvi to'g'risidagi deklaratsiyada quyidagi ma'lumotlardan qaysi biri kiritilmaydi? Shaxsiy hayot tafsilotlari"
+136 Manfaatlar to'qnashuvi  holatlari to'g'risidagi  ma'lumotlar qayerda yuritiladi? Maxsus reestrda
+"137 Agar rahbarning o'zi manfaatlar to'qnashuviga  duch kelsa, bu haqida kimga xabar beradi? Yuqori rahbariga"
+"138 ""Manfaatlar to'qnashuvi to'g'risida""gi Qonunga ko'ra, manfaatlar to'qnashuvi  holatini yashirish qanday oqibatga olib keladi? Jinoiy javobgarlik"
+139 Manfaatlar to'qnashuvini  bartaraf etishning eng muhim chorasiga qaysi biri kiradi? Xodimni vazifasidan chetlashtirish 140 Manfaatlar to'qnashuvini  tartibga solish ustidan umumiy nazoratni kim amalga oshiradi? Korrupsiyaga qarshi kurashish agentligi
+141 Davlat organlari yoki boshqa tashkilotlar tarkibiy bo'linmasining rahbari mavjud manfaatlar to'qnashuvini  tartibga solish
+bo'yicha o'z vakolatlari doirasida ko'rilgan choralar to'g'risida maxsus bo'linmaga necha kun ichida axborot taqdim etishi shart? 10 kun ichida
+142 O'zbekiston Respublikasida korrupsiyaning oldini olish va unga qarshi kurashish sohasida qaysi davlat organi davlat siyosatini shakllantiradi va amalga oshiradi? Korrupsiyaga  qarshi kurashish agentligi
+143 Quyidagilardan qaysi biri korrupsiyaga imkon beruvchi iqtisodiy sabablar hisoblanadi? Kam maosh 144 Davlat xizmatchilari  qaysi faoliyat bilan shug'ullanishi lozim? Vakolatiga mos faoliyat
+145 Rahbar kadrlami qaysi belgilari bo'yicha tanlash vajoy-joyiga qo'yish holatlariga yo'l qo'ymasligi kerak? Qarindoshlik va tan olganlik
+"146 ""Halollik vaksinasi"" nimani anglatadi? Korrupsiyaga qarshi immunitet"
+147 Normativ-huquqiy hujjatlar loyihalarining korrupsiyaga qarshi ekspertizasi  qaysi organlar tomonidan o'tkaziladi? Korrupsiyaga  qarshi kurashish agentligi
+148 Tashkilotlarning korrupsiyaga qarshi kurashish  bo'yicha siyosati mazmuni kim tomonidan shakllantiriladi? Rahbariyat  149 Quyidagilardan qaysi biri korrupsiyaga qarshi kurashish to'g'risidagi qonun hujjatlarining ijro etilishi ustidanjamoatchilik nazoratini amalga oshiradi? Jamoat birlashmalari
+150 Qonun normalarida ma'lum bir siyosiy guruh manfaatlariga xizmat qiladigan qoidalarni  kiritishga intilish harakati nima deyiladi? Lobbichilik
+151 Yangi tahrirdagi O' zbekiston Respublikasi Konstitutsiyasining ustuvor g' oyalarini ro'yobga chiqarish va normalarini hayotga tatbiq etish bo'yicha Davlat komissiyasiga kim raislik qiladi? Prezident
+152 O'zbekiston Respublikasi  Oliy Majlisi Senatining necha nafar a'zosi O'zbekiston Respublikasi Prezidenti tomonidan tayinlanadi?  16 nafar
+153 O'zbekiston Respublikasi  Vazirlar Mahkamasi  o'z  faoliyatida kimning oldidajavobgar? Prezident va Oliy Majlis
+"154 O'zbekiston Respublikasi  Oliy sudi qanday sohalarda sud hokimiyatining oliy organi hisoblanadi? Fuqarolik, jinoyat va ma'muriy ishlar"
+"155 Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasining 1-moddasiga ko'ra O'zbekiston -  boshqaruvning  respublika shakliga ega bo'lgan qanday davlat hisoblanadi? Demokratik, huquqiy, dunyoviy va ijtimoiy"
+156 Soliqlarni joriy qilish huquqi qaysi davlat organiga tegishli? Oliy Majlis
+"157 O'zbekiston Respublikasi Bosh prokurorining, Qoraqalpog'iston Respublikasi  prokurorining, viloyat, tuman va shahar prokurorlarining vakolat muddati necha yil? 5 yil"
+"158 Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasining ko'ra yangi alohida bob sifatida kiritildi? Ekologik xavfsizlik 159 Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra davlat qaysi toifadagi shaxslaming sha'ni va qadr­ qimmatini  himoya qilish, ularning ijtimoiy va moddiy farovonligi, kasbiy jihatdan o'sishi to'g'risida g'amxo'rlik qiladi? Davlat xizmatchilari"
+160 Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra O'zbekiston respublikasi  Oliy Majlis Senati majlislari  bir yilda necha marotaba tashkil qilinadi? Kamida 2 marta
+"161 Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra O'zbekiston Respublikasi  Administratsiyasini, shuningdek O'zbekiston Respublikasi Prezidenti huzuridagi  maslahat-kengash organlari va boshqa organlarni  shakllantirishga vakolatli organni belgilang Prezident"
+"162 Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra bolalar mehnatining bolaning sog'lig'iga, xavfsizligiga, axloqiga, aqliy va jismoniy rivojlanishiga xavf soluvchi, shu jumladan uning ... har qanday shakllari taqiqlanadi Eng og'ir shakllari"
+163 Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra qanday huquq har bir insonning ajralmas huquqidir va u qonun bilan muhofaza qilinadi? Hayot huquqi
+164 Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasi qachon qabul qilindi? 2023-yil 30-aprelda
+"165 Kim fuqarolarning  bandligini ta'minlash, ulami ishsizlikdan  himoya qilish, shuningdek kambag'allikni qisqartirish  choralarini ko'radi? Davlat"
+"166 Davlat qaysi ta'limni bepul bo'lishini kafolatlaydi?  O'rta maxsus, kasb-hunar ta'limi"
+"167 Har kim yozishmalari, telefon orqali so'zlashuvlari, pochta, elektron va boshqa xabarlari sir saqlanishi huquqiga ega. Ushbu huquqning cheklanishiga faqat nimaga muvofiq va nimaga asosan yo'l qo'yiladi? Sud qaroriga binoan"
+"168 Fuqarolar atroftabiiy  muhitga ehtiyotkorona munosabatda bo'lishga majburmi? Ha, majbur 169 Kim qulay investitsiyaviy va ishbilarmonlik muhitini ta'minlaydi? Davlat"
+"170 Konstitutsiyaviy qonunlarni qabul qilishda barcha deputatlar, senatorlar umumiy sonining kamida qancha qismi ishtirok etishi shart? Uchdan ikki qismi"
+171 O'zbekiston Respublikasi  Oliy Majlisi Qonunchilik  palatasining Spikeri lavozimiga ayni bir shaxs surunkasiga qancha muddatga saylanishi mumkin? 2 muddatga
+172 O'zbekiston Respublikasi  Oliy Majlisining Qonunchilik  palatasi O'zbekiston Respublikasi Prezidenti tomonidan taqdim etilgan O'zbekiston Respublikasi Bosh vaziri nomzodini taqdimnoma kiritilgan kundan e'tiboran necha kun ichida ko'rib chiqadi? 10 kun ichida
+173 Xalq deputatlari Kengashiga uning deputatlari  orasidan qonunga muvofiq kim boshchilik qiladi? Rais
+174 Quyidagilardan qaysi biri Xalq deputatlari Kengashlarining vakolatlariga kirmaydi? Konstitutsiyaviy qonun qabul qilish 175 Viloyat va Tashkent shahar hokimi kim tomonidan tayinlanadi va lavozimidan ozod etiladi? Prezident
+176 O'zbekiston Respublikasi  hududida qonunlaming aniq va bir xilda bajarilishi ustidan nazoratni kimlar amalga oshiradi? Prokuratura
+177 Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra O'zbekiston respublikasi  Oliy Majlis Senati majlislari  bir yilda necha marotaba tashkil qilinadi? Kamida 2 marta
+"178 O'zbekiston Respublikasi Prezidenti  muddatidan ilgari O'zbekiston Respublikasi Prezidenti saylovini tayinlashga haqlimi? Ha, ma'lum sharoitda"
+179 O'zbekiston Respublikasi Markaziy saylov komissiyasining raisi O'zbekiston Respublikasi Prezidentining taqdimiga binoan komissiya a'zolari orasidan qancha muddatga komissiya majlisida saylanadi? 5 yil
+180 Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra mamlakat ichkarisida va xalqaro munosabatlarda O'zbekiston  nomidan vakolatli organ qaysi? Prezident
+181 Fuqarolar farovonligini oshirishga qaratilgan O'zbekiston iqtisodiyotining negizini qanday shakldagi mulk tashkil etadi? Turli shakldagi mulk
+182 Kim bozor munosabatlarini rivojlantirish va halol raqobat uchun shart-sharoitlar yaratadi? Davlat
+"183 Kim iste'molchilarning huquqlari ustuvorligini  hisobga olgan holda iqtisodiy faoliyat, tadbirkorlik va mehnat qilish erkinligini  kafolatlaydi? Davlat"
+184 Kim qulay investitsiyaviy va ishbilarmonlik muhitini ta'minlaydi? Davlat
+"185 Umummilliy  boyligimizga nimalar kiradi? Yer, suv, o'simlik va hayvonot olami 186 Yer xususiy mulk bo'lishi mumkinmi? Ha, fuqarolar mulki bo'lishi mumkin  187 Fuqarolik jamiyati institutlariga qaysi tashkilotlar kiradi? Jamoat birlashmalari"
+"188 Qaysi tashkilotlar jamoat birlashmalari  sifatida e'tirof etiladi? Nodavlat notijorat tashkilotlar 189 Kasaba uyushmalariga a'zo bo'lish majburiymi? Yo'q, ixtiyoriy"
+190 Voyaga yetgan mehnatga layoqatli farzandlar o'z  ota-onalari haqida g'amxo'rlik qilishga majbur ekanligi qaysi moddada aks ettirilgan? 66-moda
+191 Ommaviy  axborot vositalari  nima uchunjavobgar hisoblanadi?  Tarqatgan axborotlari  uchun
+"192 O'zbekiston Respublikasining ma'muriy-hududiy tarkibi to'liq va to'g'ri aks ettirilganjavobni belgilang Respublika, viloyatlar, tumanlar, shaharlar"
+193 O'zbekiston Respublikasining Oliy Majlisi qanday organ hisoblanadi?  Qonun chiqaruvchi  oliy organ
+194 O'zbekiston Respublikasi  Oliy Majlisining Qonunchilik  palatasi va Senati vakolat muddati necha yil? 5 yil 195 O'zbekiston Respublikasi  Oliy Majlisi necha palatadan iborat? 2 palata
+196 O'zbekiston Respublikasi  Oliy Majlisining Qonunchilik  palatasi qonunga muvofiq saylanadigan necha nafar deputatdan iborat? 150 nafar
+"197 O'zbekiston Respublikasi  Oliy Majlisining Senati a'zolari Qoraqalpog'iston Respublikasi, viloyatlar va Tashkent shahridan teng miqdorda necha kishidan saylanadi? 6 kishidan"
+"198 O'zbekiston Respublikasi  Oliy Majlisi Senatining necha nafar a'zosi fan, san'at, adabiyot, ishlab chiqarish sohasida hamda davlat va jamiyat faoliyatining boshqa tarmoqlarida  katta amaliy tajribaga ega bo'lgan hamda alohida xizmat ko'rsatgan eng obro'li fuqarolar orasidan O'zbekiston Respublikasi Prezidenti tomonidan tayinlanadi? 16 nafar"
+199 O'zbekiston Respublikasi  Oliy Majlisining Qonunchilik  palatasi tomonidan qabul qilingan qonun qabul qilingan kundan e'tiboran necha kundan kechiktirmay  O'zbekiston Respublikasi  Oliy Majlisining Senatiga yuboriladi? 10 kun ichida
+200 O'zbekiston Respublikasi  Oliy Majlisining Qonunchilik  palatasi tomonidan qabul qilingan qonun Senatga yuborilgandan so'ng necha kun ichida ko'rib chiqiladi? 60 kun ichida
+"201 Qonun O'zbekiston Respublikasi  Oliy Majlisining Senati tomonidan ko'rib chiqilib va ma'qullangan taqdirda, imzolanishi va"
+e'lon qilinishi uchun O'zbekiston Respublikasi Prezidentiga  necha kundan kechiktirmay yuboriladi? 10 kun ichida
+"1. Davlat fuqarolik xizmatchilari odob-axloqining namunaviy qoidalari nimani belgilaydi? Davlat xizmatchilarining xizmat va xizmatdan tashqari paytdagi xulq-atvori, kasbiy etika va jamoat oldidagi mas 'uliyatini belgilaydi."
+2. Odob-axloq  qoidalari qaysi sohalarni qamrab oladi?
+"Xizmat faoliyati, xizmatdan tashqari xulq-atvor, fuqarolar bilan muomala, manfaatlar to'qnashuvi, axborotdan foydalanish."
+3. Davlat xizmatchilari  mehnat faoliyati davomida va xizmatdan  tashqari vaqtda qanday xulq­ atvorga  rioya qilishi lozim?
+"Halol, xolis, odobli, qonunlarga vajamiyat axloqiy me'yorlariga mos xulq-atvor."
+4. Davlat xizmatchilari o'z  kasbiy faoliyatini amalga oshirishda  nimani ustuvor deb bilishi shart?
+"Qonun ustuvorligi, davlat va jamiyat manfaatlari, fuqarolaming  huquqlari."
+"5. Davlat xizmatchilari fuqarolar bilan  munosabatda  qanday bo'lishi lozim? Hurmatli, xolis, adolatli, ochiq va e'tiborli bo'lishi lozim."
+"6. Davlat xizmatchilari o'z vakolatlarini amalga oshirishda  qaysi hujjatlarga  amal qiladi? O'zbekiston Respublikasi Konstitutsiyasi, qonunlar, normativ-huquqiy hujjatlar."
+7. Davlat fuqarolik xizmatchilari odob-axloq  qoidalari nimaga qaratilgan? Davlat xizmatining nufuzini oshirish va ishonchni mustahkamlashga.
+"8. Odob-axloq  qoidalariga  rioya qilish nima uchun muhim? Korrupsiyani oldini olish, adolat va shaffoflikni ta'minlash uchun."
+9. Quyidagilardan qaysi biri davlat xizmatchilari uchun taqiqlangan? Vakolatdan shaxsiy manfaat yo'lida foydalanish.
+"10. Davlat xizmatchilari  bo'ysunuvchi xodimlardan  nima talab qilishga  haqli emas? Shaxsiy xizmatlami, noqonuniy topshiriqlami bajarishni."
+"11. Davlat xizmatchilari qaror qabul qilish  jarayonida  qaysi talablarni ta 'minlashi shart? Xolislik, qonuniylik, shaffoflik."
+12. Favoritizm  nima?
+Qarindoshlik yoki shaxsiy aloqalar asosida imtiyoz berish.
+"13. Davlat xizmatchilari fuqarolarga  nisbatan qanday talablarga  rioya qilishi lozim? Tenglik, adolat, hurmat va xolislik."
+"14. Davlat xizmatchilari  jamoatchilik tanqidiga  nisbatan qanday munosabatda  bo'lishi shart? Bag'rikeng, xolis va ochiq munosabatda."
+15. Qaysi biri davlat xizmatchisi tanqidga  uchraganda  uning majburiyati  hisoblanadi? Kamchiliklami tan olish va ulami bartaraf etish.
+16. Davlat xizmatchisi o'z  xizmat mavqeidan  qaysi maqsadda foydalanishi taqiqlanadi? Shaxsiy yoki boshqalaming manfaatlari uchun.
+"17. Davlat fuqarolik xizmatchisi sovg'a olishi mumkinmi? Yo'q, xizmat vazifalari bilan bog'liq sovg'alami olishi taqiqlanadi."
+18. Davlat xizmatchilari o'z vakolatlaridan qachon foydalanmasligi kerak? Xizmatdan tashqari shaxsiy maqsadlarda.
+19. Davlat xizmatchisi davlat mulki bilan qanday munosabatda  bo'lishi kerak?
+"Ehtiyotkor, tejamkor va mas'uliyat bilan."
+20. Davlat xizmatchisi qaysi odob me'yorlarga  rioya qilishi kerak? Kasbiy etika va umumiy axloq normalariga.
+21. Davlat xizmatchisi qachon  halatda o'z rahbariga zudlik bilan ma'lumot  berishi kerak? Manfaatlar to' qnashuvi yuzaga kelganda.
+22. Davlat xizmatchisi internet va ijtimoiy tarmoqlarda  nima qila olmaydi? Davlat obro'siga putur yetkazuvchi axborot tarqatish.
+23. Davlat xizmatchisi fuqarolar va hamkasblarning sha'ni va qadr-qimmatiga qanday munosabatda  bo'lishi kerak?
+Hurmat va ehtirom bilan.
+24. Davlat xizmatchisi davlat siri va xizmatga oid  ma'lumotlar  bilan qanday munosabatda bo'lishi kerak?
+Maxfiylikni qat'iy saqlashi kerak.
+25. Davlat xizmatchisi davlat mulki va moliyaviy mablag'larga  qanday munosabatda  bo'lishi kerak?
+Faqat xizmat maqsadida va qonuniy foydalanishi lozim.
+26. Davlat xizmatchisi o'z  vakolatlari doirasida fuqarolarni qanday holatda  kamsitmasligi kerak?
+"Irqi, jinsi, dini, millati va ijtimoiy holatidan qat'i nazar."
+"27. Davlat xizmatchisi  mehnat jamoasida  qanday muhitni shakllantirishi kerak? Sog'lom, do'stona va o'zaro hurmat muhitini."
+"28. Rahbar bo'ysunuvidagi davlat xizmatchilariga qaysi fazilatlarda  o'rnak bo'lishi kerak? Halollik, adolat, mas'uliyat va xolislikda."
+29. Qaysi holat rahbar uchun taqiqlanadi? Vakolatdan shaxsiy manfaat yo'lida foydalanish.
+"30. Rahbar kadrlarni qanday mezonlar asosida tanlash, tayinlash  yoki tavsiya etishi mumkin em as?"
+"Qarindoshlik, tanish-bilishchilik asosida."
+"31. Rahbar  jamoada qanday holatlarga yo'l qo'yilmasligi kerak? Kamsitish, bosim, adolatsizlik va favoritizmga."
+"32. Rahbar davlat xizmatchilari faoliyatiga qanday munosabatda  bo'lishi kerak? Adolatli, xolis, qonuniy va talabchan munosabatda bo'lishi kerak."
+"33. Rahbar bo'ysunuvidagi davlat xizmatchilarini qanday jihatdan  himoya qilishi kerak? Ulaming huquqlari, sha'ni va qadr-qimmatini asoslarsiz bosimdan himoya qilishi kerak."
+34. Rahbar vakolati doirasida shartnomalar  tuzishda  qanday asosga tayanib amalga oshirishi kerak?
+"Qonuniylik, shaffoflik va davlat manfaatlariga asoslanib."
+"35. Rahbar  jamoada qanday muhitni shakllantirishi kerak? Sog'lom, adolatli, o'zaro hurmat va hamkorlik muhitini."
+"36. Rahbar bo'ysunuvidagi davlat xizmatchilariga qanday munosabatda  bo'lishi taqiqlanadi? Kamsituvchi, haqoratli yoki adolatsiz munosabatda bo'lish taqiqlanadi."
+37. Quyidagilardan qaysi harakat  rahbar uchun  taqiqlanadi?
+Vakolatdan shaxsiy manfaat yo'lida foydalanish.
+"38. Ishdan tashqari vaqtda davlat xizmatchisi qanday salbiy odatlarga yo'l qo'ymasligi kerak? Ichkilikbozlik, janjal, jamoat tartibini buzish."
+"39. Davlat xizmatchisi  jamoat  joylarida  qanday harakatlardan  saqlanishi kerak? Axloqsiz, tajovuzkor va obro'ga putur yetkazuvchi harakatlardan."
+40. Ishdan tashqari vaqtda davlat xizmatchisi  kimdan qimmatbaho sovg'a olishi mumkin? Hech kimdan olishi mumkin emas.
+41. Xizmat guvohnomalaridan qachon foydalanish  mumkin  emas? Shaxsiy maqsadlar uchun foydalanish mumkin emas.
+42. Davlat xizmatchisi shaxsiy transport vositalaridan  qachon foydalanishi mumkin? Xizmat vazifasi bilan bog'liq bo'lmagan hollarda.
+"43. Ishdan tashqari vaqtda davlat xizmatchisi qanday tadbirlari  bilan shug'ullanishi kerak? Qonuniy, axloqiy va sog'lom faoliyatlar bilan."
+"44. Ishdan tashqari vaqtda davlat xizmatchisi tashqi ko'rinishini qanday saqlashi kerak? Odobli, saranjom va jamiyat axloqiga mos."
+45. Davlat xizmatchisi  rasmiy e'lon qilinmagan  davlat siriga doir ma'lumotlarni  muhokama qilishi mumkinmi?
+"Yo'q, mumkin emas."
+46. Davlat darajasida  delegatsiyalarni qabul qilish dasturini kimlar tayyorlaydi? Qabul qiluvchi davlatning vakolatli organlari.
+"47. Agar xorijiy delegatsiya  tashrifi o'z mablag'lari hisobidan  amalga oshirilsa, qabul qiluvchi tomon qaysi xarajatlarni qoplaydi?"
+Faqat rasmiy tadbirlar bilan bog'liq xarajatlami.
+48. Xorijiy mehmon  turmush o'rtog'i bilan  kelganda  qanday tartib qo'llaniladi? Protokol qoidalariga muvofiq.
+49. Rasmiy tashrif davomida esdalik sovg'alar qachon taqdim  etiladi? Uchrashuv yoki tashrif yakunida.
+"50. Xalqaro protokolga  muvofiq, faxriy mehmonni  kutib olishda birinchi bo'lib kim salomlashadi?"
+Qabul qiluvchi tomon rahbari.
+51. Davlat tili O'zbekiston  Respublikasida ... O'zbek tili.
+"52. Rasmiy ish hujjatlarini yuritishda asosiy qonun qaysi? ""Davlat tili haqida""gi Qonun."
+53. Hujjatlarni  ro'yxatga  olish uchun ...  ishlatiladi. Ro'yxatga olish jumali yoki elektron tizim.
+54. Qaysi hujjat rasmiy hisoblanadi? Belgilangan tartibda rasmiylashtirilgan hujjat.
+55. Ish  hujjatlari necha yil saqlanishi mumkin? Belgilangan saqlash muddatlariga muvofiq (odatda 3- 75 yil).
+56. Hujjatni kim tasdiqlaydi?
+Vakolatli mansabdor shaxs.
+57. Rasmiy hujjatlarda  qaysi tildan foydalaniladi? Davlat tilidan (o'zbek tili).
+58. Hujjatlarni yuritish  jarayoni ...  bilan  boshlanadi. Hujjatni tuzish bilan.
+"59. Ish  hujjatlari tizimida ""kadrlar hujjatlari""ga  misol ... Buyruqlar, shaxsiy ishlar."
+60. Hujjatni qayta ishlash va rasmiylashtirish qoidalari ... Normativ-huquqiy hujjatlar bilan belgilanadi.
+61. Hujjatlarni elektron shaklda saqlash ... Axborot tizimlari orqali amalga oshiriladi.
+62. Tashkilotlarda ish hujjatlari ...  bilan tartibga solinadi. Ish yuritish yo'riqnomasi bilan.
+63. Hujjatni tayyorlashda  asosiy talab ... Aniqlik va qonuniylik.
+64. Hujjatlar qaysi tartibda saqlanadi? Nomenklatura asosida.
+"65. ""Xat"" hujjat turi ..."
+Axborot va yozma murojaat shakli.
+66. Davlat tili qoidalariga  rioya qilmaslik ... Javobgarlikka sabab bo'ladi.
+67. Hujjatlarni  rasmiylashtirishda ...  ishlatiladi. Javob: belgilangan  qoidalar va talablar ishlatiladi.
+68. Hujjatlarning amal qilish muddati ...  bilan  belgilanadi. Javob: normativ hujjatlar bilan belgilanadi.
+69. Qabul qilingan  hujjatni ro'yxatga  olish ...  zarur. Javob: majburiy zarur.
+70. Ish  hujjatlarini saqlashda ...  muhim  ahamiyatga  ega. Javob: tartib-intizom muhim ahamiyatga ega.
+71. Ish  hujjatlarini elektron  shaklda saqlashda  qaysi omil muhim? Javob: axborot xavfsizligi muhim.
+72. Hujjatlarni arxivlash  nima uchun kerak?
+Javob: uzoq muddat saqlash va tez topish uchun kerak.
+73. Tashkilotda  ish hujjatlari qabul qilinishi ... Javob: belgilangan  tartibda  amalga oshiriladi.
+74. Hujjatni yozishda  rasmiy tilda  bo'lishi ... Javob: shart.
+75. Ish  hujjatlarini  ro'yxatga  olishda ...  ishlatiladi. Javob: maxsus jurnal ishlatiladi.
+76. Hujjatni  rasmiylashtirish qoidalariga  rioya qilmaslik ...  olib keladi. Javob: javobgarlikka  olib keladi.
+77. Ish  hujjatlari saqlash  muddati ...
+Javob: qonun va me'yoriy hujjatlar bilan belgilanadi.
+78. Rasmiy xatlar va qarorlar qaysi tartibda saqlanadi?
+Javob: belgilangan  tartibda  saqlanadi.
+79. Hujjatning  muallifi ...
+Javob: hujjatni tuzgan shaxs.
+80. Hujjatlarda  ishlatiladigan so'zlar ...  bo'lishi kerak.
+Javob: aniq va tushunarli bo'lishi kerak.
+81.  Tashkilotlarda ish hujjatlarini yuritishning asosiy maqsadi ...
+Javob: boshqaruv faoliyatini ta 'minlash.
+82. Hujjatlarni elektron shaklda yuborishda  ...  zarur.
+Javob: elektron  raqamli imzo zarur.
+83. Ish  hujjatlari arxivlashdan  old in ...  qilinadi.
+Javob: tartibga solinadi.
+84. Ish  hujjatlarida  sana va raqam  ko'rsatilishi ...
+Javob: shart.
+85. Davlat tili qonuniga  ko'ra  barcha  rasmiy hujjatlar ...  bo'lishi kerak.
+Javob: davlat tilida bo'lishi kerak.
+86. Rasmiy ish hujjatida qaysi turdagi ma'lumot  bo'lmasligi kerak?
+Javob: shaxsiy fikr va hissiyotlar.
+87. Hujjatlarni elektron shaklda saqlash qachon afzal?
+Javob: hujjatlar hajmi katta  bo'lganda  afzal.
+88.  Tashkilotlarda ish hujjatlarini yuritish  bo'yicha  asosiy hujjat ...
+Javob: yo'riqnoma.
+89. Hujjatlarni  rasmiylashtirishda ...  muhim  ahamiyatga  ega.
+Javob: aniqlik va to'g'rilik.
+90. Ish  hujjatlari  bilan ishlashda  xodimning asosiy vazifasi ...
+Javob: qoidalarga  rioya qilish.
+91. Hujjatlar qabul qilinishidan  oldin ...  tekshiriladi.
+Javob: to'liqligi va to'g'riligi tekshiriladi.
+92. Rasmiy ish hujjatlarida  ...  bo'lishi kerak.
+Javob: rekvizitlar bo'lishi kerak.
+93. Hujjatlarni saqlash va arxivlash  muddati ...  bilan  belgilanadi.
+Javob: qonunchilik  bilan belgilanadi.
+94. Ish  hujjatlarida  shaxsiy fikrlar ...
+Javob: bo'lmasligi kerak.
+95. Hujjatlarni  rasmiylashtirishda ishlatiladigan blanklar ...
+Javob: tasdiqlangan  bo'lishi kerak.
+96. Tashkilotlarda ish hujjatlarini yuritish  ...  uchun zarur.
+Javob: boshqaruv faoliyati uchun zarur.
+97. Ish  hujjatlarini elektron  shaklda yuborish  ...  muhim.
+Javob: tezkorlik uchun muhim.
+98. Hujjatlarni yuritish qoidalariga  rioya qilmaslik ...
+Javob: intizomiy  javobgarlikka  olib keladi.
+99. Davlat tili va ish hujjatlarini yuritish qoidalariga  amal qilish ... Javob: majburiy.
+100. Korrupsiyaga  oid huquqbuzarlik  deganda  nima tushuniladi? Javob: mansab vakolatlarini suiiste'mol qilish.
+101. Korrupsiyaga  qarshi kurashish  sohasida davlat siyosatining asosiy yo'nalishlari qayerda ko'rsatilgan?
+Javob: qonun va normativ-huquqiy hujjatlarda.
+102. Tashkilotlarning korrupsiyaga  qarshi kurashish  bo'yicha siyosati mazmuni kim tomonidan  shakllantiriladi?
+Javob: tashkilot  rahbariyati tomonidan shakllantiriladi.
+103. Quyidagilardan qaysi biri joylarda  korrupsiyaning oldini olishga qaratilgan  hududiy dasturlar ishlab chiqilishi va amalga oshirilishini  tashkil etadi?
+Javob: mahalliy davlat hokimiyati organlari.
+104. Davlat xizmatchilarining korrupsiyaga  qarshi kurashish  sohasidagi huquqiy savodxonligini oshirish  kimning zimmasiga  yuklatilgan?
+Javob: davlat organlari va tashkilotlar  rahbarlarining zimmasiga yuklatilgan.
+105. Davlat organlarida  xodimlarning faoliyatida  korrupsiyaga  oid huquqbuzarliklarga yo'l qo'ymaslik kimning zimmasiga  yuklatilgan?
+Javob: davlat organlari  rahbarlarining zimmasiga yuklatilgan.
+106. Manfaatlar to'qnashuviga  berilgan ta'rifni ko'rsating.
+Javob: xodimning shaxsiy manfaatlari xizmat vazifalarini  bajarishiga ta'sir ko'rsatishi mumkin  bo'lgan holat.
+107. Agar davlat fuqarolik xizmatchisi  korrupsiya faktlari to'g'risidagi axborotga  ega bo'lsa qaysi harakatlarni amalga oshirishi kerak?
+Javob: vakolatli organlarga  xabar berishi kerak.
+108. Davlat organi xodimiga  pora olish evaziga yordam  berish haqida fuqaro murojaat etganida davlat organi xodimi majburiy nimadan iborat bo'ladi?
+Javob: huquqni muhofaza  qiluvchi organlarga  xabar berishdan  iborat bo'ladi.
+109. Korrupsiyaga  oid huquqbuzarliklar to'g'risidagi axborotni xabar qiluvchi shaxslar va ularning yaqin qarindoshlari kimning himoyasida  bo'ladi?
+Javob: davlat himoyasida  bo'ladi.
+"110. Korrupsiyaga  oid huquqbuzarliklar natijasida  qabul qilingan qaror bekor qilingan taqdirda, uning qabul qilinishi natijasida  jismoniy va yuridik shaxslarga  yetkazilgan zarar qoplanadimi?"
+"Javob: ha,  belgilangan  tartibda qoplanadi."
+111. Normativ-huquqiy hujjatlardagi va ularning loyihalaridagi korrupsiyani  keltirib chiqaruvchi omillar deb nimaga aytiladi?
+Javob: korrupsiyaga  sharoit yaratadigan  normalar va bo'shliqlar.
+112. Quyidagilardan qaysi biri korrupsiyaga  qarshi kurashish  to'g'risidagi qonun hujjatlarining ijro etilishi ustidan  jamoatchilik  nazoratini amalga oshiradi?
+Javob: fuqarolik  jamiyati institutlari va OAV.
+113. Korrupsiyaga  qarshi kurashish  bo'yicha faoliyatni amalga oshiruvchi va unda ishtirok etuvchi organlar hamda  tashkilotlar faoliyatini muvofiqlashtirish uchun Korrupsiyaga  qarshi kurashish  bo'yicha  qanday tuzilma tashkil etilgan?
+Javob: Korrupsiyaga  qarshi kurashish  milliy kengashi.
+"114. O'zbekiston  Respublikasining ""Korrupsiyaga  qarshi kurashish  to'g'risida""gi Qonunning maqsadi nima?"
+Javob: korrupsiyaning oldini olish va unga qarshi kurashish.
+115. Korrupsiyaga  qarshi kurashishning asosiy prinsiplaridan biri qaysi? Javob: qonuniylik va oshkoralik.
+116. Korrupsiyaga  qarshi davlat siyosatining asosiy yo'nalishlaridan biri? Javob: korrupsiyaning oldini olish.
+117. Qaysi organ korrupsiyaga  qarshi kurashish  bo'yicha faoliyatni  bevosita amalga oshiruvchi organ hisoblanadi?
+Javob: Korrupsiyaga  qarshi kurashish  agentligi.
+118. O'zbekiston  Respublikasining Korrupsiyaga  qarshi kurashish  bo'yicha  milliy kengashining asosiy vazifalaridan  biri?
+Javob: davlat siyosatini muvofiqlashtirish.
+119. Ichki ishlar vazirligi korrupsiyaga  qarshi qanday vakolatni amalga oshiradi? Javob: korrupsiyaga  oid  jinoyatlarni aniqlash va tergov qilish.
+120. Ommaviy axborot vositalari korrupsiyaga  qarshi kurashishda  qaysi yo'l bilan ishtirok etadi?
+Javob: jamoatchilik  nazorati va yoritish orqali.
+"121. ""Manfaatlar to'qnashuvi"" tushunchasi qanday izohlanadi? Javob: shaxsiy manfaatlarning xizmat manfaatlariga zid kelishi."
+"122. ""Manfaatlar to'qnashuvi to'g'risida""gi Qonunga  ko'ra, ""shaxsiy manfaatdorlik"" deganda nima tushuniladi?"
+Javob: xodim  yoki uning yaqinlarining moddiy yoki nomoddiy  manfaatlari.
+"123. ""Manfaatlar to'qnashuvi to'g'risida""gi Qonunga  ko'ra, maxsus bo'linma deganda  nima tushuniladi?"
+Javob: manfaatlar to'qnashuvini  aniqlovchi va nazorat qiluvchi tuzilma.
+"124. ""Manfaatlar to'qnashuvi to'g'risida""gi Qonunga  ko'ra, xodim  manfaatlar to'qnashuviga yo'l qo'ymaslik uchun kimni xabardor qilishi shart?"
+Javob: bevosita  rahbarini yoki maxsus bo'linmani.
+125. Manfaatlar to'qnashuvi to'g'risidagi deklaratsiya  qachon topshiriladi? Javob: xizmatga  kirishda va manfaatlar to'qnashuvi yuzaga  kelganda  topshiriladi.
+"126. Mavjud  manfaatlar to'qnashuvi aniqlansa, xodim  nima qilishi kerak? Javob: bu haqda  rahbariga  yoki maxsus bo'linmaga  xabar berishi kerak."
+127. Mavjud  manfaatlar to'qnashuvi to'g'risidagi xabarnoma  kimga topshiriladi? Javob: bevosita  rahbariga  yoki maxsus bo'linmaga  topshiriladi.
+128. Xodim o'ziga aloqador shaxslarning manfaatini ko'zlab ish tutsa -    bu?
+Javob: manfaatlar to'qnashuvi hisoblanadi.
+"129. ""Manfaatlar to'qnashuvi to'g'risida""gi Qonunga  ko'ra, ""nazorat"" nimani anglatadi? Javob: manfaatlar to'qnashuviga  rioya etilishi ustidan tekshiruv va monitoring."
+"130. ""Manfaatlar to'qnashuvi to'g'risida""gi Qonunga  ko'ra, xodimga  aloqador shaxslarning majburiyati  nima?"
+Javob: manfaatlar to'qnashuviga  sabab  bo'ladigan  holatlardan  tiyilish.
+"131. ""Manfaatlar to'qnashuvi to'g'risida""gi Qonunga  ko'ra, ""yaqin qarindoshlar"" qaysi shaxslarni o'z ichiga oladi?"
+"Javob: ota-ona, turmush o'rtog'i, farzandlar, aka-uka, opa-singillar."
+"132. ""Manfaatlar to'qnashuvi to'g'risida""gi Qonunga  ko'ra, manfaatlar to'qnashuvi munosabatlarini tartibga solishning asosiy prinsiplari orasida qaysi biri mavjud emas? Javob: shaxsiy manfaatlarni  ustuvor qo'yish."
+133. Qaysi holatda  manfaatlar  to'qnashuvi yuzaga  kelmaydi?
+Javob: xodimning shaxsiy manfaatlari xizmat faoliyatiga  ta'sir qilmasa.
+"134. ""Manfaatlar to'qnashuvi to'g'risida""gi Qonunga  ko'ra, ehtimoliy  manfaatlar to'qnashuvi to'g'risidagi deklaratsiyada quyidagi ma'lumotlardan qaysi biri kiritilmaydi?"
+Javob: davlat siri bo'lgan  ma'lumotlar.
+135. Manfaatlar to'qnashuvi  holatlari to'g'risidagi  ma'lumotlar qayerda yuritiladi? Javob: maxsus reyestrda yuritiladi.
+"136. Agar rahbarning o'zi manfaatlar to'qnashuviga  duch kelsa, bu haqda kimga xabar beradi?"
+Javob: yuqori turuvchi organga yoki maxsus bo'linmaga.
+"137. ""Manfaatlar to'qnashuvi to'g'risida""gi Qonunga  ko'ra, manfaatlar to'qnashuvi  holatini yashirish  qanday oqibatga  olib keladi?"
+Javob: intizomiy yoki huquqiy  javobgarlikka  olib keladi.
+138. Manfaatlar to'qnashuvini  bartaraf etishning eng muhim  chorasiga qaysi biri kiradi? Javob: xodimni qaror qabul qilishdan chetlashtirish.
+139. Manfaatlar to'qnashuvini  tartibga solish ustidan  umumiy nazoratni kim amalga oshiradi?
+Javob: davlat organlari  rahbarlari.
+140. Davlat organlari yoki boshqa  tashkilotlar  tarkibiy bo'linmalarining rahbari mavjud manfaatlar to'qnashuvini tartibga solish bo'yicha vakolatlari doirasida  ko'rilgan choralar to'g'risida  maxsus bo'linmaga  nechchi muddat ichida axborot taqdim etishi shart?
+Javob: 3 ish kuni ichida.
+141. O'zbekiston  Respublikasida korrupsiyaning oldini olish va unga qarshi kurashish sohasida qaysi davlat organi davlat siyosatini shakllantiradi va amalga oshiradi? Javob: Korrupsiyaga  qarshi kurashish  agentligi.
+142. Quyidagilardan qaysi biri korrupsiyaga  imkon  beruvchi iqtisodiy sabablar hisoblanadi? Javob: past ish haqi va iqtisodiy tengsizlik.
+143. Davlat xizmatchilari  qaysi faoliyat  bilan shug'ullanishi lozim?
+Javob: faqat qonuniy va xizmat vazifalariga  oid faoliyat bilan.
+144. Rahbar kadrlarni qaysi belgilar bo'yicha tanlash va  joy-joyiga  qo'yish holatlariga  yo'l qo'ymasligi kerak?
+Javob: qarindoshlik va shaxsiy manfaatlarga  asoslangan  holatlarga.
+"145. ""Halollik vaksinasi"" nimani anglatadi?"
+Javob: korrupsiyaga  nisbatan  murosasizlikni shakllantirish tizimi.
+146. Normativ-huquqiy hujjatlar loyihalarining korrupsiyaga  qarshi ekspertizasi  qaysi organlar tomonidan  o'tkaziladi?
+Javob: Adliya organlari tomonidan.
+147. Tashkilotlarning korrupsiyaga  qarshi kurashish  bo'yicha siyosati mazmuni kim tomonidan  shakllantiriladi?
+Javob: tashkilot  rahbariyati tomonidan.
+148. Quyidagilardan qaysi biri korrupsiyaga  qarshi kurashish  to'g'risidagi qonun hujjatlarining ijro etilishi ustidan  jamoatchilik  nazoratini amalga oshiradi?  Javob: fuqarolik  jamiyati institutlari va OAV.
+149. Qonun  normalarida  ma'lum  bir siyosiy guruh  manfaatlariga  xizmat qiladigan qoidalarni kiritishga  intilish harakati nima deyiladi?
+Javob: lobbizm.
+150. Yangi tahrirdagi O'zbekiston  Respublikasi Konstitutsiyasining ustuvor g'oyalarini ro'yobga chiqarish va normalarini  hayotga tatbiq etish  bo'yicha  Davlat komissiyasiga  kim raislik qiladi?
+Javob: O'zbekiston  Respublikasi Prezidenti.
+151. SavoI:  O'zbekiston Respublikasi Oliy Majlisi Senatining necha nafar a'zosi O'zbekiston Respublikasi Prezidenti tomonidan tayinlanadi?
+Javob: 9 nafar.
+152.Savol: O'zbekiston Respublikasi Vazirlar Mahkamasi o'z faoliyatida kimning oldida? Javob: Oliy Majlis va O'zbekiston Respublikasi Prezidenti oldida.
+153. Savol: O'zbekiston Respublikasi Oliy sudi qanday sohalarda sud hokimiyatining oliy organi bor?
+"Javob: jiqarolik, iqtisodiy va mamuriy sud ishlarini boshqarish Fuqarolik."
+154. SavoI:  Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasining 1- versiyasiga ko'ra O'zbekiston qanday davlat?
+"Javob: Suveren, demokratik, huquqiy, ijtimoiy va dunyoviy davlat."
+155.  Savol: Soliqlamijoriy qilish huquqi qaysi davlat organiga tegishli? Javob: Oliy Majlisga (Qonun boshqaruvi hokimiyati).
+"156.  Savol: Bosh prokuror, viloyat, tuman va shahar prokurorlarining vakolat muddati necha yil? Javob: 5 yil."
+157.  Savol: Yangi tahrirdagi Konstitutsiyaga ko'ra qaysi soha yangi bob (XXIV bob) sifatida kiritildi?
+Javob: Advokatura.
+"158.  Savol: Davlat qaysi raqamdagi shaxslaming  sha'ni, qadri va ijtimoiy himoyasi haqida alohida g'amxo'rlik  qiladi?"
+Javob: O'qituvchilaming (Pedagog tashrifning).
+159. SavoI: Senat majlislari bir yilda kamida bir necha ishlab chiqarish qurilishi? Javob: Kamida to'rt marta.
+160. Savol: Prezident Administratsiyasini va maslahat-kengash organlarini kuzatishga kim vakolatli?
+Javob: O'zbekiston Respublikasi Prezidenti.
+161. Savol: Bolalar mehnatining  qanday tekshiriladi?
+"Javob: Harlig'dan, qanday holatda, qanday holatda, sog'lig'i va rivojlanishiga soluvchi eng yomon bo'ladi."
+162. Savol: Qaysi huquq bir insonning ajralmas huquqidir va qonun bilan sotib olish? Javob: Yashash huquqi.
+163. Savol: Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasi qachon qabul qilinadi? Javob: 2023-yil 30-aprelda (umumxalq referendumi orqali).
+"164. Savol: Kimlikni ta'minlash, ishsizlikdan himoya qilish va kamg'allikni oshirishni ko'radi? J avo b  O'zbekiston Res  ublikasi Vazirlar Mahkamas·."
+165. Savol: Davlat qaysi ta'limning bepul bo'lishini kafolatlaydi?
+
+166. Savol: Yozishmalar va telefon so'zlashuvlari sirini cheklashga faqat nima asosida yo'l
+qo'yiladi?
+
+168. Savol: Kim qulay investitsiyaviy va ishbilarmonlik muhitini ta'minlaydi? Javob:    'zbekiston Res  ublikasi Vazirlar Mahkamasi
+169. Savol: Konstitutsiyaviy qonunlami qabul qilishdajami deputat va senatorlaming  necha qismi ishtirok etishi shart?
+Javob   Kamida uchdan ikki  ismi   $2/3$
+170. Savol: Qonunchilik  palatasi Spikeri ayni bir vaziyatga surunkasiga necha muddat saylanishi mumkin?
+Javob:       i muddatdan orti   sa  lanishi mumkin emas
+171. Savol: Qonunchilik  palatasi Bosh vazimi necha kun ichida ko'rib chiqadi? Javob:   0 kun ichida
+•   Savol: Xalq deputatlari Kengashiga uning deputatlari orasidan qonunga muvofiq kim boshchilik qiladi?
+
+•   SavoI: ulardan qaysi biri Xalq deputatlari Kengashlarining vakolatlariga kirmaydi?
+
+
+•   Savol: Viloyat va Tashkent shahar hokimi kim tayinlanadi va nazoratdan ozod qilinadi?
+Javob:    'zbekiston Res  ublikasi Prezidenti
+•   Savol: O'zbekiston Respublikasi qonunlarining  aniq va bir xilda ustidan nazoratni kimlar amalga oshirishi kerak?
+
+Javob:
+•   Savol: Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasi ko'ra Oliy Majlis Senati majlislari bir yilda bir necha ishlab chiqarish qurilishi?
+
+
+•   O'zbekiston  Respublikasi Prezidenti saylovidan  oldin O'zbekiston Respublikasi Prezidenti saylovini tayinlashga haqlimi?
+
+•   Savol: Markaziy saylov komissiyasining raisi Prezidentning taqdimiga ko'ra komissiya a'zolari orasida qancha muddatga saylanadi?
+
+•   Savol: Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra mamlakat ichkarisida va xalqaro munosabatlarda O'zbekiston nomidan vakolatli organ qaysi?
+Javob:    'zbekiston Res  ublikasi Prezidenti
+•   Savol: Fuqarolar farovonligini tuzatishga O'zbekiston iqtisodiyotining negizini qanday shakllardagi mulk tashkil qilinadi?
+
+Javob:
+"•   SavoI: Kim bozor munosabatlarini rivo·1antirish va halol odamlar uchun shart-sharoit nima? Javob:    avlat  i""ro etuvchi hokimi  at/Vazirlar Mahkamasi"
+•   Savol: Kim iste'molchilaming huquqlari mustahkamligini o'z kuchiga ega bo'lgan holda ishlash va mehnat erkinligini kafolatlaydi?
+Javob:    avlat
+•   Savol: Kim qulay investitsiyaviy va ishbilarmonlik muhitini ta'minlaydi?
+Javob:    'zbekiston Res  ublikasi Vazirlar Mahkamas·.
+•   Savol: Notijorat tashkilotlari deganda nimalar tushuniladi?
+
+•   Savol: Umummilliy  boyligimizga nimalar keladi?
+
+•   Savol: Yer xususiy mulk bo'lishi mumkinmi?
+
+•   SavoI: Fuqarolik jamiyati institutlariga qaysi tashkilotlar kiradi?
+"Javob:     ahalla, siyosiy partiyalar  i""timoi   axborot vositalari  kasaba u ashkilotlari  ·am.oat birlashmalari"
+•   Savol: Qaysijamoat birlashmalari sifatida e'tirof etiladi?
+
+·amoa
+Javob:   iyosiy partiyalar  xotin-  izlar  kasaba u
+ami  atlar va bosh  alar
+•   Savol: Kasaba uyushmalariga a'zo bo'lish mumkinmi?
+
+oshlar va faxri  lar tashkilotlari  ilmi
+
+•   Savol: Voyaga yetgan mehnatga layoqatli farzandlar o'z ota-onalari haqida g'amxo'rlik tutishi qaysi moddada aks ettirilgan?
+
+•   Savol: Ommaviy axborot nima uchun ushlanib qoladi?
+
+•   Savol: O'zbekiston Respublikasining ma'muriy-hududiy tarkibi to'liq va to'g'ri aks ettirilgan javobni belgilang.
+
+•   Savol: O'zbekiston Respublikasi Oliy Majlisi qanday organ qilinadi?
+
+
+•   Savol: O'zbekiston Respublikasi Oliy Majlisining Qonunchilik  palatasi va Senati vakolat muddati necha yil?
+
+•   Savol: O'zbekiston Respublikasi Oliy Majlisi necha palatadan iborat?
+
+"•   O'zbekiston  Respublikasi  Oli   Ma""lisining Savol    alatasi qonunga muvofiq qonunchilik uchun qancha nafar deputatdan iborat?   avob: 150 nafar de  utatdan"
+
+1-savol: O'zbekiston Respublikasi Oliy Majlisi Senatining nechta a'zosi Prezident tomonidan tayinlanadi?
+II  Javob:
+"O'zbekiston Respublikasi Oliy Majlisi Senatining 16 nafar a'zosi fan, san'at, adabiyot, ishlab chiqarish sohalarida va davlat hamda jamiyat faoliyatining boshqa tarmoqlarida  katta tajribaga ega, alohida xizmat ko'rsatgan eng obro'li fuqarolar orasidan O'zbekiston Respublikasi Prezidenti tomonidan tayinlanadi."
+2-savol: Qonunchilik palatasi tomonidan qabul qilingan qonun nechchi kundan kechiktirmay Senatga
+yuboriladi?
+II  Javob:
+O'zbekiston Respublikasi Oliy Majlisining Qonunchilik palatasi tomonidan qabul qilingan qonun qabul qilingan kundan e'tiboran 10 kundan kechiktirmay O'zbekiston Respublikasi Oliy Majlisining Senatiga yuboriladi.
+3-savol: Qonun Senatga yuborilgandan so'ng necha kun ichida ko'rib chiqiladi?
+II  Javob:
+Qonun O'zbekiston Respublikasi Oliy Majlisining Senati tomonidan yuborilgan kundan e'tiboran 60 kun ichida ko'rib chiqiladi.
+4-savol: Senat tomonidan ma'qullangan qonun Prezidentga  nechchi kundan kechiktirmay yuboriladi?
+II  Javob:
+"Qonun O'zbekiston Respublikasi Oliy Majlisining Senati tomonidan ma'qullanganidan so'ng, 10 kundan"
+kechiktirmay imzolanishi va e'lon qilinishi uchun O'zbekiston Respublikasi Prezidentiga  yuboriladi.
+
+Oʻzbekiston tarixi va davlat tili bo'yicha savol-javoblar
+O'zbekiston hududi ma'ruzada qaysi daryolar oralig'idagi mintaqa sifatida ta'riflanadi?
+* Amudaryo va Sirdaryo oralig'idagi hudud (Movarounnahr).
+O'zbekistonning sivilizatsiya beshigi ekanligini isbotlovchi jihatlar ro'yxatida birinchi bo'lib qaysi bandi keltirilgan?
+* Hududda eng qadimgi ibtidoiy jamiyat va madaniyat izlarining mavjudligi.
+O'zbekistonning xalqaro tan olinishi asosan qaysi yo'nalish orqali izohlanadi?
+* Davlat mustaqilligi va xalqaro huquq subyekti sifatida tan olinishi orqali.
+O'zbekiston etnogenezi haqidagi fikrda qaysi uch irq atamalari tilga olingan?
+* Yevropoid, Mongoloid va Yevro-mongoloid.
+Ibtidoiy madaniyatning eng qadimiy dalillaridan biri qaysi joyda topilgani aytiladi?
+* Selungur g'ori (Farg'ona vodiysi).
+Neolit davri qaysi vaqt oralig'iga to'g'ri keladi?
+* Miloddan avvalgi VI-IV ming yilliklar.
+Eneolit davri qaysi vaqt oralig'iga to'g'ri keladi?
+* Miloddan avvalgi IV-III ming yilliklar.
+Jez davrida qaysi jarayonlar shakllangan?
+* Dehqonchilik, chorvachilik, hunarmandchilik va metallurgiya rivojlangan.
+Temir davri yodgorliklari qaysi hududda ko'p uchraydi?
+* Xorazm, So'g'd va Baqtriya hududlarida.
+VI-VIII asrlarda qaysi dinlar mavjud bo'lgan?
+* Zardushtiylik, Buddaviylik, Xristianlik va mahalliy e'tiqodlar.
+Movarounnahrning VIII asr boshlaridagi siyosiy taqdiri qanday?
+* Arablar tomonidan bosib olinishi va islom dini kirib kelishi.
+X asr o'rtalarida qaysi davlat tashkil topgan?
+* Qoraxoniylar davlati.
+Dandanaqon jangi natijasi qanday bo'lgan?
+* Saljuqiylarning G'aznaviylar ustidan g'alabasi.
+XIII asr boshida Xorazm qanday tavsiflangan?
+* Markazlashgan va qudratli davlat sifatida.
+Mo'g'ullar istilosi oqibati qanday bo'lgan?
+* Iqtisodiy va madaniy tanazzul yuz bergan.
+XIV asr 40-yillarida Chig'atoy ulusi qanday bo'lingan?
+* Sharqiy va G'arbiy qismlarga.
+Mirzo Ulug'bek davrida qaysi soha rivojlangan?
+* Astronomiya va matematika.
+Temuriylardan keyin qaysi sulola hokimiyatga kelgan?
+* Shayboniylar sulolasi.
+Ashtarxoniylar sulolasi davri?
+* 1601-1756-yillar.
+Mang'itlar sulolasi davri?
+* 1756-1920-yillar.
+O'zbekiston Respublikasining davlat tili qaysi?
+* O'zbek tili.
+Davlat tilida ish yuritish qaysi qonun bilan belgilanadi?
+* "Davlat tili haqida"gi Qonun bilan.
+Tashkilotlarda ish hujjatlari qaysi tilda yuritiladi?
+* Davlat tilida.
+Buyruq hujjati kim tomonidan chiqariladi?
+* Tashkilot rahbari tomonidan.
+Xizmat hujjatlari qaysi uslubda yoziladi?
+* Rasmiy-idoraviy uslubda.
+
+Ish hujjatlari va strategik tahlil bo'yicha savol-javoblar
+Farmoyish hujjati qanday masalalar uchun chiqariladi?
+* Tezkor va joriy masalalarni hal etish uchun chiqariladi.
+Ariza odatda kimning nomiga yoziladi?
+* Tashkilot rahbari yoki vakolatli mansabdor shaxs nomiga.
+Bayonnoma qaysi jarayonni aks ettiradi?
+* Yig'ilish, majlis yoki muhokama jarayonini aks ettiradi.
+Dalolatnoma qanday hujjat turiga kiradi?
+* Axborot-ma'lumot hujjatlar turiga kiradi.
+Ish hujjatlarida sana qanday tartibda yoziladi?
+* Kun-oy-yil tartibida yoziladi.
+Ish hujjatlarida imzo nimani bildiradi?
+* Hujjat mazmunining tasdiqlanganini bildiradi.
+Buyruq matni qaysi so'z bilan boshlanadi?
+* "Buyuraman" so'zi bilan boshlanadi.
+Rasmiy hujjatlarning tili qanday bo'lishi kerak?
+* Aniq, lo'nda, tushunarli va rasmiy uslubda bo'lishi kerak.
+Ish hujjatlarida qisqartmalar qanday qo'llaniladi?
+* Faqat umumqabul qilingan va izohlangan holda qo'llaniladi.
+Hujjat rekvizitlariga qaysilar kiradi?
+* Sarlavha, sana, raqam, imzo, muhr va manzil.
+Tashkilot blankasi nimani o'z ichiga oladi?
+* Tashkilot nomi, manzili, telefon raqami va rekvizitlari.
+Xizmat yozishmalarida murojaat shakli qanday bo'lishi kerak?
+* Hurmat ifodalovchi rasmiy shaklda bo'lishi kerak.
+Ish hujjatlarida grammatik xatolarga yo'l qo'yilsa nima bo'ladi?
+* Hujjatning yuridik kuchi pasayadi.
+Hujjatlarning saqlanish muddati nimaga bog'liq?
+* Ularning huquqiy va tarixiy ahamiyatiga bog'liq.
+Rahbar kadrlar uchun davlat tilini mukammal bilish nimani ta'minlaydi?
+* Samarali boshqaruv va hujjatlarni to'g'ri yuritishni ta'minlaydi.
+"Tizim" tushunchasiga eng mos ta'rif qaysi?
+* O'zaro bog'langan elementlar majmui.
+Tizimli tahlilning asosiy elementlari qaysi to'plamda to'g'ri berilgan?
+* Maqsad, elementlar, aloqa va muhit.
+"Dekompozitsiya" deganda nima tushuniladi?
+* Murakkab tizimni qismlarga ajratish jarayoni.
+Strategik rejalashtirishda birinchi bosqich qaysi?
+* Tashkilot missiyasini aniqlash.
+"Missiya" tushunchasi nimani anglatadi?
+* Tashkilotning mavjudlik maqsadini anglatadi.
+"Viziya" tushunchasi nimani anglatadi?
+* Tashkilotning kelajakdagi ideal holatini anglatadi.
+SWOT tahlilda "S" nimani bildiradi?
+* Kuchli tomonlarni (Strengths) bildiradi.
+PESTEL tahlilda "T" nimani bildiradi?
+* Texnologik omillarni bildiradi.
+Balanced Scorecardning asosiy vazifasi qaysi?
+* Strategiyani amaliy faoliyatga bog'lash.
+Ssenariyli rejalashtirishning mohiyati qaysi?
+* Turli ehtimoliy rivojlanish variantlarini oldindan baholash.
+
+Strategik rejalashtirish va sun'iy intellekt bo'yicha savol-javoblar
+Shell misoli qaysi xulosani asoslaydi?
+* Ssenariyli rejalashtirish strategik qarorlar sifatini oshirishini.
+Raqamli monitoring platformasining asosiy ustunligi qaysi?
+* Real vaqt rejimida ma'lumotlarni kuzatish va tahlil qilish.
+"Raqamli egizak" (digital twin) nima?
+* Real obyekt yoki jarayonning virtual raqamli modeli.
+Big Data va AI strategik rejalashtirishda nimani kuchaytiradi?
+* Prognozlash aniqligi va qaror qabul qilish sifatini.
+"Maqsadli strategik rejalashtirish"ning markaziy g'oyasi qaysi?
+* Aniq belgilangan maqsadlarga erishishga yo'naltirilganlik.
+Agile strategik boshqaruv qaysi sharoitda ayniqsa mos?
+* Tez o'zgaruvchan va noaniq muhitda.
+"Silosindrom" mazmuniga eng yaqin ta'rif qaysi?
+* Bo'limlararo hamkorlikning sustligi va axborot yopiq holda qolishi.
+KPI ko'rsatkichlarining strategik boshqaruvdagi asosiy roli qaysi?
+* Strategiya ijrosini o'lchash va baholash.
+"Maqsadlar daraxti" uslubi nima uchun qo'llaniladi?
+* Strategik maqsadlarni bosqichma-bosqich aniqlashtirish uchun.
+"Loyiha asosida rejalashtirish" nimani anglatadi?
+* Strategiyani aniq loyihalar orqali amalga oshirishni.
+Sun'iy intellekt tushunchasi qaysi ta'rifga yaqin?
+* Inson aqliga xos vazifalarni bajaruvchi algoritmik tizim.
+Davlat boshqaruvida sun'iy intellektdan foydalanishning asosiy maqsadi nima?
+* Boshqaruv samaradorligi va xizmatlar sifatini oshirish.
+Mashinali o'rganish (Machine Learning) nimani anglatadi?
+* Ma'lumotlar asosida o'rganib, mustaqil takomillashuvchi algoritmlar.
+Sun'iy intellekt natijalarining ishonchliligi asosan nimaga bog'liq?
+* Ma'lumotlar sifati va algoritm to'g'riligiga.
+Davlat organlarida SI joriy etishda ustuvor cheklov qaysi?
+* Ma'lumotlar xavfsizligi va maxfiyligi.
+Quyidagilardan qaysi biri SI uchun mos vazifa hisoblanadi?
+* Katta hajmdagi ma'lumotlarni tezkor tahlil qilish.
+Algoritmik xolislik (bias) muammosi nimani anglatadi?
+* Algoritmlarning noto'g'ri yoki adolatsiz natija berishi.
+Davlat ma'lumotlaridan SI da foydalanishda qaysi tamoyil muhim?
+* Shaffoflik va qonuniylik.
+Sun'iy intellekt qaror qabul qilish jarayonida qanday rol o'ynaydi?
+* Tahliliy va tavsiyaviy rolni.
+Quyidagilardan qaysi biri SI ga asoslangan tizim?
+* Avtomatlashtirilgan qarorlarni qo'llab-quvvatlash tizimi.
+Sun'iy intellektning asosiy cheklovi nimada?
+* Inson qadriyatlari va kontekstini to'liq anglay olmasligida.
+SI natijalari davlat boshqaruvida qanday xarakterga ega?
+* Tavsiya va yordamchi xarakterga ega.
+Sun'iy intellektni joriy etish qaysi yondashuvni talab qiladi?
+* Bosqichma-bosqich va ehtiyotkor yondashuvni.
+SI davlat xizmatida qaysi jarayonlarda samaraliroq?
+* Tahlil, prognozlash va xizmat ko'rsatishda.
+Sun'iy intellektdan foydalanishdan kutiladigan asosiy natija qaysi?
+* Boshqaruv samaradorligi va resurslar tejalishi.
+
+Davlat boshqaruvi, huquq va sun'iy intellekt bo'yicha savol-javoblar
+SI bilan ishlovchi davlat xizmatchisi uchun qaysi ko'nikma muhim?
+* Tahliliy fikrlash va raqamli savodxonlik.
+Sun'iy intellekt asosida qabul qilingan tavsiyalar uchun kim mas'ul?
+* Inson - vakolatli mansabdor shaxs.
+"Inson nazorati" tamoyili nimani anglatadi?
+* SI qarorlari ustidan inson nazorati majburiy ekanini.
+Quyidagilardan qaysi biri sun'iy intellekt emas?
+* Oddiy qo'lda boshqariladigan dastur.
+Davlat xizmatchilari uchun SI bo'yicha bilimlar nima uchun zarur?
+* SI natijalarini to'g'ri tushunish va qo'llash uchun.
+Ijtimoiy davlat deganda nimani tushunasiz?
+* Fuqarolarning ijtimoiy himoyasini ta'minlovchi davlat.
+Huquqiy davlat deganda nimani tushunasiz?
+* Qonun ustuvorligi ta'minlangan davlat.
+Demokratik davlat deganda nimani tushunasiz?
+* Xalq hokimiyati va saylovlar asosida boshqariladigan davlat.
+Dunyoviy davlat tushunchasi to'g'ri ko'rsatilgan javobni belgilang.
+* Din davlatdan ajratilgan davlat.
+Davlatning oliy maqsadi nima?
+* Inson huquqlari va erkinliklarini ta'minlash.
+Konstitutsiyaga muvofiq jinoyat sodir etganlikda ayblanayotgan shaxsning aybi sudning qonuniy kuchga kirgan hukmi bilan aniqlanmaguncha aybsiz deb hisoblanishi qanday nomlanadi?
+* Aybsizlik prezumpsiyasi.
+Davlat o'z faoliyatini birlik prinsipi asosida amalga oshiradi. Shunga ko'ra birlik prinsipi nimani anglatadi?
+* Davlat hokimiyatining yagona tizimda amalga oshirilishini.
+Davlat xizmatiga kirishda teng huquqlilik deganda nimani tushunasiz?
+* Fuqarolarning teng shartlarda davlat xizmatiga kirish huquqi.
+Fuqarolar qanday hollarda uy-joyidan mahrum etilishi mumkin?
+* Faqat sud qarori asosida.
+O'zbekiston Respublikasi Konstitutsiyasining to'g'ridan-to'g'ri amal qilishi deganda nimani tushunasiz?
+* Normalar bevosita qo'llanilishini.
+Davlat suvereniteti nima bilan ifodalanadi?
+* Davlatning mustaqilligi va oliy hokimiyati bilan.
+Demokratiya tushunchasi nimani anglatadi?
+* Xalq hokimiyatini.
+Huquqiy davlat tushunchasini belgilovchi eng asosiy mezon qaysi?
+* Qonun ustuvorligi.
+Konstitutsiyada inson huquqlarining e'tirof etilishi qanday prinsipga asoslanadi?
+* Insonparvarlik prinsipi.
+Davlat hokimiyati qay tarzda amalga oshiriladi?
+* Qonun chiqaruvchi, ijro etuvchi va sud hokimiyati orqali.
+Inson huquqlari qanday xususiyatga ega?
+* Tug'ma va daxlsiz.
+Sudlar qay tarzda faoliyat yuritadi?
+* Mustaqil va faqat qonunga bo'ysungan holda.
+Qonun ustuvorligi prinsipi qaysi davlatga xos?
+* Huquqiy davlatga.
+Fuqarolik jamiyati nima?
+* Davlatdan mustaqil ijtimoiy institutlar majmui.
+Ijtimoiy davlatning asosiy maqsadi?
+* Aholining munosib turmush darajasini ta'minlash.
+
+Davlat boshqaruvi, yashil iqtisodiyot va davlat xizmati bo'yicha savol-javoblar
+Davlat hokimiyati qanday cheklanadi?
+* Konstitutsiya va qonunlar bilan cheklanadi.
+O'zbekistonning "Yashil iqtisodiyotga o'tish strategiyasi"da 2030-yilgacha asosiy maqsadlardan biri sifatida qaysi ko'rsatkich belgilangan?
+* Issiqxona gazlari chiqindilarini sezilarli qisqartirish.
+Yashil iqtisodiyotni rivojlantirishda "raqamlashtirish" qanday rol o'ynaydi?
+* Resurslardan samarali foydalanish va monitoringni ta'minlaydi.
+Yashil iqtisodiyot strategiyasida qaysi sohalarni "energiya samaradorligi" tamoyili asosida isloh qilish belgilangan?
+* Energetika, sanoat, transport va uy-joy kommunal xo'jaligi.
+"Yashil iqtisodiyotga o'tish strategiyasi"da ta'lim sohasiga qaysi vazifa yuklatilgan?
+* Yashil ko'nikmalar va ekologik ongni shakllantirish.
+Qaysi loyiha to'g'ridan-to'g'ri yashil iqtisodiyotni qo'llab-quvvatlashga qaratilgan?
+* Qayta tiklanuvchi energiya manbalarini rivojlantirish loyihalari.
+Yashil iqtisodiyot strategiyasida "hududiy yondashuv" deganda nima nazarda tutiladi?
+* Hududlarning tabiiy va iqtisodiy imkoniyatlarini hisobga olish.
+"Yashil iqtisodiyotga o'tish strategiyasi" ijrosini amalga oshirish uchun qaysi indikatorlar belgilangan?
+* Energiya samaradorligi, emissiya kamayishi va yashil investitsiyalar hajmi.
+Qaysi qonun hujjatida yashil iqtisodiyotga oid normalar kuchaytirilgan?
+* "Atrof-muhitni muhofaza qilish to'g'risida"gi Qonunda.
+Yashil iqtisodiyot sohasida faoliyat yurituvchi startaplar uchun qanday rag'batlar nazarda tutilgan?
+* Soliq imtiyozlari va moliyaviy qo'llab-quvvatlash.
+O'zbekiston Respublikasi Prezidentining 23.06.2025-yildagi PF-95-son Farmonida davlat fuqarolik xizmatini isloh qilishning ustuvor maqsadi sifatida nima belgilangan?
+* Professional va samarali davlat xizmatini shakllantirish.
+O'zbekiston Respublikasi Prezidentining PF-243-son Farmonining PF-95-ga nisbatan asosiy farqlovchi jihati nimada?
+* Kadrlarni baholash va KPI tizimini joriy etishga urg'u berilishida.
+"Meritokratiya" tamoyili davlat fuqarolik xizmatida qaysi yondashuvni ifoda etadi?
+* Lavozimga bilim va malaka asosida tayinlash.
+KPI tizimini joriy etishdan ko'zlangan asosiy maqsad qaysi?
+* Natijadorlik va samaradorlikni oshirish.
+PF-243ga muvofiq davlat xizmatchilari faoliyatini baholashda qaysi instrument asosiy hisoblanadi?
+* KPI ko'rsatkichlari.
+Davlat xizmatida "halollik vaksinası" tushunchasi qanday mazmunni anglatadi?
+* Korrupsiyaga qarshi barqaror immunitetni shakllantirish.
+Davlat xizmatini raqamlashtirish orqali erishiladigan asosiy natija qaysi?
+* Shaffoflik va tezkorlikni oshirish.
+Vazirlar Mahkamasining 2022-yil 14-oktyabrdagi 595-son Qarori asosan qaysi yo'nalishni tartibga soladi?
+* Davlat xizmatchilarini baholash va attestatsiya qilish tizimini.
+Kompetensiya tushunchasi quyidagilarning qaysini to'liq qamrab oladi?
+* Bilim, ko'nikma va malaka majmuini.
+"Maqsad - harakat - natija" tamoyili davlat boshqaruvida qaysi yondashuvni ta'minlaydi?
+* Natijaga yo'naltirilgan boshqaruvni.
+Inklyuziv davlat xizmati tushunchasi nimaga qaratilgan?
+* Teng imkoniyatlar va kamsitilmaslikka.
+O'zbekiston Respublikasi Prezidentining PF-95da 2030-yilgacha davlat fuqarolik xizmatida xotin-qizlar ulushi bo'yicha qanday maqsad belgilangan?
+* Xotin-qizlar ulushini sezilarli oshirish.
+Kadrlar zaxirasini shakllantirishda asosiy talab qaysi?
+* Kasbiy salohiyat va kompetensiya.
+O'zbekiston Respublikasi Prezidentining PF-243ga muvofiq tanlov jarayonlarida qaysi mexanizm shaffoflikni ta'minlaydi?
+* Ochiq tanlov va raqamli platformalar.
+Malaka darajasini belgilashda hal qiluvchi mezon sifatida nima hisoblanadi?
+* Amaliy natijadorlik va kompetensiya darajasi.
+
+Davlat fuqarolik xizmatchilari odob-axloqining namunaviy qoidalari nimani belgilaydi?
+•	Davlat xizmatchilarining xizmat va xizmatdan tashqari xulq-atvor me'yorlarini belgilaydi.
+Odob-axloq qoidalari qaysi sohalarni qamrab oladi?
+•	Xizmat faoliyati, jamoatdagi xulq-atvor va shaxsiy mas'uliyatni.
+Davlat xizmatchilari mehnat faoliyati davomida va xizmatdan tashqari vaqtda qanday xulq-atvorga rioya qilishi lozim?
+•	Halol, odobli va qonunlarga hurmat bilan munosabatda bo'lishi lozim.
+Davlat xizmatchilari o'z kasbiy faoliyatini amalga oshirishda nimani ustuvor deb bilishi shart?
+•	Jamiyat va davlat manfaatlarini.
+Davlat xizmatchilari fuqarolar bilan munosabatda qanday bo'lishi lozim?
+•	Xushmuomala, xolis va hurmat bilan.
+Davlat xizmatchilari o'z vakolatlarini amalga oshirishda qaysi hujjatlarga amal qiladi?
+•	Konstitutsiya, qonunlar va normativ-huquqiy hujjatlarga.
+Davlat fuqarolik xizmatchilari odob-axloq qoidalari nimaga qaratilgan?
+•	Kasbiy halollik va davlat xizmatining nufuzini oshirishga.
+Odob-axloq qoidalariga rioya qilish nima uchun muhim?
+•	Ishonch va adolatni ta'minlash uchun.
+Quyidagilardan qaysi biri davlat xizmatchilari uchun taqiqlangan?
+•	Shaxsiy manfaatlarni xizmat manfaatlaridan ustun qo'yish.
+Davlat xizmatchilari bo'ysunuvchi xodimlardan nima talab qilishga haqli emas?
+•	Qonunga xilof topshiriqlarni.
+Davlat xizmatchilari qaror qabul qilish jarayonida qaysi talablarni ta'minlashi shart?
+•	Xolislik, qonuniylik va shaffoflikni.
+Favoritizm nima?
+•	Qarindosh-urug' yoki tanishlarni asossiz qo'llab-quvvatlash.
+Davlat xizmatchilari fuqarolarga nisbatan qanday talabga rioya qilishi lozim?
+•	Tenglik va adolat tamoyiliga.
+Davlat xizmatchilari jamoatchilik tanqidiga nisbatan qanday munosabatda bo'lishi shart?
+•	Bag'rikeng va xolis.
+Quyidagilardan qaysi biri davlat xizmatchisi tanqidga uchraganda uning majburiyati hisoblanadi?
+•	Asosli tanqidni ko'rib chiqish va xulosa chiqarish.
+Davlat xizmatchisi o'z xizmat mavqeidan qaysi maqsadda foydalanishi taqiqlanadi?
+•	Shaxsiy manfaat yoki foyda olish uchun.
+Davlat fuqarolik xizmatchisi sovg'a olishi mumkinmi?
+•	Qonunda belgilangan hollardan tashqari mumkin emas.
+Davlat xizmatchilari o'z vakolatlaridan qachon foydalanmasligi kerak?
+•	Manfaatlar to'qnashuvi mavjud bo'lganda.
+Davlat xizmatchisi davlat mulki bilan qanday munosabatda bo'lishi kerak?
+•	Tejamkor va mas'uliyat bilan.
+Davlat xizmatchisi qaysi odob me'yorlarga rioya qilishi kerak?
+•	Kasbiy etika va xizmat odobi me'yorlariga.
+Davlat xizmatchisi qanday holatda o'z rahbariga zudlik bilan ma'lumot berishi kerak?
+•	Qonun buzilishi yoki manfaatlar to'qnashuvi yuzaga kelganda.
+Davlat xizmatchisi internet va ijtimoiy tarmoqlarda nima qila olmaydi?
+•	Davlat obro'siga putur yetkazuvchi axborot tarqatishni.
+Davlat xizmatchisi fuqarolar va hamkasblarning sha'ni va qadr-qimmatiga qanday munosabatda bo'lishi kerak emas?
+•	Hurmat qilmasdan va kamsituvchi munosabatda.
+Davlat xizmatchisi davlat siri va xizmatga oid ma'lumotlar bilan qanday munosabatda bo'lishi kerak?
+•	Maxfiylikni qat'iy saqlashi kerak.
+Davlat xizmatchisi davlat mulki va moliyaviy mablag'larga qanday munosabatda bo'lishi kerak?
+•	Mas'uliyatli va tejamkor.
+Davlat xizmatchisi o'z vakolatlari doirasida fuqarolarni qanday holatda kamsitmasligi kerak?
+•	Hech qanday holatda.
+Davlat xizmatchisi mehnat jamoasida qanday muhitni shakllantirishi kerak?
+•	Sog'lom va hamkorlikka asoslangan muhitni.
+Rahbar bo'ysunuvidagi davlat xizmatchilariga qaysi fazilatlarda o'rnak bo'lishi kerak?
+•	Halollik, adolat va mas'uliyatda.
+Qaysi holat rahbar uchun taqiqlanadi?
+•	Vakolatini suiiste'mol qilish.
+Rahbar kadrlarni qanday mezonlar asosida tanlash, tayinlash yoki tavsiya etishi mumkin emas?
+•	Qarindoshlik yoki shaxsiy manfaat asosida.
+Rahbar jamoada qanday holatlarga yo'l qo'yilmasligi kerak?
+•	Kamsitish, tazyiq va adolatsizlikka.
+Rahbar davlat xizmatchilari faoliyatiga qanday munosabatda bo'lishi kerak?
+•	Adolatli, xolis va talabchan munosabatda bo'lishi kerak.
+Rahbar bo'ysunuvidagi davlat xizmatchilarini qanday jihatdan himoya qilishi kerak?
+•	Qonuniy manfaatlari va sha'ni himoyasi jihatidan.
+Rahbar vakolati doirasida shartnomalar tuzishda qanday asosga tayanib amalga oshirishi kerak?
+•	Qonun va normativ-huquqiy hujjatlar asosida.
+Rahbar jamoada qanday muhitni shakllantirishi kerak?
+•	Sog'lom, hamkorlikka asoslangan va adolatli muhitni.
+Rahbar bo'ysunuvidagi davlat xizmatchilariga qanday munosabatda bo'lishi taqiqlanadi?
+•	Kamsituvchi, haqoratli va adolatsiz munosabatda bo'lish.
+Quyidagilardan qaysi harakat rahbar uchun taqiqlanadi?
+•	Vakolatni suiiste'mol qilish.
+Ishdan tashqari vaqtda davlat xizmatchisi qanday salbiy odatlarga yo'l qo'ymasligi kerak?
+•	Spirtli ichimliklarni suiiste'mol qilish va qonunga zid xatti-harakatlarga.
+Davlat xizmatchisi jamoat joylarida qanday harakatlardan saqlanishi kerak?
+•	Davlat obro'siga putur yetkazuvchi harakatlardan.
+Ishdan tashqari vaqtda davlat xizmatchisi kimdan qimmatbaho sovg'a olishi mumkin?
+•	Hech kimdan.
+Xizmat guvohnomalaridan qachon foydalanish mumkin emas?
+•	Shaxsiy manfaatlar uchun.
+Davlat xizmatchisi shaxsiy transport vositalaridan qachon foydalanishi mumkin?
+•	Xizmatga aloqasi bo'lmagan hollarda.
+Ishdan tashqari vaqtda davlat xizmatchisi qanday tadbirlar bilan shug'ullanmasligi kerak?
+•	Siyosiy yoki noqonuniy tadbirlar bilan.
+Ishdan tashqari vaqtda davlat xizmatchisi tashqi ko'rinishini qanday saqlashi kerak?
+•	Odob va madaniyat qoidalariga mos holda.
+Davlat xizmatchisi rasmiy e'lon qilinmagan faoliyat masalalarini muhokama qilishi mumkinmi?
+•	Yo'q, mumkin emas.
+Davlat darajasida delegatsiyalarni qabul qilish dasturini kimlar tayyorlaydi?
+•	Tegishli vakolatli organlar.
+Agar xorijiy delegatsiya tashrifi o'z mablag'lari hisobidan amalga oshsa, qabul qiluvchi tomon qaysi xarajatlarni qoplaydi?
+•	Protokol tadbirlari bilan bog'liq xarajatlarni.
+Xorijiy mehmon turmush o'rtog'i bilan kelganda qanday tartib qo'llaniladi?
+•	Xalqaro protokol qoidalariga muvofiq.
+Rasmiy tashriflar davomida esdalik sovg'alar qachon taqdim etiladi?
+•	Tashrif yakunida.
+Xalqaro protokolga muvofiq faxriy mehmonni kutib olishda birinchi bo'lib kim salomlashadi?
+•	Qabul qiluvchi tomon rahbari.
+Davlat tili O'zbekiston Respublikasida ...
+•	O'zbek tilidir.
+Rasmiy ish hujjatlarini yuritishda asosiy qonun qaysi?
+•	"Davlat tili haqida"gi Qonun.
+Hujjatlarni ro'yxatga olish uchun ... ishlatiladi.
+•	Ro'yxatga olish jurnali.
+Qaysi hujjat rasmiy hisoblanadi?
+•	Vakolatli shaxs tomonidan tasdiqlangan hujjat.
+Ish hujjatlari necha yil saqlanishi mumkin?
+•	Belgilangan saqlash muddatiga muvofiq.
+Hujjatni kim tasdiqlaydi?
+•	Vakolatli rahbar.
+Rasmiy hujjatlarda qaysi tildan foydalaniladi?
+•	Davlat tilidan.
+Hujjatlarni yuritish jarayoni ... bilan boshlanadi.
+•	Hujjatni rasmiylashtirish bilan.
+Ish hujjatlari tizimida "kadrlar hujjatlari"ga misol ...
+•	Mehnat shartnomasi.
+Hujjatni qayta ishlash va rasmiylashtirish qoidalari ...
+•	Normativ hujjatlar bilan belgilanadi.
+Hujjatlarni elektron shaklda saqlash ...
+•	Axborot tizimlari orqali amalga oshiriladi.
+Tashkilotlarda ish hujjatlari ... bilan tartibga solinadi.
+•	Ichki me'yoriy hujjatlar bilan.
+Hujjatni tayyorlashda asosiy talab ...
+•	Aniqlik va qonuniylik.
+Hujjatlar qaysi tartibda saqlanadi?
+•	Tasdiqlangan nomenklatura asosida.
+"Xat" hujjat turi ...
+•	Xizmat yozishmalariga kiradi.
+Davlat tili qoidalariga rioya qilmaslik ...
+•	Ma'muriy javobgarlikka sabab bo'lishi mumkin.
+Hujjatlarni rasmiylashtirishda ... ishlatiladi.
+•	Belgilangan rekvizitlar ishlatiladi.
+Hujjatlarning amal qilish muddati ... bilan belgilanadi.
+•	Qonun va normativ hujjatlar bilan.
+Qabul qilingan hujjatni ro'yxatga olish uchun ... zarur.
+•	Ro'yxatga olish raqami.
+Ish hujjatlarini saqlashda ... muhim ahamiyatga ega.
+•	Saqlash tartibi va muddati.
+Ish hujjatlarini elektron shaklda saqlashda qaysi omil muhim?
+•	Axborot xavfsizligi.
+Hujjatlarni arxivlash nima uchun kerak?
+•	Hujjatlarni saqlash va foydalanishni ta'minlash uchun.
+Tashkilotda ish hujjatlari qabul qilinishi ...
+•	Belgilangan tartib asosida amalga oshiriladi.
+Hujjatni yozishda rasmiy tilda bo'lishi ...
+•	Shart.
+Ish hujjatlarini ro'yxatga olishda ... ishlatiladi.
+•	Ro'yxatga olish jurnali.
+Hujjatni rasmiylashtirish qoidalariga rioya qilmaslik ... olib keladi.
+•	Hujjatning yuridik kuchi pasayishiga.
+Ish hujjatlari saqlanish muddati ...
+•	Nomenklatura asosida belgilanadi.
+Rasmiy xatlar va qarorlar qaysi tartibda saqlanadi?
+•	Nomenklatura bo'yicha.
+Hujjatning muallifi ...
+•	Uni tuzgan shaxs yoki tashkilot.
+Hujjatlarda ishlatiladigan so'zlar ... bo'lishi kerak.
+•	Aniq va lo'nda.
+Tashkilotlarda ish hujjatlarini yuritishning asosiy maqsadi ...
+•	Faoliyatni tartibga solish.
+Hujjatlarni elektron shaklda yuborishda ... zarur.
+•	Elektron raqamli imzo.
+Ish hujjatlari arxivlashdan oldin ... qilinadi.
+•	Saralanadi va tartiblanadi.
+Ish hujjatlarida sana va raqam ko'rsatilishi ...
+•	Majburiy.
+Davlat tili qonuniga ko'ra barcha rasmiy hujjatlar ... bo'lishi kerak.
+•	Davlat tilida.
+Hujjatlar bilan ishlashda xodim ...
+•	Mas'uliyatli bo'lishi shart.
+Rasmiy ish hujjatlarida qaysi turdagi ma'lumot bo'lmasligi kerak?
+•	Asossiz va shaxsiy ma'lumotlar.
+Hujjatlarni elektron shaklda saqlash qachon afzal?
+•	Tezkorlik va qulaylik zarur bo'lganda.
+Tashkilotlarda ish hujjatlarini yuritish bo'yicha asosiy hujjat ...
+•	Ichki me'yoriy hujjatlar.
+Hujjatlarni rasmiylashtirishda ... muhim ahamiyatga ega.
+•	Aniqlik va to'g'rilik.
+Ish hujjatlari bilan ishlashda xodimning asosiy vazifasi ...
+•	Hujjatlarni to'g'ri va o'z vaqtida rasmiylashtirish.
+Hujjatlarni qabul qilishdan oldin ... tekshiriladi.
+•	Rekvizitlarning to'liqligi.
+Rasmiy ish hujjatlarida ... bo'lishi kerak.
+•	Aniq ma'lumotlar.
+Hujjatlarni saqlash va arxivlash muddati ... bilan belgilanadi.
+•	Qonunchilik bilan.
+Ish hujjatlarida shaxsiy fikrlar ...
+•	Keltirilmasligi kerak.
+Hujjatlarni rasmiylashtirishda ishlatiladigan blanklar ...
+•	Tasdiqlangan bo'lishi kerak.
+Tashkilotlarda ish hujjatlarini yuritish ... uchun zarur.
+•	Boshqaruvni ta'minlash.
+Ish hujjatlarini elektron shaklda yuborishda ... muhim.
+•	Axborot xavfsizligi.
+Hujjatlarni yuritish qoidalariga rioya qilmaslik ...
+•	Javobgarlikka olib keladi.
+Davlat tili va ish hujjatlarini yuritish qoidalariga amal qilish ...
+•	Majburiydir.
+Korrupsiyaga oid huquqbuzarlik deganda nima tushuniladi?
+•	Mansab vakolatlaridan shaxsiy manfaat yo'lida foydalanish.
+Korrupsiyaga qarshi kurashish sohasidagi davlat siyosatining asosiy yo'nalishlari to'g'ri ko'rsatilgan qatorni ko'rsating.
+•	Oldini olish, aniqlash va javobgarlikni ta'minlash.
+Tashkilotlarning korrupsiyaga qarshi kurashish bo'yicha siyosati mazmuni kim tomonidan shakllantiriladi?
+•	Tashkilot rahbariyati tomonidan shakllantiriladi.
+Quyidagilardan qaysi biri joylarda korrupsiyaning oldini olishga qaratilgan hududiy dasturlar ishlab chiqilishi va amalga oshirilishini tashkil etadi?
+•	Mahalliy davlat hokimiyati organlari.
+Davlat xizmatchilarining korrupsiyaga qarshi kurashish sohasidagi huquqiy savodxonligini oshirish kimning zimmasiga yuklatilgan?
+•	Davlat organlari va ularning rahbarlari zimmasiga.
+Davlat organlarida xodimlarning faoliyatida korrupsiyaga oid huquqbuzarliklarga yo'l qo'ymaslik kimning zimmasiga yuklatilgan?
+•	Davlat organi rahbarining zimmasiga.
+Manfaatlar to'qnashuviga berilgan ta'rifni ko'rsating.
+•	Xodimning shaxsiy manfaatlari xizmat vazifalarini xolis bajarishiga ta'sir ko'rsatadigan holat.
+Agar davlat fuqarolik xizmatchisi korrupsiya faktlari to'g'risidagi axborotga ega bo'lsa qaysi harakatlarni amalga oshirishi kerak?
+•	Vakolatli organlarga xabar berishi kerak.
+Davlat organining xodimiga pora olish evaziga yordam berish haqida fuqaro murojaat etganda davlat organi xodimi majburiyati nimadan iborat bo'ladi?
+•	Bunday holat haqida huquqni muhofaza qiluvchi organlarga darhol xabar berish.
+Korrupsiyaga oid huquqbuzarliklar to'g'risidagi axborotni xabar qiluvchi shaxslar va ularning yaqin qarindoshlari kimning himoyasida bo'ladi?
+•	Davlat himoyasida bo'ladi.
+Korrupsiyaga oid huquqbuzarliklar natijasida qabul qilingan qaror bekor qilingan taqdirda, uning qabul qilinishi natijasida jismoniy va yuridik shaxslarga yetkazilgan zarar qoplanadimi?
+•	Ha, qonunda belgilangan tartibda qoplanadi.
+Normativ-huquqiy hujjatlardagi va ularning loyihalaridagi korrupsiyani keltirib chiqaruvchi omillar deb nimaga aytiladi?
+•	Korrupsiyaviy xavf omillari.
+Quyidagilardan qaysi biri korrupsiyaga qarshi kurashish to'g'risidagi qonun hujjatlarining ijro etilishi ustidan jamoatchilik nazoratini amalga oshiradi?
+•	Fuqarolik jamiyati institutlari.
+Korrupsiyaga qarshi kurashish bo'yicha faoliyatni amalga oshiruvchi va unda ishtirok etuvchi organlar hamda tashkilotlar faoliyatini muvofiqlashtirish uchun Korrupsiyaga qarshi kurashish bo'yicha qanday tuzilma tashkil etilgan?
+•	Korrupsiyaga qarshi kurashish bo'yicha milliy kengash.
+O'zbekiston Respublikasining "Korrupsiyaga qarshi kurashish to'g'risida"gi Qonunning maqsadi nima?
+•	Korrupsiyaning oldini olish va unga qarshi samarali kurashish.
+Korrupsiyaga qarshi kurashishning asosiy prinsiplardan biri qaysi?
+•	Qonuniylik va oshkoralik.
+Korrupsiyaga qarshi davlat siyosatining asosiy yo'nalishlaridan biri?
+•	Korrupsiyaning oldini olish.
+Qaysi organ korrupsiyaga qarshi kurashish bo'yicha faoliyatni bevosita amalga oshiruvchi organ hisoblanadi?
+•	Korrupsiyaga qarshi kurashish agentligi.
+O'zbekiston Respublikasining Korrupsiyaga qarshi kurashish bo'yicha milliy kengashining asosiy vazifalaridan biri?
+•	Davlat siyosatini muvofiqlashtirish.
+Ichki ishlar vazirligi korrupsiyaga qarshi qanday vakolatni amalga oshiradi?
+•	Aniqlash va tergov qilish vakolatlarini.
+Ommaviy axborot vositalari korrupsiyaga qarshi kurashishda qaysi yo'l bilan ishtirok etadi?
+•	Axborot tarqatish va jamoatchilik nazorati orqali.
+"Manfaatlar to'qnashuvi" tushunchasi qanday izohlanadi?
+•	Shaxsiy manfaatlar xizmat majburiyatlariga zid keladigan holat.
+"Manfaatlar to'qnashuvi to'g'risida"gi Qonunga ko'ra, "shaxsiy manfaatdorlik" deganda nima tushuniladi?
+•	Xodim yoki uning yaqin qarindoshlarining moddiy yoki nomoddiy manfaatlari.
+"Manfaatlar to'qnashuvi to'g'risida"gi Qonunga ko'ra, maxsus bo'linma deganda nima tushuniladi?
+•	Manfaatlar to'qnashuvini oldini olish bilan shug'ullanuvchi tuzilma.
+"Manfaatlar to'qnashuvi to'g'risida"gi Qonunga ko'ra, xodim manfaatlar to'qnashuviga yo'l qo'ymaslik uchun kimni xabardor qilishi shart?
+•	Bevosita rahbarini yoki vakolatli bo'linmani.
+Manfaatlar to'qnashuvi to'g'risidagi deklaratsiya qachon topshiriladi?
+•	Lavozimga kirishda, manfaatlar to'qnashuvi yuzaga kelganda va har yili belgilangan muddatlarda.
+Mavjud manfaatlar to'qnashuvi aniqlansa, xodim nima qilishi kerak?
+•	Darhol bu haqda xabar berishi va bartaraf etish choralarini ko'rishi kerak.
+Mavjud manfaatlar to'qnashuvi to'g'risidagi xabarnoma kimga topshiriladi?
+•	Bevosita rahbariga yoki maxsus bo'linmaga.
+Xodim o'ziga aloqador shaxslarning manfaatini ko'zlab ish tutsa - bu?
+•	Manfaatlar to'qnashuvi hisoblanadi.
+"Manfaatlar to'qnashuvi to'g'risida"gi Qonunga ko'ra, "nazoratchi" nimani anglatadi?
+•	Manfaatlar to'qnashuvini nazorat qiluvchi vakolatli shaxs yoki bo'linma.
+"Manfaatlar to'qnashuvi to'g'risida"gi Qonunga ko'ra, xodimga aloqador shaxslarning majburiyati nima?
+•	Xodim faoliyatiga ta'sir qiluvchi manfaatlar haqida xabar berish.
+"Manfaatlar to'qnashuvi to'g'risida"gi Qonunga ko'ra, "yaqin qarindoshlar" qaysi shaxslarni o'z ichiga oladi?
+•	Ota-ona, er (xotin), farzandlar, aka-uka, opa-singillar.
+"Manfaatlar to'qnashuvi to'g'risida"gi Qonunga ko'ra, manfaatlar to'qnashuvi munosabatlarini tartibga solishning asosiy prinsiplari orasida qaysi biri mavjud emas?
+•	Shaxsiy manfaatlarni ustuvor qo'yish.
+Qaysi holatda manfaatlar to'qnashuvi yuzaga kelmaydi?
+•	Xodim qaror qabul qilishda shaxsiy manfaatga ega bo'lmaganda.
+"Manfaatlar to'qnashuvi to'g'risida"gi Qonunga ko'ra, ehtimoliy manfaatlar to'qnashuvi to'g'risidagi deklaratsiyada qaysi ma'lumotlar kiritilmaydi?
+•	Davlat siri hisoblangan ma'lumotlar.
+Manfaatlar to'qnashuvi holatlari to'g'risidagi ma'lumotlar qayerda yuritiladi?
+•	Maxsus reyestrda.
+Agar rahbarning o'zi manfaatlar to'qnashuviga duch kelsa, bu haqda kimga xabar beradi?
+•	Yuqori turuvchi rahbarga yoki vakolatli organga.
+"Manfaatlar to'qnashuvi to'g'risida"gi Qonunga ko'ra, manfaatlar to'qnashuvi holatini yashirish qanday oqibatga olib keladi?
+•	Intizomiy yoki ma'muriy javobgarlikka.
+Manfaatlar to'qnashuvini bartaraf etishning eng muhim chorasiga qaysi biri kiradi?
+•	Xodimni qaror qabul qilish jarayonidan chetlatish.
+Manfaatlar to'qnashuvini tartibga solish ustidan umumiy nazoratni kim amalga oshiradi? O'zbekiston Respublikasi Oliy Majlisi Senatining necha nafar a'zosi O'zbekiston Respublikasi Prezidenti tomonidan tayinlanadi?
+•	16 nafar.
+O'zbekiston Respublikasi Vazirlar Mahkamasi o'z faoliyatida kimning oldida javobgar?
+•	O'zbekiston Respublikasi Prezidenti va Oliy Majlis oldida.
+O'zbekiston Respublikasi Oliy sudi qanday sohalarda sud hokimiyatining oliy organi hisoblanadi?
+•	Fuqarolik, jinoyat, ma'muriy va iqtisodiy sud ishlarini yuritish sohalarida.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasining 1-moddasiga ko'ra O'zbekiston - boshqaruvning respublika shakliga ega bo'lgan qanday davlat hisoblanadi?
+•	Suveren, demokratik, huquqiy, ijtimoiy va dunyoviy davlat.
+Soliqlarni joriy qilish huquqi qaysi davlat organiga tegishli?
+•	O'zbekiston Respublikasi Oliy Majlisiga.
+O'zbekiston Respublikasi Bosh prokurorining, Qoraqalpog'iston Respublikasi prokurorining, viloyat, tuman va shahar prokurorlarining vakolat muddati necha yil?
+•	5 yil.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra yangi alohida bob sifatida nima kiritildi?
+•	Fuqarolik jamiyati instituti haqida bob.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra davlat qaysi toifadagi shaxslarning sha'ni va qadr-qimmatini himoya qilish, ularning ijtimoiy va moddiy farovonligi, kasbiy jihatdan o'sishi to'g'risida g'amxo'rlik qiladi?
+•	Nogironligi bo'lgan shaxslar.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra O'zbekiston Respublikasi Oliy Majlis Senati majlislari bir yilda necha marta tashkil qilinadi?
+•	Kamida ikki marta.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra O'zbekiston Respublikasi Administratsiyasini, shuningdek Prezident huzuridagi maslahat-kengash organlarini shakllantirishga vakolatli organ kim?
+•	O'zbekiston Respublikasi Prezidenti.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra bolalar mehnatining bolaning sog'lig'iga, xavfsizligiga, axloqiga, aqliy va jismoniy rivojlanishiga xavf soluvchi, shu jumladan ... har qanday shakllari taqiqlanadi.
+•	Eng yomon shakllari.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra qanday huquq har bir insonning ajralmas huquqi va qonun bilan muhofaza qilinadi?
+•	Hayot huquqi.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasi qachon qabul qilindi?
+•	2023-yil 30-aprel.
+Kim fuqarolarning bandligini ta'minlash, ularni ishsizlikdan himoya qilish, shuningdek kambag'allikni qisqartirish choralarini ko'radi?
+•	Davlat.
+Davlat qaysi ta'limni bepul bo'lishini kafolatlaydi?
+•	Umumiy o'rta ta'limni.
+Har kim yozishmalari, telefon orqali so'zlashuvlari, pochta, elektron va boshqa xabarlari sir saqlanishi huquqiga ega. Ushbu huquqning cheklanishiga faqat nimaga muvofiq va nimaga asoslanib yo'l qo'yiladi?
+•	Faqat qonunga muvofiq va sud qarori asosida.
+Fuqarolar atrof tabiiy muhitga ehtiyotkorona munosabatda bo'lishga majburmi?
+•	Ha, majbur.
+Kim qulay investitsiyaviy va ishbilarmonlik muhitini ta'minlaydi?
+•	Davlat.
+Konstitutsiyaviy qonunlar qabul qilinishida barcha deputatlar, senatorlar umumiy sonining kamida qanchasi ishtirok etishi shart?
+•	Kamida uchdan ikki qismi.
+O'zbekiston Respublikasi Oliy Majlisi Qonunchilik palatasining Spikeri lavozimiga ayni bir shaxs surunkasiga qancha muddatga saylanishi mumkin?
+•	Ikki muddatdan ortiq emas.
+O'zbekiston Respublikasi Oliy Majlisining Qonunchilik palatasi O'zbekiston Respublikasi Prezidenti tomonidan taqdim etilgan O'zbekiston Respublikasi Bosh vaziri nomzodini taqdimnoma kiritilgan kundan e'tiboran necha kun ichida ko'rib chiqadi? O'zbekiston Respublikasi Oliy Majlisi Senatining necha nafar a'zosi O'zbekiston Respublikasi Prezidenti tomonidan tayinlanadi?
+•	16 nafar.
+O'zbekiston Respublikasi Vazirlar Mahkamasi o'z faoliyatida kimning oldida javobgar?
+•	O'zbekiston Respublikasi Prezidenti va Oliy Majlis oldida.
+O'zbekiston Respublikasi Oliy sudi qanday sohalarda sud hokimiyatining oliy organi hisoblanadi?
+•	Fuqarolik, jinoyat, ma'muriy va iqtisodiy sud ishlarini yuritish sohalarida.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasining 1-moddasiga ko'ra O'zbekiston - boshqaruvning respublika shakliga ega bo'lgan qanday davlat hisoblanadi?
+•	Suveren, demokratik, huquqiy, ijtimoiy va dunyoviy davlat.
+Soliqlarni joriy qilish huquqi qaysi davlat organiga tegishli?
+•	O'zbekiston Respublikasi Oliy Majlisiga.
+O'zbekiston Respublikasi Bosh prokurorining, Qoraqalpog'iston Respublikasi prokurorining, viloyat, tuman va shahar prokurorlarining vakolat muddati necha yil?
+•	5 yil.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra yangi alohida bob sifatida nima kiritildi?
+•	Fuqarolik jamiyati instituti haqida bob.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra davlat qaysi toifadagi shaxslarning sha'ni va qadr-qimmatini himoya qilish, ularning ijtimoiy va moddiy farovonligi, kasbiy jihatdan o'sishi to'g'risida g'amxo'rlik qiladi?
+•	Nogironligi bo'lgan shaxslar.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra O'zbekiston Respublikasi Oliy Majlis Senati majlislari bir yilda necha marta tashkil qilinadi?
+•	Kamida ikki marta.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra O'zbekiston Respublikasi Administratsiyasini, shuningdek Prezident huzuridagi maslahat-kengash organlarini shakllantirishga vakolatli organ kim?
+•	O'zbekiston Respublikasi Prezidenti.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra bolalar mehnatining bolaning sog'lig'iga, xavfsizligiga, axloqiga, aqliy va jismoniy rivojlanishiga xavf soluvchi, shu jumladan ... har qanday shakllari taqiqlanadi.
+•	Eng yomon shakllari.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra qanday huquq har bir insonning ajralmas huquqi va qonun bilan muhofaza qilinadi?
+•	Hayot huquqi.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasi qachon qabul qilindi?
+•	2023-yil 30-aprel.
+Kim fuqarolarning bandligini ta'minlash, ularni ishsizlikdan himoya qilish, shuningdek kambag'allikni qisqartirish choralarini ko'radi?
+•	Davlat.
+Davlat qaysi ta'limni bepul bo'lishini kafolatlaydi?
+•	Umumiy o'rta ta'limni.
+Har kim yozishmalari, telefon orqali so'zlashuvlari, pochta, elektron va boshqa xabarlari sir saqlanishi huquqiga ega. Ushbu huquqning cheklanishiga faqat nimaga muvofiq va nimaga asoslanib yo'l qo'yiladi?
+•	Faqat qonunga muvofiq va sud qarori asosida.
+Fuqarolar atrof tabiiy muhitga ehtiyotkorona munosabatda bo'lishga majburmi?
+•	Ha, majbur.
+Kim qulay investitsiyaviy va ishbilarmonlik muhitini ta'minlaydi?
+•	Davlat.
+Konstitutsiyaviy qonunlar qabul qilinishida barcha deputatlar, senatorlar umumiy sonining kamida qanchasi ishtirok etishi shart?
+•	Kamida uchdan ikki qismi.
+O'zbekiston Respublikasi Oliy Majlisi Qonunchilik palatasining Spikeri lavozimiga ayni bir shaxs surunkasiga qancha muddatga saylanishi mumkin?
+•	Ikki muddatdan ortiq emas.
+O'zbekiston Respublikasi Oliy Majlisining Qonunchilik palatasi O'zbekiston Respublikasi Prezidenti tomonidan taqdim etilgan O'zbekiston Respublikasi Bosh vaziri nomzodini taqdimnoma kiritilgan kundan e'tiboran necha kun ichida ko'rib chiqadi?
+•	10 kun ichida.
+•	10 kun ichida.
+•	Davlat organi rahbari.
+Davlat organlari yoki boshqa tashkilotlar tarkibiy bo'linmasining rahbari mavjud manfaatlar to'qnashuvini tartibga solish bo'yicha o'z vakolatlari doirasida ko'rilgan choralar to'g'risida maxsus bo'linmaga necha kun ichida axborot taqdim etishi shart?
+•	3 ish kuni ichida.
+O'zbekiston Respublikasida korrupsiyaning oldini olish va unga qarshi kurashish sohasida qaysi davlat organi davlat siyosatini shakllantiradi va amalga oshiradi?
+•	Korrupsiyaga qarshi kurashish agentligi.
+Quyidagilardan qaysi biri korrupsiyaga imkon beruvchi iqtisodiy sabablar hisoblanadi?
+•	Nazoratning sustligi va manfaatlar to'qnashuvi.
+Davlat xizmatchilari qaysi faoliyat bilan shug'ullanishi lozim?
+•	Faqat qonun bilan ruxsat etilgan faoliyat bilan.
+Rahbar kadrlarni qaysi belgilar bo'yicha tanlash va joy-joyiga qo'yish holatlariga yo'l qo'ymasligi kerak?
+•	Qarindoshlik va shaxsiy manfaat asosida.
+"Halollik vaksinası" nimani anglatadi?
+•	Korrupsiyaga qarshi ichki immunitetni shakllantirish.
+Normativ-huquqiy hujjatlar loyihalarining korrupsiyaga qarshi ekspertizasi qaysi organlar tomonidan o'tkaziladi?
+•	Vakolatli davlat organlari tomonidan.
+Tashkilotlarning korrupsiyaga qarshi kurashish bo'yicha siyosati mazmuni kim tomonidan shakllantiriladi?
+•	Tashkilot rahbariyati tomonidan.
+Quyidagilardan qaysi biri korrupsiyaga qarshi kurashish to'g'risidagi qonun hujjatlarining ijro etilishi ustidan jamoatchilik nazoratini amalga oshiradi?
+•	Fuqarolik jamiyati institutlari.
+Qonun normalarida ma'lum bir siyosiy guruh manfaatlariga xizmat qiladigan qoidalarni kiritishga intilish harakati nima deyiladi?
+•	Lobbizm.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasining ustuvor g'oyalarini ro'yobga chiqarish va normalarini hayotga tatbiq etish bo'yicha Davlat komissiyasiga kim raislik qiladi?
+•	O'zbekiston Respublikasi Prezidenti.
+Xalq deputatlari Kengashiga uning deputatlari orasidan qonunga muvofiq kim boshchilik qiladi?
+•	Kengash raisi.
+Quyidagilardan qaysi biri Xalq deputatlari Kengashlarining vakolatlariga kirmaydi?
+•	Sud hokimiyatini amalga oshirish.
+Viloyat va Toshkent shahar hokimi kim tomonidan tayinlanadi va lavozimidan ozod etiladi?
+•	O'zbekiston Respublikasi Prezidenti tomonidan.
+O'zbekiston Respublikasi hududida qonunlarning aniq va bir xilda bajarilishi ustidan nazoratni kimlar amalga oshiradi?
+•	Prokuratura organlari.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra O'zbekiston Respublikasi Oliy Majlis Senati majlislari bir yilda necha marotaba tashkil qilinadi?
+•	Kamida ikki marotaba.
+O'zbekiston Respublikasi Prezidenti muddatidan ilgari O'zbekiston Respublikasi Prezidenti saylovini tayinlashga haqlimi?
+•	Ha, haqli.
+O'zbekiston Respublikasi Markaziy saylov komissiyasining raisi O'zbekiston Respublikasi Prezidentining taqdimiga binoan komissiya a'zolari orasidan qancha muddatga komissiya majlisida saylanadi?
+•	5 yil muddatga.
+Yangi tahrirdagi O'zbekiston Respublikasi Konstitutsiyasiga ko'ra mamlakat ichkarisida va xalqaro munosabatlarda O'zbekiston nomidan vakolatli organ qaysi?
+•	O'zbekiston Respublikasi Prezidenti.
+Fuqarolar farovonligini oshirishga qaratilgan O'zbekiston iqtisodiyotining negizini qanday shakllardagi mulk tashkil etadi?
+•	Xilma-xil mulk shakllari.
+Kim bozor munosabatlarini rivojlantirish va halol raqobat uchun shart-sharoitlar yaratadi?
+•	Davlat.
+Kim iste'molchilarning huquqlari ustuvorligini hisobga olgan holda iqtisodiy faoliyat, tadbirkorlik va mehnat qilish erkinligini kafolatlaydi?
+•	Davlat.
+Kim qulay investitsiyaviy va ishbilarmonlik muhitini ta'minlaydi?
+•	Davlat.
+Notijorat tashkilotlari nima?
+•	Daromad olishni asosiy maqsad qilmagan tashkilotlar.
+Umummilliy boyligimizga nimalar kiradi?
+•	Yer, yer osti boyliklari, suv, havo va boshqa tabiiy resurslar.
+Yer xususiy mulk bo'lishi mumkinmi?
+•	Ha, qonunda belgilangan tartibda mumkin.
+Fuqarolik jamiyati institutlariga qaysi tashkilotlar kiradi?
+•	Jamoat birlashmalari, NNTlar, OAV.
+Qaysi tashkilotlar jamoat birlashmalari sifatida e'tirof etiladi?
+•	Fuqarolarning ixtiyoriy birlashmalari.
+Kasaba uyushmalariga a'zo bo'lish majburiymi?
+•	Yo'q, ixtiyoriy.
+Voyaga yetgan mehnatga layoqatli farzandlar o'z ota-onalari haqida g'amxo'rlik qilishga majbur ekanligi qaysi moddada aks ettirilgan?
+•	Konstitutsiyaning 64-moddasida.
+Ommaviy axborot vositalari nima uchun javobgar hisoblanadi?
+•	Tarqatilgan axborotning haqqoniyligi uchun.
+O'zbekiston Respublikasining ma'muriy-hududiy tarkibi to'liq va to'g'ri aks ettirilgan javobni belgilang.
+•	Qoraqalpog'iston Respublikasi, viloyatlar, tumanlar va shaharlar.
+O'zbekiston Respublikasining Oliy Majlisi qanday organ hisoblanadi?
+•	Qonun chiqaruvchi hokimiyat organi.
+O'zbekiston Respublikasi Oliy Majlisining Qonunchilik palatasi va Senati vakolat muddati necha yil?
+•	5 yil.
+O'zbekiston Respublikasi Oliy Majlisi necha palatadan iborat?
+•	Ikki palatadan.
+O'zbekiston Respublikasi Oliy Majlisining Qonunchilik palatasi qonunga muvofiq saylanadigan necha nafar deputatdan iborat?
+•	150 nafar.
+O'zbekiston Respublikasi Oliy Majlisining Senati a'zolari Qoraqalpog'iston Respublikasi, viloyatlar va Toshkent shahridan teng miqdorda necha kishidan saylanadi?
+•	6 nafardan.
+O'zbekiston Respublikasi Oliy Majlisi Senatining necha nafar a'zosi fan, san'at, adabiyot, ishlab chiqarish sohasida hamda davlat va jamiyat faoliyatining boshqa tarmoqlarida katta amaliy tajribaga ega bo'lgan hamda alohida xizmat ko'rsatgan eng obro'li fuqarolar orasidan O'zbekiston Respublikasi Prezidenti tomonidan tayinlanadi?
+•	16 nafar.
+O'zbekiston Respublikasi Oliy Majlisining Qonunchilik palatasi tomonidan qabul qilingan qonun qabul qilingan kundan e'tiboran necha kundan kechiktirmay O'zbekiston Respublikasi Oliy Majlisining Senatiga yuboriladi?
+•	10 kundan kechiktirmay.
+O'zbekiston Respublikasi Oliy Majlisining Qonunchilik palatasi tomonidan qabul qilingan qonun Senatga yuborilganidan so'ng necha kun ichida ko'rib chiqiladi?
+•	20 kun ichida.
+Qonun O'zbekiston Respublikasi Oliy Majlisi Senati tomonidan ko'rib chiqilib ma'qullangan taqdirda, imzolanishi va e'lon qilinishi uchun O'zbekiston Respublikasi Prezidentiga necha kundan kechiktirmay yuboriladi?
+•	10 kundan kechiktirmay.
+
